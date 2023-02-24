@@ -9,25 +9,28 @@ public class FlashLightComponent : MonoBehaviour
     public AudioClip[] audioClips;
     private AudioSource Sound;
     public System.Random rand;
-    public GameObject Percentage;
+    public UnityEngine.UI.Image Percentage;
     private int power = 100;
-    private UnityEngine.UI.Slider percentage_text;
 
     void Start()
     {
         FlashLight = GetComponent<Light>();
         Sound = GetComponent<AudioSource>();
         rand = new System.Random();
-        percentage_text = Percentage.GetComponent<UnityEngine.UI.Slider>();
     }
 
     void Update()
     {
+        if (power<90)
+        {
+            Percentage.color = Color.yellow;
+        }
         if (FlashLight.enabled)
         {
             if(rand.Next(0,5000) < 2)
             {
-                percentage_text.value -= 1;
+                power -= 1;
+                Debug.Log(power);
             }
         }
         //Number of clips has to be even. First half are "turn on" sounds, Second half are "turn off" sounds.

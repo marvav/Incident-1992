@@ -49,13 +49,11 @@ namespace InventoryAPI
     public class Item
     {
         public string name;
-        public string description;
         public int count;
 
-        public Item(string name, string description)
+        public Item(string name)
         {
             this.name = name;
-            this.description = description;
             this.count = 1;
         }
     }

@@ -10,7 +10,6 @@ public class PickUpItem : MonoBehaviour
     public GameObject Inventory_Object;
     public GameObject PickUpText;
     public string item_name;
-    public string item_description;
     private float PlayerHeight;
     private InventoryItems Inventory;
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class PickUpItem : MonoBehaviour
             PickUpText.SetActive(true);
             if (Input.GetButton("Pick Up"))
             {
-                InventoryAPI.Item item = new InventoryAPI.Item(item_name, item_description);
+                InventoryAPI.Item item = new InventoryAPI.Item(item_name);
                 Inventory.Inventory.Add(item);
                 self.SetActive(false);
                 PickUpText.SetActive(false);

@@ -14,7 +14,8 @@ public class InventoryMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Icon_positions = new List<Vector3> {new Vector3(-435, 180, 0), new Vector3(-315, 180, 0) };
+        Icon_positions = new List<Vector3> {new Vector3(-675, -325, 0), new Vector3(-620, -325, 0) , new Vector3(-565, -325, 0) ,
+                                            new Vector3(-675, -380, 0) , new Vector3(-620, -380, 0) , new Vector3(-565, -380, 0) };
         Inventory = Inventory_Object.GetComponent<InventoryItems>().Inventory;
     }
 
