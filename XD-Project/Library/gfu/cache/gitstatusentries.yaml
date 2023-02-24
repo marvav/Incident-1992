@@ -1,0 +1,1800 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 995438498, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 6
+  lastUpdatedAtString: 2023-02-24T14:49:23.821+01:00
+  initializedAtString: 2023-02-24T14:46:18.654+01:00
+  entries:
+  - path: XD-Project\Assets\Plugins.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins.meta
+    projectPath: Assets\Plugins.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub.meta
+    projectPath: Assets\Plugins\GitHub.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor.meta
+    projectPath: Assets\Plugins\GitHub\Editor.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+    projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+    projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+    projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\credits.txt
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\credits.txt
+    projectPath: Assets\Plugins\GitHub\Editor\credits.txt
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\credits.txt.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\credits.txt.meta
+    projectPath: Assets\Plugins\GitHub\Editor\credits.txt.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\eula.txt
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\eula.txt
+    projectPath: Assets\Plugins\GitHub\Editor\eula.txt
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\eula.txt.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\eula.txt.meta
+    projectPath: Assets\Plugins\GitHub\Editor\eula.txt.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+    projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+    projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.mdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.mdb
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.mdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.mdb.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.mdb.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.mdb.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.mdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.mdb
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.mdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.mdb.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.mdb.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.mdb.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.mdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.mdb
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.mdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.mdb.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.mdb.meta
+    projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.mdb.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\libsfw.bundle
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\libsfw.bundle
+    projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+    projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\libsfw.so
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\libsfw.so
+    projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+    projectPath: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+    projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+    projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+    projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+    projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\sfw.net.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\sfw.net.dll
+    projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\System.Threading.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\System.Threading.dll
+    projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+    projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+    projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x64.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x64.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+    projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+    projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x86.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x86.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+    projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+    projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+    projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\APIUpdater\ConfigurationCache\UnityEditor.dll.5CD8F8D504E73BCCF16117346CA4DCBF96456F187DAAA79D06B6AB31F86E561B.apiupaterconfigs
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\APIUpdater\ConfigurationCache\UnityEditor.dll.5CD8F8D504E73BCCF16117346CA4DCBF96456F187DAAA79D06B6AB31F86E561B.apiupaterconfigs
+    projectPath: Library\APIUpdater\ConfigurationCache\UnityEditor.dll.5CD8F8D504E73BCCF16117346CA4DCBF96456F187DAAA79D06B6AB31F86E561B.apiupaterconfigs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\APIUpdater\ConfigurationCache\UnityEngine.dll.E968329BF4038B56F2F889314ED1EE7E7D5C8EBFCFA6A74A1B271E1856C15C55.apiupaterconfigs
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\APIUpdater\ConfigurationCache\UnityEngine.dll.E968329BF4038B56F2F889314ED1EE7E7D5C8EBFCFA6A74A1B271E1856C15C55.apiupaterconfigs
+    projectPath: Library\APIUpdater\ConfigurationCache\UnityEngine.dll.E968329BF4038B56F2F889314ED1EE7E7D5C8EBFCFA6A74A1B271E1856C15C55.apiupaterconfigs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\APIUpdater\project-dependencies.graph
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\APIUpdater\project-dependencies.graph
+    projectPath: Library\APIUpdater\project-dependencies.graph
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ArtifactDB
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ArtifactDB
+    projectPath: Library\ArtifactDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Artifacts\0b\0bdf70c598d63195501fd79dc633473e
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\0b\0bdf70c598d63195501fd79dc633473e
+    projectPath: Library\Artifacts\0b\0bdf70c598d63195501fd79dc633473e
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\12\123ac1fc9b81ea9d2254caa39a914af7
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\12\123ac1fc9b81ea9d2254caa39a914af7
+    projectPath: Library\Artifacts\12\123ac1fc9b81ea9d2254caa39a914af7
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\13\1328f366514b11b3ff66b72c9cf7fe4e
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\13\1328f366514b11b3ff66b72c9cf7fe4e
+    projectPath: Library\Artifacts\13\1328f366514b11b3ff66b72c9cf7fe4e
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\28\281f7d2706566acadcd5456548bedab9
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\28\281f7d2706566acadcd5456548bedab9
+    projectPath: Library\Artifacts\28\281f7d2706566acadcd5456548bedab9
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\34\34b3c2fcb081676a132934a0432b0010
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\34\34b3c2fcb081676a132934a0432b0010
+    projectPath: Library\Artifacts\34\34b3c2fcb081676a132934a0432b0010
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\35\35d44e74a1ac198b09730da76752cf28
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\35\35d44e74a1ac198b09730da76752cf28
+    projectPath: Library\Artifacts\35\35d44e74a1ac198b09730da76752cf28
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\36\36f1cfca81190ad6f7fe38f8c75fcc5d
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\36\36f1cfca81190ad6f7fe38f8c75fcc5d
+    projectPath: Library\Artifacts\36\36f1cfca81190ad6f7fe38f8c75fcc5d
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\3d\3d5653f951ffd8716a8142a113ce8c47
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\3d\3d5653f951ffd8716a8142a113ce8c47
+    projectPath: Library\Artifacts\3d\3d5653f951ffd8716a8142a113ce8c47
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\4e\4ef5a72a155aaf15ccc298a4df5c898e
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\4e\4ef5a72a155aaf15ccc298a4df5c898e
+    projectPath: Library\Artifacts\4e\4ef5a72a155aaf15ccc298a4df5c898e
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\51\5151bb3c5d9ca49f047862276111caae
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\51\5151bb3c5d9ca49f047862276111caae
+    projectPath: Library\Artifacts\51\5151bb3c5d9ca49f047862276111caae
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\52\523f8caa810f26dcc3b7671a51a333c1
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\52\523f8caa810f26dcc3b7671a51a333c1
+    projectPath: Library\Artifacts\52\523f8caa810f26dcc3b7671a51a333c1
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\52\52af559f528b9cc4a850e74aa2c4f73b
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\52\52af559f528b9cc4a850e74aa2c4f73b
+    projectPath: Library\Artifacts\52\52af559f528b9cc4a850e74aa2c4f73b
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\54\5458602083cffff3b936fe027d47ba6f
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\54\5458602083cffff3b936fe027d47ba6f
+    projectPath: Library\Artifacts\54\5458602083cffff3b936fe027d47ba6f
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\55\5534d50a898cf1794b3ae8cb68d788a5
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\55\5534d50a898cf1794b3ae8cb68d788a5
+    projectPath: Library\Artifacts\55\5534d50a898cf1794b3ae8cb68d788a5
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\5b\5bd268105e629b3e152fcc404649223c
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\5b\5bd268105e629b3e152fcc404649223c
+    projectPath: Library\Artifacts\5b\5bd268105e629b3e152fcc404649223c
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\63\6323eb17f8e7e283c60492ca5c42eddc
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\63\6323eb17f8e7e283c60492ca5c42eddc
+    projectPath: Library\Artifacts\63\6323eb17f8e7e283c60492ca5c42eddc
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\63\6357d9cdf740069d41eec7441cebf15d
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\63\6357d9cdf740069d41eec7441cebf15d
+    projectPath: Library\Artifacts\63\6357d9cdf740069d41eec7441cebf15d
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\6a\6a1f23c75fa5429db308b0a1e9c1d83a
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\6a\6a1f23c75fa5429db308b0a1e9c1d83a
+    projectPath: Library\Artifacts\6a\6a1f23c75fa5429db308b0a1e9c1d83a
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\6c\6c321cbcc81fad06db5addd28535e58d
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\6c\6c321cbcc81fad06db5addd28535e58d
+    projectPath: Library\Artifacts\6c\6c321cbcc81fad06db5addd28535e58d
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\70\702efacc5c2047afdb5f8fc1986efa62
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\70\702efacc5c2047afdb5f8fc1986efa62
+    projectPath: Library\Artifacts\70\702efacc5c2047afdb5f8fc1986efa62
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\75\7572fb760f1788b967b3f2a5e58685a2
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\75\7572fb760f1788b967b3f2a5e58685a2
+    projectPath: Library\Artifacts\75\7572fb760f1788b967b3f2a5e58685a2
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\7e\7e7b5b22921a79a5796dc2583388db20
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\7e\7e7b5b22921a79a5796dc2583388db20
+    projectPath: Library\Artifacts\7e\7e7b5b22921a79a5796dc2583388db20
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\82\8270cbf067ef2d397a5646fa336b1b99
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\82\8270cbf067ef2d397a5646fa336b1b99
+    projectPath: Library\Artifacts\82\8270cbf067ef2d397a5646fa336b1b99
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\88\887d9bb198c1cad73ea803c631cfbc57
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\88\887d9bb198c1cad73ea803c631cfbc57
+    projectPath: Library\Artifacts\88\887d9bb198c1cad73ea803c631cfbc57
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\8c\8c41dde7ad4ac66555342bd64e9f2c55
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\8c\8c41dde7ad4ac66555342bd64e9f2c55
+    projectPath: Library\Artifacts\8c\8c41dde7ad4ac66555342bd64e9f2c55
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\91\91abd8ea77317283570d38768bda9029
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\91\91abd8ea77317283570d38768bda9029
+    projectPath: Library\Artifacts\91\91abd8ea77317283570d38768bda9029
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\9f\9fc723c5f2b694f64473b1dd8d4ab09e
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\9f\9fc723c5f2b694f64473b1dd8d4ab09e
+    projectPath: Library\Artifacts\9f\9fc723c5f2b694f64473b1dd8d4ab09e
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\a0\a04d8a2b2d1ac03db25d097edbcc3206
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\a0\a04d8a2b2d1ac03db25d097edbcc3206
+    projectPath: Library\Artifacts\a0\a04d8a2b2d1ac03db25d097edbcc3206
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\a0\a095704f5af546d049295927e64b9e53
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\a0\a095704f5af546d049295927e64b9e53
+    projectPath: Library\Artifacts\a0\a095704f5af546d049295927e64b9e53
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\a7\a7c9d3a8b876e42bad14f2a894463a52
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\a7\a7c9d3a8b876e42bad14f2a894463a52
+    projectPath: Library\Artifacts\a7\a7c9d3a8b876e42bad14f2a894463a52
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\b9\b9b5ba33f2dbf3f28fd94bee60a9dbbc
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\b9\b9b5ba33f2dbf3f28fd94bee60a9dbbc
+    projectPath: Library\Artifacts\b9\b9b5ba33f2dbf3f28fd94bee60a9dbbc
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\bd\bd9eaf0771b718dcc1e1024efabc82f6
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\bd\bd9eaf0771b718dcc1e1024efabc82f6
+    projectPath: Library\Artifacts\bd\bd9eaf0771b718dcc1e1024efabc82f6
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\c0\c0258e2c9527afcc11d7f68cd82e2b7b
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\c0\c0258e2c9527afcc11d7f68cd82e2b7b
+    projectPath: Library\Artifacts\c0\c0258e2c9527afcc11d7f68cd82e2b7b
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\c6\c66a50c3fcd5a073d2a3be14416a5699
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\c6\c66a50c3fcd5a073d2a3be14416a5699
+    projectPath: Library\Artifacts\c6\c66a50c3fcd5a073d2a3be14416a5699
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\c7\c7b0d7ec6f7d4b978a11742fb91cdea2
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\c7\c7b0d7ec6f7d4b978a11742fb91cdea2
+    projectPath: Library\Artifacts\c7\c7b0d7ec6f7d4b978a11742fb91cdea2
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\c8\c8438283334d3d53222e7c49b7e8bcfc
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\c8\c8438283334d3d53222e7c49b7e8bcfc
+    projectPath: Library\Artifacts\c8\c8438283334d3d53222e7c49b7e8bcfc
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\d3\d31e045a5783f581bf72b86c0bd46687
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\d3\d31e045a5783f581bf72b86c0bd46687
+    projectPath: Library\Artifacts\d3\d31e045a5783f581bf72b86c0bd46687
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\e2\e27ab489370710c664f7b7026e2ea535
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\e2\e27ab489370710c664f7b7026e2ea535
+    projectPath: Library\Artifacts\e2\e27ab489370710c664f7b7026e2ea535
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\e2\e2b851dbc5f4975e3c3952957a7b8baf
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\e2\e2b851dbc5f4975e3c3952957a7b8baf
+    projectPath: Library\Artifacts\e2\e2b851dbc5f4975e3c3952957a7b8baf
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Library\Artifacts\e3\e33bf7f9621bbe3c42824d3810980cd2
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\e3\e33bf7f9621bbe3c42824d3810980cd2
+    projectPath: Library\Artifacts\e3\e33bf7f9621bbe3c42824d3810980cd2
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\e4\e4b471f3309e398197b5bf18d671023a
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\e4\e4b471f3309e398197b5bf18d671023a
+    projectPath: Library\Artifacts\e4\e4b471f3309e398197b5bf18d671023a
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Artifacts\e5\e53a87db538f3b7d6c85fe418db7091b
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Artifacts\e5\e53a87db538f3b7d6c85fe418db7091b
+    projectPath: Library\Artifacts\e5\e53a87db538f3b7d6c85fe418db7091b
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\1900b0aE.dag
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\1900b0aE.dag
+    projectPath: Library\Bee\1900b0aE.dag
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\1900b0aE.dag.json
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\1900b0aE.dag.json
+    projectPath: Library\Bee\1900b0aE.dag.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\1900b0aE.dag.outputdata
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\1900b0aE.dag.outputdata
+    projectPath: Library\Bee\1900b0aE.dag.outputdata
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\1900b0aE.dag.payloads
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\1900b0aE.dag.payloads
+    projectPath: Library\Bee\1900b0aE.dag.payloads
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\1900b0aE.dag_derived
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\1900b0aE.dag_derived
+    projectPath: Library\Bee\1900b0aE.dag_derived
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\1900b0aE-inputdata.json
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\1900b0aE-inputdata.json
+    projectPath: Library\Bee\1900b0aE-inputdata.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.AdditionalFile.txt
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.AdditionalFile.txt
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.AdditionalFile.txt
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll.mvfrm
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll.mvfrm
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll.mvfrm
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll.mvfrm.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll.mvfrm.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.dll.mvfrm.rsp
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.pdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.ref.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.ref.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.ref.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.rsp
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.rsp2
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.rsp2
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Assembly-CSharp-Editor-firstpass.rsp2
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.ConversionSystem.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.AI.Navigation.Updater.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.CollabProxy.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.TextMeshPro.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.Timeline.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Core.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Flow.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.SettingsProvider.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.Shared.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VisualScripting.State.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\Unity.VSCode.Editor.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\UnityEditor.UI.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.dll
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.pdb
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.rsp
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.rsp
+    projectPath: Library\Bee\artifacts\1900b0aE.dag\UnityEngine.UI.rsp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\backend1.traceevents
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\backend1.traceevents
+    projectPath: Library\Bee\backend1.traceevents
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\backend2.traceevents
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\backend2.traceevents
+    projectPath: Library\Bee\backend2.traceevents
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\buildprogram0.traceevents
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\buildprogram0.traceevents
+    projectPath: Library\Bee\buildprogram0.traceevents
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\CachedNodeOutput\00bb57cfc792ac04ccc7e1991ed2a6e2_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\00bb57cfc792ac04ccc7e1991ed2a6e2_out
+    projectPath: Library\Bee\CachedNodeOutput\00bb57cfc792ac04ccc7e1991ed2a6e2_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\02e045eaeaaefa864d4414e512508b79_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\02e045eaeaaefa864d4414e512508b79_out
+    projectPath: Library\Bee\CachedNodeOutput\02e045eaeaaefa864d4414e512508b79_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\0fd549397d23cd67da3b1c8dc7cb0a0a_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\0fd549397d23cd67da3b1c8dc7cb0a0a_out
+    projectPath: Library\Bee\CachedNodeOutput\0fd549397d23cd67da3b1c8dc7cb0a0a_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\19f2ef4d92772b8d5a3f5632116455f5_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\19f2ef4d92772b8d5a3f5632116455f5_out
+    projectPath: Library\Bee\CachedNodeOutput\19f2ef4d92772b8d5a3f5632116455f5_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\1da0ffdebf14ecbe2c7140ee9f551421_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\1da0ffdebf14ecbe2c7140ee9f551421_out
+    projectPath: Library\Bee\CachedNodeOutput\1da0ffdebf14ecbe2c7140ee9f551421_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\1ddf9835e1e7ab8be1c810ac24fe08d6_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\1ddf9835e1e7ab8be1c810ac24fe08d6_out
+    projectPath: Library\Bee\CachedNodeOutput\1ddf9835e1e7ab8be1c810ac24fe08d6_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\20d5e3948af62726423b3a3970e6ee01_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\20d5e3948af62726423b3a3970e6ee01_out
+    projectPath: Library\Bee\CachedNodeOutput\20d5e3948af62726423b3a3970e6ee01_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\233370cc6599c03dc88c47e9829d98bf_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\233370cc6599c03dc88c47e9829d98bf_out
+    projectPath: Library\Bee\CachedNodeOutput\233370cc6599c03dc88c47e9829d98bf_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\2755024ab329ba20910606437072480d_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\2755024ab329ba20910606437072480d_out
+    projectPath: Library\Bee\CachedNodeOutput\2755024ab329ba20910606437072480d_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\34dc1908f65610979465f3d2acf1d6f8_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\34dc1908f65610979465f3d2acf1d6f8_out
+    projectPath: Library\Bee\CachedNodeOutput\34dc1908f65610979465f3d2acf1d6f8_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\5a4053dbb5ddcb4db282df4397e0dbf2_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\5a4053dbb5ddcb4db282df4397e0dbf2_out
+    projectPath: Library\Bee\CachedNodeOutput\5a4053dbb5ddcb4db282df4397e0dbf2_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\61696c7851399290fe5b3a01baf01871_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\61696c7851399290fe5b3a01baf01871_out
+    projectPath: Library\Bee\CachedNodeOutput\61696c7851399290fe5b3a01baf01871_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\64ff0a6349037ad7fc984e25ab6c86fb_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\64ff0a6349037ad7fc984e25ab6c86fb_out
+    projectPath: Library\Bee\CachedNodeOutput\64ff0a6349037ad7fc984e25ab6c86fb_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\66df7888a4800ac5a68d21eb799f2e7c_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\66df7888a4800ac5a68d21eb799f2e7c_out
+    projectPath: Library\Bee\CachedNodeOutput\66df7888a4800ac5a68d21eb799f2e7c_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\67f724d93f3018fc3bd6bcd5ecc947e9_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\67f724d93f3018fc3bd6bcd5ecc947e9_out
+    projectPath: Library\Bee\CachedNodeOutput\67f724d93f3018fc3bd6bcd5ecc947e9_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\6a89e9681d5a8418fc5b9f668b29640a_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\6a89e9681d5a8418fc5b9f668b29640a_out
+    projectPath: Library\Bee\CachedNodeOutput\6a89e9681d5a8418fc5b9f668b29640a_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\6cddca21d46f43b7a72dee32c6335248_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\6cddca21d46f43b7a72dee32c6335248_out
+    projectPath: Library\Bee\CachedNodeOutput\6cddca21d46f43b7a72dee32c6335248_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\77bcec8a55894c3c33cd36292dc86828_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\77bcec8a55894c3c33cd36292dc86828_out
+    projectPath: Library\Bee\CachedNodeOutput\77bcec8a55894c3c33cd36292dc86828_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\904cfc39dbe6b996f491ccfd3578ab90_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\904cfc39dbe6b996f491ccfd3578ab90_out
+    projectPath: Library\Bee\CachedNodeOutput\904cfc39dbe6b996f491ccfd3578ab90_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\9dff610001651483ec0db26063282a0e_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\9dff610001651483ec0db26063282a0e_out
+    projectPath: Library\Bee\CachedNodeOutput\9dff610001651483ec0db26063282a0e_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\aaeb2faec78c58037dec871c6247c56d_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\aaeb2faec78c58037dec871c6247c56d_out
+    projectPath: Library\Bee\CachedNodeOutput\aaeb2faec78c58037dec871c6247c56d_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\ae68e550b9b3feca8a3caf3321ad32ba_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\ae68e550b9b3feca8a3caf3321ad32ba_out
+    projectPath: Library\Bee\CachedNodeOutput\ae68e550b9b3feca8a3caf3321ad32ba_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\aec17e931e9ce2541fc6180464277430_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\aec17e931e9ce2541fc6180464277430_out
+    projectPath: Library\Bee\CachedNodeOutput\aec17e931e9ce2541fc6180464277430_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\b15d6d228599e81509f44b2a73364fd7_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\b15d6d228599e81509f44b2a73364fd7_out
+    projectPath: Library\Bee\CachedNodeOutput\b15d6d228599e81509f44b2a73364fd7_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\b481c153bb3e1c69539d95ef4459ab05_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\b481c153bb3e1c69539d95ef4459ab05_out
+    projectPath: Library\Bee\CachedNodeOutput\b481c153bb3e1c69539d95ef4459ab05_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\b4fe6d654d795609d83b169daa06ff7f_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\b4fe6d654d795609d83b169daa06ff7f_out
+    projectPath: Library\Bee\CachedNodeOutput\b4fe6d654d795609d83b169daa06ff7f_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\bf88b1486a31898a1463ace6b5d65c08_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\bf88b1486a31898a1463ace6b5d65c08_out
+    projectPath: Library\Bee\CachedNodeOutput\bf88b1486a31898a1463ace6b5d65c08_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\c4f780b34b9fe1a171a4d88b7946d2a7_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\c4f780b34b9fe1a171a4d88b7946d2a7_out
+    projectPath: Library\Bee\CachedNodeOutput\c4f780b34b9fe1a171a4d88b7946d2a7_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\ca2b486d67bfcc142c0e11c3ef702acb_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\ca2b486d67bfcc142c0e11c3ef702acb_out
+    projectPath: Library\Bee\CachedNodeOutput\ca2b486d67bfcc142c0e11c3ef702acb_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\cd4db8f68a3fcf3b9a14a717b7ee008e_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\cd4db8f68a3fcf3b9a14a717b7ee008e_out
+    projectPath: Library\Bee\CachedNodeOutput\cd4db8f68a3fcf3b9a14a717b7ee008e_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\dae6b37ea71c535a98a9232f078a23b8_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\dae6b37ea71c535a98a9232f078a23b8_out
+    projectPath: Library\Bee\CachedNodeOutput\dae6b37ea71c535a98a9232f078a23b8_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\daedb26927bbc39823ab26778bd6b273_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\daedb26927bbc39823ab26778bd6b273_out
+    projectPath: Library\Bee\CachedNodeOutput\daedb26927bbc39823ab26778bd6b273_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\dc148ef39a35530664de39364635724b_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\dc148ef39a35530664de39364635724b_out
+    projectPath: Library\Bee\CachedNodeOutput\dc148ef39a35530664de39364635724b_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\df9e63ca6d8c94b1e3303d35e01fb320_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\df9e63ca6d8c94b1e3303d35e01fb320_out
+    projectPath: Library\Bee\CachedNodeOutput\df9e63ca6d8c94b1e3303d35e01fb320_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\e34090fffdef31bab5d8ac0b21d7637d_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\e34090fffdef31bab5d8ac0b21d7637d_out
+    projectPath: Library\Bee\CachedNodeOutput\e34090fffdef31bab5d8ac0b21d7637d_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\e652074ad9d28c33d3c76af2da445e8a_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\e652074ad9d28c33d3c76af2da445e8a_out
+    projectPath: Library\Bee\CachedNodeOutput\e652074ad9d28c33d3c76af2da445e8a_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\e919fd2793586e9f0dcc2bb9a5fe721e_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\e919fd2793586e9f0dcc2bb9a5fe721e_out
+    projectPath: Library\Bee\CachedNodeOutput\e919fd2793586e9f0dcc2bb9a5fe721e_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\f41b28cb4016ae17d9f0b15df4c7e72e_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\f41b28cb4016ae17d9f0b15df4c7e72e_out
+    projectPath: Library\Bee\CachedNodeOutput\f41b28cb4016ae17d9f0b15df4c7e72e_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\f5a1e1b29561c0a35fda239f6c0aa630_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\f5a1e1b29561c0a35fda239f6c0aa630_out
+    projectPath: Library\Bee\CachedNodeOutput\f5a1e1b29561c0a35fda239f6c0aa630_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\CachedNodeOutput\f70436654b77be8b72fd35103a85a490_out
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\CachedNodeOutput\f70436654b77be8b72fd35103a85a490_out
+    projectPath: Library\Bee\CachedNodeOutput\f70436654b77be8b72fd35103a85a490_out
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\Bee\fullprofile.json
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\fullprofile.json
+    projectPath: Library\Bee\fullprofile.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\tundra.digestcache
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\tundra.digestcache
+    projectPath: Library\Bee\tundra.digestcache
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\tundra.log.json
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\tundra.log.json
+    projectPath: Library\Bee\tundra.log.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\TundraBuildState.state
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\TundraBuildState.state
+    projectPath: Library\Bee\TundraBuildState.state
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Bee\TundraBuildState.state.map
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Bee\TundraBuildState.state.map
+    projectPath: Library\Bee\TundraBuildState.state.map
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\EditorInstance.json
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\EditorInstance.json
+    projectPath: Library\EditorInstance.json
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\gfu\cache\gitlocks.yaml
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\gfu\cache\gitlocks.yaml
+    projectPath: Library\gfu\cache\gitlocks.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\gfu\cache\gitstatusentries.yaml
+    projectPath: Library\gfu\cache\gitstatusentries.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\gfu\cache\gittrackingstatus.yaml
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\gfu\cache\gittrackingstatus.yaml
+    projectPath: Library\gfu\cache\gittrackingstatus.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\gfu\cache\repoinfo.yaml
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\gfu\cache\repoinfo.yaml
+    projectPath: Library\gfu\cache\repoinfo.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\ilpp.pid
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ilpp.pid
+    projectPath: Library\ilpp.pid
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\SceneVisibilityState.asset
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\SceneVisibilityState.asset
+    projectPath: Library\SceneVisibilityState.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor.pdb
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.pdb
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.pdb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.dll
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.pdb
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.pdb
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.pdb
+    projectPath: Library\ScriptAssemblies\Unity.AI.Navigation.Updater.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.CollabProxy.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.CollabProxy.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.TextMeshPro.pdb
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.Timeline.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.Timeline.dll
+    projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.Timeline.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.Timeline.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.Timeline.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.Timeline.pdb
+    projectPath: Library\ScriptAssemblies\Unity.Timeline.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Core.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Flow.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VisualScripting.State.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VisualScripting.State.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\Unity.VSCode.Editor.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\Unity.VSCode.Editor.pdb
+    projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\UnityEditor.UI.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\UnityEditor.UI.dll
+    projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\UnityEditor.UI.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\UnityEditor.UI.pdb
+    projectPath: Library\ScriptAssemblies\UnityEditor.UI.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\UnityEngine.UI.dll
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\UnityEngine.UI.dll
+    projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\ScriptAssemblies\UnityEngine.UI.pdb
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\ScriptAssemblies\UnityEngine.UI.pdb
+    projectPath: Library\ScriptAssemblies\UnityEngine.UI.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\Search\transactions.db
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\Search\transactions.db
+    projectPath: Library\Search\transactions.db
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\SourceAssetDB
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\SourceAssetDB
+    projectPath: Library\SourceAssetDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Library\StateCache\MainStageHierarchy\4d\4d2a36d9faf65734f0bbefb3ee623532.json
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Library\StateCache\MainStageHierarchy\4d\4d2a36d9faf65734f0bbefb3ee623532.json
+    projectPath: Library\StateCache\MainStageHierarchy\4d\4d2a36d9faf65734f0bbefb3ee623532.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Logs\AssetImportWorker0.log
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Logs\AssetImportWorker0.log
+    projectPath: Logs\AssetImportWorker0.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Logs\AssetImportWorker0-prev.log
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Logs\AssetImportWorker0-prev.log
+    projectPath: Logs\AssetImportWorker0-prev.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Logs\shadercompiler-AssetImportWorker0.log
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Logs\shadercompiler-AssetImportWorker0.log
+    projectPath: Logs\shadercompiler-AssetImportWorker0.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: XD-Project\Logs\shadercompiler-UnityShaderCompiler.exe0.log
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Logs\shadercompiler-UnityShaderCompiler.exe0.log
+    projectPath: Logs\shadercompiler-UnityShaderCompiler.exe0.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: XD-Project\Temp\FSTimeGet-a2bea3876acc2b24db8f03389c00def8
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Temp\FSTimeGet-a2bea3876acc2b24db8f03389c00def8
+    projectPath: Temp\FSTimeGet-a2bea3876acc2b24db8f03389c00def8
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Temp\ProcessJobs\b8613a84801a46c691ba1681b66ddf56.layout
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Temp\ProcessJobs\b8613a84801a46c691ba1681b66ddf56.layout
+    projectPath: Temp\ProcessJobs\b8613a84801a46c691ba1681b66ddf56.layout
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Temp\ProcessJobs\eea9e219aadd89be0d01651f4cd4c583.bakert
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Temp\ProcessJobs\eea9e219aadd89be0d01651f4cd4c583.bakert
+    projectPath: Temp\ProcessJobs\eea9e219aadd89be0d01651f4cd4c583.bakert
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Temp\UnityLockfile
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Temp\UnityLockfile
+    projectPath: Temp\UnityLockfile
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: XD-Project\Temp\workerlic
+    fullPath: C:\Users\Marek\Desktop\Unity\XD-Project\Temp\workerlic
+    projectPath: Temp\workerlic
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
