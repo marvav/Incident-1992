@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InventoryAPI;
 
 public class PickUpItem : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PickUpItem : MonoBehaviour
     public GameObject Inventory_Object;
     public GameObject PickUpText;
     public string item_name;
+    public string item_description;
     private float PlayerHeight;
     private InventoryItems Inventory;
     // Start is called before the first frame update
@@ -26,10 +28,8 @@ public class PickUpItem : MonoBehaviour
             PickUpText.SetActive(true);
             if (Input.GetButton("Pick Up"))
             {
-                if (item_name == "battery")
-                    Inventory.batteries += 1;
-                else
-                    Inventory.Items.Add(item_name);
+                InventoryAPI.Item item = new InventoryAPI.Item(item_name, item_description);
+                Inventory.Inventory.Add(item);
                 self.SetActive(false);
                 PickUpText.SetActive(false);
 
