@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
-    public GameObject[] EscapeMenu;
+    public GameObject EscapeMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +18,19 @@ public class PauseGame : MonoBehaviour
         {
             if (Time.timeScale == 0)
             {
-                ToggleObjects(EscapeMenu, false);
+                EscapeMenu.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 Time.timeScale = 1;
+
             }
             else
             {
                 Time.timeScale = 0;
-                ToggleObjects(EscapeMenu, true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                EscapeMenu.SetActive(true);
             }
-        }
-    }
-    void ToggleObjects(GameObject[] objects, bool state)
-    {
-        foreach (GameObject element in objects)
-        {
-            element.SetActive(state);
         }
     }
 }
