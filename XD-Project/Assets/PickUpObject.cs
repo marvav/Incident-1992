@@ -15,14 +15,14 @@ public class PickUpItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerHeight = Player.GetComponent<CharacterController>().height;
+        PlayerHeight = Player.GetComponent<PlayerMovementDen>().playerHeight;
         Inventory = Inventory_Object.GetComponent<InventoryItems>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position + new Vector3(0, PlayerHeight / 2, 0), Player.transform.position) < 2)
+        if (Vector3.Distance(transform.position + new Vector3(0, PlayerHeight/2, 0), Player.transform.position) < 2)
         {
             PickUpText.SetActive(true);
             if (Input.GetButton("Pick Up"))

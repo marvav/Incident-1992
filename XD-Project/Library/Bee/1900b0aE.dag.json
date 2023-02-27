@@ -18098,7 +18098,11 @@
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
       "PayloadOffset": 1354097,
+<<<<<<< Updated upstream
       "PayloadLength": 35455,
+=======
+      "PayloadLength": 35785,
+>>>>>>> Stashed changes
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -18110,7 +18114,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1389639,
+=======
+      "PayloadOffset": 1389969,
+>>>>>>> Stashed changes
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -18404,7 +18412,10 @@
         "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs",
         "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs",
         "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs",
+<<<<<<< Updated upstream
         "Assets/ViewBobbing.cs",
+=======
+>>>>>>> Stashed changes
         "C:/Program Files/Unity/Hub/Editor/2022.2.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.2.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll",
         "Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp"
@@ -18606,7 +18617,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1389735,
+=======
+      "PayloadOffset": 1390065,
+>>>>>>> Stashed changes
       "PayloadLength": 9202,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -18849,7 +18864,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.AdditionalFile.txt",
       "DisplayName": "Writing Assembly-CSharp-Editor.AdditionalFile.txt",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1399045,
+=======
+      "PayloadOffset": 1399375,
+>>>>>>> Stashed changes
       "PayloadLength": 44,
       "PayloadDebugContentSnippet": "C:\\Users\\Marek\\Desktop\\XD-Proj",
       "Inputs": [],
@@ -18862,7 +18881,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp",
       "DisplayName": "Writing Assembly-CSharp-Editor.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1399182,
+=======
+      "PayloadOffset": 1399512,
+>>>>>>> Stashed changes
       "PayloadLength": 35099,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
@@ -18875,7 +18898,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp2",
       "DisplayName": "Writing Assembly-CSharp-Editor.rsp2",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1434375,
+=======
+      "PayloadOffset": 1434705,
+>>>>>>> Stashed changes
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -19199,7 +19226,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp-Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1434478,
+=======
+      "PayloadOffset": 1434808,
+>>>>>>> Stashed changes
       "PayloadLength": 10070,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
