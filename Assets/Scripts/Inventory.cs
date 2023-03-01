@@ -7,7 +7,7 @@ using TMPro;
 
 public class InventoryMenu : MonoBehaviour
 {
-    public GameObject Inventory_Object;
+    public Core Core;
     private InventoryAPI.Inventory Inventory;
     private List<Vector3> Icon_positions;
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class InventoryMenu : MonoBehaviour
     {
         Icon_positions = new List<Vector3> {new Vector3(-378,-157,0), new Vector3(-342,-157,0) , new Vector3(-306,-157,0) ,
                                             new Vector3(-378,-195,0) , new Vector3(-342,-195,0) , new Vector3(-306,-195,0) };
-        Inventory = Inventory_Object.GetComponent<InventoryItems>().Inventory;
+        Inventory = Core.Inventory.GetComponent<InventoryItems>().Inventory;
     }
 
     // Update is called once per frame
@@ -41,9 +41,9 @@ public class InventoryMenu : MonoBehaviour
     }
     void ToggleOn()
     {
-        Inventory_Object.SetActive(true);
+        Core.Inventory.SetActive(true);
         int index = 0;
-        foreach (GameObject child in CountChildren())
+        foreach (GameObject child in Core.CountChildren(Core.Inventory))
         {
             if(child.tag == "Icon")
             {
@@ -70,22 +70,9 @@ public class InventoryMenu : MonoBehaviour
 
     void ToggleOff()
     {
-        Inventory_Object.SetActive(false);
-        foreach(GameObject child in CountChildren())
+        Core.Inventory.SetActive(false);
+        foreach(GameObject child in Core.CountChildren(Core.Inventory))
             child.gameObject.SetActive(false);
-    }
-
-    List<GameObject> CountChildren()
-    {
-        List<GameObject> result = new List<GameObject>();
-        int index = 0;
-        int count = Inventory_Object.transform.childCount;
-        while (index < count)
-        {
-            result.Add(Inventory_Object.transform.GetChild(index).gameObject);
-            index += 1;
-        }
-        return result;
     }
 }
 
