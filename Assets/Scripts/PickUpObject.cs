@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using InventoryAPI;
+using CoreImport;
 
 public class PickUpItem : MonoBehaviour
 {
-    public GameObject Player;
     public GameObject Inventory_Object;
     public GameObject PickUpText;
     private float PlayerHeight;
+    private GameObject Player;
     private InventoryItems Inventory;
     // Start is called before the first frame update
     void Start()
     {
        // PlayerHeight = Player.GetComponent<PlayerMovementDen>().playerHeight;
         Inventory = Inventory_Object.GetComponent<InventoryItems>();
+        Player = CoreImport.Object.Player;
+
     }
 
     // Update is called once per frame

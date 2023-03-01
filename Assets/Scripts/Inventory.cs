@@ -13,8 +13,8 @@ public class InventoryMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Icon_positions = new List<Vector3> {new Vector3(-370,-180,0), new Vector3(-620, -325, 0) , new Vector3(-565, -325, 0) ,
-                                            new Vector3(-675, -380, 0) , new Vector3(-620, -380, 0) , new Vector3(-565, -380, 0) };
+        Icon_positions = new List<Vector3> {new Vector3(-378,-157,0), new Vector3(-342,-157,0) , new Vector3(-306,-157,0) ,
+                                            new Vector3(-378,-195,0) , new Vector3(-342,-195,0) , new Vector3(-306,-195,0) };
         Inventory = Inventory_Object.GetComponent<InventoryItems>().Inventory;
     }
 
@@ -27,11 +27,15 @@ public class InventoryMenu : MonoBehaviour
             {
                 ToggleOff();
                 Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             else
             {
                 Time.timeScale = 0;
                 ToggleOn();
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
