@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InventoryAPI;
+using static Inventory;
 
 public class PickUpItem : MonoBehaviour
 {
     public Core Core;
     private float PlayerHeight;
-    private InventoryItems Inventory;
     private GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
         //PlayerHeight = Player.GetComponent<PlayerMovementDen>().playerHeight;
         PlayerHeight = 2;
-        Inventory = Core.Inventory.GetComponent<InventoryItems>();
         Player = Core.Player;
 
     }
@@ -28,10 +26,9 @@ public class PickUpItem : MonoBehaviour
             if (Input.GetButton("Pick Up"))
             {
                 Item item = new Item(this.gameObject.name);
-                Inventory.Inventory.Add(item);
+                Inventory.Add(item);
                 this.gameObject.SetActive(false);
                 Core.PickUpText.SetActive(false);
-
             }
         }
         else

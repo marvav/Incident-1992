@@ -1,53 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using InventoryAPI;
 using UnityEngine.UI;
 using TMPro;
+using static Core_Utils;
+using static Inventory;
 
 public class InventoryMenu : MonoBehaviour
 {
-    public Core Core;
-    private InventoryAPI.Inventory Inventory;
+    public GameObject Inventory_Object;
     private List<Vector3> Icon_positions;
     // Start is called before the first frame update
     void Start()
     {
-        Icon_positions = new List<Vector3> {new Vector3(-378,-157,0), new Vector3(-342,-157,0) , new Vector3(-306,-157,0) ,
-                                            new Vector3(-378,-195,0) , new Vector3(-342,-195,0) , new Vector3(-306,-195,0) };
-        Inventory = Core.Inventory.GetComponent<InventoryItems>().Inventory;
+        Icon_positions = new List<Vector3> {new Vector3(-923,-429,0), new Vector3(-852,-429,0) , new Vector3(-781,-429,0) ,
+                                            new Vector3(-923,-500,0) , new Vector3(-852,-500,0) , new Vector3(-781,-500,0) };
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         if (Input.GetButtonDown("Inventory"))
         {
             if (Time.timeScale == 0)
             {
-                ToggleOff();
                 Time.timeScale = 1;
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                ToggleOff();
+                ToggleCursor();
             }
             else
             {
                 Time.timeScale = 0;
                 ToggleOn();
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                ToggleCursor();
             }
         }
     }
     void ToggleOn()
     {
-        Core.Inventory.SetActive(true);
+        Inventory_Object.SetActive(true);
         int index = 0;
-        foreach (GameObject child in Core.CountChildren(Core.Inventory))
+        foreach (GameObject child in CountChildren(Inventory_Object))
         {
             if(child.tag == "Icon")
             {
-                InventoryAPI.Item item = Inventory.Find_by_name(child.name);
+                Item item = Inventory.Find_by_name(child.name);
                 if (item!=null)
                 {
                     child.SetActive(true);
@@ -70,8 +72,8 @@ public class InventoryMenu : MonoBehaviour
 
     void ToggleOff()
     {
-        Core.Inventory.SetActive(false);
-        foreach(GameObject child in Core.CountChildren(Core.Inventory))
+        Inventory_Object.SetActive(false);
+        foreach(GameObject child in CountChildren(Inventory_Object))
             child.gameObject.SetActive(false);
     }
 }

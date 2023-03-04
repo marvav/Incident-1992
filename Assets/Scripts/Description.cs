@@ -9,7 +9,6 @@ public class Description : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public string text;
     public GameObject description;
     private TMP_Text description_component;
-    public Button yourButton;
     //Detect if the Cursor starts to pass over the GameObject
     void Start()
     {
