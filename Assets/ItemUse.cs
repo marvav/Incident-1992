@@ -23,7 +23,9 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler
             Debug.Log("Item in hand");
             Description.SetActive(false);
             ItemInHand.SetActive(true);
-
+            Image inHand_icon = ItemInHand.GetComponent<Image>();
+            Image item_icon = this.GetComponent<Image>();
+            inHand_icon.sprite = item_icon.sprite;
         }
     }
 }
