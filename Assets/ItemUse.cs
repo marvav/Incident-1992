@@ -21,6 +21,7 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler
         if (clickCount == 2)
         {
             Debug.Log("Item in hand");
+            Inventory.InHand = this.name;
             Description.SetActive(false);
             ItemInHand.SetActive(true);
             Image inHand_icon = ItemInHand.GetComponent<Image>();

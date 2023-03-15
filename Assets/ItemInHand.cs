@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Inventory;
 
 public class ItemInHand : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class ItemInHand : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             this.gameObject.SetActive(false);
+            Inventory.InHand = null;
         }
         if (Input.GetMouseButtonDown(0))
         {
