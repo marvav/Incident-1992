@@ -22,16 +22,18 @@ public class PickUpItem : MonoBehaviour
     {
         if (Vector3.Distance(transform.position + new Vector3(0, PlayerHeight/2, 0), Player.transform.position) < 2)
         {
-            Core.PickUpText.SetActive(true);
+            Core.PickUpItem.SetActive(true);
             if (Input.GetButton("Pick Up"))
             {
                 Item item = new Item(this.gameObject.name);
                 Inventory.Add(item);
                 this.gameObject.SetActive(false);
-                Core.PickUpText.SetActive(false);
+                Core.PickUpItem.SetActive(false);
             }
         }
         else
-            Core.PickUpText.SetActive(false);
+        {
+            Core.PickUpItem.SetActive(false);
+        }
     }
 }
