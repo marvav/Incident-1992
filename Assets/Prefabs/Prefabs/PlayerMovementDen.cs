@@ -96,7 +96,7 @@ public class PlayerMovementDen : MonoBehaviour
         // on ground
         if (grounded)
         {
-            transform.GetChild(4).GetChild(0).GetComponent<Collider>().material.dynamicFriction = 0.3f;
+            transform.GetChild(4).GetChild(0).GetComponent<Collider>().material.dynamicFriction = 0.03f;
             velocity = Vector3.zero;
             rb.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
         }
