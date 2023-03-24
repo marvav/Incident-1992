@@ -9,9 +9,9 @@ public class FlashLightComponent : MonoBehaviour
     public AudioClip[] audioClips;
     private AudioSource Sound;
     public System.Random rand;
-    public UnityEngine.UI.Image Percentage;
-    public int yellow_indicator_level;
-    public int red_indicator_level;
+    public int start_flicker_at;
+    public int flashlight_dies_at;
+    private bool isFlickering;
     private int power = 100;
     private float original_intensity;
 
@@ -25,22 +25,27 @@ public class FlashLightComponent : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (power < red_indicator_level)
+        if(power < flashlight_dies_at)
         {
-            Percentage.color = Color.red;
-            FlashLight.intensity = original_intensity / 2;
+            FlashLight.intensity = 0;
+            return;
         }
-        else
+        if (power < start_flicker_at && rand.Next(0, 2000) == 1)
         {
-            if (power < yellow_indicator_level)
+            Debug.Log("Started flickering");
+            isFlickering = true;
+        }
+        if(isFlickering)
+        {
+            int random = rand.Next(0, 5000);
+            if (random > 4500)
             {
-                Percentage.color = Color.yellow;
-                FlashLight.intensity = original_intensity / 1.3f;
+                FlashLight.intensity = rand.Next(0, (int) original_intensity);
             }
-            else
+            if(random < 10)
             {
-                FlashLight.intensity = original_intensity;
-                Percentage.color = Color.green;
+                Debug.Log("Stopped flickering");
+                isFlickering = false;
             }
         }
     }
@@ -67,11 +72,13 @@ public class FlashLightComponent : MonoBehaviour
                 Sound.clip = audioClips[rand.Next(0, audioClips.Length / 2)];
             }
             Sound.Play();
+            isFlickering = false;
             FlashLight.enabled = !FlashLight.enabled;
         }
     }
     public void Restore_Capacity()
     {
+        FlashLight.intensity = original_intensity;
         if (power > 50)
             power = 100;
         else

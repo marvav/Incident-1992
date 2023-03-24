@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 359319339650595958}
   - component: {fileID: 5685071506037195222}
   - component: {fileID: 1796546035582577918}
-  - component: {fileID: 3817511521052849592}
+  - component: {fileID: 8250813546666388130}
   m_Layer: 0
   m_Name: Tree4
   m_TagString: Untagged
@@ -28,11 +28,11 @@ Transform:
   m_GameObject: {fileID: 9205956417966640908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 447, y: 49, z: 661.6452}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5685071506037195222
 MeshFilter:
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9205956417966640908}
-  m_Mesh: {fileID: -2432090755550338912, guid: ad3e95c9a55b9ca4791e0fd8d2e818e5, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: 3f46c097f7643394fbd988be6ff4d695, type: 3}
 --- !u!23 &1796546035582577918
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3849464497154188432, guid: ad3e95c9a55b9ca4791e0fd8d2e818e5, type: 3}
+  - {fileID: 2100000, guid: b73c029a6c8639c4ab371d375cd32b11, type: 2}
   - {fileID: 2100000, guid: 5f0b23ee5cd192f4194a1bfc485dadd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3817511521052849592
-MeshCollider:
+--- !u!136 &8250813546666388130
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,7 +103,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: ad3e95c9a55b9ca4791e0fd8d2e818e5, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
