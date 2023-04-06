@@ -12,7 +12,7 @@ public class FlashLightComponent : MonoBehaviour
     public int start_flicker_at;
     public int flashlight_dies_at;
     private bool isFlickering;
-    private int power = 100;
+    public int power = 100;
     private float original_intensity;
 
     void Start()
