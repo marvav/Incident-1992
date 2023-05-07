@@ -9,6 +9,7 @@ public class BadEnding : MonoBehaviour
     public GameObject DriveHome;
     public UnityEngine.UI.Image EndingScreen;
     public UnityEngine.UI.Image Background;
+    public GameObject BadEndingMusic;
     private AudioSource m_MyAudioSource;
     private bool leaving;
     private float delay;
@@ -35,6 +36,10 @@ public class BadEnding : MonoBehaviour
                 tempColor.a += 0.002f;
                 Background.color = tempColor;
                 delay = t;
+                if (EndingScreen.color.a>254)
+                {
+                    this.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -47,6 +52,7 @@ public class BadEnding : MonoBehaviour
             {
                 leaving = true;
                 m_MyAudioSource.Play();
+                BadEndingMusic.SetActive(true);
             }
         }
         else

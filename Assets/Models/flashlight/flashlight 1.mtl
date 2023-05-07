@@ -1,0 +1,64 @@
+# Blender MTL File: 'None'
+# Material Count: 5
+
+newmtl Button
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump flashlight\\textures\\Button_normal.png
+map_Kd flashlight\\textures\\Button_baseColor.png
+
+newmtl Flashlight
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump flashlight\\textures\\Flashlight_normal.png
+map_Kd flashlight\\textures\\Flashlight_baseColor.png
+
+newmtl Linza
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump flashlight\\textures\\Linza_normal.png
+map_Kd flashlight\\textures\\Linza_baseColor.png
+map_Ke flashlight\\textures\\Linza_emissive.png
+map_d flashlight\\textures\\Linza_baseColor.png
+
+newmtl Lump
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 1.000000 1.000000 0.875646
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump flashlight\\textures\\Lump_normal.png
+map_d flashlight\\textures\\Lump_baseColor.png
+
+newmtl Ring
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump flashlight\\textures\\Ring_normal.png
+map_Kd flashlight\\textures\\Ring_baseColor.png
