@@ -54,7 +54,7 @@ public class FlashLightComponent : MonoBehaviour
 
         if (FlashLight.enabled)
         {
-            if (rand.Next(0, 5000) < 2)
+            if (power >0 && rand.Next(0, 5000) < 2)
             {
                 power -= 1;
                 Debug.Log(power);

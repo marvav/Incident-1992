@@ -11,4 +11,5 @@ public class Core : MonoBehaviour
     public GameObject PickUpText;
     public GameObject PickUpItem;
     public GameObject ItemInHand;
+    public GameObject Note;
 }
