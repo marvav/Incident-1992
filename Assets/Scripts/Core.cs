@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 public class Core : MonoBehaviour
 {
@@ -13,4 +14,5 @@ public class Core : MonoBehaviour
     public GameObject ItemInHand;
     public GameObject Note;
     public GameObject NoteText;
+    public TMP_Text Objective;
 }
