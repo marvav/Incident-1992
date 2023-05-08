@@ -6,6 +6,7 @@ public class ReadableNote : MonoBehaviour
 {
     public Core Core;
     public string content;
+    public string NewObjective;
     private float PlayerHeight;
     private GameObject Player;
     private bool isHidden;
@@ -32,6 +33,10 @@ public class ReadableNote : MonoBehaviour
                 Core.NoteText.GetComponent<TMP_Text>().text = content;
                 Core.Note.SetActive(true);
                 Core.PickUpItem.SetActive(false);
+                if(NewObjective!="")
+                {
+                    Core.Objective.text = NewObjective;
+                }
                 return;
             }
         }
