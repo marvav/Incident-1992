@@ -11,6 +11,8 @@ public class FlashLightComponent : MonoBehaviour
     public System.Random rand;
     public int start_flicker_at;
     public int flashlight_dies_at;
+    public Light groundLight;
+    public Light bodyLight;
     private bool isFlickering;
     public int power = 100;
     private float original_intensity;
@@ -27,7 +29,7 @@ public class FlashLightComponent : MonoBehaviour
     {
         if(power < flashlight_dies_at)
         {
-            FlashLight.intensity = 0;
+            setIntensity(0);
             return;
         }
         if (power < start_flicker_at && rand.Next(0, 2000) == 1)
@@ -40,7 +42,7 @@ public class FlashLightComponent : MonoBehaviour
             int random = rand.Next(0, 5000);
             if (random > 4500)
             {
-                FlashLight.intensity = rand.Next(0, (int) original_intensity);
+                setIntensity(rand.Next(0, (int) original_intensity));
             }
             if(random < 10)
             {
@@ -48,6 +50,18 @@ public class FlashLightComponent : MonoBehaviour
                 isFlickering = false;
             }
         }
+    }
+    void switchLight()
+    {
+        bodyLight.enabled = !bodyLight.enabled;
+        groundLight.enabled = !groundLight.enabled;
+        FlashLight.enabled = !FlashLight.enabled;
+    }
+    void setIntensity(int value)
+    {
+        bodyLight.intensity = value;
+        groundLight.intensity = value;
+        FlashLight.intensity = value;
     }
     void Update()
     {
@@ -73,12 +87,12 @@ public class FlashLightComponent : MonoBehaviour
             }
             Sound.Play();
             isFlickering = false;
-            FlashLight.enabled = !FlashLight.enabled;
+            switchLight();
         }
     }
     public void Restore_Capacity()
     {
-        FlashLight.intensity = original_intensity;
+        setIntensity((int) original_intensity);
         if (power > 50)
             power = 100;
         else
