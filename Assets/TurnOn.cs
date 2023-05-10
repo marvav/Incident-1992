@@ -26,7 +26,7 @@ public class TurnOn : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isCloseToPlayer(transform, Core.Player))
+        if (isCloseToPlayer(transform))
         {
             isHidden = false;
             currentIcon.SetActive(true);
@@ -34,17 +34,11 @@ public class TurnOn : MonoBehaviour
             {
                 currentIcon.SetActive(false);
                 if (!isOn)
-                {
-                    Lamp.SetActive(true);
                     currentIcon = LightOff;
-                    isOn = true;
-                }
                 else
-                {
-                    isOn = false;
-                    Lamp.SetActive(false);
                     currentIcon = LightUp;
-                }
+                isOn = !isOn;
+                Lamp.SetActive(isOn);
                 isReleased = false;
             }
         }
@@ -54,8 +48,8 @@ public class TurnOn : MonoBehaviour
             {
                 currentIcon.SetActive(false);
                 isHidden = true;
-                isReleased = true;
             }
+            isReleased = true;
         }
     }
 }

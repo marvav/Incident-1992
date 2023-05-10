@@ -19,7 +19,7 @@ public class PickUpItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform, Core.Player))
+        if (isCloseToPlayer(transform))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);

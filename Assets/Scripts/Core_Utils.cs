@@ -30,9 +30,9 @@ public static class Core_Utils
         Cursor.visible = !Cursor.visible;
     }
 
-    public static bool isCloseToPlayer(Transform current, GameObject player)
+    public static bool isCloseToPlayer(Transform current)
     {
-        return Vector3.Distance(current.position + new Vector3(0, 2, 0), player.transform.position) < 1.5f
-                || Vector3.Distance(current.position, player.transform.position) < 1.5f;
+        return Vector3.Distance(current.position + new Vector3(0, 2, 0), Player.transform.position) < 1.5f
+                || Vector3.Distance(current.position, Player.transform.position) < 1.5f;
     }
 }
