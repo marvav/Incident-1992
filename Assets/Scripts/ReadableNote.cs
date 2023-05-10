@@ -2,21 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using static Core_Utils;
 public class ReadableNote : MonoBehaviour
 {
     public Core Core;
     public string content;
     public string NewObjective;
-    private float PlayerHeight;
-    private GameObject Player;
     private bool isHidden;
     private bool objectiveChanged;
     // Start is called before the first frame update
     void Start()
     {
-        //PlayerHeight = Player.GetComponent<PlayerMovementDen>().playerHeight;
-        PlayerHeight = 2;
-        Player = Core.Player;
         isHidden = true;
         objectiveChanged = false;
 
@@ -25,8 +21,7 @@ public class ReadableNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position + new Vector3(0, PlayerHeight, 0), Player.transform.position) < 1.5f 
-            || Vector3.Distance(transform.position, Player.transform.position) < 1.5f)
+        if (isCloseToPlayer(transform, Core.Player))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);

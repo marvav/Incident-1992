@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class TurnOn : MonoBehaviour
 {
@@ -8,9 +9,7 @@ public class TurnOn : MonoBehaviour
     public GameObject Lamp;
     public GameObject LightUp;
     public GameObject LightOff;
-    private float PlayerHeight;
     private GameObject currentIcon;
-    private GameObject Player;
     private bool isHidden;
     private bool isOn;
     private bool isReleased;
@@ -18,9 +17,6 @@ public class TurnOn : MonoBehaviour
     void Start()
     {
         currentIcon = LightUp;
-        //PlayerHeight = Player.GetComponent<PlayerMovementDen>().playerHeight;
-        PlayerHeight = 2;
-        Player = Core.Player;
         isHidden = true;
         isReleased = true;
         isOn = true;
@@ -30,8 +26,7 @@ public class TurnOn : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position + new Vector3(0, PlayerHeight, 0), Player.transform.position) < 1.5f
-            || Vector3.Distance(transform.position, Player.transform.position) < 1.5f)
+        if (isCloseToPlayer(transform, Core.Player))
         {
             isHidden = false;
             currentIcon.SetActive(true);

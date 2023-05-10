@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,5 +28,11 @@ public static class Core_Utils
             Cursor.lockState = CursorLockMode.None;
 
         Cursor.visible = !Cursor.visible;
+    }
+
+    public static bool isCloseToPlayer(Transform current, GameObject player)
+    {
+        return Vector3.Distance(current.position + new Vector3(0, 2, 0), player.transform.position) < 1.5f
+                || Vector3.Distance(current.position, player.transform.position) < 1.5f;
     }
 }
