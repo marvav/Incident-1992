@@ -10,6 +10,7 @@ public class ReadableNote : MonoBehaviour
     private float PlayerHeight;
     private GameObject Player;
     private bool isHidden;
+    private bool objectiveChanged;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class ReadableNote : MonoBehaviour
         PlayerHeight = 2;
         Player = Core.Player;
         isHidden = true;
+        objectiveChanged = false;
 
     }
 
@@ -33,9 +35,10 @@ public class ReadableNote : MonoBehaviour
                 Core.NoteText.GetComponent<TMP_Text>().text = content;
                 Core.Note.SetActive(true);
                 Core.PickUpItem.SetActive(false);
-                if(NewObjective!="")
+                if(NewObjective!="" && !objectiveChanged)
                 {
                     Core.Objective.text = NewObjective;
+                    objectiveChanged = true;
                 }
                 return;
             }

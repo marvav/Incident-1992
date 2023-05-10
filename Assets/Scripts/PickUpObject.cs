@@ -22,7 +22,8 @@ public class PickUpItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position + new Vector3(0, PlayerHeight/2, 0), Player.transform.position) < 1.5f)
+        if (Vector3.Distance(transform.position + new Vector3(0, PlayerHeight, 0), Player.transform.position) < 1.5f
+            || Vector3.Distance(transform.position, Player.transform.position) < 1.5f)
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);

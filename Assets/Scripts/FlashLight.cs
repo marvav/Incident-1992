@@ -13,13 +13,13 @@ public class FlashLightComponent : MonoBehaviour
     public int flashlight_dies_at;
     public Light groundLight;
     public Light bodyLight;
+    public Light AmbientLight;
     private bool isFlickering;
     public int power = 100;
     private float original_intensity;
 
     void Start()
     {
-
         FlashLight = GetComponent<Light>();
         original_intensity = FlashLight.intensity;
         Sound = GetComponent<AudioSource>();
@@ -56,6 +56,7 @@ public class FlashLightComponent : MonoBehaviour
         bodyLight.enabled = !bodyLight.enabled;
         groundLight.enabled = !groundLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
+        AmbientLight.enabled = !AmbientLight.enabled;
     }
     void setIntensity(int value)
     {
