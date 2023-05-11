@@ -93,7 +93,8 @@ public class FlashLightComponent : MonoBehaviour
     }
     public void Restore_Capacity()
     {
-        setIntensity((int) original_intensity);
+        groundLight.intensity = original_intensity;
+        FlashLight.intensity = original_intensity;
         if (power > 50)
             power = 100;
         else
