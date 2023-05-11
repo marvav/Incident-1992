@@ -9,6 +9,8 @@ using static Inventory;
 public class InventoryMenu : MonoBehaviour
 {
     public GameObject Inventory_Object;
+    public GameObject Archive;
+    public GameObject Note;
     private List<Vector3> Icon_positions;
     // Start is called before the first frame update
     void Start()
@@ -72,8 +74,11 @@ public class InventoryMenu : MonoBehaviour
 
     void ToggleOff()
     {
+        Note.SetActive(false);
         Inventory_Object.SetActive(false);
         foreach(GameObject child in CountChildren(Inventory_Object))
+            child.gameObject.SetActive(false);
+        foreach (GameObject child in CountChildren(Archive))
             child.gameObject.SetActive(false);
     }
 }

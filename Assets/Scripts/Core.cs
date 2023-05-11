@@ -14,5 +14,6 @@ public class Core : MonoBehaviour
     public GameObject ItemInHand;
     public GameObject Note;
     public GameObject NoteText;
+    public TMP_Text Description;
     public TMP_Text Objective;
 }

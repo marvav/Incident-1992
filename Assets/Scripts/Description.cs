@@ -7,23 +7,16 @@ using TMPro;
 public class Description : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string text;
-    public GameObject description;
-    private TMP_Text description_component;
-    //Detect if the Cursor starts to pass over the GameObject
-    void Start()
-    {
-        description_component = description.GetComponent<TMP_Text>();
-    }
+    public TMP_Text description;
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        description_component.text = text;
-        description.SetActive(true);
+        description.text = text;
     }
 
     //Detect when Cursor leaves the GameObject
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        description.SetActive(false);
+        description.text = "";
     }
 }

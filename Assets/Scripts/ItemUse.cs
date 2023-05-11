@@ -7,22 +7,17 @@ using static Inventory;
 
 public class ItemUse : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject Description;
+    public TMP_Text Description;
     public GameObject ItemInHand;
 
-    //Detect if the Cursor starts to pass over the GameObject
-    void Start()
-    {
-    }
     public void OnPointerClick(PointerEventData eventData)
     {
         int clickCount = eventData.clickCount;
 
         if (clickCount == 2)
         {
-            Debug.Log("Item in hand");
             Inventory.InHand = this.name;
-            Description.SetActive(false);
+            Description.text = "";
             ItemInHand.SetActive(true);
             Image inHand_icon = ItemInHand.GetComponent<Image>();
             Image item_icon = this.GetComponent<Image>();
