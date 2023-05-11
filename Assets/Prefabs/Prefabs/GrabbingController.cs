@@ -16,14 +16,14 @@ public class GrabbingController : MonoBehaviour
     [SerializeField] private float pickupForce = 100f;
     [SerializeField] Vector3 rotation;
    // [SerializeField] private Pause pause;
-    void Start()
+    public void Start()
     {
         holdPoint.localPosition = new Vector3(0, 0, 4);
     }
-    void Update()
+    public void Update()
     {
         //if (pause.isPaused)
-       //     return;
+        //     return;
         if (Input.GetMouseButtonDown(0))
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -37,7 +37,7 @@ public class GrabbingController : MonoBehaviour
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange, pickableLayer))
                 {
                     Debug.Log("Picked up");
-                    PickupObject(hit.collider.transform.parent.gameObject);
+                    PickupObject(hit.collider.transform.gameObject);
                 }
             }
             else
@@ -79,7 +79,7 @@ public class GrabbingController : MonoBehaviour
     //    Debug.Log(move);
     //}
 
-    void MoveObject()
+    public void MoveObject()
     {
         if (heldObject.GetComponent<GrabbedObject>().collideWithPlayer)
         {
@@ -104,11 +104,11 @@ public class GrabbingController : MonoBehaviour
         }
     }
 
-    void PickupObject(GameObject pickObj)
+    public void PickupObject(GameObject pickObj)
     {
         if (pickObj.GetComponent<Rigidbody>())
         {
-
+            Debug.Log("Rigid");
             holdPoint.rotation = orientation.rotation;
             holdPoint.position = pickObj.transform.position;   ////////////// comment to make the game cooler
             heldObjectRb = pickObj.GetComponent<Rigidbody>();
@@ -153,7 +153,7 @@ public class GrabbingController : MonoBehaviour
     //            break;
     //    }
     //}
-    void DropObject()
+    public void DropObject()
     {
         Debug.Log("Drop");
         heldObjectRb.useGravity = true;
