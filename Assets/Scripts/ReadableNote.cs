@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static Core_Utils;
+using static Archive;
 public class ReadableNote : MonoBehaviour
 {
     public Core Core;
+    public string name;
     public string content;
     public string NewObjective;
     private bool isHidden;
+    private bool inArchive;
     private bool objectiveChanged;
     // Start is called before the first frame update
     void Start()
     {
         isHidden = true;
         objectiveChanged = false;
+        inArchive = false;
 
-    }
+}
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isCloseToPlayer(transform))
         {
@@ -34,6 +38,11 @@ public class ReadableNote : MonoBehaviour
                 {
                     Core.Objective.text = NewObjective;
                     objectiveChanged = true;
+                }
+                if(!inArchive)
+                {
+                    Archive.Add(new NoteItem(name, content));
+                    inArchive = true;
                 }
                 return;
             }
