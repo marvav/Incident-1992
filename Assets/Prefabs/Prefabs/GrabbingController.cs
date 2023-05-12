@@ -81,11 +81,11 @@ public class GrabbingController : MonoBehaviour
 
     public void MoveObject()
     {
-        if (heldObject.GetComponent<GrabbedObject>().collideWithPlayer)
-        {
-            DropObject();
-            return;
-        }
+        //if (heldObject.GetComponent<GrabbedObject>().collideWithPlayer)
+        //{
+        //    DropObject();
+        //    return;
+        //}
         //MoveHoldPoint();
         if (Vector3.Distance(heldObject.transform.position, holdPoint.position) > 0.01f)
         {

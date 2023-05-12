@@ -5,13 +5,13 @@ using TMPro;
 
 public class FlashLightComponent : MonoBehaviour
 {
-    private Light FlashLight;
     public AudioClip[] audioClips;
     private AudioSource Sound;
     public System.Random rand;
     public int start_flicker_at;
     public int flashlight_dies_at;
-    public Light groundLight;
+    public Light FlashLight;
+    public Light NearLight;
     public Light bodyLight;
     public Light AmbientLight;
     private bool isFlickering;
@@ -20,7 +20,6 @@ public class FlashLightComponent : MonoBehaviour
 
     void Start()
     {
-        FlashLight = GetComponent<Light>();
         original_intensity = FlashLight.intensity;
         Sound = GetComponent<AudioSource>();
         rand = new System.Random();
@@ -54,15 +53,15 @@ public class FlashLightComponent : MonoBehaviour
     void switchLight()
     {
         bodyLight.enabled = !bodyLight.enabled;
-        groundLight.enabled = !groundLight.enabled;
+        NearLight.enabled = !NearLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
         AmbientLight.enabled = !AmbientLight.enabled;
     }
     void setIntensity(int value)
     {
         bodyLight.intensity = value;
-        groundLight.intensity = value;
-        FlashLight.intensity = value;
+        NearLight.intensity = value;
+        FlashLight.intensity = value + 10;
     }
     void Update()
     {
@@ -93,7 +92,7 @@ public class FlashLightComponent : MonoBehaviour
     }
     public void Restore_Capacity()
     {
-        groundLight.intensity = original_intensity;
+        NearLight.intensity = original_intensity-10;
         FlashLight.intensity = original_intensity;
         if (power > 50)
             power = 100;
