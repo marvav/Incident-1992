@@ -60,4 +60,11 @@ public class BadEnding : MonoBehaviour
             DriveHome.SetActive(false);
         }
     }
+
+    public void TriggerEnd()
+    {
+        m_MyAudioSource.Play();
+        leaving = true;
+        BadEndingMusic.SetActive(true);
+    }
 }
