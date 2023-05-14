@@ -1,0 +1,11 @@
+Model Information:
+* title:	Viking Knife
+* source:	https://sketchfab.com/3d-models/viking-knife-3bc95d2f3e9d4ff49ffb81632dbc7046
+* author:	Mihail Shegolev (https://sketchfab.com/kekaros509)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Viking Knife" (https://sketchfab.com/3d-models/viking-knife-3bc95d2f3e9d4ff49ffb81632dbc7046) by Mihail Shegolev (https://sketchfab.com/kekaros509) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
