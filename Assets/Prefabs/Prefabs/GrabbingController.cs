@@ -15,10 +15,14 @@ public class GrabbingController : MonoBehaviour
     [SerializeField] private float holdRange = 5f;
     [SerializeField] private float pickupForce = 100f;
     [SerializeField] Vector3 rotation;
-   // [SerializeField] private Pause pause;
+    private ObjectRotator holdPointRotator;
+    private PlayerCamera camera;
+    // [SerializeField] private Pause pause;
     public void Start()
     {
         holdPoint.localPosition = new Vector3(0, 0, 4);
+        holdPointRotator = holdPoint.GetComponent<ObjectRotator>();
+        camera = GetComponent<PlayerCamera>();
     }
     public void Update()
     {
@@ -29,8 +33,6 @@ public class GrabbingController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; 
 
-            if (!GetComponent<PlayerCamera>().enabled)
-                return;
             if (heldObject == null)
             {
                 RaycastHit hit;
@@ -52,22 +54,22 @@ public class GrabbingController : MonoBehaviour
 
             if (Input.GetMouseButton(1))
             {
-                GetComponent<PlayerCamera>().enabled = false;
-                holdPoint.GetComponent<ObjectRotator>().enabled = true;
-                holdPoint.GetComponent<ObjectRotator>().SaveOffset();
+                camera.enabled = false;
+                holdPointRotator.enabled = true;
+                holdPointRotator.SaveOffset();
             }
             else
             {
-                GetComponent<PlayerCamera>().enabled = true;
-                holdPoint.GetComponent<ObjectRotator>().enabled = false;
-                holdPoint.GetComponent<ObjectRotator>().Reset();
+                camera.enabled = true;
+                holdPointRotator.enabled = false;
+                holdPointRotator.Reset();
             }
         }
         else if (GetComponent<PlayerCamera>().enabled == false)
         {
-            GetComponent<PlayerCamera>().enabled = true;
-            holdPoint.GetComponent<ObjectRotator>().enabled = false;
-            holdPoint.GetComponent<ObjectRotator>().Reset();
+            camera.enabled = true;
+            holdPointRotator.enabled = false;
+            holdPointRotator.Reset();
         }
     }
 
@@ -164,8 +166,8 @@ public class GrabbingController : MonoBehaviour
 
         holdPoint.localPosition = new Vector3(0, 0, 4);
         wasCentered = false;
-        GetComponent<PlayerCamera>().enabled = true;
-        holdPoint.GetComponent<ObjectRotator>().enabled = false;
-        holdPoint.GetComponent<ObjectRotator>().Reset();
+        camera.enabled = true;
+        holdPointRotator.enabled = false;
+        holdPointRotator.Reset();
     }
 }

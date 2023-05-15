@@ -21,7 +21,7 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
     }
     public void Update()
     {
-        if(isOpen && Input.GetButton("Pick Up"))
+        if(isOpen && Input.GetButton("PickUp"))
         {
             ArchiveUI.SetActive(false);
             Core.Description.text = "";
@@ -34,9 +34,9 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
     {
         int clickCount = eventData.clickCount;
 
-        if (clickCount == 2)
+        if (clickCount == 1)
         {
-            for(int i = 0; i<icons.Count;i++)
+            for (int i = 0; i<icons.Count;i++)
             {
                 if (Notes[i] == null)
                     break;

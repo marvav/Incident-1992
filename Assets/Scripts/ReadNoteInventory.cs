@@ -28,7 +28,7 @@ public class ReadNoteInventory : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         int clickCount = eventData.clickCount;
 
-        if (clickCount == 2)
+        if (clickCount == 1)
         {
             Core.Description.text = "";
             Core.NoteText.GetComponent<TMP_Text>().text = Notes[ArchiveIndex].content; ;

@@ -5,8 +5,9 @@ using TMPro;
 using static Inventory;
 
 
-public class ItemUse : MonoBehaviour, IPointerClickHandler
+public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public string text;
     public TMP_Text Description;
     public GameObject ItemInHand;
 
@@ -23,5 +24,15 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler
             Image item_icon = this.GetComponent<Image>();
             inHand_icon.sprite = item_icon.sprite;
         }
+    }
+
+    public void OnPointerEnter(PointerEventData pointerEventData)
+    {
+        Description.text = text;
+    }
+
+    public void OnPointerExit(PointerEventData pointerEventData)
+    {
+        Description.text = "";
     }
 }
