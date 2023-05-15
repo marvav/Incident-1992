@@ -21,13 +21,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: tree_albedo
-  m_Shader: {fileID: 4800000, guid: 0f4122b9a743b744abe2fb6a0a88868b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9920c1f1781549a46ba081a2a15a16ec, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
-  - _WINDQUALITY_NONE
+  m_ValidKeywords:
+  - BACKFACE_NORMAL_MODE_MIRROR
+  - _WINDQUALITY_BEST
+  m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -112,9 +112,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - BACKFACE_NORMAL_MODE: 1
+    - EFFECT_BILLBOARD: 0
+    - EFFECT_EXTRA_TEX: 1
     - PixelSnap: 0
     - _AO: 2.4
     - _AlphaClip: 0
+    - _AlphaClipThreshold: 0
     - _AlphaToMask: 0
     - _BaseLight: 0.35
     - _BillboardKwToggle: 0
@@ -149,12 +153,14 @@ Material:
     - _HueVariationKwToggle: 0
     - _InvFade: 1
     - _LightingEnabled: 0
-    - _Metallic: 0.346
+    - _Metallic: 0
     - _Mode: 0
     - _NormalMapKwToggle: 0
     - _Occlusion: 7.5
     - _OcclusionStrength: 1
+    - _OldHueVarBehavior: 0
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0
@@ -171,6 +177,7 @@ Material:
     - _Surface: 0
     - _TwoSided: 2
     - _UVSec: 0
+    - _WINDQUALITY: 4
     - _WindQuality: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
