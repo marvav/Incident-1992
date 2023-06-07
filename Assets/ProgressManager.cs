@@ -7,6 +7,7 @@ public class ProgressManager : MonoBehaviour
 {
     public Core Core;
     public GameObject knife;
+    public GameObject monster;
 
     public int objectiveID;
     const int START = 0;
@@ -30,12 +31,20 @@ public class ProgressManager : MonoBehaviour
             case START:
                 break;
             case CABIN_NOTE_READ:
-            case CULTIST_NOTE_READ:
                 {
                     knife.SetActive(true);
                     Core.Objective.text = objective;
+                    return;
+                }
+            case CULTIST_NOTE_READ:
+            case LOST_FLASHLIGHT_FOUND:
+                {
+                    knife.SetActive(true);
+                    Core.Objective.text = objective;
+                    monster.SetActive(true);
                     break;
                 }
+
 
 
         }

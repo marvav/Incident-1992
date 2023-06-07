@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using static Core_Utils;
 
-public class LostFlashlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class LostFlashlight : MonoBehaviour
 {
     public Core Core;
+    public int id;
+    public string objective;
     // Start is called before the first frame update
-    public void OnPointerEnter(PointerEventData pointerEventData)
+    void FixedUpdate()
     {
-        Core.Description.text = "Something must have happened here";
-    }
+        if (isCloseToPlayer(transform))
+        {
+            Core.Description.text = "This is... weird?!";
+            Core.ProgressManager.changeObjective(id, objective);
 
-    public void OnPointerExit(PointerEventData pointerEventData)
-    {
-        Core.Description.text = "";
+        }
     }
 }

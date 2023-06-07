@@ -18,7 +18,7 @@ public class OpeningScene : MonoBehaviour
         isHidden = true;
 
     }
-    void FixedUpdate()
+    void Update()
     {
         if(isHidden && Input.GetMouseButtonDown(0))
         {

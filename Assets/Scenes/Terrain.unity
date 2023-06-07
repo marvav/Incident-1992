@@ -1263,6 +1263,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1091032588}
   - {fileID: 1207846380}
   - {fileID: 1407898355}
   m_Father: {fileID: 1982283782}
@@ -3529,8 +3530,8 @@ MonoBehaviour:
   title: Friend's note
   content: I'm sorry, but we already left. Things didn't go too well. I hope you
     understand. We'll get in touch later.
-  NewObjective: I should head back.
-  objectiveID: 0
+  NewObjective: I should head back and leave.
+  objectiveID: 1
 --- !u!4 &282496750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 39a3d0003e49f3a4aa6992f237ea561d, type: 3}
@@ -5442,6 +5443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   knife: {fileID: 1361280367}
+  monster: {fileID: 0}
   objectiveID: 0
 --- !u!1 &517926940
 GameObject:
@@ -5490,9 +5492,9 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 4
@@ -8508,16 +8510,16 @@ GameObject:
   - component: {fileID: 906160343}
   - component: {fileID: 906160342}
   - component: {fileID: 906160341}
-  - component: {fileID: 906160340}
   - component: {fileID: 906160339}
   - component: {fileID: 906160338}
+  - component: {fileID: 906160344}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &906160337
 Transform:
   m_ObjectHideFlags: 0
@@ -8648,29 +8650,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!136 &906160340
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906160336}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &906160341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8686,11 +8665,11 @@ MonoBehaviour:
   eyes: {fileID: 1121955572}
   flashlight: {fileID: 2113858464}
   followTransform: {fileID: 143617542}
+  death: {fileID: 1091032587}
   speed: 2
   gravityScale: -3
   follow: 1
   respawnDistance: 100
-  stuckTreshold: 1
   spawnPlaces:
   - {x: 214, y: 60, z: 638.75}
   - {x: 155, y: 94, z: 144}
@@ -8736,6 +8715,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39743cc550e95cc45af1a763f864c155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &906160344
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906160336}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &921436445
 GameObject:
   m_ObjectHideFlags: 0
@@ -8969,6 +8971,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: b98589650b9171a49ae800ef01d57dc2, type: 3}
+--- !u!1 &930027850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
+  m_PrefabInstance: {fileID: 1273844143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &930027851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930027850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e1e0a5df740344f89c94818e4f9c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
 --- !u!1 &936685582
 GameObject:
   m_ObjectHideFlags: 0
@@ -10630,7 +10650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4accdd7537550224c9b2d6ee980851cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 0}
+  Core: {fileID: 513218965}
+  id: 3
+  objective: The flashlight is creepy. Should I investigate?
 --- !u!1 &1050390302
 GameObject:
   m_ObjectHideFlags: 0
@@ -11652,6 +11674,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085481142}
   m_Mesh: {fileID: -2432090755550338912, guid: 27811dfb4111c3a4ab3ab35b3c1d372f, type: 3}
+--- !u!1 &1091032587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091032588}
+  - component: {fileID: 1091032590}
+  - component: {fileID: 1091032589}
+  m_Layer: 5
+  m_Name: YouDied
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1091032588
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091032587}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 116024543}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1091032589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091032587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 328d304059f64a141b923afeaae84b07, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1091032590
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091032587}
+  m_CullTransparentMesh: 1
 --- !u!1 &1091173176
 GameObject:
   m_ObjectHideFlags: 0
@@ -12791,7 +12889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164525875}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.71817, y: 5.4927673, z: -58.23761}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14274,7 +14372,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 955410365}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 930027851}
   m_SourcePrefab: {fileID: 100100000, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
 --- !u!1 &1274981052
 GameObject:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class monsterFollow : MonoBehaviour
 {
@@ -8,12 +9,12 @@ public class monsterFollow : MonoBehaviour
     public MeshRenderer eyes;
     public Light flashlight;
     public Transform followTransform;
+    public GameObject death;
 
-    public int speed = 2;
-    public float gravityScale = -2f;
-    public bool follow = true;
-    public int respawnDistance = 250;
-    public float stuckTreshold;
+    public int speed;
+    public float gravityScale;
+    public bool follow;
+    public int respawnDistance;
     public Vector3[] spawnPlaces;
 
     private System.Random rand;
@@ -33,6 +34,13 @@ public class monsterFollow : MonoBehaviour
         if(follow)
         {
             distance = Vector3.Distance(followTransform.position, transform.position);
+            if (distance < 0.3f)
+            {
+                death.SetActive(true);
+                Time.timeScale = 0;
+                ToggleCursor();
+                return;
+            }
             if (distance > respawnDistance)
             {
                 if(rand.Next(0,10) == 1) //Chance to spawn directly behind player
@@ -44,6 +52,7 @@ public class monsterFollow : MonoBehaviour
                     followTransform.position = spawnPlaces[rand.Next(0, spawnPlaces.Length)];
                 }
             }
+            //Debug.Log(GetComponent<Collider>());
             ChangeVisibility(distance);
             Move();
         }
@@ -60,14 +69,9 @@ public class monsterFollow : MonoBehaviour
             eyes.enabled = !flashlight.enabled;
         }
     }
-
     void Move()
     {
-        distance = Vector3.Distance(new Vector3(transform.position.x, lastPosition.y, transform.position.z), transform.position);
-        if (distance < stuckTreshold)
-        {
-            //charControl.Move(new Vector3(0,0.1f,0));
-        }
+        //distance = Vector3.Distance(new Vector3(transform.position.x, lastPosition.y, transform.position.z), transform.position);
         charControl.Move(transform.up * gravityScale * Time.deltaTime);
         transform.LookAt(followTransform);
         charControl.Move(transform.forward * Time.deltaTime * speed);
