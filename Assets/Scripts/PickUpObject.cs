@@ -27,6 +27,7 @@ public class PickUpItem : MonoBehaviour
             {
                 Item item = new Item(this.gameObject.name);
                 Inventory.Add(item);
+                Core.PickUpSound.Play();
                 Core.PickUpItem.SetActive(false);
                 this.gameObject.SetActive(false);
                 return;

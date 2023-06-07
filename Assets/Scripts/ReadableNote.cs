@@ -7,9 +7,10 @@ using static Archive;
 public class ReadableNote : MonoBehaviour
 {
     public Core Core;
-    public string name;
+    public string title;
     public string content;
     public string NewObjective;
+    public int objectiveID;
     private bool isHidden;
     private bool inArchive;
     private bool objectiveChanged;
@@ -17,10 +18,7 @@ public class ReadableNote : MonoBehaviour
     void Start()
     {
         isHidden = true;
-        objectiveChanged = false;
-        inArchive = false;
-
-}
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -34,16 +32,9 @@ public class ReadableNote : MonoBehaviour
                 Core.NoteText.GetComponent<TMP_Text>().text = content;
                 Core.Note.SetActive(true);
                 Core.PickUpItem.SetActive(false);
-                if(NewObjective!="" && !objectiveChanged)
-                {
-                    Core.Objective.text = NewObjective;
-                    objectiveChanged = true;
-                }
-                if(!inArchive)
-                {
-                    Archive.Add(new NoteItem(name, content));
-                    inArchive = true;
-                }
+                Core.ProgressManager.changeObjective(objectiveID, NewObjective);
+                Archive.Add(new NoteItem(title, content));
+                this.gameObject.SetActive(false);
                 return;
             }
         }

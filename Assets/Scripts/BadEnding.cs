@@ -6,15 +6,16 @@ public class BadEnding : MonoBehaviour
 {
     public Core Core;
     private float PlayerHeight;
-    public GameObject DriveHome;
     public UnityEngine.UI.Image EndingScreen;
     public UnityEngine.UI.Image Background;
     public GameObject BadEndingMusic;
     private AudioSource m_MyAudioSource;
+    private bool isHidden;
     private bool leaving;
     private float delay;
     void Start()
     {
+        isHidden = true;
         leaving = false;
         delay = Time.realtimeSinceStartup;
         m_MyAudioSource = GetComponent<AudioSource>();
@@ -47,7 +48,8 @@ public class BadEnding : MonoBehaviour
     {
         if (!leaving && Vector3.Distance(transform.position, Core.Player.transform.position) < 3)
         {
-            DriveHome.SetActive(true);
+            Core.Description.text = "Drive Home";
+            isHidden = false;
             if (Input.GetButton("Pick Up"))
             {
                 leaving = true;
@@ -57,7 +59,11 @@ public class BadEnding : MonoBehaviour
         }
         else
         {
-            DriveHome.SetActive(false);
+            if (!isHidden)
+            {
+                Core.Description.text = "";
+                isHidden = true;
+            }
         }
     }
 

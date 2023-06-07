@@ -15,8 +15,8 @@ public class InventoryMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Icon_positions = new List<Vector3> {new Vector3(-923,-429,0), new Vector3(-852,-429,0) , new Vector3(-781,-429,0) ,
-                                            new Vector3(-923,-500,0) , new Vector3(-852,-500,0) , new Vector3(-781,-500,0) };
+        Icon_positions = new List<Vector3> {new Vector3(-910,-420,0), new Vector3(-840,-420,0) , new Vector3(-770,-420,0) ,
+                                            new Vector3(-910,-490,0) , new Vector3(-840,-490,0) , new Vector3(-770,-490,0) };
     }
 
     // Update is called once per frame

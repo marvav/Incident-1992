@@ -8,8 +8,7 @@ using static Inventory;
 public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public string text;
-    public TMP_Text Description;
-    public GameObject ItemInHand;
+    public Core Core;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -18,9 +17,9 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
         if (clickCount == 2)
         {
             Inventory.InHand = this.name;
-            Description.text = "";
-            ItemInHand.SetActive(true);
-            Image inHand_icon = ItemInHand.GetComponent<Image>();
+            Core.Description.text = "";
+            Core.ItemInHand.SetActive(true);
+            Image inHand_icon = Core.ItemInHand.GetComponent<Image>();
             Image item_icon = this.GetComponent<Image>();
             inHand_icon.sprite = item_icon.sprite;
         }
@@ -28,11 +27,11 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        Description.text = text;
+        Core.Description.text = text;
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        Description.text = "";
+        Core.Description.text = "";
     }
 }

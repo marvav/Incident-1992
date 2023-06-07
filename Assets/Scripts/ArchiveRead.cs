@@ -21,7 +21,7 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
     }
     public void Update()
     {
-        if(isOpen && Input.GetButton("PickUp"))
+        if(isOpen && Input.GetButton("Pick Up"))
         {
             ArchiveUI.SetActive(false);
             Core.Description.text = "";
