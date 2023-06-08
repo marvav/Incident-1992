@@ -5,6 +5,8 @@ public class BreakDoorOpen : MonoBehaviour
 {
     public int DestructiveLayer;
     public GameObject ObjectToMove;
+    public AudioSource sound;
+    public Core Core;
     private bool Broken;
     void Start()
     {
@@ -18,7 +20,8 @@ public class BreakDoorOpen : MonoBehaviour
             ObjectToMove.transform.localPosition = new Vector3(0.630999982f, 0, -0.463f);
             ObjectToMove.transform.eulerAngles = new Vector3(ObjectToMove.transform.eulerAngles.x, ObjectToMove.transform.eulerAngles.y, ObjectToMove.transform.eulerAngles.z+105);
             Broken = true;
-
+            sound.Play();
+            Core.Description.text = "";
         }
     }
 }

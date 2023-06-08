@@ -6,21 +6,13 @@ using static Core_Utils;
 public class TurnOn : MonoBehaviour
 {
     public Core Core;
-    public GameObject Lamp;
-    public GameObject LightUp;
-    public GameObject LightOff;
-    private GameObject currentIcon;
+    public AudioSource sound;
+    public Light Lamp;
     private bool isHidden;
-    private bool isOn;
-    private bool isReleased;
     // Start is called before the first frame update
     void Start()
     {
-        currentIcon = LightUp;
         isHidden = true;
-        isReleased = true;
-        isOn = true;
-
     }
 
     // Update is called once per frame
@@ -29,27 +21,20 @@ public class TurnOn : MonoBehaviour
         if (isCloseToPlayer(transform))
         {
             isHidden = false;
-            currentIcon.SetActive(true);
-            if (isReleased && Input.GetButton("Pick Up"))
+            Core.Click.SetActive(true);
+            if (Input.GetButton("Pick Up"))
             {
-                currentIcon.SetActive(false);
-                if (!isOn)
-                    currentIcon = LightOff;
-                else
-                    currentIcon = LightUp;
-                isOn = !isOn;
-                Lamp.SetActive(isOn);
-                isReleased = false;
+                Lamp.enabled = !Lamp.enabled;
+                sound.Play();
             }
         }
         else
         {
             if (!isHidden)
             {
-                currentIcon.SetActive(false);
+                Core.Click.SetActive(false);
                 isHidden = true;
             }
-            isReleased = true;
         }
     }
 }

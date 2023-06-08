@@ -10,6 +10,7 @@ public class Core : MonoBehaviour
     public PlayerMovementDen PlayerDen;
     public GameObject Inventory;
     public GameObject PickUpItem;
+    public GameObject Click;
     public GameObject ItemInHand;
     public GameObject Note;
     public GameObject NoteText;

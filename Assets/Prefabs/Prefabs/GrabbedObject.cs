@@ -10,7 +10,7 @@ public class GrabbedObject : MonoBehaviour
     public bool collideWithPlayer=false;
     void FixedUpdate()
     {
-        if (!GrabbingController.isHolding() && isReachable(transform))
+        if (!GrabbingController.isHolding() && isCloseToPlayer(transform))
             HoldIcon.SetActive(true);
         else
             HoldIcon.SetActive(false);

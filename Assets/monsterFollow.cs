@@ -16,6 +16,7 @@ public class monsterFollow : MonoBehaviour
     public int speed;
     public float gravityScale;
     public bool follow;
+    public int revealDistance;
     public int respawnDistance;
     public Vector3[] spawnPlaces;
 
@@ -67,7 +68,7 @@ public class monsterFollow : MonoBehaviour
 
     void ChangeVisibility(float distance)
     {
-        if (distance < 15)
+        if (distance < revealDistance)
         {
             if(!isClose)
             {

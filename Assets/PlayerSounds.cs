@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerSounds : MonoBehaviour
 {
     public AudioClip[] audioClips;
-    private AudioSource Sound;
+    public AudioSource Sound;
     public System.Random rand;
+    public int speedTreshold;
     Rigidbody rb;
     public int stepLength;
     private int currentStepLength;
@@ -16,7 +17,6 @@ public class PlayerSounds : MonoBehaviour
     void Start()
     {
         currentStepLength = stepLength;
-        Sound = GetComponent<AudioSource>();
         rand = new System.Random();
         rb = GetComponent<Rigidbody>();
     }
@@ -46,7 +46,7 @@ public class PlayerSounds : MonoBehaviour
             Sound.panStereo *= -1;
             Sound.Play();
         }
-        if (GetComponent<Rigidbody>().velocity.magnitude > 2)
+        if (GetComponent<Rigidbody>().velocity.magnitude > speedTreshold)
         {
             counter += 1;
         }
