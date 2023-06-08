@@ -9,11 +9,13 @@ public class PlayerSounds : MonoBehaviour
     public System.Random rand;
     Rigidbody rb;
     public int stepLength;
+    private int currentStepLength;
     private int counter;
     private int leg;
     // Start is called before the first frame update
     void Start()
     {
+        currentStepLength = stepLength;
         Sound = GetComponent<AudioSource>();
         rand = new System.Random();
         rb = GetComponent<Rigidbody>();
@@ -22,7 +24,15 @@ public class PlayerSounds : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (counter == stepLength)
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    currentStepLength = stepLength /= 2;
+        //    Debug.Log("faster");
+        //}
+        //else
+        //    currentStepLength = stepLength;
+
+        if (counter>=currentStepLength)
         {
             counter = 0;
             if (Sound.panStereo>0)

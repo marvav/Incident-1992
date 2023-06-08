@@ -10,6 +10,8 @@ public class monsterFollow : MonoBehaviour
     public Light flashlight;
     public Transform followTransform;
     public GameObject death;
+    public AudioSource Sound;
+    public AudioClip[] audioClips;
 
     public int speed;
     public float gravityScale;
@@ -19,6 +21,7 @@ public class monsterFollow : MonoBehaviour
 
     private System.Random rand;
     private float distance;
+    private bool isClose;
     private Vector3 lastPosition;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,7 @@ public class monsterFollow : MonoBehaviour
         charControl = gameObject.GetComponent<CharacterController>();
         rand = new System.Random();
         lastPosition = followTransform.position;
+        isClose = false;
     }
 
     // Update is called once per frame
@@ -41,20 +45,23 @@ public class monsterFollow : MonoBehaviour
                 ToggleCursor();
                 return;
             }
+            Debug.Log(distance);
             if (distance > respawnDistance)
             {
-                if(rand.Next(0,10) == 1) //Chance to spawn directly behind player
+                if(rand.Next(0,100) == 1) //Chance to spawn directly behind player
                 {
-                    followTransform.position = followTransform.position + new Vector3(-50, 0, 0);
+                    transform.position = followTransform.position + new Vector3(-50, 0, 0);
                 }
                 else //Spawns on one of locations
                 {
-                    followTransform.position = spawnPlaces[rand.Next(0, spawnPlaces.Length)];
+                    transform.position = spawnPlaces[rand.Next(0, spawnPlaces.Length)];
                 }
             }
-            //Debug.Log(GetComponent<Collider>());
+            else
+            {
+                Move();
+            }
             ChangeVisibility(distance);
-            Move();
         }
     }
 
@@ -62,11 +69,26 @@ public class monsterFollow : MonoBehaviour
     {
         if (distance < 15)
         {
+            if(!isClose)
+            {
+                Sound.clip = audioClips[rand.Next(0, audioClips.Length)];
+                Sound.Play();
+                isClose = true;
+            }
+            else
+            {
+                if (rand.Next(0, 100) == 1)
+                {
+                    Sound.clip = audioClips[rand.Next(0, audioClips.Length)];
+                    Sound.Play();
+                }
+            }
             eyes.enabled = true;
         }
         else
         {
             eyes.enabled = !flashlight.enabled;
+            isClose = false;
         }
     }
     void Move()
@@ -75,7 +97,6 @@ public class monsterFollow : MonoBehaviour
         charControl.Move(transform.up * gravityScale * Time.deltaTime);
         transform.LookAt(followTransform);
         charControl.Move(transform.forward * Time.deltaTime * speed);
-        lastPosition = transform.position;
     }
 
 }

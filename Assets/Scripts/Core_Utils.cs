@@ -32,7 +32,10 @@ public static class Core_Utils
 
     public static bool isCloseToPlayer(Transform current)
     {
-        return Vector3.Distance(current.position + new Vector3(0, 2, 0), Player.transform.position) < 1.5f
-                || Vector3.Distance(current.position, Player.transform.position) < 1.5f;
+        return Vector3.Distance(current.position + new Vector3(0, 1, 0), Player.transform.position) < 2;
+    }
+    public static bool isReachable(Transform current)
+    {
+        return Vector3.Distance(current.position + new Vector3(0, 1, 0), Player.transform.position) < 3;
     }
 }

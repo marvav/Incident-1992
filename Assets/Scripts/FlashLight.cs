@@ -10,6 +10,7 @@ public class FlashLightComponent : MonoBehaviour
     public System.Random rand;
     public int start_flicker_at;
     public int flashlight_dies_at;
+    public Light LongDistanceFlashLight;
     public Light FlashLight;
     public Light NearLight;
     public Light bodyLight;
@@ -56,12 +57,13 @@ public class FlashLightComponent : MonoBehaviour
         NearLight.enabled = !NearLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
         AmbientLight.enabled = !AmbientLight.enabled;
+        LongDistanceFlashLight.enabled = !LongDistanceFlashLight.enabled;
     }
     void setIntensity(int value)
     {
-        bodyLight.intensity = value;
-        NearLight.intensity = value;
-        FlashLight.intensity = value + 10;
+        NearLight.intensity = value-30;
+        FlashLight.intensity = value;
+        LongDistanceFlashLight.intensity = value+30;
     }
     void Update()
     {
@@ -92,8 +94,9 @@ public class FlashLightComponent : MonoBehaviour
     }
     public void Restore_Capacity()
     {
-        NearLight.intensity = original_intensity-10;
+        NearLight.intensity = original_intensity-30;
         FlashLight.intensity = original_intensity;
+        LongDistanceFlashLight.intensity = original_intensity+30;
         if (power > 50)
             power = 100;
         else

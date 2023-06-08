@@ -6,6 +6,7 @@ using static Core_Utils;
 public class Door : MonoBehaviour
 {
     public Core Core;
+    public string text;
     private bool isHidden;
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class Door : MonoBehaviour
     {
         if(isHidden && isCloseToPlayer(transform))
         {
-            Core.Description.text = "The door is locked.";
+            Core.Description.text = text;
         }
         else
         {

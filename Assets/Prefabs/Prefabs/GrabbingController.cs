@@ -18,6 +18,11 @@ public class GrabbingController : MonoBehaviour
     private ObjectRotator holdPointRotator;
     private PlayerCamera camera;
     // [SerializeField] private Pause pause;
+
+    public bool isHolding()
+    {
+        return heldObject != null;
+    }
     public void Start()
     {
         holdPoint.localPosition = new Vector3(0, 0, 4);

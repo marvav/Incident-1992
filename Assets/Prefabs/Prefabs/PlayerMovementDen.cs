@@ -62,12 +62,8 @@ public class PlayerMovementDen : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = airDrag;
-
-    }
-
-    private void FixedUpdate()
-    {
         MovePlayer();
+
     }
 
     private void MyInput()
