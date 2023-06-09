@@ -1853,7 +1853,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a3804e44f9a4af4c82832b4b040bf24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511781409}
   m_SourcePrefab: {fileID: 100100000, guid: 5a3804e44f9a4af4c82832b4b040bf24, type: 3}
 --- !u!4 &80390973 stripped
 Transform:
@@ -4496,7 +4499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: moveSpeed
@@ -4505,6 +4508,10 @@ PrefabInstance:
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: groundDrag
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
+      propertyPath: jumpCooldown
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: sprintMultiplier
@@ -8774,6 +8781,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510691221}
   m_Mesh: {fileID: -3948391805661315219, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
+--- !u!1 &511781408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a3804e44f9a4af4c82832b4b040bf24, type: 3}
+  m_PrefabInstance: {fileID: 80390972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &511781409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511781408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8294aea7b9944b4aae2590d56d0abcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  text: Homemade lightning rod. Definitely a fire hazard!
+  objectiveID: 0
+  objective: 
 --- !u!1 &513218963
 GameObject:
   m_ObjectHideFlags: 0
@@ -8943,6 +8971,13 @@ MonoBehaviour:
   knife: {fileID: 1361280367}
   monster: {fileID: 906160336}
   objectiveID: 0
+  noteFound: 0
+  knifeSet: 0
+  cabinBroken: 0
+  deerFound: 0
+  knifeFound: 0
+  vanFound: 0
+  campFound: 0
 --- !u!1 &516688988
 GameObject:
   m_ObjectHideFlags: 0
@@ -9681,8 +9716,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 885, y: -465}
-  m_SizeDelta: {x: 128, y: 128}
+  m_AnchoredPosition: {x: 900, y: -480}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598137973
 MonoBehaviour:
@@ -9697,7 +9732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10247,12 +10282,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 80390973}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea020817ede262442ae95963297f1058, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -2625469258158646515, guid: ea020817ede262442ae95963297f1058, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 630187008}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea020817ede262442ae95963297f1058, type: 3}
+      addedObject: {fileID: 1150665395}
+    - targetCorrespondingSourceObject: {fileID: -2625469258158646515, guid: ea020817ede262442ae95963297f1058, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 630187009}
+      addedObject: {fileID: 1150665394}
   m_SourcePrefab: {fileID: 100100000, guid: ea020817ede262442ae95963297f1058, type: 3}
 --- !u!4 &630187006 stripped
 Transform:
@@ -10264,39 +10299,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ea020817ede262442ae95963297f1058, type: 3}
   m_PrefabInstance: {fileID: 630187005}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &630187008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630187007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c737a9a2e39dea343862a45a6e712863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestructiveLayer: 7
-  ObjectToMove: {fileID: 630187007}
-  MovedObject: {fileID: 1276437536}
-  sound: {fileID: 0}
-  Core: {fileID: 513218965}
---- !u!114 &630187009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630187007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8294aea7b9944b4aae2590d56d0abcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
-  text: Homemade lightning rod. Definitely fire hazard!
-  objectiveID: 0
-  objective: 
 --- !u!1 &636363629
 GameObject:
   m_ObjectHideFlags: 0
@@ -15353,6 +15355,7 @@ RectTransform:
   - {fileID: 145062402}
   - {fileID: 1668633224}
   - {fileID: 598137971}
+  - {fileID: 962976903}
   - {fileID: 1741245752}
   m_Father: {fileID: 143617542}
   m_RootOrder: -1
@@ -16504,6 +16507,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1362a6f8447cd8b4592b1c6775f22cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &962976902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962976903}
+  - component: {fileID: 962976907}
+  - component: {fileID: 962976906}
+  - component: {fileID: 962976904}
+  m_Layer: 5
+  m_Name: Journal
+  m_TagString: Inventory
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &962976903
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962976902}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 921436446}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -920, y: 450}
+  m_SizeDelta: {x: 64, y: 64}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &962976904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962976902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afef461e803192478a8f338faf6240e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+--- !u!114 &962976906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962976902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ede33e4f1c620244c98fe0ef3e88409c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &962976907
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962976902}
+  m_CullTransparentMesh: 1
 --- !u!1001 &963563168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21194,6 +21287,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1150665390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2625469258158646515, guid: ea020817ede262442ae95963297f1058, type: 3}
+  m_PrefabInstance: {fileID: 630187005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1150665394
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150665390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2700608471213933614, guid: ea020817ede262442ae95963297f1058, type: 3}
+--- !u!114 &1150665395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150665390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c737a9a2e39dea343862a45a6e712863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestructiveLayer: 7
+  ObjectToMove: {fileID: 630187007}
+  MovedObject: {fileID: 1276437536}
+  sound: {fileID: 0}
+  Core: {fileID: 513218965}
 --- !u!1 &1164525875
 GameObject:
   m_ObjectHideFlags: 0

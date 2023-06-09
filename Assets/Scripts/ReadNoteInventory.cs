@@ -31,7 +31,7 @@ public class ReadNoteInventory : MonoBehaviour, IPointerEnterHandler, IPointerEx
         if (clickCount == 1)
         {
             Core.Description.text = "";
-            Core.NoteText.GetComponent<TMP_Text>().text = Notes[ArchiveIndex].content; ;
+            Core.NoteText.GetComponent<TMP_Text>().text = Notes[ArchiveIndex].content;
             Core.Note.SetActive(true);
         }
     }
