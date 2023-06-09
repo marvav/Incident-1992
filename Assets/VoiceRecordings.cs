@@ -5,7 +5,8 @@ using UnityEngine;
 public class VoiceRecordings : MonoBehaviour
 {
     public AudioSource Sound;
-    public AudioClip audioClip;
+    public AudioSource audioClip;
+    public AudioClip recording;
     public System.Random rand;
     private bool wasPlayed;
     // Start is called before the first frame update
@@ -18,16 +19,21 @@ public class VoiceRecordings : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (wasPlayed && !audioClip.isPlaying && !Sound.isPlaying)
+        {
+            Sound.Play();
+        }
         if(!wasPlayed && rand.Next(0,2000)==1)
         {
-            Sound.clip = audioClip;
+            Sound.Pause();
+            audioClip.clip = recording;
             wasPlayed = true;
-            Sound.Play();
+            audioClip.Play();
         }
     }
     void NewRecording(AudioClip newClip)
     {
-        audioClip = newClip;
+        recording = newClip;
         wasPlayed= false;
     }
 }

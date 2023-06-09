@@ -11,7 +11,6 @@ public class Core : MonoBehaviour
     public GameObject Inventory;
     public GameObject PickUpItem;
     public GameObject Click;
-    public GameObject ItemInHand;
     public GameObject Note;
     public GameObject NoteText;
     public TMP_Text Description;

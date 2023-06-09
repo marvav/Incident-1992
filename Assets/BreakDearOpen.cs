@@ -5,24 +5,18 @@ public class BreakDoorOpen : MonoBehaviour
 {
     public int DestructiveLayer;
     public GameObject ObjectToMove;
-    public GameObject message;
+    public GameObject MovedObject;
     public AudioSource sound;
     public Core Core;
-    private bool Broken;
-    void Start()
-    {
-        Broken = false;
-    }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (!Broken && collision.gameObject.layer == DestructiveLayer && collision.relativeVelocity.magnitude > 0.2)
+        if (collision.gameObject.layer == DestructiveLayer && collision.relativeVelocity.magnitude > 0.2)
         {
-            ObjectToMove.transform.localPosition = new Vector3(0.630999982f, 0, -0.463f);
-            ObjectToMove.transform.eulerAngles = new Vector3(ObjectToMove.transform.eulerAngles.x, ObjectToMove.transform.eulerAngles.y, ObjectToMove.transform.eulerAngles.z+105);
-            Broken = true;
+            MovedObject.SetActive(true);
             sound.Play();
-            message.SetActive(false);
+            Core.Description.text = "";
+            ObjectToMove.SetActive(false);
         }
     }
 }

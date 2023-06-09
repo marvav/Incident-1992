@@ -14,6 +14,7 @@ public class FlashLightComponent : MonoBehaviour
     public Light FlashLight;
     public Light NearLight;
     public Light bodyLight;
+    public Light itemLight;
     public Light AmbientLight;
     private bool isFlickering;
     public int power = 100;
@@ -54,6 +55,7 @@ public class FlashLightComponent : MonoBehaviour
     void switchLight()
     {
         bodyLight.enabled = !bodyLight.enabled;
+        itemLight.enabled = !itemLight.enabled;
         NearLight.enabled = !NearLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
         AmbientLight.enabled = !AmbientLight.enabled;

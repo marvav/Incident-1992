@@ -8,12 +8,27 @@ public class GrabbedObject : MonoBehaviour
     public GameObject HoldIcon;
     public GrabbingController GrabbingController;
     public bool collideWithPlayer=false;
+    private bool isHidden;
+    void Start()
+    {
+        isHidden = true;
+    }
+
     void FixedUpdate()
     {
         if (!GrabbingController.isHolding() && isCloseToPlayer(transform))
+        {
+            isHidden = false;
             HoldIcon.SetActive(true);
+        }
         else
-            HoldIcon.SetActive(false);
+        {
+            if(!isHidden)
+            {
+                HoldIcon.SetActive(false);
+                isHidden = true;
+            }
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

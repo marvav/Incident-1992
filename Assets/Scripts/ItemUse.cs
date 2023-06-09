@@ -22,24 +22,20 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
         if (clickCount == 2)
         {
-            if (isHidden && Inventory.InHand)
+            if (isHidden && Inventory.InHand!="")
             {
                 Core.Description.text = "I can't hold more items at once";
             }
             else
             {
                 ItemInHand.SetActive(isHidden);
-                Inventory.InHand = !Inventory.InHand;
+                if(isHidden)
+                    Inventory.InHand = gameObject.name;
+                else
+                    Inventory.InHand = "";
                 isHidden = !isHidden;
                 Core.Description.text = "";
             }
-
-            //Inventory.InHand = this.name;
-            //Core.Description.text = "";
-            //ItemInHand.SetActive(true);
-            //Image inHand_icon = Core.ItemInHand.GetComponent<Image>();
-            //Image item_icon = this.GetComponent<Image>();
-            //inHand_icon.sprite = item_icon.sprite;
         }
     }
 
