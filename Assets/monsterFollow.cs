@@ -11,6 +11,7 @@ public class monsterFollow : MonoBehaviour
     public Light flashlight;
     public Transform followTransform;
     public GameObject death;
+    public GameObject deathControls;
     public AudioSource DeathMusic;
     public AudioSource Sound;
     public AudioClip[] audioClips;
@@ -45,9 +46,10 @@ public class monsterFollow : MonoBehaviour
             distance = Vector3.Distance(followTransform.position, transform.position);
             if (distance < 0.3f)
             {
-                death.SetActive(true);
                 DeathMusic.Play();
                 Time.timeScale = 0;
+                death.SetActive(true);
+                deathControls.SetActive(true);
                 ToggleCursor();
                 return;
             }

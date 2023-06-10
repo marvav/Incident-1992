@@ -6,10 +6,12 @@ using static Core_Utils;
 public class Encounter : MonoBehaviour
 {
     public Core Core;
+    public bool isWithCar;
+    public GameObject death;
     public GameObject encounter;
     public GameObject car;
     public GameObject carFire;
-    public RigidBody player;
+    public Rigidbody player;
     public AudioSource gun;
     public AudioClip[] gunshots;
     private bool isHappening;
@@ -30,14 +32,20 @@ public class Encounter : MonoBehaviour
                 gun.clip = gunshots[counter];
                 counter++;
                 gun.Play();
-                if (player.velocity < 2)
+                if (player.velocity.magnitude < 2)
                 {
-                    
+                    death.SetActive(true);
+                    Time.timeScale = 0;
+                    ToggleCursor();
+                    return;
                 }
                 if (counter >= gunshots.Length-1)
                 {
-                    car.SetActive(false);
-                    carFire.SetActive(true);
+                    if (isWithCar)
+                    {
+                        car.SetActive(false);
+                        carFire.SetActive(true);
+                    }
                     Core.ProgressManager.changeObjective(9);
                     encounter.SetActive(false);
                 }
