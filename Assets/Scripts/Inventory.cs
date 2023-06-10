@@ -7,7 +7,6 @@ public static class Inventory
     public static List<Item> Items = new List<Item> {null, null , null , null , null , null };
     public static int size = Items.Count;
     public static string InHand = "";
-    public static int objectiveID = 0;
 
     public static void Add(Item item)
     {

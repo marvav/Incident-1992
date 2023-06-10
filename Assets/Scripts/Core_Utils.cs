@@ -34,8 +34,8 @@ public static class Core_Utils
     {
         return Vector3.Distance(current.position + new Vector3(0, 1, 0), Player.transform.position) < 2;
     }
-    public static bool isReachable(Transform current)
+    public static bool isCloseToPlayer(Transform current, int distance)
     {
-        return Vector3.Distance(current.position + new Vector3(0, 1, 0), Player.transform.position) < 3;
+        return Vector3.Distance(current.position + new Vector3(0, 1, 0), Player.transform.position) < distance;
     }
 }

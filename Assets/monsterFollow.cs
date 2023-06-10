@@ -5,19 +5,23 @@ using static Core_Utils;
 
 public class monsterFollow : MonoBehaviour
 {
+    public Core Core;
     CharacterController charControl;
     public MeshRenderer eyes;
     public Light flashlight;
     public Transform followTransform;
     public GameObject death;
+    public AudioSource DeathMusic;
     public AudioSource Sound;
     public AudioClip[] audioClips;
 
     public int speed;
     public float gravityScale;
     public bool follow;
+    public int messageDistance;
     public int revealDistance;
     public int respawnDistance;
+    public string[] messages;
     public Vector3[] spawnPlaces;
 
     private System.Random rand;
@@ -42,9 +46,17 @@ public class monsterFollow : MonoBehaviour
             if (distance < 0.3f)
             {
                 death.SetActive(true);
+                DeathMusic.Play();
                 Time.timeScale = 0;
                 ToggleCursor();
                 return;
+            }
+            if(distance < messageDistance)
+            {
+                if (rand.Next(0, 50) == 1)
+                    Core.Description.text = messages[rand.Next(0, messages.Length)];
+                else
+                    Core.Description.text = "";
             }
             Debug.Log(distance);
             if (distance > respawnDistance)
@@ -94,7 +106,6 @@ public class monsterFollow : MonoBehaviour
     }
     void Move()
     {
-        //distance = Vector3.Distance(new Vector3(transform.position.x, lastPosition.y, transform.position.z), transform.position);
         charControl.Move(transform.up * gravityScale * Time.deltaTime);
         transform.LookAt(followTransform);
         charControl.Move(transform.forward * Time.deltaTime * speed);

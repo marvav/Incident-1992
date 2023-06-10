@@ -7,8 +7,8 @@ public class Description3D : MonoBehaviour
 {
     public Core Core;
     public string text;
-    public int objectiveID;
-    public string objective;
+    public bool isClue;
+    public int clueID = 0;
     private bool isHidden;
 
     // Update is called once per frame
@@ -24,7 +24,8 @@ public class Description3D : MonoBehaviour
             {
                 Core.Description.text = text;
                 isHidden = false;
-                Core.ProgressManager.changeObjective(objectiveID, objective);
+                if(isClue)
+                    Core.ProgressManager.changeObjective(clueID);
             }
         }
         else

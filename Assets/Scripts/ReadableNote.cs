@@ -9,11 +9,9 @@ public class ReadableNote : MonoBehaviour
     public Core Core;
     public string title;
     public string content;
-    public string NewObjective;
-    public int objectiveID;
+    public int clueID;
     private bool isHidden;
     private bool inArchive;
-    private bool objectiveChanged;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +30,7 @@ public class ReadableNote : MonoBehaviour
                 Core.NoteText.GetComponent<TMP_Text>().text = content;
                 Core.Note.SetActive(true);
                 Core.PickUpItem.SetActive(false);
-                Core.ProgressManager.changeObjective(objectiveID, NewObjective);
+                Core.ProgressManager.changeObjective(clueID);
                 Archive.Add(new NoteItem(title, content));
                 this.gameObject.SetActive(false);
                 return;

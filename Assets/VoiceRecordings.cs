@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class VoiceRecordings : MonoBehaviour
 {
+    public ProgressManager ProgressManager;
     public AudioSource Sound;
     public AudioSource audioClip;
     public AudioClip recording;
     public System.Random rand;
+    public int progressNumber;
     private bool wasPlayed;
     // Start is called before the first frame update
     void Start()
@@ -29,11 +31,13 @@ public class VoiceRecordings : MonoBehaviour
             audioClip.clip = recording;
             wasPlayed = true;
             audioClip.Play();
+            ProgressManager.changeObjective(progressNumber);
         }
     }
-    void NewRecording(AudioClip newClip)
+    public void NewRecording(AudioClip newClip, int newProgressNumber)
     {
         recording = newClip;
-        wasPlayed= false;
+        progressNumber = newProgressNumber;
+        wasPlayed = false;
     }
 }

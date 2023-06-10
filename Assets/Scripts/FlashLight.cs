@@ -18,6 +18,7 @@ public class FlashLightComponent : MonoBehaviour
     public Light AmbientLight;
     private bool isFlickering;
     public int power = 100;
+    public int monsterRevealer;
     private float original_intensity;
 
     void Start()

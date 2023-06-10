@@ -9,6 +9,8 @@ public class PickUpItem : MonoBehaviour
     public Core Core;
     private float PlayerHeight;
     private bool isHidden;
+    public bool isClue;
+    public int clueID = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class PickUpItem : MonoBehaviour
             Core.PickUpItem.SetActive(true);
             if (Input.GetButton("Pick Up"))
             {
+                if(isClue)
+                    Core.ProgressManager.changeObjective(clueID);
                 Item item = new Item(this.gameObject.name);
                 Inventory.Add(item);
                 Core.PickUpSound.Play();
