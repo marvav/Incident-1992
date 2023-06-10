@@ -6,10 +6,14 @@ public class BadEnding : MonoBehaviour
 {
     public Core Core;
     private float PlayerHeight;
-    public UnityEngine.UI.Image EndingScreen;
+    public GameObject DeathControls;
+    public UnityEngine.UI.Image BadEndingScreen;
+    public UnityEngine.UI.Image GoodEndingScreen;
+    public UnityEngine.UI.Image GreatEndingScreen;
     public UnityEngine.UI.Image Background;
-    public GameObject BadEndingMusic;
-    private AudioSource m_MyAudioSource;
+    public AudioSource m_MyAudioSource;
+    public AudioSource CarAudio;
+    private UnityEngine.UI.Image screen;
     private bool isHidden;
     private bool leaving;
     private float delay;
@@ -18,7 +22,6 @@ public class BadEnding : MonoBehaviour
         isHidden = true;
         leaving = false;
         delay = Time.realtimeSinceStartup;
-        m_MyAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,17 +31,19 @@ public class BadEnding : MonoBehaviour
         {
             Time.timeScale = 0;
             float t = Time.realtimeSinceStartup;
-            if (t - delay > 0.01f && EndingScreen.color.a < 255)
+            if (t - delay > 0.01f && screen.color.a < 255)
             {
-                var tempColor = EndingScreen.color;
+                var tempColor = screen.color;
                 tempColor.a += 0.001f;
-                EndingScreen.color = tempColor;
+                screen.color = tempColor;
                 tempColor = Background.color;
                 tempColor.a += 0.002f;
                 Background.color = tempColor;
                 delay = t;
-                if (EndingScreen.color.a>254)
+                if (screen.color.a>250)
                 {
+                    Debug.Log("konec");
+                    DeathControls.SetActive(true);
                     this.gameObject.SetActive(false);
                 }
             }
@@ -52,9 +57,18 @@ public class BadEnding : MonoBehaviour
             isHidden = false;
             if (Input.GetButton("Pick Up"))
             {
+                if (Core.ProgressManager.secondRecordingListened)
+                {
+                    if (Core.ProgressManager.vanSabotaged)
+                        screen = GreatEndingScreen;
+                    else
+                        screen = GoodEndingScreen;
+                }
+                else
+                    screen = BadEndingScreen;
                 leaving = true;
+                CarAudio.Play();
                 m_MyAudioSource.Play();
-                BadEndingMusic.SetActive(true);
             }
         }
         else
@@ -65,12 +79,5 @@ public class BadEnding : MonoBehaviour
                 isHidden = true;
             }
         }
-    }
-
-    public void TriggerEnd()
-    {
-        m_MyAudioSource.Play();
-        leaving = true;
-        BadEndingMusic.SetActive(true);
     }
 }

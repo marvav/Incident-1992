@@ -26,6 +26,7 @@ public class ProgressManager : MonoBehaviour
     const int BURNED_CAR = 11;
     const int AMMO_AQUIRED = 12;
     const int CAVE_UNLOCKED = 14;
+    const int VAN_SABOTAGED = 15;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -43,6 +44,7 @@ public class ProgressManager : MonoBehaviour
     public bool secondRecordingListened = false;
     public bool carIsBurned = false;
     public bool ammoAquired = false;
+    public bool vanSabotaged = false;
 
     public void changeObjective(int id)
     {

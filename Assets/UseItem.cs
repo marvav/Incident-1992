@@ -8,6 +8,7 @@ public class UseItem : MonoBehaviour
 {
     public GameObject ObjectToMove;
     public GameObject MovedObject;
+    public bool destroyAfterUse = false;
     public string NeededItem;
     public string message;
     public AudioSource sound;
@@ -26,6 +27,10 @@ public class UseItem : MonoBehaviour
             Core.Description.text = message;
             if (Inventory.InHand == NeededItem && Input.GetMouseButtonDown(0))
             {
+                if (destroyAfterUse)
+                {
+                    Inventory.Remove(NeededItem);
+                }
                 Core.Description.text = "";
                 sound.Play();
                 MovedObject.SetActive(true);

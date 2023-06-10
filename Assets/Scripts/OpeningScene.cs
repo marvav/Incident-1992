@@ -16,6 +16,7 @@ public class OpeningScene : MonoBehaviour
     {
         start = 0;
         isHidden = true;
+        Core.Description.text = "Press Left Mouse Button to Start";
 
     }
     void Update()
