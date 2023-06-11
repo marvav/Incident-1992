@@ -8,6 +8,7 @@ public class OpeningScene : MonoBehaviour
     // Start is called before the first frame update
     public Core Core;
     public GameObject scene;
+    public TMP_Text text;
     public AudioSource sound;
     public string[] lines;
     private int start;
@@ -16,7 +17,7 @@ public class OpeningScene : MonoBehaviour
     void Start()
     {
         isHidden = true;
-        Core.Description.text = lines[0];
+        text.text = lines[0];
         start = 1;
 
     }
@@ -27,11 +28,11 @@ public class OpeningScene : MonoBehaviour
             sound.Play();
             if (start >= lines.Length-1)
             {
-                Core.Description.text = "";
+                text.text = "";
                 scene.SetActive(false);
                 return;
             }
-            Core.Description.text = lines[start];
+            text.text = lines[start];
             start++;
             isHidden = false;
         }

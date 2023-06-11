@@ -8,6 +8,7 @@ using static Core_Utils;
 
 public class ShowControls : MonoBehaviour, IPointerClickHandler
 {
+    public AudioSource sound;
     private List<GameObject> controls;
     private bool isOpen;
 
@@ -22,12 +23,11 @@ public class ShowControls : MonoBehaviour, IPointerClickHandler
 
         if (clickCount == 1)
         {
-            Debug.Log("clicked");
+            sound.Play();
             isOpen = !isOpen;
 
             for (int i = 0; i < controls.Count; i++)
             {
-                Debug.Log("child");
                 controls[i].SetActive(isOpen);
             }
         }

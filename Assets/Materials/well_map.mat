@@ -22,12 +22,12 @@ Material:
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _BumpMap
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: f7908df1880d2d749bee4a9d8daf2156, type: 3}
+        m_Texture: {fileID: 2800000, guid: a63c6bb7ce5804c47bb583530ff7995f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -51,7 +51,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f7908df1880d2d749bee4a9d8daf2156, type: 3}
+        m_Texture: {fileID: 2800000, guid: a63c6bb7ce5804c47bb583530ff7995f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

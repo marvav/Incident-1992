@@ -18,8 +18,8 @@ public class PlayerCamera : MonoBehaviour
     public Quaternion startOffset;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+       Cursor.lockState = CursorLockMode.Locked;
+       Cursor.visible = false;
     }
     void LateUpdate()
     {

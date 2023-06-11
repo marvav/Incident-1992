@@ -24,7 +24,7 @@ public class InventoryMenu : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         if (Input.GetButtonDown("Inventory"))

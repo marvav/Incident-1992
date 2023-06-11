@@ -35,8 +35,8 @@ public class GrabbingController : MonoBehaviour
         //     return;
         if (Input.GetMouseButtonDown(0))
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false; 
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false; 
 
             if (heldObject == null)
             {
