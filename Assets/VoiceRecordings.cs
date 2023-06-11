@@ -23,6 +23,7 @@ public class VoiceRecordings : MonoBehaviour
     {
         if (wasPlayed && !audioClip.isPlaying && !Sound.isPlaying)
         {
+            ProgressManager.changeObjective(progressNumber);
             Sound.Play();
         }
         if(!wasPlayed && rand.Next(0,2000)==1)
@@ -31,7 +32,6 @@ public class VoiceRecordings : MonoBehaviour
             audioClip.clip = recording;
             wasPlayed = true;
             audioClip.Play();
-            ProgressManager.changeObjective(progressNumber);
         }
     }
     public void NewRecording(AudioClip newClip, int newProgressNumber)

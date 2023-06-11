@@ -8,21 +8,23 @@ public class OpeningScene : MonoBehaviour
     // Start is called before the first frame update
     public Core Core;
     public GameObject scene;
+    public AudioSource sound;
     public string[] lines;
     private int start;
     private bool isHidden;
     // Update is called once per frame
     void Start()
     {
-        start = 0;
         isHidden = true;
-        Core.Description.text = "Press Left Mouse Button to Start";
+        Core.Description.text = lines[0];
+        start = 1;
 
     }
     void Update()
     {
         if(isHidden && Input.GetMouseButtonDown(0))
         {
+            sound.Play();
             if (start >= lines.Length-1)
             {
                 Core.Description.text = "";

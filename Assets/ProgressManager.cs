@@ -78,8 +78,11 @@ public class ProgressManager : MonoBehaviour
             encounters.SetActive(true);
             firstRecordingListened = true;
         }
-        if (id == REVOLVER_FOUND)
+        if (id == REVOLVER_FOUND && !revolverFound)
+        {
+            monster.SetActive(true);
             revolverFound = true;
+        }
         if (id == ENCOUNTER_SURVIVED)
         {
             recordings.NewRecording(second_recording,10);
@@ -159,6 +162,8 @@ public class ProgressManager : MonoBehaviour
             result += "Did the 'monster' kill one of the guys? I should find out. He said he was at Three...what\n\n";
         if (carIsBurned)
             result += "My car is burned down... \n\n";
+        if (vanSabotaged)
+            result += "I cut their tires open. Now they can't just run away\n\n";
         return result;
     }
 }

@@ -28,13 +28,11 @@ public class monsterFollow : MonoBehaviour
     private System.Random rand;
     private float distance;
     private bool isClose;
-    private Vector3 lastPosition;
     // Start is called before the first frame update
     void Start()
     {
         charControl = gameObject.GetComponent<CharacterController>();
         rand = new System.Random();
-        lastPosition = followTransform.position;
         isClose = false;
     }
 
@@ -44,17 +42,22 @@ public class monsterFollow : MonoBehaviour
         if(follow)
         {
             distance = Vector3.Distance(followTransform.position, transform.position);
-            if (distance < 0.3f)
+            if (distance < 1 && rand.Next(0, 10) == 1)
             {
-                DeathMusic.Play();
-                Time.timeScale = 0;
-                death.SetActive(true);
-                deathControls.SetActive(true);
-                ToggleCursor();
-                return;
+                Core.Hurt(4);
+                if(Core.PlayerHP <= 0)
+                {
+                    DeathMusic.Play();
+                    Time.timeScale = 0;
+                    death.SetActive(true);
+                    deathControls.SetActive(true);
+                    ToggleCursor();
+                    return;
+                }
             }
             if(distance < messageDistance)
             {
+                Core.ProgressManager.monsterFound = true;
                 if (rand.Next(0, 50) == 1)
                     Core.Description.text = messages[rand.Next(0, messages.Length)];
                 else

@@ -6,7 +6,6 @@ public class BadEnding : MonoBehaviour
 {
     public Core Core;
     private float PlayerHeight;
-    public GameObject DeathControls;
     public UnityEngine.UI.Image BadEndingScreen;
     public UnityEngine.UI.Image GoodEndingScreen;
     public UnityEngine.UI.Image GreatEndingScreen;
@@ -43,7 +42,7 @@ public class BadEnding : MonoBehaviour
                 if (screen.color.a>250)
                 {
                     Debug.Log("konec");
-                    DeathControls.SetActive(true);
+                    Core.DeathHUD.SetActive(true);
                     this.gameObject.SetActive(false);
                 }
             }
@@ -51,7 +50,7 @@ public class BadEnding : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (!leaving && Vector3.Distance(transform.position, Core.Player.transform.position) < 3)
+        if (Core.ProgressManager.noteFound && !leaving && Vector3.Distance(transform.position, Core.Player.transform.position) < 2)
         {
             Core.Description.text = "Drive Home";
             isHidden = false;

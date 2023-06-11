@@ -20,10 +20,14 @@ public class FlashLightComponent : MonoBehaviour
     public int power = 100;
     public int monsterRevealer;
     private float original_intensity;
+    private float nearLight_intensity;
+    private float LongDistance_intensity;
 
     void Start()
     {
         original_intensity = FlashLight.intensity;
+        nearLight_intensity = NearLight.intensity;
+        LongDistance_intensity = LongDistanceFlashLight.intensity;
         Sound = GetComponent<AudioSource>();
         rand = new System.Random();
     }
@@ -31,7 +35,9 @@ public class FlashLightComponent : MonoBehaviour
     {
         if(power < flashlight_dies_at)
         {
-            setIntensity(0);
+            NearLight.intensity = 0;
+            FlashLight.intensity = 0;
+            LongDistanceFlashLight.intensity = 0;
             return;
         }
         if (power < start_flicker_at && rand.Next(0, 2000) == 1)
@@ -44,7 +50,7 @@ public class FlashLightComponent : MonoBehaviour
             int random = rand.Next(0, 5000);
             if (random > 4500)
             {
-                setIntensity(rand.Next(0, (int) original_intensity));
+                setIntensity();
             }
             if(random < 10)
             {
@@ -62,18 +68,18 @@ public class FlashLightComponent : MonoBehaviour
         AmbientLight.enabled = !AmbientLight.enabled;
         LongDistanceFlashLight.enabled = !LongDistanceFlashLight.enabled;
     }
-    void setIntensity(int value)
+    void setIntensity()
     {
-        NearLight.intensity = value-30;
-        FlashLight.intensity = value;
-        LongDistanceFlashLight.intensity = value+30;
+        NearLight.intensity = rand.Next(0, (int)nearLight_intensity);
+        FlashLight.intensity = rand.Next(0, (int)original_intensity);
+        LongDistanceFlashLight.intensity = rand.Next(0, (int)LongDistance_intensity);
     }
     void Update()
     {
 
         if (FlashLight.enabled)
         {
-            if (power >0 && rand.Next(0, 5000) < 2)
+            if (power >0 && rand.Next(0, 3000) < 2)
             {
                 power -= 1;
                 Debug.Log(power);
@@ -97,9 +103,9 @@ public class FlashLightComponent : MonoBehaviour
     }
     public void Restore_Capacity()
     {
-        NearLight.intensity = original_intensity-30;
+        NearLight.intensity = nearLight_intensity;
         FlashLight.intensity = original_intensity;
-        LongDistanceFlashLight.intensity = original_intensity+30;
+        LongDistanceFlashLight.intensity = LongDistance_intensity;
         if (power > 50)
             power = 100;
         else

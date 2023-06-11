@@ -9,9 +9,8 @@ public class UseItem : MonoBehaviour
     public GameObject ObjectToMove;
     public GameObject MovedObject;
     public bool destroyAfterUse = false;
-    public string NeededItem;
+    public GameObject NeededItem;
     public string message;
-    public AudioSource sound;
     public Core Core;
     private bool isHidden;
     void Start()
@@ -25,14 +24,15 @@ public class UseItem : MonoBehaviour
         if (isCloseToPlayer(transform))
         {
             Core.Description.text = message;
-            if (Inventory.InHand == NeededItem && Input.GetMouseButtonDown(0))
+            if (Inventory.InHand == NeededItem.name && Input.GetMouseButtonDown(0))
             {
                 if (destroyAfterUse)
                 {
-                    Inventory.Remove(NeededItem);
+                    Inventory.InHand = "";
+                    Inventory.Remove(NeededItem.name);
+                    NeededItem.SetActive(false);
                 }
                 Core.Description.text = "";
-                sound.Play();
                 MovedObject.SetActive(true);
                 ObjectToMove.SetActive(false);
             }
