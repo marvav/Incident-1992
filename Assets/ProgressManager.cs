@@ -5,19 +5,23 @@ using UnityEngine;
 public class ProgressManager : MonoBehaviour
 {
     public Core Core;
+    public GameObject dummyDoor;
+    public GameObject ClosedDoor;
     public GameObject knife;
     public GameObject monster;
     public GameObject encounters;
     public GameObject murder;
+    public monsterFollow monsterStats;
     public VoiceRecordings recordings;
     public AudioClip second_recording;
+    public int fasterMonsterSpeed = 3;
 
     const int START = 0;
     const int CABIN_NOTE_READ = 1;
     const int LOCKED_CAVE_FOUND = 2;
     const int LOST_FLASHLIGHT_FOUND = 3;
     const int DEER_FOUND = 4;
-    const int VAN_FOUND = 5;
+    const int TRACKS_FOUND = 5;
     const int RADIO_FOUND = 6;
     const int FIRST_RECORDING_LISTENED = 7;
     const int REVOLVER_FOUND = 8;
@@ -27,6 +31,7 @@ public class ProgressManager : MonoBehaviour
     const int AMMO_AQUIRED = 12;
     const int CAVE_UNLOCKED = 14;
     const int VAN_SABOTAGED = 15;
+    const int KNIFE_FOUND = 13;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -37,7 +42,7 @@ public class ProgressManager : MonoBehaviour
     public bool revolverFound = false;
     public bool deerFound = false;
     public bool knifeFound = false;
-    public bool vanFound = false;
+    public bool tracksFound = false;
     public bool campFound = false;
     public bool firstRecordingListened = false;
     public bool encounterSurvived = false;
@@ -50,6 +55,8 @@ public class ProgressManager : MonoBehaviour
     {
         if(id == CABIN_NOTE_READ && !noteFound)
         {
+            dummyDoor.SetActive(false);
+            ClosedDoor.SetActive(true);
             if (!knifeFound)
                 knife.SetActive(true);
             noteFound = true;
@@ -64,6 +71,10 @@ public class ProgressManager : MonoBehaviour
                 knife.SetActive(true);
             lostFlashlightFound = true;
         }
+        if (id == TRACKS_FOUND && !tracksFound)
+            tracksFound = true;
+        if (id == KNIFE_FOUND && !knifeFound)
+            monster.SetActive(true);
         if(id== DEER_FOUND && !deerFound)
             deerFound = true;
         if(id== RADIO_FOUND && !campFound)
@@ -87,6 +98,7 @@ public class ProgressManager : MonoBehaviour
         {
             recordings.NewRecording(second_recording,10);
             encounterSurvived = true;
+            monsterStats.speed = fasterMonsterSpeed;
         }
         if (id == SECOND_RECORDING_LISTENED && !secondRecordingListened)
         {
@@ -100,6 +112,10 @@ public class ProgressManager : MonoBehaviour
         if(id== AMMO_AQUIRED &&!ammoAquired)
         {
             ammoAquired = true;
+        }
+        if (id == VAN_SABOTAGED)
+        {
+            vanSabotaged = true;
         }
     }
 
@@ -124,10 +140,10 @@ public class ProgressManager : MonoBehaviour
 
         if (cabinBroken)
             result += "David's cabin looks somewhat empty... and tidy?\n\n";
-
+        if (tracksFound && !campFound)
+            result += "There are fresh tire tracks in the grass near camp site.\n\n";
         if (deerFound && !revolverFound)
             result += "David got into hunting...probably\n\n";
-
         if (revolverFound && !ammoAquired)
             result += "Having a gun is nice, but I'm missing an ammo\n\n";
         if (ammoAquired && !revolverFound)
@@ -138,18 +154,9 @@ public class ProgressManager : MonoBehaviour
         if (knifeFound)
             result += "Someone put knife into my car.\n\n";
 
-        if (!encounterSurvived)
-        {
-            if (vanFound && !campFound)
-                result += "Why would someone hide van in a forest?\n\n";
-
-            if (!vanFound && campFound)
-                result += "There is a suspicious camp on a hill.\n\n";
-
-            if (vanFound && campFound)
-                result += "There is a suspicious van and camp on a hill.\n\n";
-        }
-        else
+        if (campFound && !secondRecordingListened)
+            result += "I stole a walkie talkie from the creepy camp I found. Maybe I'll hear someone talking.\n\n";
+        if (encounterSurvived)
             result += "The killers have a van out there. Why don't they just leave?\n\n";
 
         if (firstRecordingListened && !encounterSurvived)

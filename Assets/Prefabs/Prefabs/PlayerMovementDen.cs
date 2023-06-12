@@ -7,6 +7,12 @@ public class PlayerMovementDen : MonoBehaviour
 {
     float speed;
     public float moveSpeed;
+
+    public int stamina;
+    public int staminaRechargeSpeed;
+    public float staminaDrainedMultiplier;
+    public AudioSource staminaPanting;
+
     public float speedCoeficient;
     
     public float groundDrag, airDrag;
@@ -41,10 +47,16 @@ public class PlayerMovementDen : MonoBehaviour
     Vector3 moveDirection;
     Rigidbody rb;
 
+    private float currentStamina;
+    private bool staminaDrained;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        staminaDrained = false;
+        currentStamina = stamina;
 
         readyToJump = true;
     }
@@ -71,8 +83,29 @@ public class PlayerMovementDen : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         speed = moveSpeed + verticalInput * moveSpeed * speedCoeficient;
-        if (Input.GetKey(sprintKey) && verticalInput >= 0)
-            speed *= sprintMultiplier;
+        if (Input.GetKey(sprintKey) && verticalInput >= 0 && !staminaDrained)
+        {
+            if (currentStamina > 0)
+            {
+                currentStamina -= Time.deltaTime;
+                speed *= sprintMultiplier;
+            }
+            else
+            {
+                staminaDrained = true;
+                staminaPanting.Play();
+            }
+        }
+        if (staminaDrained)
+        {
+            speed *= staminaDrainedMultiplier;
+            if (currentStamina > stamina / 2)
+                staminaDrained = false;
+        }
+
+        if((!Input.GetKey(sprintKey) || staminaDrained) && currentStamina < stamina)
+            currentStamina += Time.deltaTime* staminaRechargeSpeed;
+
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && (grounded || gameObject.transform.parent!=null))
         {

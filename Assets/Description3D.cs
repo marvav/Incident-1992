@@ -7,18 +7,14 @@ public class Description3D : MonoBehaviour
 {
     public Core Core;
     public string text;
+    public float range = 2.0f;
     public bool isClue;
     public int clueID = 0;
-    private bool isHidden;
+    private bool isHidden = true;
 
-    // Update is called once per frame
-    void Start()
+    void Update()
     {
-        isHidden = true;
-    }
-    void FixedUpdate()
-    {
-        if (isCloseToPlayer(transform))
+        if (isCloseToPlayer(transform, range))
         {
             if (isHidden)
             {

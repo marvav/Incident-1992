@@ -95,7 +95,7 @@ Material:
     - EFFECT_BILLBOARD: 0
     - EFFECT_EXTRA_TEX: 1
     - _AlphaClip: 0
-    - _AlphaClipThreshold: 0.33
+    - _AlphaClipThreshold: 0
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -137,7 +137,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.6792453, g: 0.6068911, b: 0.5344251, a: 1}
-    - _Color: {r: 0.6792453, g: 0.60689104, b: 0.5344251, a: 1}
+    - _Color: {r: 0.9150943, g: 0.87897587, b: 0.84085083, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.2}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

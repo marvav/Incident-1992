@@ -8,10 +8,14 @@ public class StartGame : MonoBehaviour, IPointerClickHandler
 {
     public GameObject OpeningScene;
     public GameObject Menu;
-    void Start()
+    void FixedUpdate()
     {
-        Time.timeScale = 0;
-        ToggleCursor();
+        if(Cursor.lockState!= CursorLockMode.None)
+        {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
     public void OnPointerClick(PointerEventData eventData)
     {

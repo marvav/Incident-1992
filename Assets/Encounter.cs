@@ -16,15 +16,8 @@ public class Encounter : MonoBehaviour
     public GameObject ShootHim;
     public GameObject AreYouBlind;
     public AudioClip[] gunshots;
-    private bool isHappening;
-    private int counter;
-
-    void Start()
-    {
-        ShootHim.SetActive(true);
-        isHappening = false;
-        counter = 0;
-    }
+    private bool isHappening = false;
+    private int counter = 0;
 
     void FixedUpdate()
     {
@@ -39,7 +32,6 @@ public class Encounter : MonoBehaviour
                 gun.clip = gunshots[counter];
                 counter++;
                 gun.Play();
-                Debug.Log(player.velocity.magnitude);
                 if (player.velocity.magnitude < 7)
                 {
                     Core.Hurt(5);
@@ -67,8 +59,8 @@ public class Encounter : MonoBehaviour
             {
                 if (isCloseToPlayer(transform, 20))
                 {
+                    ShootHim.SetActive(true);
                     gun.Play();
-                    Debug.Log("Encounter");
                     isHappening = true;
             }
         }

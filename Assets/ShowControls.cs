@@ -10,12 +10,11 @@ public class ShowControls : MonoBehaviour, IPointerClickHandler
 {
     public AudioSource sound;
     private List<GameObject> controls;
-    private bool isOpen;
+    private bool isOpen = false;
 
     public void Start()
     {
         controls = CountChildren(this.gameObject);
-        isOpen = false;
     }
     public void OnPointerClick(PointerEventData eventData)
     {

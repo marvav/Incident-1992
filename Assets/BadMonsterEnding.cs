@@ -12,7 +12,6 @@ public class BadMonsterEnding : MonoBehaviour
     public GameObject knife;
     public Transform playerTransform;
     public GameObject death;
-    public GameObject deathControls;
     public AudioSource DeathMusic;
     public AudioSource Sound;
     public AudioClip[] audioClips;
@@ -24,16 +23,16 @@ public class BadMonsterEnding : MonoBehaviour
     public int revealDistance;
     public int respawnDistance;
     public string[] messages;
-    public Vector3[] spawnPlaces;
 
     private Transform followTransform;
     private System.Random rand;
     private float distance;
     private bool isClose;
-    private bool foundKnife;
+    private bool foundKnife = false;
     // Start is called before the first frame update
     void Start()
     {
+        followTransform = knife.transform;
         charControl = gameObject.GetComponent<CharacterController>();
         rand = new System.Random();
         isClose = false;
@@ -52,7 +51,7 @@ public class BadMonsterEnding : MonoBehaviour
                     DeathMusic.Play();
                     Time.timeScale = 0;
                     death.SetActive(true);
-                    deathControls.SetActive(true);
+                    Core.DeathHUD.SetActive(true);
                     ToggleCursor();
                     return;
                 }
@@ -61,7 +60,7 @@ public class BadMonsterEnding : MonoBehaviour
                     knife.SetActive(false);
                     followTransform = playerTransform;
                     foundKnife = true;
-                    speed = 10;
+                    speed = 20;
                 }
             }
             if (distance < messageDistance)
@@ -71,17 +70,6 @@ public class BadMonsterEnding : MonoBehaviour
                     Core.Description.text = messages[rand.Next(0, messages.Length)];
                 else
                     Core.Description.text = "";
-            }
-            if (distance > respawnDistance)
-            {
-                if (rand.Next(0, 100) == 1) //Chance to spawn directly behind player
-                {
-                    transform.position = followTransform.position + new Vector3(-50, 0, 0);
-                }
-                else //Spawns on one of locations
-                {
-                    transform.position = spawnPlaces[rand.Next(0, spawnPlaces.Length)];
-                }
             }
             else
             {

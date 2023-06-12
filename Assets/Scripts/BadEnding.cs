@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class BadEnding : MonoBehaviour
 {
@@ -41,8 +42,6 @@ public class BadEnding : MonoBehaviour
                 delay = t;
                 if (screen.color.a>250)
                 {
-                    Debug.Log("konec");
-                    Core.DeathHUD.SetActive(true);
                     this.gameObject.SetActive(false);
                 }
             }
@@ -50,7 +49,7 @@ public class BadEnding : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Core.ProgressManager.noteFound && !leaving && Vector3.Distance(transform.position, Core.Player.transform.position) < 2)
+        if (Core.ProgressManager.noteFound && !leaving && isCloseToPlayer(transform))
         {
             Core.Description.text = "Drive Home";
             isHidden = false;
@@ -68,6 +67,7 @@ public class BadEnding : MonoBehaviour
                 leaving = true;
                 CarAudio.Play();
                 m_MyAudioSource.Play();
+                Core.DeathHUD.SetActive(true);
             }
         }
         else

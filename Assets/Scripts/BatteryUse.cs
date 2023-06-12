@@ -8,11 +8,9 @@ using static Inventory;
 public class Consumable : MonoBehaviour, IPointerClickHandler
 {
     public TMP_Text Description;
+    public InventoryMenu InventoryMenu;
+    public AudioSource sound;
     public FlashLightComponent FlashLight;
-    //Detect if the Cursor starts to pass over the GameObject
-    void Start()
-    {
-    }
     public void OnPointerClick(PointerEventData eventData)
     {
         int clickCount = eventData.clickCount;
@@ -21,8 +19,10 @@ public class Consumable : MonoBehaviour, IPointerClickHandler
         {
             FlashLight.Restore_Capacity();
             Inventory.Remove("Battery");
-            this.gameObject.SetActive(false);
             Description.text = "";
+            sound.Play();
+            InventoryMenu.ToggleOff();
+            InventoryMenu.ToggleOn();
         }
     }
 }

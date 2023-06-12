@@ -10,11 +10,7 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     public string text;
     public GameObject ItemInHand;
     public Core Core;
-    private bool isHidden;
-
-    void Start() { 
-        isHidden = true; 
-    }
+    private bool isHidden = true;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -22,6 +18,7 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
         if (clickCount == 2)
         {
+            Core.PickUpSound.Play();
             if (isHidden && Inventory.InHand!="")
             {
                 Core.Description.text = "I can't hold more items at once";
@@ -29,8 +26,11 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
             else
             {
                 ItemInHand.SetActive(isHidden);
-                if(isHidden)
+                if (isHidden)
+                {
                     Inventory.InHand = gameObject.name;
+                    Core.Inventory.SetActive(false);
+                }
                 else
                     Inventory.InHand = "";
                 isHidden = !isHidden;

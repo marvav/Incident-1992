@@ -14,11 +14,10 @@ public class FlashLightComponent : MonoBehaviour
     public Light FlashLight;
     public Light NearLight;
     public Light bodyLight;
-    public Light itemLight;
     public Light AmbientLight;
     private bool isFlickering;
     public int power = 100;
-    public int monsterRevealer;
+    public int dischargeSpeed;
     private float original_intensity;
     private float nearLight_intensity;
     private float LongDistance_intensity;
@@ -33,7 +32,15 @@ public class FlashLightComponent : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(power < flashlight_dies_at)
+        if (FlashLight.enabled)
+        {
+            if (power > 0 && rand.Next(0, 1000) < dischargeSpeed)
+            {
+                power -= 1;
+                //Debug.Log(power);
+            }
+        }
+        if (power < flashlight_dies_at)
         {
             NearLight.intensity = 0;
             FlashLight.intensity = 0;
@@ -42,7 +49,7 @@ public class FlashLightComponent : MonoBehaviour
         }
         if (power < start_flicker_at && rand.Next(0, 2000) == 1)
         {
-            Debug.Log("Started flickering");
+            //Debug.Log("Started flickering");
             isFlickering = true;
         }
         if(isFlickering)
@@ -62,7 +69,6 @@ public class FlashLightComponent : MonoBehaviour
     void switchLight()
     {
         bodyLight.enabled = !bodyLight.enabled;
-        itemLight.enabled = !itemLight.enabled;
         NearLight.enabled = !NearLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
         AmbientLight.enabled = !AmbientLight.enabled;
@@ -76,26 +82,13 @@ public class FlashLightComponent : MonoBehaviour
     }
     void Update()
     {
-
-        if (FlashLight.enabled)
-        {
-            if (power >0 && rand.Next(0, 3000) < 2)
-            {
-                power -= 1;
-                Debug.Log(power);
-            }
-        }
         //Number of clips has to be even. First half are "turn on" sounds, Second half are "turn off" sounds.
         if (Input.GetButtonDown("Flashlight"))
         {
             if (FlashLight.enabled)
-            {
                 Sound.clip = audioClips[rand.Next(audioClips.Length / 2, audioClips.Length)];
-            }
             else
-            {
                 Sound.clip = audioClips[rand.Next(0, audioClips.Length / 2)];
-            }
             Sound.Play();
             isFlickering = false;
             switchLight();

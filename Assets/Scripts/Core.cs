@@ -9,6 +9,7 @@ public class Core : MonoBehaviour
     public GameObject Player;
     public int PlayerMaxHP = 10;
     public int PlayerHP = 10;
+    public VolumeEffects effects;
     public GameObject HurtScreen;
     public GameObject DeathHUD;
     public PlayerMovementDen PlayerDen;
@@ -19,6 +20,7 @@ public class Core : MonoBehaviour
     public GameObject NoteText;
     public TMP_Text Description;
     public AudioSource PickUpSound;
+    public AudioSource DeathSound;
     public ProgressManager ProgressManager;
     private float delay;
 
@@ -28,17 +30,23 @@ public class Core : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Debug.Log(PlayerHP);
-        if (PlayerHP < PlayerMaxHP && Time.realtimeSinceStartup-delay > 30)
+        if (PlayerHP < PlayerMaxHP && Time.realtimeSinceStartup-delay > 15)
         {
             PlayerHP = PlayerMaxHP;
+            effects.chromaticAnimation = false;
         }
+
     }
 
     public void Hurt(int damage)
     {
+        effects.chromaticAnimation = true;
         PlayerHP -= damage;
         HurtScreen.SetActive(true);
         delay = Time.realtimeSinceStartup;
+        if (PlayerHP <= 0)
+        {
+            DeathSound.Play();
+        }
     }
 }

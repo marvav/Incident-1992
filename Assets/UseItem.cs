@@ -8,25 +8,23 @@ public class UseItem : MonoBehaviour
 {
     public GameObject ObjectToMove;
     public GameObject MovedObject;
+    public bool itemNeeded = true;
     public bool destroyAfterUse = false;
     public GameObject NeededItem;
     public string message;
+    public float range = 2.0f;
     public Core Core;
-    private bool isHidden;
-    void Start()
-    {
-        isHidden = true;
-    }
+    private bool isHidden = true;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (isCloseToPlayer(transform))
+        if (isCloseToPlayer(transform, range))
         {
             Core.Description.text = message;
-            if (Inventory.InHand == NeededItem.name && Input.GetMouseButtonDown(0))
+            if ((!itemNeeded || Inventory.InHand == NeededItem.name) && Input.GetMouseButtonDown(0))
             {
-                if (destroyAfterUse)
+                if (destroyAfterUse && itemNeeded)
                 {
                     Inventory.InHand = "";
                     Inventory.Remove(NeededItem.name);

@@ -8,14 +8,8 @@ public class TurnOn : MonoBehaviour
     public Core Core;
     public AudioSource sound;
     public Light Lamp;
-    private bool isHidden;
-    private bool isClicked;
-    // Start is called before the first frame update
-    void Start()
-    {
-        isHidden = true;
-        isClicked = false;
-    }
+    private bool isHidden = true;
+    private bool isClicked = false;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -24,15 +18,14 @@ public class TurnOn : MonoBehaviour
         {
             isHidden = false;
             Core.Click.SetActive(true);
-            if (isClicked)
-            {
-                return;
-            }
             if (Input.GetButton("Pick Up"))
             {
-                isClicked = true;
-                Lamp.enabled = !Lamp.enabled;
-                sound.Play();
+                if (!isClicked)
+                {
+                    isClicked = true;
+                    Lamp.enabled = !Lamp.enabled;
+                    sound.Play();
+                }
             }
             else
                 isClicked = false;

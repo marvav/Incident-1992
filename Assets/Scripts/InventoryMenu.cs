@@ -8,6 +8,7 @@ using static Inventory;
 
 public class InventoryMenu : MonoBehaviour
 {
+    public GameObject EscapeMenu;
     public GameObject Inventory_Object;
     public GameObject Archive;
     public GameObject Note;
@@ -22,28 +23,41 @@ public class InventoryMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0)
+        if (Input.GetButtonDown("Escape"))
         {
-            //Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                EscapeMenu.SetActive(false);
+                ToggleOff();
+                ToggleCursor();
+
+            }
+            else
+            {
+                ToggleOff();
+                EscapeMenu.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
         if (Input.GetButtonDown("Inventory"))
         {
             if (Time.timeScale == 0)
             {
                 Time.timeScale = 1;
+                EscapeMenu.SetActive(false);
                 ToggleOff();
                 ToggleCursor();
             }
             else
             {
-                Time.timeScale = 0;
+                EscapeMenu.SetActive(false);
                 ToggleOn();
-                ToggleCursor();
+                Time.timeScale = 0;
             }
         }
     }
-    void ToggleOn()
+    public void ToggleOn()
     {
         Inventory_Object.SetActive(true);
         int index = 0;
@@ -72,7 +86,7 @@ public class InventoryMenu : MonoBehaviour
         }
     }
 
-    void ToggleOff()
+    public void ToggleOff()
     {
         Note.SetActive(false);
         Inventory_Object.SetActive(false);

@@ -14,6 +14,7 @@ public class monsterFollow : MonoBehaviour
     public GameObject deathControls;
     public AudioSource DeathMusic;
     public AudioSource Sound;
+    public AudioSource Damage;
     public AudioClip[] audioClips;
 
     public int speed;
@@ -42,8 +43,9 @@ public class monsterFollow : MonoBehaviour
         if(follow)
         {
             distance = Vector3.Distance(followTransform.position, transform.position);
-            if (distance < 1 && rand.Next(0, 10) == 1)
+            if (distance < 1 && rand.Next(0, 25) == 1)
             {
+                Damage.Play();
                 Core.Hurt(4);
                 if(Core.PlayerHP <= 0)
                 {

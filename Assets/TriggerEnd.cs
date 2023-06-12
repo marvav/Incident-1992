@@ -7,6 +7,7 @@ public class TriggerEnd : MonoBehaviour
     public Core Core;
     public GameObject GoodMonster;
     public GameObject BadMonster;
+    public GameObject entranceBarrier;
     public GameObject gate;
     public GameObject bandit;
     public GameObject deadBandit;
@@ -23,6 +24,7 @@ public class TriggerEnd : MonoBehaviour
         }
         else
         {
+            entranceBarrier.SetActive(true);
             BadMonster.SetActive(true);
         }
     }
@@ -35,8 +37,6 @@ public class TriggerEnd : MonoBehaviour
             if (hasPlayed && !banditLaugh.isPlaying)
             {
                 GoodMonster.SetActive(true);
-                bandit.SetActive(false);
-                deadBandit.SetActive(true);
             }
             if (!hasPlayed)
             {

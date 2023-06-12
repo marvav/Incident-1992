@@ -6,6 +6,7 @@ using static Core_Utils;
 public class PauseGame : MonoBehaviour
 {
     public GameObject EscapeMenu;
+    public GameObject Inventory;
 
     // Update is called once per frame
     void Update()

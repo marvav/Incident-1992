@@ -6,16 +6,23 @@ using UnityEngine.UI;
 public class PlayerCamera : MonoBehaviour
 {
     public GameObject grabber;
+    public Slider sensitivitySlider;
     public float sensetivityX, sensetivityY = 100f;
     public Transform orientation;
     public bool clamp;
     public bool onPlayer;
    // public Slider slider;
     private float mouseSensetivity;
-    float xRotation;
-    float yRotation;
+    public float xRotation;
+    public float yRotation;
     //[SerializeField] private Pause pause;
     public Quaternion startOffset;
+
+    public void SetSensitivity(float sensitivity)
+    {
+        sensetivityX = sensitivity;
+        sensetivityY = sensitivity;
+    }
     void Start()
     {
        Cursor.lockState = CursorLockMode.Locked;
@@ -23,8 +30,6 @@ public class PlayerCamera : MonoBehaviour
     }
     void LateUpdate()
     {
-        //if (pause.isPaused)
-        //    return;
         if (!Cursor.visible)
         {
             // mouseSensetivity = Mathf.Lerp(0.1f, 2, slider.value);
