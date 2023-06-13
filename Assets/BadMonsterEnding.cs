@@ -39,7 +39,7 @@ public class BadMonsterEnding : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (follow)
         {
@@ -71,10 +71,7 @@ public class BadMonsterEnding : MonoBehaviour
                 else
                     Core.Description.text = "";
             }
-            else
-            {
-                Move();
-            }
+            Move();
             ChangeVisibility(distance);
         }
     }
