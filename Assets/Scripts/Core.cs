@@ -9,6 +9,7 @@ public class Core : MonoBehaviour
     public GameObject Player;
     public int PlayerMaxHP = 10;
     public int PlayerHP = 10;
+    public float startingGamma;
     public VolumeEffects effects;
     public GameObject HurtScreen;
     public GameObject DeathHUD;
@@ -19,6 +20,7 @@ public class Core : MonoBehaviour
     public GameObject Note;
     public GameObject NoteText;
     public TMP_Text Description;
+    public AudioSource GeneralAudio;
     public AudioSource PickUpSound;
     public AudioSource DeathSound;
     public ProgressManager ProgressManager;
@@ -27,6 +29,7 @@ public class Core : MonoBehaviour
     void Start()
     {
         delay = Time.realtimeSinceStartup;
+        RenderSettings.ambientLight = new Color(startingGamma, startingGamma, startingGamma, 1.0f);
     }
     void FixedUpdate()
     {

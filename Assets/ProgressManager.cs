@@ -11,6 +11,7 @@ public class ProgressManager : MonoBehaviour
     public GameObject monster;
     public GameObject encounters;
     public GameObject murder;
+    public GameObject van;
     public monsterFollow monsterStats;
     public VoiceRecordings recordings;
     public AudioClip second_recording;
@@ -104,6 +105,8 @@ public class ProgressManager : MonoBehaviour
         {
             secondRecordingListened = true;
             murder.SetActive(true);
+            if (!vanSabotaged)
+                van.SetActive(false);
         }
         if(id==BURNED_CAR && !carIsBurned)
         {

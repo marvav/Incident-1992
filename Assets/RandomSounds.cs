@@ -17,9 +17,9 @@ public class RandomSounds : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (rand.Next(0, rate) == 1)
+        if (!Sound.isPlaying && rand.Next(0, rate) == 1)
         {
             Sound.clip = audioClips[rand.Next(0, audioClips.Length)];
             Sound.Play();

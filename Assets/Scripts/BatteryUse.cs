@@ -21,8 +21,7 @@ public class Consumable : MonoBehaviour, IPointerClickHandler
             Inventory.Remove("Battery");
             Description.text = "";
             sound.Play();
-            InventoryMenu.ToggleOff();
-            InventoryMenu.ToggleOn();
+            InventoryMenu.ToggleOnInventory();
         }
     }
 }

@@ -8,6 +8,9 @@ public class ToggleUse : MonoBehaviour
     public Core Core;
     public GameObject state1;
     public GameObject state2;
+    public AudioClip state1Sound;
+    public AudioClip state2Sound;
+    public AudioSource sound;
     public float range;
     private bool isHidden = true;
     private bool state = false;
@@ -24,10 +27,15 @@ public class ToggleUse : MonoBehaviour
             {
                 if (!isClicked)
                 {
+                    if (state)
+                        sound.clip = state1Sound;
+                    else
+                        sound.clip = state2Sound;
                     isClicked = true;
                     state1.SetActive(state);
                     state2.SetActive(!state);
                     state = !state;
+                    sound.Play();
                 }
             }
             else

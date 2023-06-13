@@ -29,13 +29,13 @@ public class InventoryMenu : MonoBehaviour
             {
                 Time.timeScale = 1;
                 EscapeMenu.SetActive(false);
-                ToggleOff();
+                Inventory_Object.SetActive(false);
                 ToggleCursor();
 
             }
             else
             {
-                ToggleOff();
+                Inventory_Object.SetActive(false);
                 EscapeMenu.SetActive(true);
                 Time.timeScale = 0;
             }
@@ -46,18 +46,18 @@ public class InventoryMenu : MonoBehaviour
             {
                 Time.timeScale = 1;
                 EscapeMenu.SetActive(false);
-                ToggleOff();
+                Inventory_Object.SetActive(false);
                 ToggleCursor();
             }
             else
             {
                 EscapeMenu.SetActive(false);
-                ToggleOn();
+                ToggleOnInventory();
                 Time.timeScale = 0;
             }
         }
     }
-    public void ToggleOn()
+    public void ToggleOnInventory()
     {
         Inventory_Object.SetActive(true);
         int index = 0;
@@ -86,7 +86,7 @@ public class InventoryMenu : MonoBehaviour
         }
     }
 
-    public void ToggleOff()
+    public void ToggleOffInventory()
     {
         Note.SetActive(false);
         Inventory_Object.SetActive(false);

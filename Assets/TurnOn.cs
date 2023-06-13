@@ -6,7 +6,7 @@ using static Core_Utils;
 public class TurnOn : MonoBehaviour
 {
     public Core Core;
-    public AudioSource sound;
+    public AudioClip sound;
     public Light Lamp;
     private bool isHidden = true;
     private bool isClicked = false;
@@ -24,7 +24,8 @@ public class TurnOn : MonoBehaviour
                 {
                     isClicked = true;
                     Lamp.enabled = !Lamp.enabled;
-                    sound.Play();
+                    Core.GeneralAudio.clip = sound;
+                    Core.GeneralAudio.Play();
                 }
             }
             else
