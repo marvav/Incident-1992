@@ -75,14 +75,19 @@ public class ProgressManager : MonoBehaviour
         if (id == TRACKS_FOUND && !tracksFound)
             tracksFound = true;
         if (id == KNIFE_FOUND && !knifeFound)
+        {
             monster.SetActive(true);
+            knifeFound = true;
+        }
         if(id== DEER_FOUND && !deerFound)
             deerFound = true;
         if(id== RADIO_FOUND && !campFound)
         {
             monster.SetActive(true);
             if (!knifeFound)
+            {
                 knife.SetActive(true);
+            }
             campFound = true;
         }
         if(id == FIRST_RECORDING_LISTENED && !firstRecordingListened)

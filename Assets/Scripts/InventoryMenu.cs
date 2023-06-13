@@ -80,6 +80,8 @@ public class InventoryMenu : MonoBehaviour
                     element_pos.anchoredPosition = Icon_positions[index];
                     index++;
                 }
+                else
+                    child.SetActive(false);
             }
             else
                 child.SetActive(true);
