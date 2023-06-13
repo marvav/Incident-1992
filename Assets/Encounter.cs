@@ -6,6 +6,7 @@ using static Core_Utils;
 public class Encounter : MonoBehaviour
 {
     public Core Core;
+    public AudioSource WalkieTalkie;
     public bool isWithCar;
     public GameObject death;
     public GameObject encounter;
@@ -18,8 +19,14 @@ public class Encounter : MonoBehaviour
     public AudioClip[] gunshots;
     private bool isHappening = false;
     private int counter = 0;
+    public System.Random rand;
 
-    void FixedUpdate()
+    void Start()
+    {
+        rand = new System.Random();
+    }
+
+    void Update()
     {
         if(isHappening)
         {
@@ -57,7 +64,7 @@ public class Encounter : MonoBehaviour
         }
         else
             {
-                if (isCloseToPlayer(transform, 20))
+                if (isCloseToPlayer(transform, 20) && !WalkieTalkie.isPlaying && rand.Next(0,500)==1)
                 {
                     ShootHim.SetActive(true);
                     gun.Play();

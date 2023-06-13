@@ -83,7 +83,7 @@ public class PlayerMovementDen : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         speed = moveSpeed + verticalInput * moveSpeed * speedCoeficient;
-        if (Input.GetKey(sprintKey) && verticalInput >= 0 && !staminaDrained)
+        if (Input.GetKey(sprintKey) && verticalInput >= 0.2f && !staminaDrained)
         {
             if (currentStamina > 0)
             {

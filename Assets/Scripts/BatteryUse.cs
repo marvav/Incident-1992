@@ -7,9 +7,8 @@ using static Inventory;
 
 public class Consumable : MonoBehaviour, IPointerClickHandler
 {
-    public TMP_Text Description;
+    public Core Core;
     public InventoryMenu InventoryMenu;
-    public AudioSource sound;
     public FlashLightComponent FlashLight;
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -19,9 +18,12 @@ public class Consumable : MonoBehaviour, IPointerClickHandler
         {
             FlashLight.Restore_Capacity();
             Inventory.Remove("Battery");
-            Description.text = "";
-            sound.Play();
+            Core.Description.text = "";
+            Core.PickUpSound.Play();
+            if(Inventory.Find_by_name("Battery")==null)
+                this.gameObject.SetActive(false);
             InventoryMenu.ToggleOnInventory();
+
         }
     }
 }

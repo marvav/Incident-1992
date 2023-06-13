@@ -10,23 +10,22 @@ public class VoiceRecordings : MonoBehaviour
     public AudioClip recording;
     public System.Random rand;
     public int progressNumber;
-    private bool wasPlayed;
+    private bool wasPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
         rand = new System.Random();
-        wasPlayed = false;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (wasPlayed && !audioClip.isPlaying && !Sound.isPlaying)
         {
             ProgressManager.changeObjective(progressNumber);
             Sound.Play();
         }
-        if(!wasPlayed && rand.Next(0,2000)==1)
+        if(!wasPlayed && rand.Next(0,50000)==1)
         {
             Sound.Pause();
             audioClip.clip = recording;
