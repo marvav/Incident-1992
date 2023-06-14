@@ -66,7 +66,7 @@ public class Encounter : MonoBehaviour
         }
         else
             {
-                if (isCloseToPlayer(transform, 20) && !WalkieTalkie.isPlaying && rand.Next(0,2000)==1)
+                if (isCloseToPlayer(transform, 20) && !WalkieTalkie.isPlaying && rand.Next(0,1500)==1)
                 {
                     ShootHim.SetActive(true);
                     gun.Play();

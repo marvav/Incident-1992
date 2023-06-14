@@ -25,7 +25,7 @@ public class VoiceRecordings : MonoBehaviour
             ProgressManager.changeObjective(progressNumber);
             Sound.Play();
         }
-        if(!wasPlayed && rand.Next(0,10000)==1)
+        if(!wasPlayed && rand.Next(0,5000)==1)
         {
             Sound.Pause();
             audioClip.clip = recording;

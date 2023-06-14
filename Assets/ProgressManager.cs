@@ -54,8 +54,8 @@ public class ProgressManager : MonoBehaviour
     public bool carIsBurned = false;
     public bool ammoAquired = false;
     public bool vanSabotaged = false;
-    public bool ropeFound = true;
-    public bool wellEntered = true;
+    public bool ropeFound = false;
+    public bool wellEntered = false;
 
     public void changeObjective(int id)
     {
