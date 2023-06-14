@@ -7,14 +7,17 @@ public class TurnOn : MonoBehaviour
 {
     public Core Core;
     public AudioClip sound;
-    public Light Lamp;
+    public GameObject objToTurnOff;
+    public GameObject obj;
+    public float range = 2;
+    public bool isOn = false;
     private bool isHidden = true;
     private bool isClicked = false;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (isCloseToPlayer(transform))
+        if (isCloseToPlayer(transform, range))
         {
             isHidden = false;
             Core.Click.SetActive(true);
@@ -22,8 +25,11 @@ public class TurnOn : MonoBehaviour
             {
                 if (!isClicked)
                 {
+                    if(objToTurnOff!=null)
+                        objToTurnOff.SetActive(false);
+                    isOn = !isOn;
                     isClicked = true;
-                    Lamp.enabled = !Lamp.enabled;
+                    obj.SetActive(isOn);
                     Core.GeneralAudio.clip = sound;
                     Core.GeneralAudio.Play();
                 }

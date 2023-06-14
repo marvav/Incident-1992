@@ -40,6 +40,7 @@ public class InventoryMenu : MonoBehaviour
                 EscapeMenu.SetActive(true);
                 Time.timeScale = 0;
             }
+            Core.Description.text = "";
         }
         if (Input.GetButtonDown("Inventory"))
         {

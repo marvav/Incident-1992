@@ -5455,7 +5455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: gravity
-      value: -4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: stamina
@@ -5479,7 +5479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: jumpCooldown
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8705981627870275926, guid: ce3854a0dc64eda4e9c93d6dd777e134, type: 3}
       propertyPath: staminaPanting
@@ -14480,7 +14480,7 @@ MonoBehaviour:
   monsterStats: {fileID: 906160341}
   recordings: {fileID: 154856559}
   second_recording: {fileID: 8300000, guid: 1626ab91a67ac524a88588aca18437fc, type: 3}
-  fasterMonsterSpeed: 3
+  fasterMonsterSpeed: 4
   noteFound: 0
   lockedCaveFound: 0
   monsterFound: 0
@@ -14498,8 +14498,8 @@ MonoBehaviour:
   carIsBurned: 0
   ammoAquired: 0
   vanSabotaged: 0
-  ropeFound: 1
-  wellEntered: 1
+  ropeFound: 0
+  wellEntered: 0
 --- !u!1 &516688988
 GameObject:
   m_ObjectHideFlags: 0
@@ -15496,7 +15496,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -7146521406498821007, guid: 71c01a24ec5e3744e8f5c1bc54760fb8, type: 3}
   m_PrefabInstance: {fileID: 1835119236}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &581697135
+--- !u!114 &581697139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15505,17 +15505,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 581697131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608a4aa7f4df5cf4bb08847731005196, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d791214156becd4aab20bb2ab0b641c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToMove: {fileID: 581697131}
-  MovedObject: {fileID: 452548030}
-  itemNeeded: 0
-  destroyAfterUse: 0
-  NeededItem: {fileID: 0}
-  message: 
-  range: 2
   Core: {fileID: 513218965}
+  sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
+  objToTurnOff: {fileID: 581697131}
+  obj: {fileID: 452548030}
+  range: 2
+  isOn: 0
 --- !u!1 &586076689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: bbdca65d407599146b3d8327e6007815, type: 3}
@@ -27734,7 +27732,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
-  Lamp: {fileID: 245785268}
+  objToTurnOff: {fileID: 0}
+  obj: {fileID: 245785265}
+  range: 2
+  isOn: 0
 --- !u!1 &965232498
 GameObject:
   m_ObjectHideFlags: 0
@@ -42424,7 +42425,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
-  Lamp: {fileID: 1625680158}
+  objToTurnOff: {fileID: 0}
+  obj: {fileID: 1625680155}
+  range: 2
+  isOn: 0
 --- !u!1 &1450739342
 GameObject:
   m_ObjectHideFlags: 0
@@ -43732,7 +43736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1484279821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49879,7 +49883,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  Lamp: {fileID: 1107457156}
+  objToTurnOff: {fileID: 0}
+  obj: {fileID: 1107457153}
+  range: 2
+  isOn: 0
 --- !u!1 &1709675079
 GameObject:
   m_ObjectHideFlags: 0
@@ -51230,7 +51237,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
-  Lamp: {fileID: 1980171991}
+  objToTurnOff: {fileID: 0}
+  obj: {fileID: 1980171990}
+  range: 2
+  isOn: 0
 --- !u!1 &1762917126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: c35e2a0814d2fc544b8a226fc2a6ce1d, type: 3}
@@ -53724,7 +53734,7 @@ PrefabInstance:
       addedObject: {fileID: 85995545}
     - targetCorrespondingSourceObject: {fileID: -7146521406498821007, guid: 71c01a24ec5e3744e8f5c1bc54760fb8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 581697135}
+      addedObject: {fileID: 581697139}
   m_SourcePrefab: {fileID: 100100000, guid: 71c01a24ec5e3744e8f5c1bc54760fb8, type: 3}
 --- !u!4 &1842986937 stripped
 Transform:

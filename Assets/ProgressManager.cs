@@ -194,9 +194,7 @@ public class ProgressManager : MonoBehaviour
         if (vanSabotaged)
             result += "I cut their tires open. Now they can't just run away\n\n";
         if (ropeFound&& !wellEntered)
-        {
             result += "I've found rope with other climbing equipment. Maybe I could descend somewhere?!\n\n";
-        }
         if (wellEntered)
             result += "Who would have thought the old well was secret entrance?! I bet no-one was there for at least 500 years! Except for David I guess...\n\n";
         return result;
