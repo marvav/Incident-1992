@@ -10,8 +10,8 @@ public class GoodEndingMonster : MonoBehaviour
     public MeshRenderer eyes;
     public Light flashlight;
     public Transform followTransform;
-    public GameObject death;
-    public GameObject deathNewspaper;
+    public GameObject deadBandit;
+    public GameObject bandit;
     public AudioSource DeathMusic;
     public AudioSource Sound;
     public AudioClip[] audioClips;
@@ -42,11 +42,14 @@ public class GoodEndingMonster : MonoBehaviour
             distance = Vector3.Distance(followTransform.position, transform.position);
             if (distance < 1)
             {
+                bandit.SetActive(false);
+                deadBandit.SetActive(true);
                 DeathMusic.Play();
-                Time.timeScale = 0;
-                death.SetActive(true);
-                deathNewspaper.SetActive(true);
-                ToggleCursor();
+                this.gameObject.SetActive(false);
+                //Time.timeScale = 0;
+                //death.SetActive(true);
+                //deathNewspaper.SetActive(true);
+                //ToggleCursor();
                 return;
             }
             if (distance < messageDistance)

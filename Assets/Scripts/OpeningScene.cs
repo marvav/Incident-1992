@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using static Core_Utils;
 
 public class OpeningScene : MonoBehaviour
 {
     // Start is called before the first frame update
     public Core Core;
-    public GameObject scene;
     public TMP_Text text;
     public AudioSource sound;
+    public AudioClip music;
     public string[] lines;
-    private int start;
-    private bool isHidden;
+    public bool endLoopMusic = true;
+    private int start = 1;
+    private bool isHidden = true;
     // Update is called once per frame
     void Start()
     {
-        isHidden = true;
+        Time.timeScale = 1;
+        ToggleCursor();
+        if(music != null)
+        {
+            Core.GeneralMusic.clip = music;
+            Core.GeneralMusic.Play();
+            Core.GeneralMusic.loop = true;
+        }
         text.text = lines[0];
-        start = 1;
-
     }
     void Update()
     {
@@ -28,8 +35,10 @@ public class OpeningScene : MonoBehaviour
             sound.Play();
             if (start >= lines.Length-1)
             {
+                if(endLoopMusic)
+                    Core.GeneralMusic.loop = false;
                 text.text = "";
-                scene.SetActive(false);
+                this.gameObject.SetActive(false);
                 return;
             }
             text.text = lines[start];

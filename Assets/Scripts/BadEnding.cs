@@ -7,11 +7,9 @@ public class BadEnding : MonoBehaviour
 {
     public Core Core;
     private float PlayerHeight;
+    public GameObject CarEnding;
     public UnityEngine.UI.Image BadEndingScreen;
-    public UnityEngine.UI.Image GoodEndingScreen;
-    public UnityEngine.UI.Image GreatEndingScreen;
     public UnityEngine.UI.Image Background;
-    public AudioSource m_MyAudioSource;
     public AudioSource CarAudio;
     private UnityEngine.UI.Image screen;
     private bool isHidden;
@@ -24,7 +22,6 @@ public class BadEnding : MonoBehaviour
         delay = Time.realtimeSinceStartup;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (leaving)
@@ -40,42 +37,34 @@ public class BadEnding : MonoBehaviour
                 tempColor.a += 0.002f;
                 Background.color = tempColor;
                 delay = t;
-                if (screen.color.a>250)
+                if (screen.color.a > 250)
                 {
                     this.gameObject.SetActive(false);
                 }
             }
         }
-    }
-    void FixedUpdate()
-    {
-        if (Core.ProgressManager.noteFound && !leaving && isCloseToPlayer(transform))
-        {
-            Core.Description.text = "Drive Home";
-            isHidden = false;
-            if (Input.GetButton("Pick Up"))
-            {
-                if (Core.ProgressManager.secondRecordingListened)
-                {
-                    if (Core.ProgressManager.vanSabotaged)
-                        screen = GreatEndingScreen;
-                    else
-                        screen = GoodEndingScreen;
-                }
-                else
-                    screen = BadEndingScreen;
-                leaving = true;
-                CarAudio.Play();
-                m_MyAudioSource.Play();
-                Core.DeathHUD.SetActive(true);
-            }
-        }
         else
         {
-            if (!isHidden)
+            if (Core.ProgressManager.noteFound && !leaving && isCloseToPlayer(transform))
             {
-                Core.Description.text = "";
-                isHidden = true;
+                Core.Description.text = "Drive Home";
+                isHidden = false;
+                if (Input.GetButton("Pick Up"))
+                {
+                    CarEnding.SetActive(true);
+                    screen = BadEndingScreen;
+                    leaving = true;
+                    CarAudio.Play();
+                    Core.DeathHUD.SetActive(true);
+                }
+            }
+            else
+            {
+                if (!isHidden)
+                {
+                    Core.Description.text = "";
+                    isHidden = true;
+                }
             }
         }
     }

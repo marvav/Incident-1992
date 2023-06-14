@@ -11,8 +11,6 @@ public class monsterFollow : MonoBehaviour
     public Light flashlight;
     public Transform followTransform;
     public GameObject death;
-    public GameObject deathControls;
-    public AudioSource DeathMusic;
     public AudioSource Sound;
     public AudioSource Damage;
     public AudioClip[] audioClips;
@@ -49,10 +47,9 @@ public class monsterFollow : MonoBehaviour
                 Core.Hurt(4);
                 if(Core.PlayerHP <= 0)
                 {
-                    DeathMusic.Play();
                     Time.timeScale = 0;
                     death.SetActive(true);
-                    deathControls.SetActive(true);
+                    Core.DeathHUD.SetActive(true);
                     ToggleCursor();
                     return;
                 }

@@ -37,7 +37,7 @@ public class PlayerMovementDen : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
+    public bool grounded;
 
     public Transform orientation;
 
@@ -48,14 +48,14 @@ public class PlayerMovementDen : MonoBehaviour
     Rigidbody rb;
 
     private float currentStamina;
-    private bool staminaDrained;
+    public bool staminaDrained = false;
+    public bool isSprinting = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
-        staminaDrained = false;
         currentStamina = stamina;
 
         readyToJump = true;
@@ -85,6 +85,7 @@ public class PlayerMovementDen : MonoBehaviour
         speed = moveSpeed + verticalInput * moveSpeed * speedCoeficient;
         if (Input.GetKey(sprintKey) && verticalInput >= 0.2f && !staminaDrained)
         {
+            isSprinting = true;
             if (currentStamina > 0)
             {
                 currentStamina -= Time.deltaTime;
@@ -96,6 +97,8 @@ public class PlayerMovementDen : MonoBehaviour
                 staminaPanting.Play();
             }
         }
+        else
+            isSprinting = false;
         if (staminaDrained)
         {
             speed *= staminaDrainedMultiplier;
@@ -165,5 +168,10 @@ public class PlayerMovementDen : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    public bool isMoving()
+    {
+        return horizontalInput+verticalInput> 0;
     }
 }

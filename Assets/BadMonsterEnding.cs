@@ -41,6 +41,7 @@ public class BadMonsterEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(followTransform.position);
         if (follow)
         {
             distance = Vector3.Distance(followTransform.position, transform.position);

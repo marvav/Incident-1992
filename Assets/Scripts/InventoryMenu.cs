@@ -8,6 +8,7 @@ using static Inventory;
 
 public class InventoryMenu : MonoBehaviour
 {
+    public Core Core;
     public GameObject EscapeMenu;
     public GameObject Inventory_Object;
     public GameObject Archive;
@@ -16,8 +17,8 @@ public class InventoryMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Icon_positions = new List<Vector3> {new Vector3(-910,-420,0), new Vector3(-840,-420,0) , new Vector3(-770,-420,0) ,
-                                            new Vector3(-910,-490,0) , new Vector3(-840,-490,0) , new Vector3(-770,-490,0) };
+        Icon_positions = new List<Vector3> {new Vector3(-860,-370,0), new Vector3(-795,-370,0) , new Vector3(-720,-370,0) ,
+                                            new Vector3(-860,-450,0) , new Vector3(-795,-450,0) , new Vector3(-720,-450,0) };
     }
 
     // Update is called once per frame
@@ -55,6 +56,7 @@ public class InventoryMenu : MonoBehaviour
                 ToggleOnInventory();
                 Time.timeScale = 0;
             }
+            Core.Description.text = "";
         }
     }
     public void ToggleOnInventory()

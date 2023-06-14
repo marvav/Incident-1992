@@ -44,9 +44,11 @@ public class Encounter : MonoBehaviour
                     Core.Hurt(5);
                     if (Core.PlayerHP <= 0)
                     {
+                        Core.DeathHUD.SetActive(true);
                         death.SetActive(true);
                         Time.timeScale = 0;
                         ToggleCursor();
+                        this.gameObject.SetActive(false);
                     }
                     return;
                 }
@@ -64,7 +66,7 @@ public class Encounter : MonoBehaviour
         }
         else
             {
-                if (isCloseToPlayer(transform, 20) && !WalkieTalkie.isPlaying && rand.Next(0,500)==1)
+                if (isCloseToPlayer(transform, 20) && !WalkieTalkie.isPlaying && rand.Next(0,2000)==1)
                 {
                     ShootHim.SetActive(true);
                     gun.Play();

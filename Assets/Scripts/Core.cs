@@ -21,6 +21,7 @@ public class Core : MonoBehaviour
     public GameObject NoteText;
     public TMP_Text Description;
     public AudioSource GeneralAudio;
+    public AudioSource GeneralMusic;
     public AudioSource PickUpSound;
     public AudioSource DeathSound;
     public ProgressManager ProgressManager;

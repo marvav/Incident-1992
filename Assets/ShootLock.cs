@@ -9,27 +9,23 @@ public class ShootLock : MonoBehaviour
     public GameObject ObjectToMove;
     public ProgressManager ProgressManager;
     public GameObject MovedObject;
-    public string NeededItem;
     public string message;
     public string messageCannot;
     public AudioSource sound;
     public Core Core;
-    private bool isHidden;
-    void Start()
-    {
-        isHidden = true;
-    }
+    private bool isHidden = true;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (isCloseToPlayer(transform))
         {
             Core.Description.text = message;
-            if (Inventory.InHand == NeededItem && Input.GetMouseButtonDown(0))
+            if (Inventory.InHand == "Revolver" && Input.GetMouseButtonDown(0))
             {
                 if(ProgressManager.ammoAquired)
                 {
+                    Inventory.Remove("Ammo");
                     Core.Description.text = "";
                     sound.Play();
                     MovedObject.SetActive(true);

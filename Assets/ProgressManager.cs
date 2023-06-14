@@ -12,6 +12,7 @@ public class ProgressManager : MonoBehaviour
     public GameObject encounters;
     public GameObject murder;
     public GameObject van;
+    public GameObject wellEntrance;
     public monsterFollow monsterStats;
     public VoiceRecordings recordings;
     public AudioClip second_recording;
@@ -33,6 +34,8 @@ public class ProgressManager : MonoBehaviour
     const int CAVE_UNLOCKED = 14;
     const int VAN_SABOTAGED = 15;
     const int KNIFE_FOUND = 13;
+    const int ROPE_FOUND = 16;
+    const int WELL_ENTERED = 17;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -51,6 +54,8 @@ public class ProgressManager : MonoBehaviour
     public bool carIsBurned = false;
     public bool ammoAquired = false;
     public bool vanSabotaged = false;
+    public bool ropeFound = true;
+    public bool wellEntered = true;
 
     public void changeObjective(int id)
     {
@@ -125,6 +130,15 @@ public class ProgressManager : MonoBehaviour
         {
             vanSabotaged = true;
         }
+        if (id == ROPE_FOUND)
+        {
+            ropeFound = true;
+            wellEntrance.SetActive(true);
+        }
+        if (id == WELL_ENTERED && !wellEntered)
+        {
+            wellEntered = true;
+        }
     }
 
 
@@ -132,13 +146,13 @@ public class ProgressManager : MonoBehaviour
     {
         string result = "";
         if (!noteFound)
-            result += "I should hurry up to see my friends!\n\n";
+            result += "I should hurry up to the Hájenka cabin. I don't want to miss the reunion. It's somewhere on the blue trail.\n\n";
 
         if(noteFound && !firstRecordingListened)
             result += "I can't believe they argued and left this fast... Maybe they can't be helped\n\n";
 
         if (lockedCaveFound)
-            result += "The Hájenka cave is locked, but there is light inside?!\n\n";
+            result += "There is a light on in Hájenka cave. Someone must have been inside recently!\n\n";
 
         if (lostFlashlightFound)
             result += "Can someone be in such a hurry to lose a flashlight at night?\n\n";
@@ -179,6 +193,12 @@ public class ProgressManager : MonoBehaviour
             result += "My car is burned down... \n\n";
         if (vanSabotaged)
             result += "I cut their tires open. Now they can't just run away\n\n";
+        if (ropeFound&& !wellEntered)
+        {
+            result += "I've found rope with other climbing equipment. Maybe I could descend somewhere?!\n\n";
+        }
+        if (wellEntered)
+            result += "Who would have thought the old well was secret entrance?! I bet no-one was there for at least 500 years! Except for David I guess...\n\n";
         return result;
     }
 }
