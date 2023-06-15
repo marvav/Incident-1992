@@ -7,13 +7,14 @@ public class monsterFollow : MonoBehaviour
 {
     public Core Core;
     CharacterController charControl;
-    public MeshRenderer eyes;
+    public GameObject eyes;
     public Light flashlight;
     public Transform followTransform;
     public GameObject death;
     public AudioSource Sound;
     public AudioSource Damage;
     public AudioClip[] audioClips;
+    public Animation animation;
 
     public int speed;
     public float gravityScale;
@@ -100,12 +101,15 @@ public class monsterFollow : MonoBehaviour
                     Sound.Play();
                 }
             }
-            eyes.enabled = true;
+            eyes.SetActive(true);
+            animation.Play("monster_final");
         }
         else
         {
-            eyes.enabled = !flashlight.enabled;
+            eyes.SetActive(!flashlight.enabled);
             isClose = false;
+            if (flashlight.enabled && animation.IsPlaying("monster_final")) animation.Stop("monster_final");
+            else if (!animation.IsPlaying("monster_final")) animation.Play("monster_final");
         }
     }
     void Move()
