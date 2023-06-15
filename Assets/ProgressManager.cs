@@ -36,6 +36,9 @@ public class ProgressManager : MonoBehaviour
     const int KNIFE_FOUND = 13;
     const int ROPE_FOUND = 16;
     const int WELL_ENTERED = 17;
+    const int BURNED_CASETTES_FOUND = 20;
+    const int CASETTE_FOUND = 18;
+    const int CASETTE_PLAYED = 19;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -56,6 +59,9 @@ public class ProgressManager : MonoBehaviour
     public bool vanSabotaged = false;
     public bool ropeFound = false;
     public bool wellEntered = false;
+    public bool casetteFound = false;
+    public bool casettePlayed = false;
+    public bool burnedCasettesFound = false;
 
     public void changeObjective(int id)
     {
@@ -139,6 +145,15 @@ public class ProgressManager : MonoBehaviour
         {
             wellEntered = true;
         }
+        if (id == CASETTE_FOUND && !casetteFound)
+            casetteFound = true;
+        if (id == CASETTE_PLAYED && !casettePlayed)
+        {
+            casettePlayed = true;
+            monster.SetActive(true);
+        }
+        if(id== BURNED_CASETTES_FOUND && !burnedCasettesFound)
+            burnedCasettesFound = true;
     }
 
 
@@ -197,6 +212,12 @@ public class ProgressManager : MonoBehaviour
             result += "I've found rope with other climbing equipment. Maybe I could descend somewhere?!\n\n";
         if (wellEntered)
             result += "Who would have thought the old well was secret entrance?! I bet no-one was there for at least 500 years! Except for David I guess...\n\n";
+        if (casetteFound && !casettePlayed)
+            result += "I found mysterious casette in David's car player. I need to find a way to listen to it.\n\n";
+        if (casettePlayed && !wellEntered)
+            result += "Oh my God, what was David talking about?! Qui?! Ancient entrance hidden in plain sight? Secret excavation site?!\n\n";
+        if (burnedCasettesFound && !casettePlayed)
+            result += "Someone burned a lot of casettes near David's cabin. Why?!\n\n";
         return result;
     }
 }

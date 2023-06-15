@@ -5,11 +5,12 @@ using UnityEngine;
 public class LoadingScreen : MonoBehaviour
 {
     public AudioSource sound;
+    public GameObject screen;
     void Update()
     {
         if (!sound.isPlaying)
-        {
-            this.gameObject.SetActive(false);
-        }
+            screen.SetActive(false);
+        else
+            screen.SetActive(true);
     }
 }

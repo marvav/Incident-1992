@@ -14,15 +14,19 @@ public class InteractionTeleport : MonoBehaviour
     public float range = 2.0f;
     public Core Core;
     private bool isHidden = true;
+    private bool isActive = false;
     public GameObject Destination;
+    public AudioSource MovementSound;
 
-    void Update()
+    void FixedUpdate()
     {
         if (isCloseToPlayer(transform, range))
         {
             Core.Description.text = message;
             if ((!itemNeeded || Inventory.InHand == NeededItem.name) && Input.GetMouseButtonDown(0))
             {
+                MovementSound.Play();
+                Core.Player.transform.position = Destination.transform.position;
                 if (destroyAfterUse && itemNeeded)
                 {
                     Inventory.InHand = "";
@@ -30,9 +34,7 @@ public class InteractionTeleport : MonoBehaviour
                     NeededItem.SetActive(false);
                 }
                 Core.Description.text = "";
-                Player.transform.position = Destination.transform.position;
-                if (loadingScreen != null)
-                    loadingScreen.SetActive(true);
+                return;
             }
             isHidden = false;
         }

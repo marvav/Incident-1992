@@ -12,13 +12,12 @@ public class InventoryMenu : MonoBehaviour
     public GameObject EscapeMenu;
     public GameObject Inventory_Object;
     public GameObject Archive;
-    public GameObject Note;
     private List<Vector3> Icon_positions;
     // Start is called before the first frame update
     void Start()
     {
         Icon_positions = new List<Vector3> {new Vector3(-860,-370,0), new Vector3(-795,-370,0) , new Vector3(-720,-370,0) ,
-                                            new Vector3(-860,-450,0) , new Vector3(-795,-450,0) , new Vector3(-720,-450,0) };
+                                            new Vector3(-860,-450,0) , new Vector3(-795,-450,0) , new Vector3(-720,-450,0) , new Vector3(-645,-450,0)};
     }
 
     // Update is called once per frame
@@ -93,7 +92,7 @@ public class InventoryMenu : MonoBehaviour
 
     public void ToggleOffInventory()
     {
-        Note.SetActive(false);
+        Core.Note.SetActive(false);
         Inventory_Object.SetActive(false);
         foreach(GameObject child in CountChildren(Inventory_Object))
             child.gameObject.SetActive(false);

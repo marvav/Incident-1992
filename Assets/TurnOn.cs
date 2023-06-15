@@ -25,8 +25,11 @@ public class TurnOn : MonoBehaviour
             {
                 if (!isClicked)
                 {
-                    if(objToTurnOff!=null)
+                    if (objToTurnOff != null)
+                    {
                         objToTurnOff.SetActive(false);
+                    }
+                    Core.Click.SetActive(false);
                     isOn = !isOn;
                     isClicked = true;
                     obj.SetActive(isOn);

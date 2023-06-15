@@ -11,7 +11,7 @@ public class EndingLoadScene : MonoBehaviour
     public Core Core;
     public TMP_Text text;
     public AudioSource sound;
-    public AudioSource descentSound;
+    public AudioSource LoadingScreen;
     public GameObject Teleport;
     public string[] lines;
     private int start = 1;
@@ -20,6 +20,7 @@ public class EndingLoadScene : MonoBehaviour
     void Start()
     {
         text.text = lines[0];
+        LoadingScreen.Play();
     }
     void Update()
     {
@@ -28,7 +29,6 @@ public class EndingLoadScene : MonoBehaviour
             sound.Play();
             if (start >= lines.Length - 1)
             {
-                descentSound.Play();
                 text.text = "";
                 Core.Player.transform.position = Teleport.transform.position;
                 this.gameObject.SetActive(false);

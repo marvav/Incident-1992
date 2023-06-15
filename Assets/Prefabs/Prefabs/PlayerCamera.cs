@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerCamera : MonoBehaviour
 {
     public GameObject grabber;
-    public Slider sensitivitySlider;
     public float sensetivityX, sensetivityY = 100f;
     public Transform orientation;
     public bool clamp;
