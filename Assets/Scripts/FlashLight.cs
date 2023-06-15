@@ -6,6 +6,7 @@ using TMPro;
 public class FlashLightComponent : MonoBehaviour
 {
     public AudioClip[] audioClips;
+    public AudioSource buzzing;
     private AudioSource Sound;
     public System.Random rand;
     public int start_flicker_at;
@@ -30,55 +31,20 @@ public class FlashLightComponent : MonoBehaviour
         Sound = GetComponent<AudioSource>();
         rand = new System.Random();
     }
-    void FixedUpdate()
-    {
-        if (FlashLight.enabled)
-        {
-            if (power > 0 && rand.Next(0, 1000) < dischargeSpeed)
-            {
-                power -= 1;
-                //Debug.Log(power);
-            }
-        }
-        if (power < flashlight_dies_at)
-        {
-            NearLight.intensity = 0;
-            FlashLight.intensity = 0;
-            LongDistanceFlashLight.intensity = 0;
-            return;
-        }
-        if (power < start_flicker_at && rand.Next(0, 2000) == 1)
-        {
-            //Debug.Log("Started flickering");
-            isFlickering = true;
-        }
-        if(isFlickering)
-        {
-            int random = rand.Next(0, 5000);
-            if (random > 4500)
-            {
-                setIntensity();
-            }
-            if(random < 10)
-            {
-                Debug.Log("Stopped flickering");
-                isFlickering = false;
-            }
-        }
-    }
     void switchLight()
     {
         bodyLight.enabled = !bodyLight.enabled;
         NearLight.enabled = !NearLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
-        AmbientLight.enabled = !AmbientLight.enabled;
+        //AmbientLight.enabled = !AmbientLight.enabled;
         LongDistanceFlashLight.enabled = !LongDistanceFlashLight.enabled;
     }
-    void setIntensity()
+    void setIntensity(float number)
     {
-        NearLight.intensity = rand.Next(0, (int)nearLight_intensity);
-        FlashLight.intensity = rand.Next(0, (int)original_intensity);
-        LongDistanceFlashLight.intensity = rand.Next(0, (int)LongDistance_intensity);
+        Debug.Log(number);
+        NearLight.intensity = nearLight_intensity * number;
+        FlashLight.intensity = original_intensity * number;
+        LongDistanceFlashLight.intensity = LongDistance_intensity * number;
     }
     void Update()
     {
@@ -93,12 +59,49 @@ public class FlashLightComponent : MonoBehaviour
             isFlickering = false;
             switchLight();
         }
+
+        if (FlashLight.enabled)
+        {
+            if (power > 0 && rand.Next(0, 1000) < dischargeSpeed)
+            {
+                power -= 1;
+                //Debug.Log(power);
+            }
+        }
+        if (power < flashlight_dies_at)
+        {
+            NearLight.intensity = 0;
+            FlashLight.intensity = 0;
+            LongDistanceFlashLight.intensity = 0;
+            bodyLight.enabled = false;
+            return;
+        }
+        if (flashlight_dies_at < power && power < start_flicker_at && rand.Next(0, 2000) == 1)
+        {
+            Debug.Log("Started flickering");
+            buzzing.Play();
+            isFlickering = true;
+        }
+        if (isFlickering)
+        {
+            int random = rand.Next(3, 10);
+            int chance = rand.Next(1, 5000);
+            if(chance >4500)
+                setIntensity((float)random / 10);
+            if (chance <10)
+            {
+                buzzing.Pause();
+                Debug.Log("Stoped flickering");
+                isFlickering = false;
+            }
+        }
     }
     public void Restore_Capacity()
     {
         NearLight.intensity = nearLight_intensity;
         FlashLight.intensity = original_intensity;
         LongDistanceFlashLight.intensity = LongDistance_intensity;
+        bodyLight.enabled = true;
         if (power > 50)
             power = 100;
         else

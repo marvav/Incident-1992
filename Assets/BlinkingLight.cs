@@ -15,7 +15,7 @@ public class BlinkingLight : MonoBehaviour
         light = GetComponent<Light>();
         rand = new System.Random();
     }
-    void FixedUpdate()
+    void Update()
     {
         if (!isFlickering && rand.Next(0, blinking_intensity) == 1)
         {
