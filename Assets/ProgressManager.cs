@@ -142,9 +142,7 @@ public class ProgressManager : MonoBehaviour
             wellEntrance.SetActive(true);
         }
         if (id == WELL_ENTERED && !wellEntered)
-        {
             wellEntered = true;
-        }
         if (id == CASETTE_FOUND && !casetteFound)
             casetteFound = true;
         if (id == CASETTE_PLAYED && !casettePlayed)
@@ -208,7 +206,7 @@ public class ProgressManager : MonoBehaviour
             result += "My car is burned down... \n\n";
         if (vanSabotaged)
             result += "I cut their tires open. Now they can't just run away\n\n";
-        if (ropeFound&& !wellEntered)
+        if (ropeFound && !wellEntered)
             result += "I've found rope with other climbing equipment. Maybe I could descend somewhere?!\n\n";
         if (wellEntered)
             result += "Who would have thought the old well was secret entrance?! I bet no-one was there for at least 500 years! Except for David I guess...\n\n";

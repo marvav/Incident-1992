@@ -22,7 +22,7 @@ public class EndingLoadScene : MonoBehaviour
         text.text = lines[0];
         LoadingScreen.Play();
     }
-    void Update()
+    void FixedUpdate()
     {
         if (isHidden && Input.GetMouseButtonDown(0))
         {
