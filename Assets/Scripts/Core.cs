@@ -32,7 +32,7 @@ public class Core : MonoBehaviour
         delay = Time.realtimeSinceStartup;
         RenderSettings.ambientLight = new Color(startingGamma, startingGamma, startingGamma, 1.0f);
     }
-    void FixedUpdate()
+    void Update()
     {
         if (PlayerHP < PlayerMaxHP && Time.realtimeSinceStartup-delay > 15)
         {

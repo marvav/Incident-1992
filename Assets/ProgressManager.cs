@@ -164,16 +164,13 @@ public class ProgressManager : MonoBehaviour
         if(noteFound && !firstRecordingListened)
             result += "I can't believe they argued and left this fast... Maybe they can't be helped\n\n";
 
-        if (lockedCaveFound)
+        if (lockedCaveFound && !ropeFound)
             result += "There is a light on in Hájenka cave. Someone must have been inside recently!\n\n";
-
-        if (lostFlashlightFound)
-            result += "Can someone be in such a hurry to lose a flashlight at night?\n\n";
 
         if (monsterFound)
             result += "I feel... breeze, shivers down my spine and... presence? Like in a horror movie before the action happens.\n\n";
 
-        if (cabinBroken)
+        if (cabinBroken && !firstRecordingListened)
             result += "David's cabin looks somewhat empty... and tidy?\n\n";
         if (tracksFound && !campFound)
             result += "There are fresh tire tracks in the grass near camp site.\n\n";
@@ -191,7 +188,7 @@ public class ProgressManager : MonoBehaviour
 
         if (campFound && !secondRecordingListened)
             result += "I stole a walkie talkie from the creepy camp I found. Maybe I'll hear someone talking.\n\n";
-        if (encounterSurvived)
+        if (encounterSurvived && !vanSabotaged)
             result += "The killers have a van out there. Why don't they just leave?\n\n";
 
         if (firstRecordingListened && !encounterSurvived)
@@ -213,7 +210,7 @@ public class ProgressManager : MonoBehaviour
         if (casetteFound && !casettePlayed)
             result += "I found mysterious casette in David's car player. I need to find a way to listen to it.\n\n";
         if (casettePlayed && !wellEntered)
-            result += "Oh my God, what was David talking about?! Qui?! Ancient entrance hidden in plain sight? Secret excavation site?!\n\n";
+            result += "Oh my God, what was David talking about?! Excavation?! Ice Singing Lady? Entrace hidden with contaminated water note. He can't be serious\n\n";
         if (burnedCasettesFound && !casettePlayed)
             result += "Someone burned a lot of casettes near David's cabin. Why?!\n\n";
         return result;

@@ -13,6 +13,7 @@ public class EndingLoadScene : MonoBehaviour
     public AudioSource sound;
     public AudioSource LoadingScreen;
     public GameObject Teleport;
+    public GameObject WellRegularEntrance;
     public string[] lines;
     private int start = 1;
     private bool isHidden = true;
@@ -31,6 +32,7 @@ public class EndingLoadScene : MonoBehaviour
             {
                 text.text = "";
                 Core.Player.transform.position = Teleport.transform.position;
+                WellRegularEntrance.SetActive(true);
                 this.gameObject.SetActive(false);
                 return;
             }
