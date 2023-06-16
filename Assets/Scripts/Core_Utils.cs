@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public static class Core_Utils
 {
     public static GameObject Player = GameObject.Find("Player");
+    public static System.Random rand = new System.Random();
 
     public static List<GameObject> CountChildren(GameObject Object)
     {

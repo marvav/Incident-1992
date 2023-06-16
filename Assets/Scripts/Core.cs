@@ -22,6 +22,7 @@ public class Core : MonoBehaviour
     public TMP_Text Description;
     public AudioSource GeneralAudio;
     public AudioSource GeneralMusic;
+    public AudioSource VoiceOver;
     public AudioSource PickUpSound;
     public AudioSource DeathSound;
     public ProgressManager ProgressManager;

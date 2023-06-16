@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class VoiceRecordings : MonoBehaviour
 {
@@ -8,14 +9,8 @@ public class VoiceRecordings : MonoBehaviour
     public AudioSource Sound;
     public AudioSource audioClip;
     public AudioClip recording;
-    public System.Random rand;
     public int progressNumber;
     private bool wasPlayed = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rand = new System.Random();
-    }
 
     // Update is called once per frame
     void Update()

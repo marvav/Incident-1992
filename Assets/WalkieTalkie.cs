@@ -4,33 +4,45 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using static Core_Utils;
 
-public class WalkieTalkie : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class WalkieTalkie : MonoBehaviour
 {
-    public string text;
-    public GameObject walkieTalkie;
     public Core Core;
+    public ProgressManager ProgressManager;
+    public AudioSource buzzingSource;
+    public AudioClip[] Buzz;
+    public AudioClip[] VoiceOver;
+    private int index = 0;
+    private int progressNumber;
+    private bool wasPlayed = true;
+    private List<GameObject> recordings;
 
-    public void OnPointerClick(PointerEventData eventData)
+    void Start()
     {
-        int clickCount = eventData.clickCount;
+        recordings = CountChildren(this.gameObject);
+    }
 
-        if (clickCount == 2)
+    void Update()
+    {
+        if(!wasPlayed && !buzzingSource.isPlaying && rand.Next(0,2000) == 1)
         {
-            Core.Description.text = "";
-            if(walkieTalkie.activeSelf)
-                walkieTalkie.SetActive(false);
-            else
-                walkieTalkie.SetActive(true);
+            buzzingSource.clip = Buzz[rand.Next(0, Buzz.Length)];
+            buzzingSource.Play();
+            Core.VoiceOver.clip = VoiceOver[rand.Next(0, VoiceOver.Length)];
+            Core.VoiceOver.Play();
         }
     }
 
-    public void OnPointerEnter(PointerEventData pointerEventData)
+    public void NewRecording(int newProgressNumber)
     {
-        Core.Description.text = text;
+        progressNumber = newProgressNumber;
+        wasPlayed = false;
+        index++;
     }
 
-    public void OnPointerExit(PointerEventData pointerEventData)
+    public void PlayRecording()
     {
-        Core.Description.text = "";
+        wasPlayed = true;
+        recordings[index].SetActive(true);
+        ProgressManager.changeObjective(progressNumber);
     }
 }
