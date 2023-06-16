@@ -11,6 +11,7 @@ public class monsterFollow : MonoBehaviour
     public Light flashlight;
     public Transform followTransform;
     public GameObject death;
+    public AudioSource buzzing;
     public AudioSource Sound;
     public AudioSource Damage;
     public AudioClip[] audioClips;
@@ -37,7 +38,7 @@ public class monsterFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(follow)
         {
@@ -66,9 +67,18 @@ public class monsterFollow : MonoBehaviour
             Debug.Log(distance);
             if (distance > respawnDistance)
             {
-                if(rand.Next(0,100) == 1) //Chance to spawn directly behind player
+                if(rand.Next(0,50) == 1) //Chance to spawn directly behind player
                 {
-                    transform.position = followTransform.position + new Vector3(-50, 0, 0);
+                    int random = rand.Next(0, 4);
+                    if(random == 0)
+                        transform.position = followTransform.position + new Vector3(-50, 0, 0);
+                    if(random == 1)
+                        transform.position = followTransform.position + new Vector3(-40, 0, -20);
+                    if (random == 2)
+                        transform.position = followTransform.position + new Vector3(-20, 0, -40);
+                    if (random == 3)
+                        transform.position = followTransform.position + new Vector3(0, 0, -50);
+                    buzzing.Pause();
                 }
                 else //Spawns on one of locations
                 {
@@ -87,7 +97,9 @@ public class monsterFollow : MonoBehaviour
     {
         if (distance < revealDistance)
         {
-            if(!isClose)
+            if (!buzzing.isPlaying)
+                buzzing.Play();
+            if (!isClose)
             {
                 Sound.clip = audioClips[rand.Next(0, audioClips.Length)];
                 Sound.Play();

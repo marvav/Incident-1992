@@ -11,23 +11,13 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
 {
     public Core Core;
     public GameObject ArchiveUI;
+    public GameObject CloseTouchScreen;
     private List<GameObject> icons;
-    private bool isOpen;
+    private bool isOpen = false;
 
     public void Start()
     {
         icons = CountChildren(ArchiveUI);
-        isOpen = false;
-    }
-    public void Update()
-    {
-        if(isOpen && Input.GetButton("Pick Up"))
-        {
-            ArchiveUI.SetActive(false);
-            Core.Description.text = "";
-            Core.Note.SetActive(false);
-            isOpen = false;
-        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -36,16 +26,17 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
 
         if (clickCount == 1)
         {
-            for (int i = 0; i<icons.Count;i++)
+            isOpen = !isOpen;
+            for (int i = 0; i < icons.Count; i++)
             {
                 if (Notes[i] == null)
                     break;
-                icons[i].SetActive(true);
+                icons[i].SetActive(isOpen);
             }
-            ArchiveUI.SetActive(true);
+            CloseTouchScreen.SetActive(isOpen);
+            ArchiveUI.SetActive(isOpen);
             Core.Description.text = "";
             Core.Note.SetActive(false);
-            isOpen = true;
         }
     }
 }

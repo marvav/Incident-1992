@@ -7,7 +7,7 @@ public class BadMonsterEnding : MonoBehaviour
 {
     public Core Core;
     CharacterController charControl;
-    public MeshRenderer eyes;
+    public GameObject eyes;
     public Light flashlight;
     public GameObject knife;
     public Transform playerTransform;
@@ -95,11 +95,11 @@ public class BadMonsterEnding : MonoBehaviour
                     Sound.Play();
                 }
             }
-            eyes.enabled = true;
+            eyes.SetActive(true);
         }
         else
         {
-            eyes.enabled = !flashlight.enabled;
+            eyes.SetActive(!flashlight.enabled);
             isClose = false;
         }
     }
