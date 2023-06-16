@@ -29,6 +29,7 @@ public class monsterFollow : MonoBehaviour
     private System.Random rand;
     private float distance;
     private bool isClose;
+    private bool messaging = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,11 +59,20 @@ public class monsterFollow : MonoBehaviour
             }
             if(distance < messageDistance)
             {
-                Core.ProgressManager.monsterFound = true;
-                if (rand.Next(0, 50) == 1)
-                    Core.Description.text = messages[rand.Next(0, messages.Length)];
-                else
-                    Core.Description.text = "";
+                if (messaging)
+                {
+                    Core.ProgressManager.monsterFound = true;
+                    if (rand.Next(0, 50) == 1)
+                        Core.Description.text = messages[rand.Next(0, messages.Length)];
+                    else
+                        Core.Description.text = "";
+                }
+            }
+            else
+            {
+                messaging = true;
+                if (!buzzing.isPlaying)
+                    buzzing.Play();
             }
             Debug.Log(distance);
             if (distance > respawnDistance)
@@ -79,6 +89,7 @@ public class monsterFollow : MonoBehaviour
                     if (random == 3)
                         transform.position = followTransform.position + new Vector3(0, 0, -50);
                     buzzing.Pause();
+                    messaging = false;
                 }
                 else //Spawns on one of locations
                 {
@@ -97,6 +108,7 @@ public class monsterFollow : MonoBehaviour
     {
         if (distance < revealDistance)
         {
+            messaging = true;
             if (!buzzing.isPlaying)
                 buzzing.Play();
             if (!isClose)

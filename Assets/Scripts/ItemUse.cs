@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 using static Inventory;
+using static Core_Utils;
 
 
 public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
@@ -30,6 +31,8 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
                 {
                     Inventory.InHand = gameObject.name;
                     Core.Inventory.SetActive(false);
+                    Time.timeScale = 1;
+                    ToggleCursor();
                 }
                 else
                     Inventory.InHand = "";

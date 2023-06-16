@@ -5,7 +5,6 @@ using UnityEngine;
 public class TriggerEnd : MonoBehaviour
 {
     public Core Core;
-    public GameObject GoodMonster;
     public GameObject BadMonster;
     public GameObject ropeExit;
     public GameObject Rope;
@@ -30,7 +29,7 @@ public class TriggerEnd : MonoBehaviour
     }
     void Update()
     {
-        if (!banditShout.isPlaying)
+        if (Core.ProgressManager.vanSabotaged && !banditShout.isPlaying)
         {
             deadBandit.SetActive(true);
         }
