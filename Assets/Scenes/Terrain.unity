@@ -4481,7 +4481,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fca37174e9c847c4ba6e6f7a09daccb1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.194
+  m_Volume: 0.105
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20011,6 +20011,54 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &655794310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655794311}
+  - component: {fileID: 655794312}
+  m_Layer: 10
+  m_Name: Recording1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &655794311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655794310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 154856555}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655794312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655794310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b50ac9d063f7648bb7198e7abcfdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  source: {fileID: 1149954007}
+  subtitles: []
+  subtitlesTimes: []
 --- !u!1 &656371302
 GameObject:
   m_ObjectHideFlags: 0
@@ -36809,6 +36857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149954006}
   - component: {fileID: 1149954007}
+  - component: {fileID: 1149954008}
   m_Layer: 10
   m_Name: Recordings
   m_TagString: Untagged
@@ -36927,6 +36976,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1149954008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149954005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b50ac9d063f7648bb7198e7abcfdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  source: {fileID: 1149954007}
+  subtitles:
+  - Hey, Riese
+  - I just got back to our camp and the spare radio is missing
+  - Looks like someone has been looking through our stuff
+  - Are you keeping an eye on our man?! OVER
+  - I..I lost him at the cabin
+  - I'm not sure he drove back as we intended...
+  - What?! AND YOU'RE TELLING ME JUST LIKE THAT
+  - WHAT THE HELL ARE WE GONNA DO
+  - If he went through our stuff he might be onto something
+  - WHAT IF HE'S LISTENING RIGHT NOW?!
+  - Meet me at point 2
+  - We gotta sort him out. OVER
+  subtitlesTimes:
+  - 0
+  - 1.7
+  - 5
+  - 7
+  - 10.5
+  - 14
+  - 18.5
+  - 20
+  - 21.5
+  - 22.5
+  - 25
+  - 27
 --- !u!1 &1150665390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2625469258158646515, guid: ea020817ede262442ae95963297f1058, type: 3}
@@ -47629,6 +47718,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72cff75b08ea66a4ebeab481fee8ae1c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1149954006}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72cff75b08ea66a4ebeab481fee8ae1c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 655794311}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72cff75b08ea66a4ebeab481fee8ae1c, type: 3}
       insertIndex: -1
@@ -47795,7 +47887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1484279821
 RectTransform:
   m_ObjectHideFlags: 0
