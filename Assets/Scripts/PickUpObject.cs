@@ -14,7 +14,7 @@ public class PickUpItem : MonoBehaviour
     public int clueID = 0;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (isCloseToPlayer(transform, range))
         {
@@ -22,7 +22,8 @@ public class PickUpItem : MonoBehaviour
             Core.PickUpItem.SetActive(true);
             if (Input.GetButton("Pick Up"))
             {
-                if(isClue)
+                Core.Description.text = "";
+                if (isClue)
                     Core.ProgressManager.changeObjective(clueID);
                 Item item = new Item(this.gameObject.name);
                 Inventory.Add(item);

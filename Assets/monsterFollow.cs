@@ -17,7 +17,7 @@ public class monsterFollow : MonoBehaviour
     public AudioClip[] audioClips;
     public Animation animation;
 
-    public int speed;
+    public float speed;
     public float gravityScale;
     public bool follow;
     public int messageDistance;

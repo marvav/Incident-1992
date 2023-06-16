@@ -33,7 +33,7 @@ public class FlashLightComponent : MonoBehaviour
     }
     void switchLight()
     {
-        bodyLight.enabled = !bodyLight.enabled;
+        bodyLight.enabled = !NearLight.enabled;
         NearLight.enabled = !NearLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
         //AmbientLight.enabled = !AmbientLight.enabled;
