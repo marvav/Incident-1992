@@ -98,6 +98,7 @@ public class FlashLightComponent : MonoBehaviour
     }
     public void Restore_Capacity()
     {
+        isFlickering = false;
         NearLight.intensity = nearLight_intensity;
         FlashLight.intensity = original_intensity;
         LongDistanceFlashLight.intensity = LongDistance_intensity;

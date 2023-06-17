@@ -9,17 +9,13 @@ public class ReadableNote : MonoBehaviour
     public Core Core;
     public string title;
     public string content;
+    public float range = 0.5f;
     public int clueID;
-    private bool isHidden;
+    private bool isHidden = true;
     private bool inArchive;
-    // Start is called before the first frame update
-    void Start()
-    {
-        isHidden = true;
-    }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (isCloseToPlayer(transform))
         {

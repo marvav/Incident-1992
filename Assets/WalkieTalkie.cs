@@ -46,8 +46,8 @@ public class WalkieTalkie : MonoBehaviour
                     recordings[index].SetActive(true);
                     wasPlayed = true;
                     recordingIsHappening = false;
-                    if (index == recordings.Count-1)
-                        this.gameObject.SetActive(false);
+                    //if (index == recordings.Count-1)
+                        //this.gameObject.SetActive(false);
                 }
                 else
                     timer += Time.deltaTime;
