@@ -7,7 +7,7 @@ using static Core_Utils;
 public class PickUpItem : MonoBehaviour
 {
     public Core Core;
-    public float range = 2.0f;
+    public float range = 1.0f;
     private float PlayerHeight;
     private bool isHidden = true;
     public bool isClue;

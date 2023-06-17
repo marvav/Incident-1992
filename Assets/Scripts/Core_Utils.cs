@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public static class Core_Utils
 {
     public static GameObject Player = GameObject.Find("Player");
+    public static GameObject HoldPoint = GameObject.Find("HoldPoint");
     public static System.Random rand = new System.Random();
 
     public static List<GameObject> CountChildren(GameObject Object)
@@ -33,10 +34,19 @@ public static class Core_Utils
 
     public static bool isCloseToPlayer(Transform current)
     {
-        return Vector3.Distance(current.position + new Vector3(0, 1, 0), Player.transform.position) < 2;
+        return Vector3.Distance(current.position, Player.transform.position) < 2;
     }
     public static bool isCloseToPlayer(Transform current, float distance)
     {
-        return Vector3.Distance(current.position + new Vector3(0, 1, 0), Player.transform.position) < distance;
+        return Vector3.Distance(current.position, Player.transform.position) < distance;
+
+    }
+    public static bool isCloseToHoldPoint(Transform current)
+    {
+        return Vector3.Distance(current.position, HoldPoint.transform.position) < 1;
+    }
+    public static bool isCloseToHoldPoint(Transform current, float distance)
+    {
+        return Vector3.Distance(current.position, HoldPoint.transform.position) < distance;
     }
 }
