@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Core_Utils;
+using static Inventory;
 
 public class Encounter : MonoBehaviour
 {
     public Core Core;
-    public AudioSource WalkieTalkie;
     public bool isWithCar;
     public GameObject death;
     public GameObject encounter;
@@ -19,12 +19,6 @@ public class Encounter : MonoBehaviour
     public AudioClip[] gunshots;
     private bool isHappening = false;
     private int counter = 0;
-    public System.Random rand;
-
-    void Start()
-    {
-        rand = new System.Random();
-    }
 
     void Update()
     {
@@ -66,7 +60,7 @@ public class Encounter : MonoBehaviour
         }
         else
             {
-                if (isCloseToPlayer(transform, 20) && !WalkieTalkie.isPlaying && rand.Next(0,1500)==1)
+                if (isCloseToPlayer(transform, 20) && Inventory.InHand != "WalkieTalkie" && rand.Next(0,1500)==1)
                 {
                     ShootHim.SetActive(true);
                     gun.Play();

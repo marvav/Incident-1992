@@ -19,6 +19,7 @@ public class Core : MonoBehaviour
     public GameObject Click;
     public GameObject Note;
     public GameObject NoteText;
+    public TMP_Text Subtitles;
     public TMP_Text Description;
     public AudioSource GeneralAudio;
     public AudioSource GeneralMusic;

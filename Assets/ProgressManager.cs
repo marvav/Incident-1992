@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProgressManager : MonoBehaviour
 {
     public Core Core;
+    public GameObject WalkieTalkie;
     public GameObject dummyDoor;
     public GameObject ClosedDoor;
     public GameObject knife;
@@ -14,8 +15,7 @@ public class ProgressManager : MonoBehaviour
     public GameObject van;
     public GameObject wellEntrance;
     public monsterFollow monsterStats;
-    public VoiceRecordings recordings;
-    public AudioClip second_recording;
+    public WalkieTalkie recordings;
     public int fasterMonsterSpeed = 3;
 
     const int START = 0;
@@ -95,6 +95,7 @@ public class ProgressManager : MonoBehaviour
         if(id== RADIO_FOUND && !campFound)
         {
             monster.SetActive(true);
+            WalkieTalkie.SetActive(true);
             if (!knifeFound)
             {
                 knife.SetActive(true);
@@ -113,7 +114,7 @@ public class ProgressManager : MonoBehaviour
         }
         if (id == ENCOUNTER_SURVIVED)
         {
-            recordings.NewRecording(second_recording,10);
+            recordings.NextRecording();
             encounterSurvived = true;
             monsterStats.speed = fasterMonsterSpeed;
         }

@@ -8,32 +8,49 @@ public class AudioWithSubtitles : MonoBehaviour
     public AudioSource source;
     public string[] subtitles;
     public float[] subtitlesTimes;
-    private int index = 0;
-    private float timer = 0.0f;
-    private bool wasPlayed = false;
+    public bool isClue;
+    public ProgressManager ProgressManager;
+    public int progressNumber;
+    private int index;
+    private float timer;
+    private bool isPaused = false;
 
     void Start()
     {
         source.Play();
+        timer = 0.0f;
+        index = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (source.isPlaying)
+        if(Time.timeScale == 0)
         {
-            timer += Time.deltaTime;
-            if(index < subtitles.Length && timer > subtitlesTimes[index])
+            source.Pause();
+            isPaused = true;
+            return;
+        }
+        if (source.isPlaying || isPaused)
+        {
+            if (isPaused)
             {
-                Core.Description.text = subtitles[index];
+                isPaused = false;
+                source.UnPause();
+            }
+            timer += Time.deltaTime;
+            if (index < subtitles.Length && timer > subtitlesTimes[index])
+            {
+                Core.Subtitles.text = subtitles[index];
                 index++;
             }
 
         }
         else
         {
-            Core.Description.text = "";
+            if (isClue)
+                ProgressManager.changeObjective(progressNumber);
+            Core.Subtitles.text = "";
             this.gameObject.SetActive(false);
         }
     }
