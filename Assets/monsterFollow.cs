@@ -7,6 +7,7 @@ public class monsterFollow : MonoBehaviour
 {
     public Core Core;
     CharacterController charControl;
+    public GameObject monsterSubtitles;
     public GameObject eyes;
     public Light flashlight;
     public Transform followTransform;
@@ -23,27 +24,24 @@ public class monsterFollow : MonoBehaviour
     public int messageDistance;
     public int revealDistance;
     public int respawnDistance;
-    public string[] messages;
     public Vector3[] spawnPlaces;
 
-    private System.Random rand;
     private float distance;
-    private bool isClose;
+    private bool isClose = false;
     private bool messaging = true;
     // Start is called before the first frame update
     void Start()
     {
         charControl = gameObject.GetComponent<CharacterController>();
-        rand = new System.Random();
-        isClose = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(follow)
         {
             distance = Vector3.Distance(followTransform.position, transform.position);
+            monsterSubtitles.SetActive(messaging && distance < messageDistance);
             if (distance < 1 && rand.Next(0, 25) == 1)
             {
                 Damage.Play();
@@ -57,24 +55,17 @@ public class monsterFollow : MonoBehaviour
                     return;
                 }
             }
-            if(distance < messageDistance)
-            {
-                if (messaging)
-                {
-                    Core.ProgressManager.monsterFound = true;
-                    if (rand.Next(0, 50) == 1)
-                        Core.Description.text = messages[rand.Next(0, messages.Length)];
-                    else
-                        Core.Description.text = "";
-                }
-            }
+            if (distance < messageDistance)
+                Core.ProgressManager.monsterFound = true;
             else
             {
                 messaging = true;
                 if (!buzzing.isPlaying)
                     buzzing.Play();
             }
+
             Debug.Log(distance);
+
             if (distance > respawnDistance)
             {
                 if(rand.Next(0,50) == 1) //Chance to spawn directly behind player
@@ -97,9 +88,7 @@ public class monsterFollow : MonoBehaviour
                 }
             }
             else
-            {
                 Move();
-            }
             ChangeVisibility(distance);
         }
     }
@@ -141,6 +130,11 @@ public class monsterFollow : MonoBehaviour
         charControl.Move(transform.up * gravityScale * Time.deltaTime);
         transform.LookAt(followTransform);
         charControl.Move(transform.forward * Time.deltaTime * speed);
+    }
+
+    public int GetMonsterDistance()
+    {
+        return (int) distance;
     }
 
 }

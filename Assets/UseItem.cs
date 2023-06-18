@@ -22,11 +22,11 @@ public class UseItem : MonoBehaviour
         if (isCloseToPlayer(transform, range))
         {
             Core.Description.text = message;
-            if ((!itemNeeded || Inventory.InHand == NeededItem.name) && Input.GetMouseButtonDown(0))
+            if ((!itemNeeded || Inventory.InHand == NeededItem) && Input.GetMouseButtonDown(0))
             {
                 if (destroyAfterUse && itemNeeded)
                 {
-                    Inventory.InHand = "";
+                    Inventory.InHand = null;
                     Inventory.Remove(NeededItem.name);
                     NeededItem.SetActive(false);
                 }

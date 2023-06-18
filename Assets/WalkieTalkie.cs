@@ -41,7 +41,7 @@ public class WalkieTalkie : MonoBehaviour
             }
             if (recordingIsHappening)
             {
-                if (Inventory.InHand == "WalkieTalkie")
+                if (Inventory.InHand!=null && Inventory.InHand.name == "WalkieTalkie")
                 {
                     recordings[index].SetActive(true);
                     wasPlayed = true;

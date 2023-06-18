@@ -60,7 +60,7 @@ public class Encounter : MonoBehaviour
         }
         else
             {
-                if (isCloseToPlayer(transform, 20) && Inventory.InHand != "WalkieTalkie" && rand.Next(0,1500)==1)
+                if (isCloseToPlayer(transform, 20) && rand.Next(0,1500)==1)
                 {
                     ShootHim.SetActive(true);
                     gun.Play();

@@ -20,24 +20,21 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
         if (clickCount == 2)
         {
             Core.PickUpSound.Play();
-            if (isHidden && Inventory.InHand!="")
+            if (Inventory.InHand != null && Inventory.InHand.name == ItemInHand.name)
             {
-                Core.Description.text = "I can't hold more items at once";
+                Inventory.InHand.SetActive(false);
+                Inventory.InHand = null;
             }
             else
             {
-                ItemInHand.SetActive(isHidden);
-                if (isHidden)
-                {
-                    Inventory.InHand = gameObject.name;
-                    Core.Inventory.SetActive(false);
-                    Time.timeScale = 1;
-                    ToggleCursor();
-                }
-                else
-                    Inventory.InHand = "";
-                isHidden = !isHidden;
-                Core.Description.text = "";
+                if(Inventory.InHand != null)
+                    Inventory.InHand.SetActive(false);
+
+                ItemInHand.SetActive(true);
+                Inventory.InHand = ItemInHand;
+                Core.Inventory.SetActive(false);
+                Time.timeScale = 1;
+                ToggleCursor();
             }
         }
     }
