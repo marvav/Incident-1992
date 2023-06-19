@@ -17,7 +17,7 @@ public class PickUpItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (renderer.isVisible && isCloseToPlayer(transform, range) && CanInteract(this.gameObject, range))
+        if (renderer.isVisible && CanInteract(this.gameObject, range))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);

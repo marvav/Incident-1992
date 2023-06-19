@@ -9,6 +9,7 @@ public static class Core_Utils
     public static GameObject HoldPoint = GameObject.Find("HoldPoint");
     public static GameObject Camera = GameObject.Find("Main Camera");
     public static System.Random rand = new System.Random();
+    public static int interactionMask = ~(1 << 8);
 
     public static List<GameObject> CountChildren(GameObject Object)
     {
@@ -40,15 +41,15 @@ public static class Core_Utils
     }
     public static bool CanInteract(GameObject current, float distance)
     {
-        int layerMask = 1 << 8;
-        layerMask = ~layerMask;
-        RaycastHit coverHit;
-        Vector3 direction = (current.transform.position - Camera.transform.position).normalized;
-        Debug.DrawRay(Camera.transform.position, direction, Color.green);
-        if (Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, layerMask))
+        //Debug.DrawRay(Camera.transform.position, direction, Color.green);
+        if(isCloseToPlayer(current.transform, distance))
         {
-            Debug.Log(coverHit.collider.gameObject.name);
-            return coverHit.collider.gameObject.name == current.name;
+            RaycastHit coverHit;
+            Vector3 direction = (current.transform.position - Camera.transform.position).normalized;
+            if (Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, interactionMask))
+            {
+                return coverHit.collider.gameObject.name == current.name;
+            }
         }
         return false;
     }

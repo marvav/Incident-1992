@@ -11,13 +11,14 @@ public class ToggleObject : MonoBehaviour
     public GameObject objToSwap;
     public float range = 2;
     public bool isOn = false;
+    public Renderer renderer;
     private bool isHidden = true;
     private bool isClicked = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform, range))
+        if (renderer.isVisible && CanInteract(this.gameObject, range))
         {
             isHidden = false;
             Core.Click.SetActive(true);
