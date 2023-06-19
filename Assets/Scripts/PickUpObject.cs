@@ -7,16 +7,17 @@ using static Core_Utils;
 public class PickUpItem : MonoBehaviour
 {
     public Core Core;
-    public float range = 0.7f;
+    public float range = 1.0f;
     private float PlayerHeight;
     private bool isHidden = true;
     public bool isClue;
     public int clueID = 0;
+    public Renderer renderer;
 
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform, range) && CanInteract(this.gameObject, range))
+        if (renderer.isVisible && isCloseToPlayer(transform, range) && CanInteract(this.gameObject, range))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);

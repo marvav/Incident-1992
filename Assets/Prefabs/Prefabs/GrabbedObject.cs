@@ -7,12 +7,13 @@ public class GrabbedObject : MonoBehaviour
 {
     public GameObject HoldIcon;
     public GrabbingController GrabbingController;
-    public bool collideWithPlayer=false;
+    public bool collideWithPlayer = false;
     private bool isHidden = true;
+    public Renderer renderer;
 
     void FixedUpdate()
     {
-        if (!GrabbingController.isHolding() && isCloseToPlayer(transform, 2.0f) && CanInteract(this.gameObject, 2.0f))
+        if (renderer.isVisible && !GrabbingController.isHolding() && isCloseToPlayer(transform, 2.0f) && CanInteract(this.gameObject, 2.0f))
         {
             isHidden = false;
             HoldIcon.SetActive(true);
