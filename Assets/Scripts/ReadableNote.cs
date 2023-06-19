@@ -10,13 +10,14 @@ public class ReadableNote : MonoBehaviour
     public string content;
     public float range = 1.0f;
     public int clueID;
+    public Renderer renderer;
     private bool isHidden = true;
     private bool inArchive;
 
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform, range) && CanInteract(this.gameObject, range))
+        if (renderer.isVisible && isCloseToPlayer(transform, range) && CanInteract(this.gameObject, range))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);
