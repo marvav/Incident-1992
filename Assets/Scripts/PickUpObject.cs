@@ -8,7 +8,6 @@ public class PickUpItem : MonoBehaviour
 {
     public Core Core;
     public float range = 0.7f;
-    public Renderer renderer;
     private float PlayerHeight;
     private bool isHidden = true;
     public bool isClue;
@@ -17,7 +16,7 @@ public class PickUpItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform, range) && renderer.isVisible)
+        if (isCloseToPlayer(transform, range) && CanInteract(this.gameObject, range))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);

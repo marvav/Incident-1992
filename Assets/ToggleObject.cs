@@ -8,6 +8,7 @@ public class ToggleObject : MonoBehaviour
     public Core Core;
     public AudioClip sound;
     public GameObject obj;
+    public GameObject objToSwap;
     public float range = 2;
     public bool isOn = false;
     private bool isHidden = true;
@@ -28,6 +29,8 @@ public class ToggleObject : MonoBehaviour
                     isOn = !isOn;
                     isClicked = true;
                     obj.SetActive(isOn);
+                    if(objToSwap!=null)
+                        objToSwap.SetActive(!isOn);
                     Core.GeneralAudio.clip = sound;
                     Core.GeneralAudio.Play();
                 }

@@ -7,9 +7,8 @@ using static Archive;
 public class ReadableNote : MonoBehaviour
 {
     public Core Core;
-    public string title;
     public string content;
-    public float range = 0.5f;
+    public float range = 1.0f;
     public int clueID;
     private bool isHidden = true;
     private bool inArchive;
@@ -17,7 +16,7 @@ public class ReadableNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform))
+        if (isCloseToPlayer(transform, range) && CanInteract(this.gameObject, range))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);
@@ -27,7 +26,7 @@ public class ReadableNote : MonoBehaviour
                 Core.Note.SetActive(true);
                 Core.PickUpItem.SetActive(false);
                 Core.ProgressManager.changeObjective(clueID);
-                Archive.Add(new NoteItem(title, content));
+                Archive.Add(new NoteItem(this.gameObject.name, content));
                 this.gameObject.SetActive(false);
                 return;
             }

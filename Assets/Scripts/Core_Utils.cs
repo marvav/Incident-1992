@@ -7,6 +7,7 @@ public static class Core_Utils
 {
     public static GameObject Player = GameObject.Find("Player");
     public static GameObject HoldPoint = GameObject.Find("HoldPoint");
+    public static GameObject Camera = GameObject.Find("Main Camera");
     public static System.Random rand = new System.Random();
 
     public static List<GameObject> CountChildren(GameObject Object)
@@ -38,12 +39,21 @@ public static class Core_Utils
     }
     public static bool isCloseToPlayer(Transform current, float distance)
     {
-        return Vector3.Distance(current.position, Player.transform.position) < distance;
+        return Vector3.Distance(current.position, Camera.transform.position) < distance;
 
     }
-    public static bool CanInteract(Transform current, float distance)
+    public static bool CanInteract(GameObject current, float distance)
     {
-        return Vector3.Distance(current.position, HoldPoint.transform.position) < distance;
-            //Physics.Linecast(Player.transform.position, HoldPoint.transform.position);
+        int layerMask = 1 << 8;
+        layerMask = ~layerMask;
+        RaycastHit coverHit;
+        Vector3 direction = (current.transform.position - Camera.transform.position).normalized;
+        Debug.DrawRay(Camera.transform.position, direction, Color.green);
+        if (Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, layerMask))
+        {
+            Debug.Log(coverHit.collider.gameObject.name);
+            return coverHit.collider.gameObject.name == current.name;
+        }
+        return false;
     }
 }
