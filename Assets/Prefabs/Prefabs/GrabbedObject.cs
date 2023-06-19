@@ -12,7 +12,7 @@ public class GrabbedObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!GrabbingController.isHolding() && isCloseToPlayer(transform))
+        if (!GrabbingController.isHolding() && isCloseToPlayer(transform, 2.0f) && CanInteract(this.gameObject, 2.0f))
         {
             isHidden = false;
             HoldIcon.SetActive(true);

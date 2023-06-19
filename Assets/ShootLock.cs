@@ -18,7 +18,7 @@ public class ShootLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform))
+        if (isCloseToPlayer(transform, 2))
         {
             Core.Description.text = message;
             if (Inventory.InHand.name == "Revolver" && Input.GetMouseButtonDown(0))

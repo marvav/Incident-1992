@@ -45,7 +45,7 @@ public class BadEnding : MonoBehaviour
         }
         else
         {
-            if (Core.ProgressManager.noteFound && !leaving && isCloseToPlayer(transform))
+            if (Core.ProgressManager.noteFound && !leaving && isCloseToPlayer(transform, 2))
             {
                 Core.Description.text = "Drive Home";
                 isHidden = false;

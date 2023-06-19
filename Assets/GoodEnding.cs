@@ -11,7 +11,7 @@ public class GoodEnding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform))
+        if (isCloseToPlayer(transform, 2))
         {
             Time.timeScale = 0;
             screen.SetActive(true);

@@ -33,10 +33,6 @@ public static class Core_Utils
         Cursor.visible = !Cursor.visible;
     }
 
-    public static bool isCloseToPlayer(Transform current)
-    {
-        return Vector3.Distance(current.position, Player.transform.position) < 2;
-    }
     public static bool isCloseToPlayer(Transform current, float distance)
     {
         return Vector3.Distance(current.position, Camera.transform.position) < distance;
