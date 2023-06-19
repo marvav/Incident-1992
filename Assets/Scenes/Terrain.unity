@@ -12890,7 +12890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -12940,9 +12940,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 359832979}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 359832978}
   m_SourcePrefab: {fileID: 100100000, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
 --- !u!4 &359832976 stripped
 Transform:
@@ -12954,22 +12951,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
   m_PrefabInstance: {fileID: 359832975}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &359832978
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 359832977}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1236607f21ed9f04ba92a01ec5d01c7b, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 8bfbe18d36fc8c44c95a4032e54f77ef, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!65 &359832979
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18500,7 +18481,7 @@ Transform:
   - {fileID: 1291396293}
   m_Father: {fileID: 1257810788}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.27703857, z: 0}
 --- !u!111 &532688722
 Animation:
   m_ObjectHideFlags: 0
@@ -48644,9 +48625,9 @@ Animation:
   m_GameObject: {fileID: 1373637228}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 8bfbe18d36fc8c44c95a4032e54f77ef, type: 2}
+  m_Animation: {fileID: 7400000, guid: 1236607f21ed9f04ba92a01ec5d01c7b, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 8bfbe18d36fc8c44c95a4032e54f77ef, type: 2}
+  - {fileID: 7400000, guid: 1236607f21ed9f04ba92a01ec5d01c7b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -50294,7 +50275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1430996125
 Transform:
   m_ObjectHideFlags: 0
