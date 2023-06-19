@@ -41,12 +41,9 @@ public static class Core_Utils
         return Vector3.Distance(current.position, Player.transform.position) < distance;
 
     }
-    public static bool isCloseToHoldPoint(Transform current)
-    {
-        return Vector3.Distance(current.position, HoldPoint.transform.position) < 1;
-    }
-    public static bool isCloseToHoldPoint(Transform current, float distance)
+    public static bool CanInteract(Transform current, float distance)
     {
         return Vector3.Distance(current.position, HoldPoint.transform.position) < distance;
+            //Physics.Linecast(Player.transform.position, HoldPoint.transform.position);
     }
 }

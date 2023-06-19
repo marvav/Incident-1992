@@ -8,11 +8,7 @@ public class GrabbedObject : MonoBehaviour
     public GameObject HoldIcon;
     public GrabbingController GrabbingController;
     public bool collideWithPlayer=false;
-    private bool isHidden;
-    void Start()
-    {
-        isHidden = true;
-    }
+    private bool isHidden = true;
 
     void FixedUpdate()
     {
