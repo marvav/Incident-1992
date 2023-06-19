@@ -26,19 +26,19 @@ RenderSettings:
   m_AmbientIntensity: 0.01
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.15045369, g: 0.0177821, b: 0.3490566, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 319c124941dfbdf4da047d0c72925dc8, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9af600df10430d74e9f068032f651ce2, type: 2}
   m_HaloStrength: 0
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 256
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000028020142, g: 0.00002904576, b: 0.00023538785, a: 1}
+  m_IndirectSpecularColor: {r: 0.002378374, g: 0.0016290583, b: 0.00398093, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -64234,7 +64234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &1935621064
 TerrainCollider:
   m_ObjectHideFlags: 0
