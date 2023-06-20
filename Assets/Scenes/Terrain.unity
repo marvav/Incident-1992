@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00033791657, g: 0.0002580574, b: 0.0005027982, a: 1}
+  m_IndirectSpecularColor: {r: 0.00033953707, g: 0.00025716098, b: 0.0005019875, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18581,7 +18581,7 @@ Transform:
   - {fileID: 1291396293}
   m_Father: {fileID: 1257810788}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0.27703857, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &532688722
 Animation:
   m_ObjectHideFlags: 0
@@ -18594,8 +18594,9 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 52d78c3bd92e9fd40a09bd0bba9af18e, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 52d78c3bd92e9fd40a09bd0bba9af18e, type: 2}
+  - {fileID: 7400000, guid: 97552651b9cf2644fa16882e85973c46, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &538138129
@@ -46095,22 +46096,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 2, z: 1.3}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!111 &1291396296
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291396292}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1236607f21ed9f04ba92a01ec5d01c7b, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 8bfbe18d36fc8c44c95a4032e54f77ef, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1291946155
 GameObject:
   m_ObjectHideFlags: 0
@@ -54833,9 +54818,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1291396295}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1291396296}
   m_SourcePrefab: {fileID: 100100000, guid: a872fe7316a8ed747b67433655556eb5, type: 3}
 --- !u!1 &1547994875
 GameObject:
