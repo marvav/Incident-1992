@@ -15,7 +15,7 @@ public class Description3D : MonoBehaviour
 
     void Update()
     {
-        if (renderer.isVisible && CanInteract(this.gameObject, range))
+        if ((renderer != null && renderer.isVisible) && CanInteract(this.gameObject, range))
         {
             if (isHidden)
             {

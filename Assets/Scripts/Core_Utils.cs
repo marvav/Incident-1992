@@ -41,13 +41,14 @@ public static class Core_Utils
     }
     public static bool CanInteract(GameObject current, float distance)
     {
-        //Debug.DrawRay(Camera.transform.position, direction, Color.green);
         if(isCloseToPlayer(current.transform, distance))
         {
             RaycastHit coverHit;
             Vector3 direction = (current.transform.position - Camera.transform.position).normalized;
+            Debug.DrawRay(Camera.transform.position, direction, Color.green);
             if (Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, interactionMask))
             {
+                Debug.Log(coverHit.collider.gameObject.name);
                 return coverHit.collider.gameObject.name == current.name;
             }
         }
