@@ -39,6 +39,7 @@ public class ProgressManager : MonoBehaviour
     const int BURNED_CASETTES_FOUND = 20;
     const int CASETTE_FOUND = 18;
     const int CASETTE_PLAYED = 19;
+    const int RADIO_EQUIPMENT_FOUND = 21;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -62,6 +63,7 @@ public class ProgressManager : MonoBehaviour
     public bool casetteFound = false;
     public bool casettePlayed = false;
     public bool burnedCasettesFound = false;
+    public bool radioEquipmentFound = false;
 
     public void changeObjective(int id)
     {
@@ -153,6 +155,8 @@ public class ProgressManager : MonoBehaviour
         }
         if(id== BURNED_CASETTES_FOUND && !burnedCasettesFound)
             burnedCasettesFound = true;
+        if (id == RADIO_EQUIPMENT_FOUND && !radioEquipmentFound)
+            radioEquipmentFound = true;
     }
 
 
@@ -214,6 +218,8 @@ public class ProgressManager : MonoBehaviour
             result += "Oh my God, what was David talking about?! Excavation?! Ice Singing Lady? Entrace hidden with contaminated water note. He can't be serious\n\n";
         if (burnedCasettesFound && !casettePlayed)
             result += "Someone burned a lot of casettes near David's cabin. Why?!\n\n";
+        if (radioEquipmentFound && !casettePlayed)
+            result += "There is radio equipment in the station on the hill. But it needs electricity\n\n";
         return result;
     }
 }

@@ -10,11 +10,12 @@ public class Description3D : MonoBehaviour
     public float range = 2.0f;
     public bool isClue;
     public int clueID = 0;
+    public Renderer renderer;
     private bool isHidden = true;
 
     void Update()
     {
-        if (isCloseToPlayer(transform, range))
+        if (renderer.isVisible && CanInteract(this.gameObject, range))
         {
             if (isHidden)
             {
