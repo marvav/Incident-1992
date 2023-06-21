@@ -2,13 +2,13 @@ using UnityEngine;
 using System.Collections;
 using System;
 using TMPro;
+using static Core_Utils;
 
 public class FlashLightComponent : MonoBehaviour
 {
     public AudioClip[] audioClips;
     public AudioSource buzzing;
     private AudioSource Sound;
-    public System.Random rand;
     public int start_flicker_at;
     public Light LongDistanceFlashLight;
     public Light FlashLight;
@@ -29,7 +29,6 @@ public class FlashLightComponent : MonoBehaviour
         LongDistance_intensity = LongDistanceFlashLight.intensity;
         bodyLight_intensity = bodyLight.intensity;
         Sound = GetComponent<AudioSource>();
-        rand = new System.Random();
     }
     void switchLight()
     {
