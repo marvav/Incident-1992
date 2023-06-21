@@ -9,16 +9,14 @@ public class ToggleObject : MonoBehaviour
     public AudioClip sound;
     public GameObject obj;
     public GameObject objToSwap;
-    public float range = 2;
     public bool isOn = false;
-    public Renderer renderer;
     private bool isHidden = true;
     private bool isClicked = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (renderer.isVisible && CanInteract(this.gameObject, range))
+        if (CanInteract(this.gameObject, 1.0f, 35.0f))
         {
             isHidden = false;
             Core.Click.SetActive(true);

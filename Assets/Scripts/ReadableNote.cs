@@ -8,16 +8,14 @@ public class ReadableNote : MonoBehaviour
 {
     public Core Core;
     public string content;
-    public float range = 1.0f;
     public int clueID;
-    public Renderer renderer;
     private bool isHidden = true;
     private bool inArchive;
 
     // Update is called once per frame
     void Update()
     {
-        if (renderer.isVisible && CanInteract(this.gameObject, range))
+        if (CanInteract(this.gameObject, 1.0f, 35.0f))
         {
             isHidden = false;
             Core.PickUpItem.SetActive(true);
@@ -29,7 +27,6 @@ public class ReadableNote : MonoBehaviour
                 Core.ProgressManager.changeObjective(clueID);
                 Archive.Add(new NoteItem(this.gameObject.name, content));
                 this.gameObject.SetActive(false);
-                return;
             }
         }
         else

@@ -7,6 +7,7 @@ public static class Core_Utils
 {
     public static GameObject Player = GameObject.Find("Player");
     public static GameObject HoldPoint = GameObject.Find("HoldPoint");
+    public static GameObject Hand = GameObject.Find("Hand");
     public static GameObject Camera = GameObject.Find("Main Camera");
     public static System.Random rand = new System.Random();
     public static int interactionMask = ~(1 << 8);
@@ -36,17 +37,22 @@ public static class Core_Utils
 
     public static bool isCloseToPlayer(Transform current, float distance)
     {
-        return Vector3.Distance(current.position, Camera.transform.position) < distance;
+        return Vector3.Distance(current.position, Hand.transform.position) < distance;
 
     }
-    public static bool CanInteract(GameObject current, float distance)
+
+
+    public static bool CanInteract(GameObject current, float distance, float angle)
     {
         if(isCloseToPlayer(current.transform, distance))
         {
             RaycastHit coverHit;
             Vector3 direction = (current.transform.position - Camera.transform.position).normalized;
-            Debug.DrawRay(Camera.transform.position, direction, Color.green);
-            if (Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, interactionMask))
+            Vector3 directionHold = (Hand.transform.position - Camera.transform.position).normalized;
+            //Debug.DrawRay(Camera.transform.position, directionHold, Color.green);
+            //Debug.DrawRay(Camera.transform.position, direction, Color.green);
+            //Debug.Log(Vector3.Angle(direction, directionHold));
+            if (Vector3.Angle(direction, directionHold) <= angle && Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, interactionMask))
             {
                 Debug.Log(coverHit.collider.gameObject.name);
                 return coverHit.collider.gameObject.name == current.name;

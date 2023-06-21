@@ -8,21 +8,19 @@ public class Description3D : MonoBehaviour
     public Core Core;
     public string text;
     public float range = 2.0f;
-    public bool isClue;
+    public float angle = 90.0f;
     public int clueID = 0;
-    public Renderer renderer;
     private bool isHidden = true;
 
     void Update()
     {
-        if ((renderer != null && renderer.isVisible) && CanInteract(this.gameObject, range))
+        if (CanInteract(this.gameObject, range, angle))
         {
             if (isHidden)
             {
                 Core.Description.text = text;
                 isHidden = false;
-                if(isClue)
-                    Core.ProgressManager.changeObjective(clueID);
+                Core.ProgressManager.changeObjective(clueID);
             }
         }
         else

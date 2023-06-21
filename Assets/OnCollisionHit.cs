@@ -9,6 +9,7 @@ public class OnCollisionHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Core.Hurt(damage);
+        if(collision.gameObject.tag=="Player")
+            Core.Hurt(damage);
     }
 }
