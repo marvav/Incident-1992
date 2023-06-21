@@ -9,10 +9,10 @@ public class WalkieTalkie : MonoBehaviour
 {
     public Core Core;
     public float availableTime;
+    public int eventChance;
     public AudioSource buzzingSource;
     public AudioClip[] Buzz;
     public AudioClip[] VoiceOver;
-    public int eventChance;
     private int index = 0;
     private float timer = 0;
     private bool wasPlayed = false;

@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class BlinkingLight : MonoBehaviour
 {
     public int blinking_intensity;
     public int intensity;
-    public System.Random rand;
     private Light light;
     private bool isFlickering;
 
     void Start()
     {
         light = GetComponent<Light>();
-        rand = new System.Random();
     }
     void Update()
     {

@@ -10,7 +10,6 @@ public class ReadableNote : MonoBehaviour
     public string content;
     public int clueID;
     private bool isHidden = true;
-    private bool inArchive;
 
     // Update is called once per frame
     void Update()

@@ -12,14 +12,13 @@ public class UseItem : MonoBehaviour
     public bool destroyAfterUse = false;
     public GameObject NeededItem;
     public string message;
-    public float range = 2.0f;
     public Core Core;
     private bool isHidden = true;
 
     // Update is called once per frame
     void Update()
     {
-        if (isCloseToPlayer(transform, range))
+        if (CanInteract(this.gameObject, 2.0f, 35.0f))
         {
             Core.Description.text = message;
             if ((!itemNeeded || Inventory.InHand == NeededItem) && Input.GetMouseButtonDown(0))

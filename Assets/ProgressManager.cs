@@ -40,6 +40,7 @@ public class ProgressManager : MonoBehaviour
     const int CASETTE_FOUND = 18;
     const int CASETTE_PLAYED = 19;
     const int RADIO_EQUIPMENT_FOUND = 21;
+    const int HOLE_FOUND = 24;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -64,6 +65,7 @@ public class ProgressManager : MonoBehaviour
     public bool casettePlayed = false;
     public bool burnedCasettesFound = false;
     public bool radioEquipmentFound = false;
+    public bool holeFound = false;
 
     public void changeObjective(int id)
     {
@@ -157,6 +159,8 @@ public class ProgressManager : MonoBehaviour
             burnedCasettesFound = true;
         if (id == RADIO_EQUIPMENT_FOUND && !radioEquipmentFound)
             radioEquipmentFound = true;
+        if(id == HOLE_FOUND && !holeFound)
+            holeFound = true;
     }
 
 
@@ -170,7 +174,7 @@ public class ProgressManager : MonoBehaviour
             result += "I can't believe they argued and left this fast... Maybe they can't be helped\n\n";
 
         if (lockedCaveFound && !ropeFound)
-            result += "There is a light on in Hájenka cave. Someone must have been inside recently!\n\n";
+            result += "There is a light on in Hájenka cave. Someone must have been there recently!\n\n";
 
         if (monsterFound)
             result += "I feel... breeze, shivers down my spine and... presence? Like in a horror movie before the action happens.\n\n";
@@ -220,6 +224,10 @@ public class ProgressManager : MonoBehaviour
             result += "Someone burned a lot of casettes near David's cabin. Why?!\n\n";
         if (radioEquipmentFound && !casettePlayed)
             result += "There is radio equipment in the station on the hill. But it needs electricity\n\n";
+        if (lostFlashlightFound && !holeFound)
+            result += "Someone must have been in such a hurry he lost a flashlight at night\n\n";
+        if (holeFound)
+            result += "Someone have been digging near David's cabin very recently\n\n";
         return result;
     }
 }
