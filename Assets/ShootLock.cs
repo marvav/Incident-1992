@@ -21,7 +21,7 @@ public class ShootLock : MonoBehaviour
         if (isCloseToPlayer(transform, 2))
         {
             Core.Description.text = message;
-            if (Inventory.InHand.name == "Revolver" && Input.GetMouseButtonDown(0))
+            if (Inventory.InHand!=null && Inventory.InHand.name == "Revolver" && Input.GetMouseButtonDown(0))
             {
                 if(ProgressManager.ammoAquired)
                 {
