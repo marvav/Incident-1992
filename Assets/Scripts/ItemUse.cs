@@ -11,7 +11,6 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     public string text;
     public GameObject ItemInHand;
     public Core Core;
-    private bool isHidden = true;
 
     public void OnPointerClick(PointerEventData eventData)
     {

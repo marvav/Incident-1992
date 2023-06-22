@@ -12,6 +12,7 @@ public class TriggerEnd : MonoBehaviour
     public GameObject bandit;
     public GameObject deadBandit;
     public AudioSource banditShout;
+    private bool wasActivated;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +26,15 @@ public class TriggerEnd : MonoBehaviour
         {
             ropeExit.SetActive(false);
             BadMonster.SetActive(true);
+            BadMonster.transform.position = new Vector3(436.7f, -16.7f, 635.4f);
         }
     }
     void Update()
     {
-        if (Core.ProgressManager.vanSabotaged && !banditShout.isPlaying)
+        if (!wasActivated && Core.ProgressManager.vanSabotaged && !banditShout.isPlaying)
         {
             deadBandit.SetActive(true);
+            wasActivated = true;
         }
     }
 }

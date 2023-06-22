@@ -41,6 +41,7 @@ public class ProgressManager : MonoBehaviour
     const int CASETTE_PLAYED = 19;
     const int RADIO_EQUIPMENT_FOUND = 21;
     const int HOLE_FOUND = 24;
+    const int REVOLVER_USED = 23;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -66,6 +67,7 @@ public class ProgressManager : MonoBehaviour
     public bool burnedCasettesFound = false;
     public bool radioEquipmentFound = false;
     public bool holeFound = false;
+    public bool revolverUsed = false;
 
     public void changeObjective(int id)
     {
@@ -161,6 +163,7 @@ public class ProgressManager : MonoBehaviour
             radioEquipmentFound = true;
         if(id == HOLE_FOUND && !holeFound)
             holeFound = true;
+        revolverUsed = id == REVOLVER_USED && !revolverUsed;
     }
 
 
@@ -189,7 +192,7 @@ public class ProgressManager : MonoBehaviour
             result += "Having a gun is nice, but I'm missing an ammo\n\n";
         if (ammoAquired && !revolverFound)
             result += "Having ammo is nice, but I'm missing a gun\n\n";
-        if (ammoAquired && revolverFound)
+        if (ammoAquired && revolverFound && !revolverUsed)
             result += "My revolver is now loaded\n\n";
 
         if (knifeFound)

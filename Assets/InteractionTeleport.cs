@@ -14,7 +14,6 @@ public class InteractionTeleport : MonoBehaviour
     public float range = 2.0f;
     public Core Core;
     private bool isHidden = true;
-    private bool isActive = false;
     public GameObject Destination;
     public AudioSource MovementSound;
 

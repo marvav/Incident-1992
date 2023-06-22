@@ -8,7 +8,6 @@ public class OpeningScene : MonoBehaviour
 {
     // Start is called before the first frame update
     public Core Core;
-    public GameObject Player;
     public GameObject Flashlight;
     public TMP_Text text;
     public AudioSource sound;
@@ -42,7 +41,7 @@ public class OpeningScene : MonoBehaviour
                 if(endLoopMusic)
                     Core.GeneralMusic.loop = false;
                 text.text = "";
-                Player.SetActive(true);
+                Core.Player.SetActive(true);
                 Flashlight.SetActive(true);
                 this.gameObject.SetActive(false);
                 return;
