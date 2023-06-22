@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProgressManager : MonoBehaviour
 {
     public Core Core;
+    public AudioClip NewNoteSound;
     public GameObject WalkieTalkie;
     public GameObject dummyDoor;
     public GameObject ClosedDoor;
@@ -69,9 +70,23 @@ public class ProgressManager : MonoBehaviour
     public bool holeFound = false;
     public bool revolverUsed = false;
 
+    private bool[] id_list = new bool[50];
+
     public void changeObjective(int id)
     {
-        if(id == CABIN_NOTE_READ && !noteFound)
+        if (id == 0)
+            return;
+
+        if (id_list[id] != true)
+        {
+            Core.GeneralAudio.clip = NewNoteSound;
+            Core.GeneralAudio.Play();
+        }
+
+        id_list[id] = true;
+
+
+        if (id == CABIN_NOTE_READ && !noteFound)
         {
             dummyDoor.SetActive(false);
             ClosedDoor.SetActive(true);
@@ -79,10 +94,9 @@ public class ProgressManager : MonoBehaviour
                 knife.SetActive(true);
             noteFound = true;
         }
-        if(id==LOCKED_CAVE_FOUND && !lockedCaveFound)
-        {
-            lockedCaveFound = true;
-        }
+
+        lockedCaveFound = id == LOCKED_CAVE_FOUND;
+
         if(id == LOST_FLASHLIGHT_FOUND && !lostFlashlightFound)
         {
             if (!knifeFound)
@@ -174,7 +188,7 @@ public class ProgressManager : MonoBehaviour
             result += "I should hurry up to the Hájenka cabin. I don't want to miss the reunion. It's somewhere on the blue trail.\n\n";
 
         if(noteFound && !firstRecordingListened)
-            result += "I can't believe they argued and left this fast... Maybe they can't be helped\n\n";
+            result += "I can't believe they argued and left this fast... But why would David say he left? I thought he lives here.\n\n";
 
         if (lockedCaveFound && !ropeFound)
             result += "There is a light on in Hájenka cave. Someone must have been there recently!\n\n";
