@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Archive
 {
-    public static List<NoteItem> Notes = new List<NoteItem> {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
+    public static List<NoteItem> Notes;
 
     public static void Add(NoteItem note)
     {
@@ -17,6 +17,9 @@ public static class Archive
             }
         }
         return;
+    }
+    public static void InitializeArchive(){
+        Notes = new List<NoteItem> { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null };
     }
 }
 

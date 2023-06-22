@@ -30,14 +30,23 @@ public class WalkieTalkie : MonoBehaviour
         {
             if (!recordingIsHappening && rand.Next(0, eventChance) == 1)
             {
-                buzzingSource.clip = Buzz[rand.Next(0, Buzz.Length)];
-                buzzingSource.Play();
-                if (rand.Next(0, 5) == 1)
+                if (Inventory.InHand != null && Inventory.InHand.name == "WalkieTalkie")
                 {
-                    Core.VoiceOver.clip = VoiceOver[rand.Next(0, VoiceOver.Length)];
-                    Core.VoiceOver.Play();
+                    recordings[index].SetActive(true);
+                    wasPlayed = true;
+                    recordingIsHappening = false;
                 }
-                recordingIsHappening = true;
+                else
+                {
+                    buzzingSource.clip = Buzz[rand.Next(0, Buzz.Length)];
+                    buzzingSource.Play();
+                    if (rand.Next(0, 5) == 1)
+                    {
+                        Core.VoiceOver.clip = VoiceOver[rand.Next(0, VoiceOver.Length)];
+                        Core.VoiceOver.Play();
+                    }
+                    recordingIsHappening = true;
+                }
             }
             if (recordingIsHappening)
             {
@@ -46,8 +55,6 @@ public class WalkieTalkie : MonoBehaviour
                     recordings[index].SetActive(true);
                     wasPlayed = true;
                     recordingIsHappening = false;
-                    //if (index == recordings.Count-1)
-                        //this.gameObject.SetActive(false);
                 }
                 else
                     timer += Time.deltaTime;

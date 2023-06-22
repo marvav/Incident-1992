@@ -4,9 +4,9 @@ using UnityEngine;
 
 public static class Inventory
 {
-    public static List<Item> Items = new List<Item> {null, null , null , null , null , null };
-    public static int size = Items.Count;
-    public static GameObject InHand = null;
+    public static List<Item> Items;
+    public static int size = 0;
+    public static GameObject InHand;
 
     public static void Add(Item item)
     {
@@ -58,6 +58,13 @@ public static class Inventory
     public static bool isInHand(GameObject item)
     {
         return InHand == item;
+    }
+
+    public static void InitializeInventory()
+    {
+        Items = new List<Item> { null, null, null, null, null, null, null };
+        size = Items.Count;
+        InHand = null;
     }
 }
 

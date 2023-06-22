@@ -5,10 +5,9 @@ using System.Collections.Generic;
 
 public static class Core_Utils
 {
-    public static GameObject Player = GameObject.Find("Player");
-    public static GameObject HoldPoint = GameObject.Find("HoldPoint");
-    public static GameObject Hand = GameObject.Find("Hand");
-    public static GameObject Camera = GameObject.Find("Main Camera");
+    public static GameObject Player;
+    public static GameObject Hand;
+    public static GameObject Camera;
     public static System.Random rand = new System.Random();
     public static int interactionMask = ~(1 << 8);
 
@@ -38,7 +37,6 @@ public static class Core_Utils
     public static bool isCloseToPlayer(Transform current, float distance)
     {
         return Vector3.Distance(current.position, Hand.transform.position) < distance;
-
     }
 
 

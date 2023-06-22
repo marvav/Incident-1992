@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
-using static Inventory;
+//using static Inventory;
 using static Core_Utils;
 
 
@@ -32,9 +32,9 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
                 ItemInHand.SetActive(true);
                 Inventory.InHand = ItemInHand;
-                Core.Inventory.SetActive(false);
-                Time.timeScale = 1;
-                ToggleCursor();
+                //Core.Inventory.SetActive(false);
+                //Time.timeScale = 1;
+                //ToggleCursor();
             }
         }
     }

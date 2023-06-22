@@ -6,17 +6,17 @@ using static Core_Utils;
 public class monsterFollow : MonoBehaviour
 {
     public Core Core;
-    CharacterController charControl;
     public GameObject monsterSubtitles;
     public GameObject eyes;
     public Light flashlight;
     public Transform followTransform;
     public GameObject death;
     public AudioSource buzzing;
-    public AudioSource Sound;
     public AudioSource Damage;
     public AudioClip[] audioClips;
     public Animation animation;
+    CharacterController charControl;
+    AudioSource Sound;
 
     public float speed;
     public float gravityScale;
@@ -33,6 +33,7 @@ public class monsterFollow : MonoBehaviour
     void Start()
     {
         charControl = gameObject.GetComponent<CharacterController>();
+        Sound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

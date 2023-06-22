@@ -3,10 +3,15 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using static Core_Utils;
+using static Archive;
+using static Inventory;
 
 public class Core : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject Hand;
+    public GameObject Camera;
     public int PlayerMaxHP = 10;
     public int PlayerHP = 10;
     public float startingGamma;
@@ -14,7 +19,6 @@ public class Core : MonoBehaviour
     public GameObject HurtScreen;
     public GameObject DeathHUD;
     public PlayerMovementDen PlayerDen;
-    public GameObject Inventory;
     public GameObject PickUpItem;
     public GameObject Click;
     public GameObject Note;
@@ -31,6 +35,13 @@ public class Core : MonoBehaviour
 
     void Start()
     {
+        Core_Utils.Player = Player;
+        Core_Utils.Hand = Hand;
+        Core_Utils.Camera = Camera;
+
+        Archive.InitializeArchive();
+        Inventory.InitializeInventory();
+
         delay = Time.realtimeSinceStartup;
         RenderSettings.ambientLight = new Color(startingGamma, startingGamma, startingGamma, 1.0f);
     }
