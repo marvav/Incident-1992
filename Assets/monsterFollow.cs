@@ -26,12 +26,16 @@ public class monsterFollow : MonoBehaviour
     public int respawnDistance;
     public Vector3[] spawnPlaces;
 
+    
+    private int monsterDirection;
+
     private float distance;
     private bool isClose = false;
     private bool messaging = true;
     // Start is called before the first frame update
     void Start()
     {
+        monsterDirection = 1;
         charControl = gameObject.GetComponent<CharacterController>();
         Sound = gameObject.GetComponent<AudioSource>();
     }
@@ -128,14 +132,19 @@ public class monsterFollow : MonoBehaviour
     }
     void Move()
     {
-        charControl.Move(transform.up * gravityScale * Time.deltaTime);
+        charControl.Move(monsterDirection * transform.up * gravityScale * Time.deltaTime);
         transform.LookAt(followTransform);
-        charControl.Move(transform.forward * Time.deltaTime * speed);
+        charControl.Move(monsterDirection * transform.forward * Time.deltaTime * speed);
     }
 
     public int GetMonsterDistance()
     {
         return (int) distance;
+    }
+
+    public void ToggleMonster()
+    {
+        monsterDirection *= -1;
     }
 
 }

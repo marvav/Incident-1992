@@ -17,6 +17,7 @@ public class AudioWithSubtitles : MonoBehaviour
 
     void Start()
     {
+        Core.Monster.ToggleMonster();
         source.Play();
         timer = 0.0f;
         index = 0;
@@ -51,6 +52,7 @@ public class AudioWithSubtitles : MonoBehaviour
             if (isClue)
                 ProgressManager.changeObjective(progressNumber);
             Core.Subtitles.text = "";
+            Core.Monster.ToggleMonster();
             this.gameObject.SetActive(false);
         }
     }

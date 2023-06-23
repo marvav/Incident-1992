@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0, b: 0, a: 0.039215688}
   m_FogMode: 1
   m_FogDensity: 0.01
@@ -5477,11 +5477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2909672254416225424, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: field of view
-      value: 85
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2909672254416225424, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: far clip plane
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2909672254416225424, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: m_TargetDisplay
@@ -15659,7 +15659,7 @@ MonoBehaviour:
   MovedObject: {fileID: 314891192}
   itemNeeded: 1
   destroyAfterUse: 1
-  NeededItem: {fileID: 0}
+  NeededItem: {fileID: 777484587}
   message: I could use this radio equipment to play the casette I found
   Core: {fileID: 513218965}
 --- !u!1001 &397696612
@@ -20460,9 +20460,10 @@ MonoBehaviour:
   Player: {fileID: 961960629}
   Hand: {fileID: 836405676}
   Camera: {fileID: 108088847}
+  Monster: {fileID: 906160341}
   PlayerMaxHP: 10
   PlayerHP: 10
-  startingGamma: 0.2
+  startingGamma: 0.3
   effects: {fileID: 1580185955}
   HurtScreen: {fileID: 2098334380}
   DeathHUD: {fileID: 1371803656}
@@ -41396,9 +41397,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.94629896, b: 0.72075474, a: 0}
-  m_Intensity: 40
-  m_Range: 200
-  m_SpotAngle: 105.88353
+  m_Intensity: 50
+  m_Range: 100
+  m_SpotAngle: 103.65605
   m_InnerSpotAngle: 46.831673
   m_CookieSize: 10
   m_Shadows:
@@ -47205,7 +47206,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9429145, b: 0.7018868, a: 0}
-  m_Intensity: 35
+  m_Intensity: 15
   m_Range: 100
   m_SpotAngle: 120.25155
   m_InnerSpotAngle: 66.469376
@@ -60804,7 +60805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1484279821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -72273,9 +72274,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 148162308}
   m_Direction: 0
   m_MinValue: 80
-  m_MaxValue: 90
+  m_MaxValue: 95
   m_WholeNumbers: 1
-  m_Value: 85
+  m_Value: 90
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

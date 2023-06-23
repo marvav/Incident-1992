@@ -12,6 +12,7 @@ public class Core : MonoBehaviour
     public GameObject Player;
     public GameObject Hand;
     public GameObject Camera;
+    public monsterFollow Monster;
     public int PlayerMaxHP = 10;
     public int PlayerHP = 10;
     public float startingGamma;
