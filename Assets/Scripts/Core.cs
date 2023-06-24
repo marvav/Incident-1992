@@ -33,6 +33,8 @@ public class Core : MonoBehaviour
     public AudioSource DeathSound;
     public ProgressManager ProgressManager;
     private float delay;
+    private int Localization = 0;
+
 
     void Start()
     {
@@ -65,6 +67,21 @@ public class Core : MonoBehaviour
         if (PlayerHP <= 0)
         {
             DeathSound.Play();
+        }
+    }
+
+    public void ChangeLanguage(int value)
+    {
+        if(value != Localization)
+        {
+            Localization = value;
+            GameObject[] objects = GameObject.FindGameObjectsWithTag("Localization");
+            foreach (GameObject gameobject in objects)
+            {
+                Debug.Log(gameobject.name);
+                Multitext text = gameobject.GetComponent<Multitext>();
+                text.ChangeLanguage(Localization);
+            }
         }
     }
 }

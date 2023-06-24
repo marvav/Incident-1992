@@ -8,6 +8,7 @@ TagManager:
   - Inventory
   - Icon
   - Monster
+  - Localization
   layers:
   - Default
   - TransparentFX
