@@ -84,4 +84,9 @@ public class Core : MonoBehaviour
             }
         }
     }
+
+    public int GetLanguage()
+    {
+        return Localization;
+    }
 }

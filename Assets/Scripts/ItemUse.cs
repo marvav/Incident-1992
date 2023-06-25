@@ -2,11 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
-//using static Inventory;
 using static Core_Utils;
 
 
-public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class ItemUse : MonoBehaviour, IPointerClickHandler
 {
     public string text;
     public GameObject ItemInHand;
@@ -36,15 +35,5 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
                 //ToggleCursor();
             }
         }
-    }
-
-    public void OnPointerEnter(PointerEventData pointerEventData)
-    {
-        Core.Description.text = text;
-    }
-
-    public void OnPointerExit(PointerEventData pointerEventData)
-    {
-        Core.Description.text = "";
     }
 }

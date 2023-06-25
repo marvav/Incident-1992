@@ -6,17 +6,17 @@ using TMPro;
 
 public class Description : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public string text;
-    public TMP_Text description;
+    public Core Core;
+    public string[] text;
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        description.text = text;
+        Core.Description.text = text[Core.GetLanguage()];
     }
 
     //Detect when Cursor leaves the GameObject
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        description.text = "";
+        Core.Description.text = "";
     }
 }

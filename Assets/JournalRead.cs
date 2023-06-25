@@ -4,20 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class JournalRead : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class JournalRead : MonoBehaviour, IPointerClickHandler
 {
     public Core Core;
-    // Start is called before the first frame update
-    public void OnPointerEnter(PointerEventData pointerEventData)
-    {
-        Core.Description.text = "Journal";
-    }
-
-    //Detect when Cursor leaves the GameObject
-    public void OnPointerExit(PointerEventData pointerEventData)
-    {
-        Core.Description.text = "";
-    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
