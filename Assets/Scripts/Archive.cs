@@ -25,12 +25,12 @@ public static class Archive
 
 public class NoteItem
 {
-    public string name;
-    public string content;
+    public string[] titles;
+    public string[] contents;
 
-    public NoteItem(string name, string content)
+    public NoteItem(string[] titles, string[] contents)
     {
-        this.name = name;
-        this.content = content;
+        this.titles = titles;
+        this.contents = contents;
     }
 }

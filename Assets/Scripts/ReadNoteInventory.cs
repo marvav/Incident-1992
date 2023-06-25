@@ -11,11 +11,10 @@ public class ReadNoteInventory : MonoBehaviour, IPointerEnterHandler, IPointerEx
 {
     public int ArchiveIndex;
     public Core Core;
-    private bool isOpen;
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        Core.Description.text = Notes[ArchiveIndex].name;
+        Core.Description.text = Notes[ArchiveIndex].titles[Core.GetLanguage()];
     }
 
     //Detect when Cursor leaves the GameObject
@@ -31,7 +30,7 @@ public class ReadNoteInventory : MonoBehaviour, IPointerEnterHandler, IPointerEx
         if (clickCount == 1)
         {
             Core.Description.text = "";
-            Core.NoteText.GetComponent<TMP_Text>().text = Notes[ArchiveIndex].content;
+            Core.NoteText.GetComponent<TMP_Text>().text = Notes[ArchiveIndex].contents[Core.GetLanguage()];
             Core.Note.SetActive(true);
         }
     }

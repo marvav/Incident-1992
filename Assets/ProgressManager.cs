@@ -185,66 +185,156 @@ public class ProgressManager : MonoBehaviour
     {
         string result = "";
         if (!noteFound)
-            result += "I should hurry up to the Hájenka cabin. I don't want to miss the reunion. It's somewhere on the blue trail.\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "I should hurry up to the Hájenka cabin. I don't want to miss the reunion. It's somewhere on the blue trail.\n\n";
+            else
+                result += "Mìl bych si pohnout do Davidovy chaty. Nechci aby se zlobili, že jdu pozdì. Mìlo by to být nìkde na modré trase.\n\n";
 
-        if(noteFound && !firstRecordingListened)
-            result += "I can't believe they argued and left this fast... But why would David say he left? I thought he lives here.\n\n";
-
+        if (noteFound && !firstRecordingListened)
+            if (Core.GetLanguage() == 0)
+                result += "I can't believe they argued and left this fast... But why would David say he left? I thought he lives here.\n\n";
+            else
+                result += "Nemùžu uvìøit, že by se prostì pohádali a odešli... Proè by David odcházel? Myslel jsem, že tu žije.\n\n";
         if (lockedCaveFound && !ropeFound)
-            result += "There is a light on in Hájenka cave. Someone must have been there recently!\n\n";
-
+            if (Core.GetLanguage() == 0)
+                result += "There is a light on in Hájenka cave. Someone must have been there recently!\n\n";
+            else
+                result += "V jeskyni Hájence je nìjaké svìtlo. Asi tam nìkdo je nebo aspoò byl.\n\n";
         if (monsterFound)
-            result += "I feel... breeze, shivers down my spine and... presence? Like in a horror movie before the action happens.\n\n";
-
+            if (Core.GetLanguage() == 0)
+                result += "I feel... breeze, shivers down my spine and... presence? Like in a horror movie before the action happens.\n\n";
+            else
+                result += "Cítím... chladný vánek. Mráz mi leze po zádech. Skoro jako v horrorovém filmu než si postavy uvìdomí, že nejsou samy\n\n";
         if (cabinBroken && !firstRecordingListened)
-            result += "David's cabin looks somewhat empty... and tidy?\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "David's cabin looks somewhat empty... and tidy?\n\n";
+            else
+                result += "Davidova chata vypadá podivnì poloprázdnì.\n\n";
         if (tracksFound && !campFound)
-            result += "There are fresh tire tracks in the grass near camp site.\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "There are fresh tire tracks in the grass on red track.\n\n";
+            else
+                result += "Našel jsem èerstvé stopy kol v trávì na èervené stezce.\n\n";
         if (deerFound && !revolverFound)
-            result += "David got into hunting...probably\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "David got into hunting...probably\n\n";
+            else
+                result += "Vypadá to, že se David zaèal zajímat o lov.\n\n";
         if (revolverFound && !ammoAquired)
-            result += "Having a gun is nice, but I'm missing an ammo\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Having a gun is nice, but I'm missing an ammo.\n\n";
+            else
+                result += "Je super mít zbraò, ale víc bych si ji užil, kdybych mìl náboje.\n\n";
         if (ammoAquired && !revolverFound)
-            result += "Having ammo is nice, but I'm missing a gun\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Having ammo is nice, but I'm missing a gun\n\n";
+            else
+                result += "Je super mít náboje, ale víc bych si je užil, kdybych mìl taky èím støílet.\n\n";
         if (ammoAquired && revolverFound && !revolverUsed)
-            result += "My revolver is now loaded\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "My revolver is now loaded\n\n";
+            else
+                result += "Mùj revolver je teï pøipraven ke støelbì.\n\n";
 
-        if (knifeFound)
-            result += "Someone put knife into my car.\n\n";
+        if (knifeFound && !encounterSurvived)
+            if (Core.GetLanguage() == 0)
+                result += "Someone put knife into my car.\n\n";
+            else
+                result += "Nìkdo mi schoval do auta nùž.\n\n";
+        if(encounterSurvived && knifeFound)
+            if (Core.GetLanguage() == 0)
+                result += "Why would these mad fuckers put knife in my car?\n\n";
+            else
+                result += "Proè by mi ti vrahouni schovávali do auta nùž?\n\n";
 
         if (campFound && !secondRecordingListened)
-            result += "I stole a walkie talkie from the creepy camp I found. Maybe I'll hear someone talking.\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "I stole a walkie talkie from the creepy camp I found. Maybe I'll hear someone talking.\n\n";
+            else
+                result += "Šlohnul jsem vysílaèku z toho podivného táboøištì s dodávkou. Tøeba nìkoho uslyším.\n\n";
         if (encounterSurvived && !vanSabotaged)
-            result += "The killers have a van out there. Why don't they just leave?\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "The killers have a van out there. Why don't they just leave?\n\n";
+            else
+                result += "Proè ti kreténi prostì neodjedou, když tady mají auto?\n\n";
 
         if (firstRecordingListened && !encounterSurvived)
-            result += "Am I being paranoid or did they talk about me on the radio?!\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Am I being paranoid or did they talk about me on the radio?!\n\n";
+            else
+                result += "Jsem jenom paranoidní, nebo se teï právì 2 cápci s vysílaèkama bavili o mnì?!\n\n";
 
         if (encounterSurvived && !secondRecordingListened)
-            result += "I've never been shot at before. I need to know their plans\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "I've never been shot at before. I need to know their plans\n\n";
+            else
+                result += "Ještì nikdy na mì nikdo nestøílel... Co když nìco udìlali Davidovi a Brandonovi\n\n";
 
         if (secondRecordingListened && !ammoAquired)
-            result += "Did the 'monster' kill one of the guys? I should find out. He said he was at Three...what\n\n";
+            if (monsterFound)
+            {
+                if (Core.GetLanguage() == 0)
+                    result += "Did the 'monster' kill one of the guys? I should find out. He said he was at Three...what\n\n";
+                else
+                    result += "Opravdu teï to monstrum zabilo jednoho z tìch vrahù?. Øíkal že je u Tøí...cože\n\n";
+            }
+            else
+            {
+                if (Core.GetLanguage() == 0)
+                    result += "Did something kill one of the guys? I should find out. He said he was at Three...what\n\n";
+                else
+                    result += "Opravdu teï nìco zabilo jednoho z tìch vrahù?. Øíkal že je u Tøí...cože\n\n";
+            }
         if (carIsBurned)
-            result += "My car is burned down... \n\n";
+            if (Core.GetLanguage() == 0)
+                result += "My car is burned down... \n\n";
+            else
+                result += "Vyhoøelo mi auto... \n\n";
         if (vanSabotaged)
-            result += "I cut their tires open. Now they can't just run away\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "I cut their tires open. Now they can't just run away\n\n";
+            else
+                result += "Pøeøezal jsem jim pneumatiky. Teï se odtud jen tak nedostanou\n\n";
         if (ropeFound && !wellEntered)
-            result += "I've found rope with other climbing equipment. Maybe I could descend somewhere?!\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "I've found rope and other climbing equipment. Maybe I could descend somewhere?!\n\n";
+            else
+                result += "Našel jsem horolezecké lano a další vybavení. Možná bych ho mohl nìjak využít...\n\n";
         if (wellEntered)
-            result += "Who would have thought the old well was secret entrance?! I bet no-one was there for at least 500 years! Except for David I guess...\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Who would have thought the old well is a secret entrance?! I bet no-one was there for at least 500 years! Except for David I guess...\n\n";
+            else
+                result += "Kdo by si pomyslel, že ta stará studna je tajným vchodem. Vsadil bych se, že tu nikdo nebyl alespoò 500 let! Kromì Davida teda...\n\n;"
         if (casetteFound && !casettePlayed)
-            result += "I found mysterious casette in David's car player. I need to find a way to listen to it.\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "I found mysterious casette in David's car player. I need to find a way to listen to it.\n\n";
+            else
+                result += "Našel jsem podezøelou kazetu v Davidovì starém autì. Možná bych si ji mìl nìjak pøehrát.\n\n";
         if (casettePlayed && !wellEntered)
-            result += "Oh my God, what was David talking about?! Excavation?! Ice Singing Lady? Entrace hidden with contaminated water note. He can't be serious\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Oh my God, what was David talking about?! Excavation?! Ice Singing Lady? Entrace hidden with contaminated water note. He can't be serious\n\n";
+            else
+                result += "Proboha, o èem to sakra David mluvil? Výzkum? Dáma ze Zpívaného Ledu? Tajný vchod maskovaný zkazkou o kontaminované vodì?! To nemùže myslet vážnì!\n\n;"
         if (burnedCasettesFound && !casettePlayed)
-            result += "Someone burned a lot of casettes near David's cabin. Why?!\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Someone burned a lot of casettes near David's cabin. Why?!\n\n";
+            else
+                result += "Nìkdo v lese spálil spoustu kazetek i s rádiem. Proè?\n\n";
         if (radioEquipmentFound && !casettePlayed)
-            result += "There is radio equipment in the station on the hill. But it needs electricity\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "There is radio equipment in the station on the hill. But it needs electricity\n\n";
+            else
+                result += "V rádiové stanici je funkèní vybavení, ale potøebuje elektøinu\n\n";
         if (lostFlashlightFound && !holeFound)
-            result += "Someone must have been in such a hurry he lost a flashlight at night\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Someone must have been in such a hurry he lost a flashlight at night\n\n";
+            else
+                result += "Nìkdo musel mít tak naspìch, že ztratil baterku... V noci?!\n\n";
         if (holeFound)
-            result += "Someone have been digging near David's cabin very recently\n\n";
+            if (Core.GetLanguage() == 0)
+                result += "Someone have been digging near David's cabin very recently. The hole is fresh.\n\n";
+            else
+                result += "Nìkdo v lese vykopal podezøele velkou díru. Je èerstvá.\n\n";
         return result;
     }
 }

@@ -11,6 +11,7 @@ public class UseItem : MonoBehaviour
     public bool itemNeeded = true;
     public bool destroyAfterUse = false;
     public GameObject NeededItem;
+    public string[] description;
     public string message;
     public Core Core;
     private bool isHidden = true;
@@ -20,15 +21,15 @@ public class UseItem : MonoBehaviour
     {
         if (CanInteract(this.gameObject, 2.0f, 35.0f))
         {
-            Core.Description.text = message;
+            Core.Description.text = description[Core.GetLanguage()];
             if ((!itemNeeded || Inventory.InHand == NeededItem) && Input.GetMouseButtonDown(0))
             {
                 if (destroyAfterUse && itemNeeded)
                 {
                     Inventory.InHand = null;
                     Inventory.Remove(NeededItem.name);
-                    NeededItem.SetActive(false);
                 }
+                NeededItem.SetActive(false);
                 Core.Description.text = "";
                 MovedObject.SetActive(true);
                 ObjectToMove.SetActive(false);

@@ -1843,6 +1843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: single_rock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27811dfb4111c3a4ab3ab35b3c1d372f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 27811dfb4111c3a4ab3ab35b3c1d372f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.364
@@ -1850,6 +1854,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: 27811dfb4111c3a4ab3ab35b3c1d372f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.711
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 27811dfb4111c3a4ab3ab35b3c1d372f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3502,6 +3510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  titles: []
   content: The caves of Hajenka are extraordinary because of their disproportionate
     size. What appears to be a small tunnel grows underground into impressive halls
     sprinkled with stalactites. This specific cave was explored as early as 1567
@@ -3510,6 +3519,7 @@ MonoBehaviour:
     with the darkness scared him away, but when he returned with the locals later,
     the cave was allegedly completely empty. To this day, none of these artifacts
     have been found, and this story has been labeled a myth.
+  contents: []
   clueID: 0
 --- !u!23 &99510508
 MeshRenderer:
@@ -5796,6 +5806,9 @@ PrefabInstance:
       addedObject: {fileID: 416121817}
     - targetCorrespondingSourceObject: {fileID: 2909672253493867172, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       insertIndex: 2
+      addedObject: {fileID: 2024062015}
+    - targetCorrespondingSourceObject: {fileID: 2909672253493867172, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
+      insertIndex: 3
       addedObject: {fileID: 2029020529}
     - targetCorrespondingSourceObject: {fileID: 2909672253493867172, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       insertIndex: -1
@@ -5805,10 +5818,7 @@ PrefabInstance:
       addedObject: {fileID: 1934881845}
     - targetCorrespondingSourceObject: {fileID: 2909672254416225425, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2024062015}
-    - targetCorrespondingSourceObject: {fileID: 2909672254416225425, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2085823715}
+      addedObject: {fileID: 280835101}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2909672254416225454, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       insertIndex: -1
@@ -9112,6 +9122,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 0
   NeededItem: {fileID: 467575514}
+  description: []
   message: 
   Core: {fileID: 513218965}
 --- !u!65 &205796970
@@ -11142,11 +11153,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280835100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.2}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2000122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2085823715}
+  m_Father: {fileID: 168699336}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &280835102
@@ -11383,7 +11394,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2124705421725058983, guid: 1a2dcf3d145a7fd4fbd58f2a0282c54e, type: 3}
 --- !u!23 &286158120
@@ -12754,12 +12765,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314891192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.17738676, y: 0.68449545, z: -0.68449545, w: -0.17738676}
+  m_LocalPosition: {x: 620.9252, y: -29.6116, z: -202.79839}
+  m_LocalScale: {x: 1.939014, y: 1.8150758, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1449301853}
+  m_Father: {fileID: 801741137}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &314891194
@@ -12785,7 +12796,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 70
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -12793,23 +12804,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.19663969
+      value: 0.9963684
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.0144928
+      outSlope: -1.0144928
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -12818,7 +12829,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -12847,8 +12858,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.17742729
+      value: 1.0036316
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15472,6 +15483,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 0
   NeededItem: {fileID: 1809905516}
+  description: []
   message: Tire
   Core: {fileID: 513218965}
 --- !u!135 &360381204
@@ -15762,8 +15774,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  titles:
+  - David's Note
+  - "David\u016Fv vzkaz"
   content: I'm sorry Peter, but we already left. Things didn't go too well and old
     wounds did not heal as expected. I hope you understand. You should go home.
+  contents:
+  - I'm sorry Peter, but we already left. Things didn't go too well and old wounds
+    did not heal as expected. I hope you understand. You should go home.
+  - "Promi\u0148 Pet\u0159e, ale u\u017E jsme ode\u0161li. V\u011Bci ne\u0161ly zrovna
+    dob\u0159e a star\xE9 r\xE1ny se nezahojily podle m\xFDch p\u0159edstav. M\u011Bl
+    bys jet dom\u016F."
   clueID: 1
 --- !u!23 &366725266
 MeshRenderer:
@@ -16035,6 +16056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370908297}
   - component: {fileID: 370908298}
+  - component: {fileID: 370908299}
   m_Layer: 0
   m_Name: Are you blind
   m_TagString: Untagged
@@ -16068,7 +16090,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42541f2b4a82f844fa471f9b9cf65482, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -16078,9 +16100,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 90
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -16088,23 +16110,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.110427044
+      value: 0.9963684
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.002004
+      outSlope: -1.002004
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -16112,8 +16134,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.11089134
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16142,8 +16164,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.08871269
+      value: 0.99274063
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16153,6 +16175,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &370908299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370908296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b50ac9d063f7648bb7198e7abcfdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  source: {fileID: 370908298}
+  subtitles:
+  - Are you fucking blind?!
+  subtitlesTimes: []
+  isClue: 0
+  ProgressManager: {fileID: 0}
+  progressNumber: 0
 --- !u!1001 &372289391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16765,6 +16807,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 0
   NeededItem: {fileID: 1809905516}
+  description: []
   message: Tire
   Core: {fileID: 513218965}
 --- !u!135 &382287553
@@ -16979,6 +17022,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 1
   NeededItem: {fileID: 777484587}
+  description: []
   message: I could use this radio equipment to play the casette I found
   Core: {fileID: 513218965}
 --- !u!1001 &397696612
@@ -18211,7 +18255,7 @@ Camera:
     height: 1
   near clip plane: 100
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -18929,11 +18973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23dcf33c318569e4d8c835f5b6a1f784, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.944908
+      value: 7.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23dcf33c318569e4d8c835f5b6a1f784, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -414.37744
+      value: -417.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23dcf33c318569e4d8c835f5b6a1f784, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19756,7 +19800,7 @@ PrefabInstance:
     - target: {fileID: -8051669629696242779, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: -6271272218860487682, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -19764,11 +19808,11 @@ PrefabInstance:
     - target: {fileID: -1093657262558155610, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: 24407114053387401, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: 919132149155446097, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Name
       value: Casette
@@ -19824,7 +19868,7 @@ PrefabInstance:
     - target: {fileID: 5971212612578824093, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: 7318672815482293053, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -22575,6 +22619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  titles: []
   content: Three Boulders is a local landmark that dates back to at least the 1300s.
     From the records made by local priest we can have an insight into their original
     purpose. Cult of Qui, which was massacred later in the 1423 by Hussite army,
@@ -22583,6 +22628,7 @@ MonoBehaviour:
     passed, locals gathered small ones as building materials. Today, only three of
     the largest boulders remained, and we can only imagine what fascinating things
     they experienced!
+  contents: []
   clueID: 0
 --- !u!23 &516197894
 MeshRenderer:
@@ -23313,7 +23359,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 1a2dcf3d145a7fd4fbd58f2a0282c54e, type: 3}
 --- !u!114 &529459985
@@ -26980,7 +27026,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 986063831}
+    m_TransformParent: {fileID: 1012467348}
     m_Modifications:
     - target: {fileID: -9029363850886486937, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -26992,31 +27038,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.1938584
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.3333334
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.3116814
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.549988
+      value: 16.237572
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44
+      value: 3.0466666
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 158.89996
+      value: 10.163057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9878006
+      value: -0.1788082
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27024,7 +27070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.15572454
+      value: 0.983884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -28966,6 +29012,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 0
   NeededItem: {fileID: 467575514}
+  description: []
   message: The lock is damaged, but I'd need a crowbar to finish it
   Core: {fileID: 513218965}
 --- !u!82 &650282489
@@ -29830,10 +29877,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  titles:
+  - Welcome Note
+  - "P\u0159iv\xEDt\xE1n\xED"
   content: Welcome in Hajenka area. Beware of wandering off of colored tourist routes
     and paths as local wilderness is undermined with limestone caves and other wonders
     of nature. One can get easily lost or even stumble upon undiscovered entrances..
     Our best advice is to avoid that. Enjoy your trip! Do not stray!
+  contents:
+  - Welcome in Hajenka area. Beware of wandering off of colored tourist routes and
+    paths as local wilderness is undermined with limestone caves and other wonders
+    of nature. One can get easily lost or even stumble upon undiscovered entrances..
+    Our best advice is to avoid that. Enjoy your trip! Do not stray!
+  - "V\xEDtejte v H\xE1jence. U\u017Eijte si sv\u016Fj v\xFDlet! Vyvarujte se toul\xE1n\xED
+    mimo barevn\xE9 turistick\xE9 stezky. Zdej\u0161\xED krajina je podryta mno\u017Estv\xEDm
+    fascinuj\xEDc\xEDch jeskyn\xED a dal\u0161\xEDch krasov\xFDch \xFAkaz\u016F.
+    \u010Clov\u011Bk m\u016F\u017Ee narazit na neobjeven\xE9 vchody a v krajn\xEDch
+    p\u0159\xEDpadech do nich spadnout. Na\u0161\xED dob\u0159e m\xEDn\u011Bnou radou
+    je vyhnout se jim. U\u017Eijte si sv\u016Fj v\xFDlet. Netoulejte se!"
   clueID: 0
 --- !u!23 &668180402
 MeshRenderer:
@@ -32629,15 +32690,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 168699336}
+    m_TransformParent: {fileID: 143617542}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.003
+      value: 0.0030000003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalScale.y
@@ -32645,11 +32706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.003
+      value: 0.0030000003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.172
+      value: 0.13000488
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32657,23 +32718,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07
+      value: 0.06500244
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.68835455
+      value: 0.71933985
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.72537446
+      value: -0.69465834
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -32681,7 +32742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -88
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -32717,7 +32778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_Name
-      value: flashlight
+      value: Flashlight
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 90893254e819f114b92a98f538e77d73, type: 3}
       propertyPath: m_Layer
@@ -32741,7 +32802,13 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 759d6d1b876b10a44881901ac7b46e38, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2085823715}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90893254e819f114b92a98f538e77d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1579930934}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90893254e819f114b92a98f538e77d73, type: 3}
 --- !u!1 &744742260
@@ -34390,6 +34457,7 @@ GameObject:
   - component: {fileID: 787959127}
   - component: {fileID: 787959125}
   - component: {fileID: 787959130}
+  - component: {fileID: 787959131}
   m_Layer: 6
   m_Name: door_doors_0
   m_TagString: Untagged
@@ -34500,6 +34568,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2304434881036101879, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
+--- !u!114 &787959131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787959123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  contents:
+  - The door is stucked, but the wood looks weak.
+  - "Ty dve\u0159e se ani nepohnou, ale vypadaj\xED slab\u011B"
+  clueID: 0
 --- !u!1 &788953401
 GameObject:
   m_ObjectHideFlags: 0
@@ -37933,6 +38018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 890179368}
   - component: {fileID: 890179369}
+  - component: {fileID: 890179370}
   m_Layer: 0
   m_Name: ShootHim
   m_TagString: Untagged
@@ -37965,8 +38051,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fdf965b5df4a00947b048e65112cb6cd, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 42541f2b4a82f844fa471f9b9cf65482, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -37976,9 +38062,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 90
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -37986,23 +38072,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.110427044
+      value: 0.9963684
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.002004
+      outSlope: -1.002004
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -38010,8 +38096,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.11089134
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -38040,8 +38126,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.08871269
+      value: 0.99274063
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -38051,6 +38137,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &890179370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890179367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b50ac9d063f7648bb7198e7abcfdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  source: {fileID: 890179369}
+  subtitles:
+  - Come on! SHOOT HIM!
+  subtitlesTimes: []
+  isClue: 0
+  ProgressManager: {fileID: 0}
+  progressNumber: 0
 --- !u!1 &892369148 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -967169973740555122, guid: 94452352966a51c4ab91815c7542328d, type: 3}
@@ -41386,8 +41492,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  titles:
+  - Well Warning
+  - "Varov\xE1n\xED ze studny"
   content: This well has been stripped of its functional parts to prevent tourists
     from drinking its water. The water is contaminated. Please, do not repair!
+  contents:
+  - This well has been stripped of its functional parts to prevent tourists from
+    drinking its water. The water is contaminated. Please, do not repair!
+  - "Tato studna byla zbavena sv\xFDch funk\u010Dn\xEDch \u010D\xE1st\xED, abychom
+    zamezili turist\u016Fm v pit\xED jej\xED voda. Voda je kontaminovan\xE1. Pros\xEDm,
+    nesna\u017Ete se ji p\xEDt, ani studnu opravovat."
   clueID: 0
 --- !u!33 &955053257
 MeshFilter:
@@ -42772,7 +42887,6 @@ Transform:
   - {fileID: 1749999279}
   - {fileID: 1462483825}
   - {fileID: 2069358335}
-  - {fileID: 624457740}
   - {fileID: 1012467348}
   - {fileID: 745692702}
   - {fileID: 1441829676}
@@ -44946,6 +45060,7 @@ Transform:
   m_LocalScale: {x: 1.7, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 624457740}
   - {fileID: 903765945}
   - {fileID: 1257810788}
   - {fileID: 1430996125}
@@ -45788,7 +45903,7 @@ Light:
   m_Color: {r: 1, g: 0.94629896, b: 0.72075474, a: 0}
   m_Intensity: 60
   m_Range: 100
-  m_SpotAngle: 122.58961
+  m_SpotAngle: 111.452225
   m_InnerSpotAngle: 46.831673
   m_CookieSize: 10
   m_Shadows:
@@ -51983,7 +52098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1178540312
 Light:
   m_ObjectHideFlags: 0
@@ -51996,10 +52111,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9429145, b: 0.7018868, a: 0}
-  m_Intensity: 15
+  m_Intensity: 5
   m_Range: 100
-  m_SpotAngle: 120.25155
-  m_InnerSpotAngle: 66.469376
+  m_SpotAngle: 179
+  m_InnerSpotAngle: 45.30835
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -52077,7 +52192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178540311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.20000076, z: 0.099975586}
+  m_LocalPosition: {x: 0, y: 0.20000076, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53349,6 +53464,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 1
   NeededItem: {fileID: 1891654345}
+  description: []
   message: I could descent into the old well
   Core: {fileID: 513218965}
 --- !u!135 &1208919107
@@ -53504,10 +53620,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  titles: []
   content: Welcome to Hajenka summer camp. You may have noticed we are not present
     right now, but we discourage you from entering / destroying any of our property.
     We are coordinated with police patrols and any damage is going to be punished.
     Please do not enter / destroy any of our property.
+  contents: []
   clueID: 0
 --- !u!23 &1211941746
 MeshRenderer:
@@ -57090,6 +57208,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 0
   NeededItem: {fileID: 1809905516}
+  description: []
   message: Tire
   Core: {fileID: 513218965}
 --- !u!135 &1275611389
@@ -59424,7 +59543,7 @@ PrefabInstance:
     - target: {fileID: -8051669629696242779, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: -6271272218860487682, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -59432,11 +59551,11 @@ PrefabInstance:
     - target: {fileID: -1093657262558155610, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: 24407114053387401, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: 919132149155446097, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Name
       value: Casette (1)
@@ -59456,7 +59575,7 @@ PrefabInstance:
     - target: {fileID: 5971212612578824093, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: 7318672815482293053, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -60632,7 +60751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349218426}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.7590275, y: -0.71488804, z: -0.9150002}
+  m_LocalPosition: {x: 1.032, y: -0.716, z: -1.302}
   m_LocalScale: {x: 0.00049999985, y: 0.0004999998, z: 0.00049999973}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61068,7 +61187,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2124705421725058983, guid: 1a2dcf3d145a7fd4fbd58f2a0282c54e, type: 3}
 --- !u!1 &1355687953
@@ -64600,6 +64719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1447225906}
   - component: {fileID: 1447225907}
+  - component: {fileID: 1447225908}
   m_Layer: 0
   m_Name: ShootHim
   m_TagString: Untagged
@@ -64632,8 +64752,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fdf965b5df4a00947b048e65112cb6cd, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 42541f2b4a82f844fa471f9b9cf65482, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -64643,9 +64763,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 90
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -64653,23 +64773,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.110427044
+      value: 0.9963684
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.002004
+      outSlope: -1.002004
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -64677,8 +64797,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.11089134
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -64707,8 +64827,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.08871269
+      value: 0.99274063
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -64718,6 +64838,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1447225908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447225905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b50ac9d063f7648bb7198e7abcfdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  source: {fileID: 1447225907}
+  subtitles:
+  - Come on! SHOOT HIM!
+  subtitlesTimes: []
+  isClue: 0
+  ProgressManager: {fileID: 0}
+  progressNumber: 0
 --- !u!1 &1448289826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -967169973740555122, guid: 94452352966a51c4ab91815c7542328d, type: 3}
@@ -64895,7 +65035,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 50f4e10a89e877d43b32fd4160bdd22c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 79c15baee6a2d7343a703362dbf0d3d5, type: 2}
+      objectReference: {fileID: 2100000, guid: 76c33d12fa2362943b8e8baf1eb5dfc2, type: 2}
     - target: {fileID: 919132149155446097, guid: 50f4e10a89e877d43b32fd4160bdd22c, type: 3}
       propertyPath: m_Name
       value: radio_low
@@ -64910,10 +65050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 50f4e10a89e877d43b32fd4160bdd22c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 314891193}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f4e10a89e877d43b32fd4160bdd22c, type: 3}
 --- !u!4 &1449301853 stripped
@@ -65499,7 +65636,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2124705421725058983, guid: 1a2dcf3d145a7fd4fbd58f2a0282c54e, type: 3}
 --- !u!1 &1462273296
@@ -65693,9 +65830,10 @@ GameObject:
   - component: {fileID: 1466189546}
   - component: {fileID: 1466189545}
   - component: {fileID: 1466189547}
+  - component: {fileID: 1466189548}
   m_Layer: 5
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: Localization
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65831,6 +65969,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38db2087a0e2da94cbb39b0e69449704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1466189548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466189543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f864666d403ad0642a56de7e623a7235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - Exit
+  - Konec
 --- !u!1 &1467931971
 GameObject:
   m_ObjectHideFlags: 0
@@ -67548,11 +67701,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  titles: []
   content: Hajenka is home to a number of unique animals and plants thanks to its
     reliefs engraved by melting glaciers at the end of the last ice age. One of the
     most impressive species is undoubtedly Harich Poleri. Very large bird, famous
     for his umbrella-like head. Hajenka is one of two places in the world where he
     lives in the wild. Remember that Harich Poleri is strictly protected by law.
+  contents: []
   clueID: 0
 --- !u!23 &1520332115
 MeshRenderer:
@@ -70151,12 +70306,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579930933}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.15}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: 0.69465834, z: -0, w: 0.71933985}
+  m_LocalPosition: {x: 26.81102, y: 55.000305, z: 44.297634}
+  m_LocalScale: {x: 166.66664, y: 166.66667, z: 166.66664}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2085823715}
+  m_Father: {fileID: 2024062015}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1579930935
@@ -70651,6 +70806,9 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 1
   NeededItem: {fileID: 610081813}
+  description:
+  - The lock looks sturdy. I'd need a key for this.
+  - "Ten z\xE1mek vypad\xE1 pevn\u011B. Na tohle bude pot\u0159eba kl\xED\u010D."
   message: The lock looks sturdy. I'd need a key for this.
   Core: {fileID: 513218965}
 --- !u!1 &1585434339
@@ -70975,6 +71133,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589222484}
   m_Mesh: {fileID: 3896834602047901977, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
+--- !u!1 &1589954785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 42af2f814b0eade479afb797e003dff2, type: 3}
+  m_PrefabInstance: {fileID: 2080301284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1589954789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589954785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  contents:
+  - Mhmm. David must have picked on hunting I guess...
+  - "Vypad\xE1 to, \u017Ee se David za\u010Dal v\u011Bnovat lovu."
+  clueID: 4
+--- !u!64 &1589954790
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589954785}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: 42af2f814b0eade479afb797e003dff2, type: 3}
 --- !u!1001 &1593737426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73429,6 +73631,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 1
   NeededItem: {fileID: 1809905516}
+  description: []
   message: The stone yearns for something
   Core: {fileID: 513218965}
 --- !u!114 &1639466097
@@ -75881,6 +76084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1700525285}
   - component: {fileID: 1700525286}
+  - component: {fileID: 1700525287}
   m_Layer: 0
   m_Name: Are you blind
   m_TagString: Untagged
@@ -75914,7 +76118,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42541f2b4a82f844fa471f9b9cf65482, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -75924,9 +76128,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 90
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -75934,23 +76138,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.110427044
+      value: 0.9963684
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.002004
+      outSlope: -1.002004
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -75958,8 +76162,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.11089134
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -75988,8 +76192,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.08871269
+      value: 0.99274063
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -75999,6 +76203,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1700525287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700525284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b50ac9d063f7648bb7198e7abcfdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  source: {fileID: 1700525286}
+  subtitles:
+  - Are you fucking blind?!
+  subtitlesTimes: []
+  isClue: 0
+  ProgressManager: {fileID: 0}
+  progressNumber: 0
 --- !u!1 &1700636095
 GameObject:
   m_ObjectHideFlags: 0
@@ -79876,54 +80100,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810593800}
   m_Mesh: {fileID: -2432090755550338912, guid: 228634853600f0d47958cdafaf0f6887, type: 3}
---- !u!1 &1810963744
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1810963745}
-  - component: {fileID: 1810963746}
-  m_Layer: 6
-  m_Name: Door is locked
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1810963745
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810963744}
-  m_LocalRotation: {x: -0.7071068, y: 2.512148e-15, z: 2.5121477e-15, w: 0.7071068}
-  m_LocalPosition: {x: 0.4863447, y: -0.036415815, z: 1.2753139}
-  m_LocalScale: {x: 60, y: 30, z: 2.5114295}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2123656852}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1810963746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810963744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8294aea7b9944b4aae2590d56d0abcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
-  text: The door is stucked, but the wood looks weak.
-  range: 2
-  clueID: 0
 --- !u!1 &1811379434
 GameObject:
   m_ObjectHideFlags: 0
@@ -80007,54 +80183,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811379434}
   m_Mesh: {fileID: 8204146038589534501, guid: e203bfacc97fdeb409f396f1236ed69f, type: 3}
---- !u!1 &1812694602
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1812694603}
-  - component: {fileID: 1812694604}
-  m_Layer: 6
-  m_Name: Description
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1812694603
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812694602}
-  m_LocalRotation: {x: -0, y: -0, z: 0.000000029802319, w: 1}
-  m_LocalPosition: {x: -3.12, y: -0.58, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2080301287}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1812694604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812694602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8294aea7b9944b4aae2590d56d0abcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
-  text: Mhmm. David must have picked on hunting I guess...
-  range: 1.5
-  clueID: 4
 --- !u!1 &1814778928
 GameObject:
   m_ObjectHideFlags: 0
@@ -82076,6 +82204,7 @@ MonoBehaviour:
   itemNeeded: 1
   destroyAfterUse: 0
   NeededItem: {fileID: 1809905516}
+  description: []
   message: Tire
   Core: {fileID: 513218965}
 --- !u!135 &1865392027
@@ -82347,7 +82476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878323916}
   m_LocalRotation: {x: 0.5, y: -0.50000006, z: -0.50000006, w: 0.5}
-  m_LocalPosition: {x: 0.17603946, y: 2.3431382, z: -0.91499984}
+  m_LocalPosition: {x: 0.17603946, y: 2.343, z: -1.131}
   m_LocalScale: {x: 0.0004999999, y: 0.0004999998, z: 0.0005}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88086,6 +88215,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa536c936177bbc41a64b119878443d1, type: 3}
       insertIndex: 0
+      addedObject: {fileID: 314891193}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa536c936177bbc41a64b119878443d1, type: 3}
+      insertIndex: 1
       addedObject: {fileID: 391837461}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa536c936177bbc41a64b119878443d1, type: 3}
@@ -89835,9 +89967,10 @@ GameObject:
   - component: {fileID: 2055755476}
   - component: {fileID: 2055755475}
   - component: {fileID: 2055755477}
+  - component: {fileID: 2055755478}
   m_Layer: 5
   m_Name: Restart
-  m_TagString: Untagged
+  m_TagString: Localization
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89971,6 +90104,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b286c91da7492854c8ebb23a786416e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2055755478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055755473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f864666d403ad0642a56de7e623a7235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - Restart
+  - "Za\u010D\xEDt znovu"
 --- !u!1 &2056198974
 GameObject:
   m_ObjectHideFlags: 0
@@ -91120,11 +91268,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42af2f814b0eade479afb797e003dff2, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 42af2f814b0eade479afb797e003dff2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1812694603}
-    m_AddedComponents: []
+      addedObject: {fileID: 1589954790}
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 42af2f814b0eade479afb797e003dff2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1589954789}
   m_SourcePrefab: {fileID: 100100000, guid: 42af2f814b0eade479afb797e003dff2, type: 3}
 --- !u!4 &2080301287 stripped
 Transform:
@@ -91565,17 +91716,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085823714}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.69465834, z: -0, w: 0.71933985}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 333.33328, y: 333.33334, z: 333.33328}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 280835101}
-  - {fileID: 1579930934}
   - {fileID: 1178540314}
   - {fileID: 1036140216}
   - {fileID: 1450739345}
-  m_Father: {fileID: 168699336}
+  m_Father: {fileID: 2024062015}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2085823716
@@ -93685,7 +93834,6 @@ Transform:
   - {fileID: 787959124}
   - {fileID: 2089087123}
   - {fileID: 1000995900}
-  - {fileID: 1810963745}
   - {fileID: 1688784157}
   m_Father: {fileID: 712839083}
   m_RootOrder: -1
