@@ -1,25 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class PlayerSounds : MonoBehaviour
 {
     public PlayerMovementDen Player;
     public AudioClip[] audioClips;
     public AudioSource Sound;
-    public System.Random rand;
     Rigidbody rb;
     public int stepLength;
     private float counter;
     // Start is called before the first frame update
     void Start()
     {
-        rand = new System.Random();
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (counter >= stepLength && !Sound.isPlaying && Player.isMoving() && Player.grounded)
         {

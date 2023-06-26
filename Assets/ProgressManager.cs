@@ -304,7 +304,7 @@ public class ProgressManager : MonoBehaviour
             if (Core.GetLanguage() == 0)
                 result += "Who would have thought the old well is a secret entrance?! I bet no-one was there for at least 500 years! Except for David I guess...\n\n";
             else
-                result += "Kdo by si pomyslel, že ta stará studna je tajným vchodem. Vsadil bych se, že tu nikdo nebyl alespoò 500 let! Kromì Davida teda...\n\n;"
+                result += "Kdo by si pomyslel, že ta stará studna je tajným vchodem. Vsadil bych se, že tu nikdo nebyl alespoò 500 let! Kromì Davida teda...\n\n";
         if (casetteFound && !casettePlayed)
             if (Core.GetLanguage() == 0)
                 result += "I found mysterious casette in David's car player. I need to find a way to listen to it.\n\n";
@@ -314,7 +314,7 @@ public class ProgressManager : MonoBehaviour
             if (Core.GetLanguage() == 0)
                 result += "Oh my God, what was David talking about?! Excavation?! Ice Singing Lady? Entrace hidden with contaminated water note. He can't be serious\n\n";
             else
-                result += "Proboha, o èem to sakra David mluvil? Výzkum? Dáma ze Zpívaného Ledu? Tajný vchod maskovaný zkazkou o kontaminované vodì?! To nemùže myslet vážnì!\n\n;"
+                result += "Proboha, o èem to sakra David mluvil? Výzkum? Dáma ze Zpívaného Ledu? Tajný vchod maskovaný zkazkou o kontaminované vodì?! To nemùže myslet vážnì!\n\n";
         if (burnedCasettesFound && !casettePlayed)
             if (Core.GetLanguage() == 0)
                 result += "Someone burned a lot of casettes near David's cabin. Why?!\n\n";
