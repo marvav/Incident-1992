@@ -7,6 +7,7 @@ public class PlayerSounds : MonoBehaviour
 {
     public PlayerMovementDen Player;
     public AudioClip[] audioClips;
+    public AudioClip[] woodSteps;
     public AudioSource Sound;
     Rigidbody rb;
     public int stepLength;
@@ -23,20 +24,30 @@ public class PlayerSounds : MonoBehaviour
         if (counter >= stepLength && !Sound.isPlaying && Player.isMoving() && Player.grounded)
         {
             counter = 0;
-            if (Sound.panStereo>0)
+            switch (Player.GetFloor())
             {
-                Sound.clip = audioClips[rand.Next(audioClips.Length/2, audioClips.Length)];
+                case "Wood":
+                    ChooseLeg(woodSteps);
+                    break;
+                default:
+                    ChooseLeg(audioClips);
+                    break;
             }
-            else
-            {
-                Sound.clip = audioClips[rand.Next(0, audioClips.Length / 2)];
-            }
-            Sound.panStereo *= -1;
             Sound.Play();
         }
         if (rb.velocity.magnitude == 0)
             counter = 0;
         else
             counter += rb.velocity.magnitude;
+    }
+
+    void ChooseLeg(AudioClip[] clips)
+    {
+        if (Sound.panStereo > 0)
+            Sound.clip = clips[rand.Next(clips.Length / 2, clips.Length)];
+        else
+            Sound.clip = clips[rand.Next(0, clips.Length / 2)];
+
+        Sound.panStereo *= -1;
     }
 }

@@ -37,6 +37,7 @@ public class PlayerMovementDen : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    private string floorTag = "";
     public bool grounded;
 
     public Transform orientation;
@@ -65,7 +66,12 @@ public class PlayerMovementDen : MonoBehaviour
     {
         // ground check
         //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
-        grounded = Physics.CheckSphere(groundCheck.transform.position, groundCheck.GetComponent<SphereCollider>().radius * gameObject.transform.localScale.x, whatIsGround);
+        Collider[] array = Physics.OverlapSphere(groundCheck.transform.position, groundCheck.GetComponent<SphereCollider>().radius * gameObject.transform.localScale.x, whatIsGround);
+        grounded = array.Length != 0;
+        if (grounded)
+            floorTag = array[0].gameObject.tag;
+        else
+            floorTag = "";
         MyInput();
         SpeedControl();
 
@@ -173,5 +179,9 @@ public class PlayerMovementDen : MonoBehaviour
     public bool isMoving()
     {
         return horizontalInput+verticalInput> 0;
+    }
+    public string GetFloor()
+    {
+        return floorTag;
     }
 }

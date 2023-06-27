@@ -85,6 +85,16 @@ public class Core : MonoBehaviour
         }
     }
 
+    public void ChangeVolume(string tag, float volume)
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject gameobject in objects)
+        {
+            AudioSource audio = gameobject.GetComponent<AudioSource>();
+            audio.volume = volume;
+        }
+    }
+
     public int GetLanguage()
     {
         return Localization;

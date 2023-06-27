@@ -9,6 +9,7 @@ TagManager:
   - Icon
   - Monster
   - Localization
+  - Wood
   layers:
   - Default
   - TransparentFX
