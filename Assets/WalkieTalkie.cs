@@ -8,6 +8,8 @@ using static Inventory;
 public class WalkieTalkie : MonoBehaviour
 {
     public Core Core;
+    public GameObject enemyCamp;
+    public GameObject ThreeBoulders;
     public float availableTime;
     public int eventChance;
     public AudioSource buzzingSource;
@@ -28,6 +30,12 @@ public class WalkieTalkie : MonoBehaviour
     {
         if (!wasPlayed)
         {
+            if (index == 0 && isCloseToPlayer(enemyCamp.transform, 100.0f))
+                return;
+
+            if (index == 1 && isCloseToPlayer(ThreeBoulders.transform, 100.0f))
+                return;
+
             if (!recordingIsHappening && rand.Next(0, eventChance) == 1)
             {
                 if (Inventory.InHand != null && Inventory.InHand.name == "WalkieTalkie")
