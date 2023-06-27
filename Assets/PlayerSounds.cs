@@ -7,16 +7,13 @@ public class PlayerSounds : MonoBehaviour
 {
     public PlayerMovementDen Player;
     public AudioClip[] audioClips;
+    public float pitch;
     public AudioClip[] woodSteps;
+    public float woodPitch;
     public AudioSource Sound;
-    Rigidbody rb;
+    public Rigidbody rb;
     public int stepLength;
     private float counter;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -27,11 +24,17 @@ public class PlayerSounds : MonoBehaviour
             switch (Player.GetFloor())
             {
                 case "Wood":
-                    ChooseLeg(woodSteps);
-                    break;
+                    {
+                        ChooseLeg(woodSteps);
+                        Sound.pitch = woodPitch;
+                        break;
+                    }
                 default:
-                    ChooseLeg(audioClips);
-                    break;
+                    {
+                        ChooseLeg(audioClips);
+                        Sound.pitch = pitch;
+                        break;
+                    }
             }
             Sound.Play();
         }

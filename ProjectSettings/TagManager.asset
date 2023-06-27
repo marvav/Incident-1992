@@ -10,6 +10,9 @@ TagManager:
   - Monster
   - Localization
   - Wood
+  - Voice
+  - PlayerSounds
+  - Music
   layers:
   - Default
   - TransparentFX

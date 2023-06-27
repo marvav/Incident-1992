@@ -14,6 +14,7 @@ public class FlashLightComponent : MonoBehaviour
     public Light FlashLight;
     public Light NearLight;
     public Light bodyLight;
+    public float dimmedBodyLight;
     private bool isFlickering;
     public int power = 100;
     public int dischargeSpeed;
@@ -32,7 +33,10 @@ public class FlashLightComponent : MonoBehaviour
     }
     void switchLight()
     {
-        bodyLight.enabled = !NearLight.enabled;
+        if (NearLight.enabled)
+            bodyLight.intensity = dimmedBodyLight;
+        else
+            bodyLight.intensity = bodyLight_intensity;
         NearLight.enabled = !NearLight.enabled;
         FlashLight.enabled = !FlashLight.enabled;
         LongDistanceFlashLight.enabled = !LongDistanceFlashLight.enabled;
@@ -43,20 +47,8 @@ public class FlashLightComponent : MonoBehaviour
         FlashLight.intensity = original_intensity * number;
         LongDistanceFlashLight.intensity = LongDistance_intensity * number;
     }
-    void Update()
+    void FixedUpdate()
     {
-        //Number of clips has to be even. First half are "turn on" sounds, Second half are "turn off" sounds.
-        if (Input.GetButtonDown("Flashlight"))
-        {
-            if (FlashLight.enabled)
-                Sound.clip = audioClips[rand.Next(audioClips.Length / 2, audioClips.Length)];
-            else
-                Sound.clip = audioClips[rand.Next(0, audioClips.Length / 2)];
-            Sound.Play();
-            isFlickering = false;
-            switchLight();
-        }
-
         if (FlashLight.enabled && power > 0 && rand.Next(0, 1000) < dischargeSpeed)
             power -= 1;
 
@@ -65,7 +57,7 @@ public class FlashLightComponent : MonoBehaviour
             NearLight.intensity = 0;
             FlashLight.intensity = 0;
             LongDistanceFlashLight.intensity = 0;
-            bodyLight.intensity = 0;
+            bodyLight.intensity = dimmedBodyLight;
             isFlickering = false;
         }
         if (0 < power)
@@ -90,6 +82,20 @@ public class FlashLightComponent : MonoBehaviour
                     isFlickering = false;
                 }
             }
+        }
+    }
+    void Update()
+    {
+        //Number of clips has to be even. First half are "turn on" sounds, Second half are "turn off" sounds.
+        if (Input.GetButtonDown("Flashlight"))
+        {
+            if (FlashLight.enabled)
+                Sound.clip = audioClips[rand.Next(audioClips.Length / 2, audioClips.Length)];
+            else
+                Sound.clip = audioClips[rand.Next(0, audioClips.Length / 2)];
+            Sound.Play();
+            isFlickering = false;
+            switchLight();
         }
     }
     public void Restore_Capacity()
