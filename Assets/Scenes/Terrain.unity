@@ -43050,8 +43050,8 @@ MonoBehaviour:
   - This well has been stripped of its functional parts to prevent tourists from
     drinking its water. The water is contaminated. Please, do not repair!
   - "Tato studna byla zbavena sv\xFDch funk\u010Dn\xEDch \u010D\xE1st\xED, abychom
-    zamezili turist\u016Fm v pit\xED jej\xED voda. Voda je kontaminovan\xE1. Pros\xEDm,
-    nesna\u017Ete se ji p\xEDt, ani studnu opravovat."
+    zamezili turist\u016Fm v pit\xED jej\xED vody. Voda je kontaminovan\xE1. Pros\xEDm,
+    jej\xED vodu nepijte ani ji neopravujte!"
   clueID: 0
 --- !u!33 &955053257
 MeshFilter:
@@ -71936,6 +71936,8 @@ GameObject:
   - component: {fileID: 1560897803}
   - component: {fileID: 1560897806}
   - component: {fileID: 1560897805}
+  - component: {fileID: 1560897808}
+  - component: {fileID: 1560897807}
   m_Layer: 9
   m_Name: Tourist map
   m_TagString: Untagged
@@ -72008,6 +72010,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560897802}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1560897807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560897802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d3cb373860dbb44bb74119664de922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  clips:
+  - {fileID: 8300000, guid: d31a7020baffdef4292a67e5a16450f3, type: 3}
+  - {fileID: 8300000, guid: 61447868eef81da4f84191157d3e27f3, type: 3}
+  clipID: 0
+--- !u!65 &1560897808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560897802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 0.00000059604645, z: 10.000002}
+  m_Center: {x: -0.000030517578, y: 0.0009765625, z: 0}
 --- !u!1 &1567808984
 GameObject:
   m_ObjectHideFlags: 0
@@ -89805,6 +89845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1984299332}
+  - component: {fileID: 1984299333}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -89836,6 +89877,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1984299333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984299331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dee2d202beaea49bab69950a05e37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1984492843
 MonoBehaviour:
   m_ObjectHideFlags: 0

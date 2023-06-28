@@ -6,6 +6,7 @@ using TMPro;
 using static Core_Utils;
 using static Archive;
 using static Inventory;
+using static VoiceOverManager;
 
 public class Core : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Core : MonoBehaviour
 
         Archive.InitializeArchive();
         Inventory.InitializeInventory();
+        VoiceOverManager.InitializeVoiceOverManager();
 
         delay = Time.realtimeSinceStartup;
         RenderSettings.ambientLight = new Color(startingGamma, startingGamma, startingGamma, 1.0f);
