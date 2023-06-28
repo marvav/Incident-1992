@@ -48,11 +48,6 @@ public class WalkieTalkie : MonoBehaviour
                 {
                     buzzingSource.clip = Buzz[rand.Next(0, Buzz.Length)];
                     buzzingSource.Play();
-                    if (rand.Next(0, 5) == 1)
-                    {
-                        Core.VoiceOver.clip = VoiceOver[rand.Next(0, VoiceOver.Length)];
-                        Core.VoiceOver.Play();
-                    }
                     recordingIsHappening = true;
                 }
             }

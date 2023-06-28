@@ -14989,8 +14989,150 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: What could have forced David to live like this... The car doesn't even look
-    usable. But maybe there is something useful. It even has a radio...
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 4
   clueID: 0
 --- !u!1 &342870342
@@ -15435,7 +15577,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Is this.. blood?!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!1 &349683111
@@ -18732,6 +18891,11 @@ MonoBehaviour:
   texts:
   - Style
   - Styl
+--- !u!1 &407958925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 113b86982997afd4d8adee9ef6728ddf, type: 3}
+  m_PrefabInstance: {fileID: 1554774879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &411321793
 GameObject:
   m_ObjectHideFlags: 0
@@ -19625,7 +19789,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Is this.. blood?!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!1 &429348463
@@ -21931,7 +22112,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: What? I don't remeber driving with a knife in my car
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2.5
   clueID: 0
 --- !u!65 &482585863
@@ -22602,6 +22835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 505466630}
   - component: {fileID: 505466631}
+  - component: {fileID: 505466632}
   m_Layer: 8
   m_Name: VoiceOver
   m_TagString: Voice
@@ -22720,6 +22954,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &505466632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505466629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cdf7927fa9c5a04db57377b165f8fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  source: {fileID: 505466631}
+  ProgressManager: {fileID: 513218967}
+  isRunning: 0
 --- !u!1 &506104447
 GameObject:
   m_ObjectHideFlags: 0
@@ -23129,7 +23379,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Homemade lightning rod. Definitely a fire hazard!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!1 &512883239
@@ -25009,7 +25308,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Shit.. I mean, it looks really old...
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!4 &541556173 stripped
@@ -27303,7 +27639,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: I destroyed their van
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 15
 --- !u!1 &607481851
@@ -27885,11 +28242,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622875257}
   m_CullTransparentMesh: 1
---- !u!1 &623267144 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
-  m_PrefabInstance: {fileID: 1317262657}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &623905201
 GameObject:
   m_ObjectHideFlags: 0
@@ -29469,7 +29821,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: I destroyed their van
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 15
 --- !u!1 &646750005
@@ -37975,7 +38348,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: The blade glows as if it was melting
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!114 &834152073
@@ -39338,7 +39747,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Who would left rusty car inside a national park?!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 4
   clueID: 0
 --- !u!4 &886199113 stripped
@@ -42850,7 +43308,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: The cave is unlocked
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 14
 --- !u!82 &953560933
@@ -47306,7 +47784,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: The flashlight is creepy. Should I investigate?
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 3
 --- !u!1 &1036140213
@@ -48105,7 +48630,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: A strange hidden camp? What the hell is going on?!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 10
   clueID: 0
 --- !u!1 &1056146337
@@ -54616,7 +55191,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Looks like cave excavation storage cabinet.
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 3
   clueID: 0
 --- !u!4 &1199874690 stripped
@@ -57212,6 +57830,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238390836}
   m_Mesh: {fileID: -6100752449607423867, guid: 3b17808190c065841b89e3091c9cdae7, type: 3}
+--- !u!1 &1243839730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243839731}
+  - component: {fileID: 1243839732}
+  m_Layer: 6
+  m_Name: Description
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1243839731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243839730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1554774880}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1243839732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243839730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8294aea7b9944b4aae2590d56d0abcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  text:
+  - Someone must have burned a lot of casettes and a radio.
+  - "N\u011Bkdo tu sp\xE1lil spoustu kazet i s r\xE1diem."
+  range: 2
+  clueID: 0
 --- !u!1 &1244344506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d0c22d416ab58fe48ace6b8c1ea7fe62, type: 3}
@@ -61386,32 +62054,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317262659}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
 --- !u!4 &1317262658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
   m_PrefabInstance: {fileID: 1317262657}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1317262659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623267144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8294aea7b9944b4aae2590d56d0abcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
-  text: Strange, someone have burned a lot of casettes and a radio in here. But why?
-  range: 2
-  clueID: 20
 --- !u!1 &1320976083
 GameObject:
   m_ObjectHideFlags: 0
@@ -61921,7 +62570,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: It's not like I mourn over a man that wanted to kill me.. but damn!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!114 &1330214809
@@ -62191,7 +62907,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Someone must have dug this hole recently
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 4
   clueID: 24
 --- !u!4 &1334356649
@@ -65728,7 +66484,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: This radio equipment won't work. The electricity is turned off
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 21
 --- !u!4 &1415588030 stripped
@@ -69047,7 +69865,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: What kind of games could kids play with lightning rod?
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!1 &1484035633
@@ -71751,14 +72623,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 113b86982997afd4d8adee9ef6728ddf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1243839731}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 113b86982997afd4d8adee9ef6728ddf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1554774884}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 113b86982997afd4d8adee9ef6728ddf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1554774883}
   m_SourcePrefab: {fileID: 100100000, guid: 113b86982997afd4d8adee9ef6728ddf, type: 3}
 --- !u!4 &1554774880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 113b86982997afd4d8adee9ef6728ddf, type: 3}
   m_PrefabInstance: {fileID: 1554774879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1554774883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407958925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d3cb373860dbb44bb74119664de922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  VoiceOverComponent: {fileID: 505466632}
+  replacementDescription: {fileID: 0}
+  clipID: 1
+  progressNumber: 20
+  clips:
+  - {fileID: 8300000, guid: eb6541618c6f79b45ad5ed658e6b2151, type: 3}
+  - {fileID: 8300000, guid: 2829d93d6a002b147ba6cff296ed8262, type: 3}
+  subtitlesEN:
+  - Someone's burned a lot of casettes and a radio...
+  - But why?
+  - It doesn't really seem like a barbecue
+  timestampsEN:
+  - 0
+  - 2
+  - 3
+  subtitlesCZ:
+  - "Hmm, to je zvl\xE1\u0161tn\xED"
+  - "N\u011Bkdo sp\xE1lil kazety i s r\xE1diem"
+  - "Ale na grilova\u010Dku to zrovna nevypad\xE1"
+  timestampsCZ:
+  - 0
+  - 1.5
+  - 3
+--- !u!135 &1554774884
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407958925}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.64187646
+  m_Center: {x: -0.3421016, y: 0.06670209, z: -0.2869502}
 --- !u!1 &1556375712
 GameObject:
   m_ObjectHideFlags: 0
@@ -72023,10 +72961,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  VoiceOverComponent: {fileID: 505466632}
+  replacementDescription: {fileID: 0}
+  clipID: 0
+  progressNumber: 0
   clips:
   - {fileID: 8300000, guid: d31a7020baffdef4292a67e5a16450f3, type: 3}
   - {fileID: 8300000, guid: 61447868eef81da4f84191157d3e27f3, type: 3}
-  clipID: 0
+  subtitlesEN:
+  - It's nice they have this place covered with maps and colored tracks.
+  - my chances of not getting lost increased slightly
+  timestampsEN:
+  - 0
+  - 3
+  subtitlesCZ:
+  - "Je fajn \u017Ee pokryli tohle m\xEDsto turistick\xFDma zna\u010Dkama"
+  - "M\xE1m aspo\u0148 n\u011Bjakou \u0161anci, \u017Ee se neztrat\xEDm..."
+  timestampsCZ:
+  - 0
+  - 3
 --- !u!65 &1560897808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79299,7 +80252,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Is this.. blood?!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!23 &1709675082
@@ -81547,7 +82517,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: The gate is closed shut.
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 2
 --- !u!1 &1777750724
@@ -85463,7 +86457,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Is this.. blood?!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!1001 &1881596715
@@ -88457,7 +89468,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: The rope was CUT!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!1 &1972517803
@@ -89845,7 +90873,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1984299332}
-  - component: {fileID: 1984299333}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -89877,18 +90904,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1984299333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984299331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6dee2d202beaea49bab69950a05e37d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1984492843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89902,7 +90917,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Oh my God! The fuckers burned down my car!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 11
 --- !u!1001 &1986561522
@@ -91436,7 +92493,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Are these fresh tire tracks? Where do they lead?
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 4
   clueID: 5
 --- !u!1 &2011324928
@@ -92445,7 +93550,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: I destroyed their van
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 15
 --- !u!1001 &2045760493
@@ -94816,7 +95942,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: Is this.. blood?!
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 0
 --- !u!1 &2085823714
@@ -98145,7 +99288,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  text: I destroyed their van
+  text:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   range: 2
   clueID: 15
 --- !u!1001 &2143950210
