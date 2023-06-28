@@ -26,12 +26,18 @@ public class monsterFollow : MonoBehaviour
     public int respawnDistance;
     public Vector3[] spawnPlaces;
 
-    
+    public bool x1 = false;
+    public bool x2 = false;
+    public bool x3 = false;
+    public bool x4 = false;
+
+
     private int monsterDirection;
 
     private float distance;
     private bool isClose = false;
     private bool messaging = true;
+    private Vector3 blankVector = new Vector3(0, 0, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +49,12 @@ public class monsterFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (x1)
+        {
+            Teleport(followTransform.position, new Vector3(-10, 0, 0));
+            x1 = false;
+            return;
+        }
         if(follow)
         {
             distance = Vector3.Distance(followTransform.position, transform.position);
@@ -145,6 +157,11 @@ public class monsterFollow : MonoBehaviour
     public void ToggleMonster()
     {
         monsterDirection *= -1;
+    }
+
+    public void Teleport(Vector3 position, Vector3 offset)
+    {
+        transform.position = new Vector3(position.x + offset.x,position.y + offset.y,position.z + offset.z);
     }
 
 }
