@@ -27,6 +27,7 @@ public class PlayerMovementDen : MonoBehaviour
     public float gravity;
 
     public GameObject groundCheck;
+    public GrabbingController GrabbingController;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -38,6 +39,7 @@ public class PlayerMovementDen : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     private string floorTag = "";
+    private Collider[] groundArray;
     public bool grounded;
 
     public Transform orientation;
@@ -66,10 +68,10 @@ public class PlayerMovementDen : MonoBehaviour
     {
         // ground check
         //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
-        Collider[] array = Physics.OverlapSphere(groundCheck.transform.position, groundCheck.GetComponent<SphereCollider>().radius * gameObject.transform.localScale.x, whatIsGround);
-        grounded = array.Length != 0;
+        groundArray = Physics.OverlapSphere(groundCheck.transform.position, groundCheck.GetComponent<SphereCollider>().radius * gameObject.transform.localScale.x, whatIsGround);
+        grounded = groundArray.Length != 0 && groundArray[0] != GrabbingController.GetHeldObject();
         if (grounded)
-            floorTag = array[0].gameObject.tag;
+            floorTag = groundArray[0].gameObject.tag;
         else
             floorTag = "";
         MyInput();
@@ -115,8 +117,8 @@ public class PlayerMovementDen : MonoBehaviour
         if((!Input.GetKey(sprintKey) || staminaDrained) && currentStamina < stamina)
             currentStamina += Time.deltaTime* staminaRechargeSpeed;
 
-        // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && (grounded || gameObject.transform.parent!=null))
+        // when to jump (grounded || gameObject.transform.parent!=null)
+        if (Input.GetKey(jumpKey) && readyToJump && (grounded || gameObject.transform.parent != null))
         {
             readyToJump = false;
 

@@ -9,11 +9,10 @@ public class GrabbedObject : MonoBehaviour
     public GrabbingController GrabbingController;
     public bool collideWithPlayer = false;
     private bool isHidden = true;
-    public Renderer renderer;
 
     void FixedUpdate()
     {
-        if (renderer.isVisible && !GrabbingController.isHolding() && CanInteract(this.gameObject, 2.0f, 20.0f))
+        if (!GrabbingController.isHolding() && CanInteract(this.gameObject, 2.0f, 20.0f))
         {
             isHidden = false;
             HoldIcon.SetActive(true);

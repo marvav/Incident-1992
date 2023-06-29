@@ -6,7 +6,7 @@ public class GrabbingController : MonoBehaviour
 {
     [SerializeField] Transform holdPoint;
     public Transform orientation;
-    private GameObject heldObject;
+    private GameObject heldObject = null;
     private Rigidbody heldObjectRb;
     private bool wasCentered = false;
     public LayerMask pickableLayer;
@@ -18,6 +18,8 @@ public class GrabbingController : MonoBehaviour
     private ObjectRotator holdPointRotator;
     private PlayerCamera camera;
     // [SerializeField] private Pause pause;
+
+    public GameObject GetHeldObject() { return heldObject; }
 
     public bool isHolding()
     {
