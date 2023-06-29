@@ -9,6 +9,7 @@ public class monsterFollow : MonoBehaviour
     public GameObject monsterSubtitles;
     public GameObject eyes;
     public Light flashlight;
+    public float speedUpWhenFlashlightOn;
     public Transform followTransform;
     public GameObject death;
     public AudioSource buzzing;
@@ -25,11 +26,6 @@ public class monsterFollow : MonoBehaviour
     public int revealDistance;
     public int respawnDistance;
     public Vector3[] spawnPlaces;
-
-    public bool x1 = false;
-    public bool x2 = false;
-    public bool x3 = false;
-    public bool x4 = false;
 
 
     private int monsterDirection;
@@ -49,13 +45,7 @@ public class monsterFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (x1)
-        {
-            Teleport(followTransform.position, new Vector3(-10, 0, 0));
-            x1 = false;
-            return;
-        }
-        if(follow)
+        if (follow)
         {
             distance = Vector3.Distance(followTransform.position, transform.position);
             monsterSubtitles.SetActive(messaging && distance < messageDistance);
@@ -89,13 +79,13 @@ public class monsterFollow : MonoBehaviour
                 {
                     int random = rand.Next(0, 4);
                     if(random == 0)
-                        transform.position = followTransform.position + new Vector3(-50, 0, 0);
-                    if(random == 1)
-                        transform.position = followTransform.position + new Vector3(-40, 0, -20);
+                        Teleport(followTransform.position, new Vector3(-20, 0, 0));
+                    if (random == 1)
+                        Teleport(followTransform.position, new Vector3(20, 0, 0));
                     if (random == 2)
-                        transform.position = followTransform.position + new Vector3(-20, 0, -40);
+                        Teleport(followTransform.position, new Vector3(0, 0, -20));
                     if (random == 3)
-                        transform.position = followTransform.position + new Vector3(0, 0, -50);
+                        Teleport(followTransform.position, new Vector3(0, 0, 20));
                     buzzing.Pause();
                     messaging = false;
                 }
@@ -146,6 +136,9 @@ public class monsterFollow : MonoBehaviour
     {
         charControl.Move(monsterDirection * transform.up * gravityScale * Time.deltaTime);
         transform.LookAt(followTransform);
+        float movement = monsterDirection * transform.forward * Time.deltaTime * speed;
+        if (flashlight.enabled)
+            movement += speedUpWhenFlashlightOn;
         charControl.Move(monsterDirection * transform.forward * Time.deltaTime * speed);
     }
 

@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using static Core_Utils;
 
 public class RandomSounds : MonoBehaviour
 {
     public AudioClip[] audioClips;
     public int rate;
     private AudioSource Sound;
-    public System.Random rand;
     // Start is called before the first frame update
     void Start()
     {
         Sound = GetComponent<AudioSource>();
-        rand = new System.Random();
     }
 
     // Update is called once per frame
