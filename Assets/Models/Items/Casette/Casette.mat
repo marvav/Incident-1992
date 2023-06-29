@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Casette
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: -4873485881877702949, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
+  m_Parent: {fileID: -4884681553720194071, guid: fd3d93a9bc5839443b9d41fc494fefee, type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _NORMALMAP

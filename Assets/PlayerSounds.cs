@@ -10,6 +10,8 @@ public class PlayerSounds : MonoBehaviour
     public float pitch;
     public AudioClip[] woodSteps;
     public float woodPitch;
+    public AudioClip[] asphaltSteps;
+    public float asphaltPitch;
     public AudioSource Sound;
     public Rigidbody rb;
     public int stepLength;
@@ -23,6 +25,12 @@ public class PlayerSounds : MonoBehaviour
             counter = 0;
             switch (Player.GetFloor())
             {
+                case "Asphalt":
+                    {
+                        ChooseLeg(asphaltSteps);
+                        Sound.pitch = asphaltPitch;
+                        break;
+                    }
                 case "Wood":
                     {
                         ChooseLeg(woodSteps);

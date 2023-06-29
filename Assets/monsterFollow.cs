@@ -136,10 +136,10 @@ public class monsterFollow : MonoBehaviour
     {
         charControl.Move(monsterDirection * transform.up * gravityScale * Time.deltaTime);
         transform.LookAt(followTransform);
-        float movement = monsterDirection * transform.forward * Time.deltaTime * speed;
+        Vector3 movement = monsterDirection * transform.forward * Time.deltaTime * speed;
         if (flashlight.enabled)
-            movement += speedUpWhenFlashlightOn;
-        charControl.Move(monsterDirection * transform.forward * Time.deltaTime * speed);
+            movement *= speedUpWhenFlashlightOn;
+        charControl.Move(movement);
     }
 
     public int GetMonsterDistance()
