@@ -7,8 +7,9 @@ public class ToggleObject : MonoBehaviour
 {
     public Core Core;
     public AudioClip sound;
-    public GameObject obj;
-    public GameObject objToSwap;
+    public GameObject OptionalCustomIcon;
+    public GameObject[] objects;
+    public GameObject[] objectsToSwap;
     public bool isOn = false;
     private bool isHidden = true;
     private bool isClicked = false;
@@ -19,7 +20,10 @@ public class ToggleObject : MonoBehaviour
         if (CanInteract(this.gameObject, 1.0f, 35.0f))
         {
             isHidden = false;
-            Core.Click.SetActive(true);
+            if(OptionalCustomIcon == null)
+                Core.Click.SetActive(true);
+            else
+                OptionalCustomIcon.SetActive(true);
             if (Input.GetButton("Pick Up"))
             {
                 if (!isClicked)
@@ -27,9 +31,8 @@ public class ToggleObject : MonoBehaviour
                     Core.Click.SetActive(false);
                     isOn = !isOn;
                     isClicked = true;
-                    obj.SetActive(isOn);
-                    if(objToSwap!=null)
-                        objToSwap.SetActive(!isOn);
+                    ToggleObjects(objects, isOn);
+                    ToggleObjects(objectsToSwap, !isOn);
                     Core.GeneralAudio.clip = sound;
                     Core.GeneralAudio.Play();
                 }
@@ -42,7 +45,10 @@ public class ToggleObject : MonoBehaviour
             isClicked = false;
             if (!isHidden)
             {
-                Core.Click.SetActive(false);
+                if (OptionalCustomIcon == null)
+                    Core.Click.SetActive(false);
+                else
+                    OptionalCustomIcon.SetActive(false);
                 isHidden = true;
             }
         }

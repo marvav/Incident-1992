@@ -25,6 +25,14 @@ public static class Core_Utils
         return result;
     }
 
+    public static void ToggleObjects(GameObject[] objects, bool state)
+    {
+        foreach(GameObject obj in objects)
+        {
+            obj.SetActive(state);
+        }
+    }
+
     public static void ToggleCursor()
     {
         if (Cursor.lockState == CursorLockMode.None)

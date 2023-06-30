@@ -27,11 +27,13 @@ public class Core : MonoBehaviour
     public GameObject NoteText;
     public TMP_Text Subtitles;
     public TMP_Text Description;
+    public TMP_Text CasetteCode;
     public AudioSource GeneralAudio;
     public AudioSource GeneralMusic;
     public VoiceOverSubtitles VoiceOver;
     public AudioSource PickUpSound;
     public AudioSource DeathSound;
+    public CombinationLock Lock;
     public ProgressManager ProgressManager;
     private float delay;
     private int Localization = 0;
@@ -39,6 +41,7 @@ public class Core : MonoBehaviour
 
     void Start()
     {
+
         Core_Utils.Player = Player;
         Core_Utils.Hand = Hand;
         Core_Utils.Camera = Camera;
@@ -46,6 +49,7 @@ public class Core : MonoBehaviour
         Archive.InitializeArchive();
         Inventory.InitializeInventory();
         VoiceOverManager.InitializeVoiceOverManager();
+        GenerateCode();
 
         delay = Time.realtimeSinceStartup;
         RenderSettings.ambientLight = new Color(startingGamma, startingGamma, startingGamma, 1.0f);
@@ -100,5 +104,15 @@ public class Core : MonoBehaviour
     public int GetLanguage()
     {
         return Localization;
+    }
+
+    public void GenerateCode()
+    {
+        CasetteCode.text = "";
+        for (int i = 0; i < 4; i++)
+        {
+            Lock.correctDigits[i] = rand.Next(0,10);
+            CasetteCode.text += Lock.correctDigits[i].ToString();
+        }
     }
 }
