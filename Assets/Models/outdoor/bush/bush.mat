@@ -96,7 +96,7 @@ Material:
     - EFFECT_EXTRA_TEX: 1
     - _AO: 2.4
     - _AlphaClip: 0
-    - _AlphaClipThreshold: 0.184
+    - _AlphaClipThreshold: 0
     - _AlphaToMask: 0
     - _BaseLight: 0.35
     - _BillboardKwToggle: 0

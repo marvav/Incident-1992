@@ -10,6 +10,7 @@ public static class Core_Utils
     public static GameObject Camera;
     public static System.Random rand = new System.Random();
     public static int interactionMask = ~(1 << 8);
+    public static int pickableMask = (1 << 7);
 
     public static List<GameObject> CountChildren(GameObject Object)
     {
@@ -55,6 +56,20 @@ public static class Core_Utils
                 Debug.Log(coverHit.collider.gameObject.name);
                 return coverHit.collider.gameObject.name == current.name;
             }
+        }
+        return false;
+    }
+
+    public static bool CanPickUp(GameObject current, float distance, float angle, RaycastHit coverHit)
+    {
+        if (isCloseToPlayer(current.transform, distance))
+        {
+            Vector3 direction = (current.transform.position - Camera.transform.position).normalized;
+            Vector3 directionHold = (Hand.transform.position - Camera.transform.position).normalized;
+            //Debug.DrawRay(Camera.transform.position, directionHold, Color.green);
+            //Debug.DrawRay(Camera.transform.position, direction, Color.green);
+            //Debug.Log(Vector3.Angle(direction, directionHold));
+            return Vector3.Angle(direction, directionHold) <= angle && Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, pickableMask);
         }
         return false;
     }

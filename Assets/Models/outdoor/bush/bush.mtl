@@ -1,0 +1,15 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl GreenBushMAt
+Ns 199.999995
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Thunder\\Desktop\\workspace\\Nyeste Modeller\\OBJECTS\\eviroment\\bushgreen1_NORM.png
+map_Kd C:\\Users\\marek\\Desktop\\Incident-1992\\Assets\\Models\\outdoor\\bush\\bush_diffuseOriginal.png
+map_d C:\\Users\\marek\\Desktop\\Incident-1992\\Assets\\Models\\outdoor\\bush\\bush_diffuseOriginal.png

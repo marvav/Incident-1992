@@ -14,15 +14,22 @@ public class Move : MonoBehaviour, IPointerClickHandler
     {
         int clickCount = eventData.clickCount;
 
-        if (clickCount == 1)
+        switch (clickCount)
         {
-            sound.Play();
-            obj.transform.Rotate(movement.x, movement.y, movement.z);
-            if (movement.y > 0)
-                Lock.changeDigit(index, -1);
-            else
-                Lock.changeDigit(index, 1);
+            case 1:
+                MoveOne();
+                break;
         }
+    }
+
+    public void MoveOne()
+    {
+        sound.Play();
+        obj.transform.Rotate(movement.x, movement.y, movement.z);
+        if (movement.y > 0)
+            Lock.changeDigit(index, -1);
+        else
+            Lock.changeDigit(index, 1);
     }
 
 

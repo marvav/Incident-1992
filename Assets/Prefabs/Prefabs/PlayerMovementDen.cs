@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerMovementDen : MonoBehaviour
 {
+    public Core Core;
     float speed;
     public float moveSpeed;
 
@@ -54,6 +55,9 @@ public class PlayerMovementDen : MonoBehaviour
     public bool staminaDrained = false;
     public bool isSprinting = false;
 
+    public float HeightHurtThreshold;
+    private bool landAndHurt = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -76,6 +80,7 @@ public class PlayerMovementDen : MonoBehaviour
             floorTag = "";
         MyInput();
         SpeedControl();
+        HandleFallDamage();
 
         // handle drag
         if (grounded)
@@ -185,5 +190,16 @@ public class PlayerMovementDen : MonoBehaviour
     public string GetFloor()
     {
         return floorTag;
+    }
+
+    public void HandleFallDamage()
+    {
+        Debug.Log(rb.velocity.y);
+        if(rb.velocity.y > -0.1f && landAndHurt)
+        {
+            Core.Hurt(2);
+            landAndHurt = false;
+        }
+        landAndHurt = landAndHurt || rb.velocity.y < HeightHurtThreshold;
     }
 }
