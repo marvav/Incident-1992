@@ -70,7 +70,7 @@ public class ProgressManager : MonoBehaviour
     public bool holeFound = false;
     public bool revolverUsed = false;
 
-    private bool[] id_list = new bool[50];
+    public bool[] id_list = new bool[50];
 
     public void changeObjective(int id)
     {
@@ -336,5 +336,15 @@ public class ProgressManager : MonoBehaviour
             else
                 result += "Nìkdo v lese vykopal podezøele velkou díru. Je èerstvá.\n\n";
         return result;
+    }
+
+    public int getFoundCluesCount()
+    {
+        int count = 0;
+        foreach(bool clue in id_list)
+        {
+            count += clue ? 1 : 0;
+        }
+        return count;
     }
 }
