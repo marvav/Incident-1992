@@ -59,6 +59,7 @@ public class FlashLightComponent : MonoBehaviour
             LongDistanceFlashLight.intensity = 0;
             bodyLight.intensity = dimmedBodyLight;
             isFlickering = false;
+            buzzing.Pause();
         }
         if (0 < power)
         {
@@ -95,12 +96,14 @@ public class FlashLightComponent : MonoBehaviour
                 Sound.clip = audioClips[rand.Next(0, audioClips.Length / 2)];
             Sound.Play();
             isFlickering = false;
+            buzzing.Pause();
             switchLight();
         }
     }
     public void Restore_Capacity()
     {
         isFlickering = false;
+        buzzing.Pause();
         NearLight.intensity = nearLight_intensity;
         FlashLight.intensity = original_intensity;
         LongDistanceFlashLight.intensity = LongDistance_intensity;
