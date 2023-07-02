@@ -8,7 +8,6 @@ public class ReadableNote : MonoBehaviour
 {
     public Core Core;
     public string[] titles;
-    public string content;
     public string[] contents;
     public int clueID;
     private bool isHidden = true;
@@ -22,7 +21,7 @@ public class ReadableNote : MonoBehaviour
             Core.PickUpItem.SetActive(true);
             if (Input.GetButton("Pick Up"))
             {
-                Core.NoteText.GetComponent<TMP_Text>().text = contents[Core.GetLanguage()];
+                Core.NoteText.GetComponent<TMP_Text>().text = GetContent();
                 Core.Note.SetActive(true);
                 Core.PickUpItem.SetActive(false);
                 Core.ProgressManager.changeObjective(clueID);
@@ -38,5 +37,10 @@ public class ReadableNote : MonoBehaviour
                 isHidden = true;
             }
         }
+    }
+
+    public string GetContent()
+    {
+        return contents[Core.GetLanguage()];
     }
 }

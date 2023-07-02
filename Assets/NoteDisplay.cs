@@ -10,6 +10,6 @@ public class NoteDisplay : MonoBehaviour
 
     void Start()
     {
-        text.text = note.content;
+        text.text = note.GetContent();
     }
 }
