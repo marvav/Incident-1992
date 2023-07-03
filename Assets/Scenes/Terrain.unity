@@ -9328,15 +9328,15 @@ GameObject:
   m_Component:
   - component: {fileID: 173624863}
   - component: {fileID: 173624865}
-  - component: {fileID: 173624864}
-  - component: {fileID: 173624866}
+  - component: {fileID: 173624868}
+  - component: {fileID: 173624867}
   m_Layer: 5
   m_Name: OpeningScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &173624863
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9349,16 +9349,26 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 452972620}
   - {fileID: 1118031931}
+  - {fileID: 656002062}
   m_Father: {fileID: 429348464}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000015258789, y: 0.000030517578}
-  m_SizeDelta: {x: 3840, y: 2160}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &173624864
+--- !u!222 &173624865
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173624862}
+  m_CullTransparentMesh: 1
+--- !u!114 &173624867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9371,14 +9381,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 634be68e3fc0569419b5116b8755d4fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9388,15 +9398,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &173624865
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173624862}
-  m_CullTransparentMesh: 1
---- !u!114 &173624866
+--- !u!114 &173624868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9405,25 +9407,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 173624862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a56a197ff230b547aaac582ad250659, type: 3}
+  m_Script: {fileID: 11500000, guid: 7732f2522e8a9ef4c93724aa6d2105c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
-  Flashlight: {fileID: 2085823714}
-  text: {fileID: 1118031929}
-  sound: {fileID: 163077830}
-  music: {fileID: 8300000, guid: fc0828bd1d640464594d2267e05baea4, type: 3}
-  lines:
-  - Fuck, why do I always have to be so late...
-  - 8 years without seeing each other and I have to be late
-  - As if forgiving past wasn't enough
-  - I should head to David's cabin as fast as possible
-  - Not sure what happened that caused him to change his mind
-  - But I heard he changed a lot lately, became kind of a loner
-  - And Brandon? I haven't heard anything about him since high school
-  - I need to get to the Hajenka cabin as fast as possible
-  - I should look at the map.
-  endLoopMusic: 1
+  next: {fileID: 0}
+  screen: {fileID: 173624867}
+  black: {fileID: 452972618}
+  speedScreen: 0.25
+  speedBlack: 0.1
+  fadeIn: 1
 --- !u!1 &174137217
 GameObject:
   m_ObjectHideFlags: 0
@@ -25699,6 +25692,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4956921487582360143, guid: 3c7e5551dd3e0d24fa116206e8b8da1d, type: 3}
   m_PrefabInstance: {fileID: 448640664}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &452972617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 452972620}
+  - component: {fileID: 452972619}
+  - component: {fileID: 452972618}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &452972618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452972617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 634be68e3fc0569419b5116b8755d4fd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &452972619
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452972617}
+  m_CullTransparentMesh: 1
+--- !u!224 &452972620
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452972617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 173624863}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &453832679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3143549617801501561, guid: 0e1937a3bc1bb914480eb1ab80930c9e, type: 3}
@@ -38426,6 +38495,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655973127}
   m_Mesh: {fileID: -2432090755550338912, guid: 27811dfb4111c3a4ab3ab35b3c1d372f, type: 3}
+--- !u!1 &656002061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 656002062}
+  - component: {fileID: 656002063}
+  m_Layer: 5
+  m_Name: PlayerInit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &656002062
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656002061}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 173624863}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.00010438316}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &656002063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656002061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cda7214ca7512b4f9e8f0fe26a6d604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!1 &656371302
 GameObject:
   m_ObjectHideFlags: 0
@@ -65388,6 +65507,7 @@ GameObject:
   - component: {fileID: 1118031931}
   - component: {fileID: 1118031930}
   - component: {fileID: 1118031929}
+  - component: {fileID: 1118031932}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -65415,7 +65535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: bb
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -65509,9 +65629,37 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000063824526}
+  m_AnchoredPosition: {x: -500, y: -0.000063824526}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1118031932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118031928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a56a197ff230b547aaac582ad250659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  Flashlight: {fileID: 2085823714}
+  text: {fileID: 1118031929}
+  sound: {fileID: 163077830}
+  music: {fileID: 8300000, guid: fc0828bd1d640464594d2267e05baea4, type: 3}
+  lines:
+  - Fuck, why do I always have to be so late...
+  - 8 years without seeing each other and I have to be late
+  - As if forgiving past wasn't enough
+  - I should head to David's cabin as fast as possible
+  - Not sure what happened that caused him to change his mind
+  - But I heard he changed a lot lately, became kind of a loner
+  - And Brandon? I haven't heard anything about him since high school
+  - I need to get to the Hajenka cabin as fast as possible
+  - I should look at the map.
+  endLoopMusic: 1
 --- !u!4 &1118472977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8e65b96b21166147a1527d4803ce5f7, type: 3}
@@ -87002,7 +87150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1484279821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93178,6 +93326,7 @@ GameObject:
   - component: {fileID: 1597161151}
   - component: {fileID: 1597161150}
   - component: {fileID: 1597161149}
+  - component: {fileID: 1597161152}
   m_Layer: 5
   m_Name: YouDied
   m_TagString: Untagged
@@ -93314,7 +93463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -93339,6 +93488,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597161147}
   m_CullTransparentMesh: 1
+--- !u!114 &1597161152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597161147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7732f2522e8a9ef4c93724aa6d2105c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  next: {fileID: 0}
+  screen: {fileID: 1597161150}
+  black: {fileID: 0}
+  speedScreen: 1
+  speedBlack: 1
+  fadeIn: 1
 --- !u!1001 &1597834542
 PrefabInstance:
   m_ObjectHideFlags: 0

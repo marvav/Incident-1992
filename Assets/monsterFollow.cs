@@ -55,10 +55,9 @@ public class monsterFollow : MonoBehaviour
                 Core.Hurt(4);
                 if(Core.PlayerHP <= 0)
                 {
-                    Time.timeScale = 0;
+                    //Time.timeScale = 0;
                     death.SetActive(true);
-                    Core.DeathHUD.SetActive(true);
-                    ToggleCursor();
+                    //ToggleCursor();
                     return;
                 }
             }
