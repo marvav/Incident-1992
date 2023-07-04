@@ -6,11 +6,12 @@ public class TurnOffPlayer : MonoBehaviour
 {
     public GameObject Player;
     public GameObject FlashLight;
+    public bool state;
 
     // Update is called once per frame
     void Update()
     {
-        Player.SetActive(false);
-        FlashLight.SetActive(false);
+        Player.GetComponent<PlayerMovementDen>().enabled = state;
+        FlashLight.GetComponent<FlashLightComponent>().enabled = state;
     }
 }

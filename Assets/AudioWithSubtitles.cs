@@ -8,19 +8,18 @@ public class AudioWithSubtitles : MonoBehaviour
     public AudioSource source;
     public string[] subtitles;
     public float[] subtitlesTimes;
-    public bool isClue;
     public ProgressManager ProgressManager;
-    public int progressNumber;
-    private int index;
-    private float timer;
+    public int progressNumber = 0;
+    public bool fluentMode = false;
+    private int index = 0;
+    private int charIndex = 0; 
+    private float timer = 0.0f;
     private bool isPaused = false;
 
     void Start()
     {
         Core.Monster.ToggleMonster();
         source.Play();
-        timer = 0.0f;
-        index = 0;
     }
 
     // Update is called once per frame
@@ -34,23 +33,29 @@ public class AudioWithSubtitles : MonoBehaviour
         }
         if (source.isPlaying || isPaused)
         {
+            timer += Time.deltaTime;
             if (isPaused)
             {
                 isPaused = false;
                 source.UnPause();
             }
-            timer += Time.deltaTime;
-            if (index < subtitles.Length && timer > subtitlesTimes[index])
+            if (fluentMode)
             {
-                Core.Subtitles.text = subtitles[index];
-                index++;
+                //TODO fluent character appearing
+            }
+            else
+            {
+                if (index < subtitles.Length && timer > subtitlesTimes[index])
+                {
+                    Core.Subtitles.text = subtitles[index];
+                    index++;
+                }
             }
 
         }
         else
         {
-            if (isClue)
-                ProgressManager.changeObjective(progressNumber);
+            ProgressManager.changeObjective(progressNumber);
             Core.Subtitles.text = "";
             Core.Monster.ToggleMonster();
             this.gameObject.SetActive(false);
