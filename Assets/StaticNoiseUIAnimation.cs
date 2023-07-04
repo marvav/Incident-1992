@@ -23,10 +23,7 @@ public class StaticNoiseUIAnimation : MonoBehaviour, IPointerEnterHandler, IPoin
 
         transform = GetComponent<RectTransform>();
         foreach (GameObject image in CountChildren(Particles))
-        {
             images.Add(image.GetComponent<RectTransform>());
-            image.GetComponent<RectTransform>().sizeDelta = new Vector2(rand.Next(particleSize, particleSize*2),rand.Next(particleSize, particleSize * 2));
-        }
     }
 
     // Update is called once per frame
@@ -36,6 +33,7 @@ public class StaticNoiseUIAnimation : MonoBehaviour, IPointerEnterHandler, IPoin
         {
             foreach (RectTransform image in images)
             {
+                image.sizeDelta = new Vector2(rand.Next(particleSize, particleSize * 2), rand.Next(particleSize, particleSize * 2));
                 int random_x = rand.Next((int)(transform.anchoredPosition.x - transform.sizeDelta.x / 2), (int)(transform.anchoredPosition.x + transform.sizeDelta.x/2));
                 int random_y = rand.Next((int)(transform.anchoredPosition.y - transform.sizeDelta.y / 2), (int)(transform.anchoredPosition.y + transform.sizeDelta.y/2));
                 image.anchoredPosition = new Vector3(random_x, random_y, 0);

@@ -28,6 +28,7 @@ public class PlayerMovementDen : MonoBehaviour
     public float gravity;
 
     public GameObject groundCheck;
+    public Collider Body;
     public GrabbingController GrabbingController;
 
     [HideInInspector] public float walkSpeed;
@@ -138,18 +139,15 @@ public class PlayerMovementDen : MonoBehaviour
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        // on ground
         if (grounded)
         {
-            transform.GetChild(4).GetChild(0).GetComponent<Collider>().material.dynamicFriction = 0.03f;
+            Body.material.dynamicFriction = 0.03f;
             velocity = Vector3.zero;
             rb.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
         }
-
-        // in air
-        else if (!grounded)
+        else
         {
-            transform.GetChild(4).GetChild(0).GetComponent<Collider>().material.dynamicFriction = 0;
+            Body.material.dynamicFriction = 0;
             rb.AddForce(moveDirection.normalized * speed * 10f * airMultiplier, ForceMode.Force);
             velocity.y += gravity * Time.deltaTime;
             rb.velocity += velocity;

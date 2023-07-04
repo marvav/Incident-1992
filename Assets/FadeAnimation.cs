@@ -11,40 +11,46 @@ public class FadeAnimation : MonoBehaviour
     public float speedScreen = 1.0f;
     public float speedBlack = 1.0f;
     public bool fadeIn = true;
+    public bool isDeath = false;
 
     // Update is called once per frame
     void Update()
     {
         //Time.timeScale = 0;
-        if (fadeIn && screen.color.a < 255)
+        float gain = Time.deltaTime;
+        if (fadeIn)
         {
             var tempColor = screen.color;
-            tempColor.a += Time.deltaTime * speedScreen;
+            tempColor.a = tempColor.a + gain * speedScreen < 1 ? tempColor.a + gain * speedScreen : 1;
             screen.color = tempColor;
             tempColor = black.color;
-            tempColor.a += Time.deltaTime * speedBlack;
+            tempColor.a = tempColor.a + gain * speedBlack < 1 ? tempColor.a + gain * speedBlack : 1;
             black.color = tempColor;
-            if (screen.color.a >= 255)
+            Debug.Log(screen.color.a);
+            if (screen.color.a == 1)
             {
-                Core.DeathHUD.SetActive(true);
-                this.gameObject.GetComponent<FadeAnimation>().enabled = false;
-                next.SetActive(true);
+                Debug.Log("im");
+                Continue();
             }
         }
-        if(!fadeIn && screen.color.a > 255)
+        else
         {
             var tempColor = screen.color;
-            tempColor.a -= Time.deltaTime * speedScreen;
+            tempColor.a = tempColor.a - gain * speedScreen > 0 ? tempColor.a - gain * speedScreen : 0;
             screen.color = tempColor;
             tempColor = black.color;
-            tempColor.a -= Time.deltaTime * speedBlack;
+            tempColor.a = tempColor.a - gain * speedBlack > 0 ? tempColor.a - gain * speedBlack : 0;
             black.color = tempColor;
-            if (screen.color.a <=0)
-            {
-                Core.DeathHUD.SetActive(true);
-                this.gameObject.GetComponent<FadeAnimation>().enabled = false;
-                next.SetActive(true);
-            }
+            if (screen.color.a ==0)
+                Continue();
         }
+    }
+    void Continue()
+    {
+        if(isDeath)
+            Core.DeathHUD.SetActive(true);
+        if(next!=null)
+            next.SetActive(true);
+        this.gameObject.GetComponent<FadeAnimation>().enabled = false;
     }
 }
