@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabbingController : MonoBehaviour
 {
     [SerializeField] Transform holdPoint;
+    public InteractionManager Hand;
     public Transform orientation;
     private GameObject heldObject = null;
     private Rigidbody heldObjectRb;
@@ -42,12 +43,7 @@ public class GrabbingController : MonoBehaviour
 
             if (heldObject == null)
             {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange, pickableLayer))
-                {
-                    Debug.Log("Picked up");
-                    PickupObject(hit.collider.transform.gameObject);
-                }
+                PickupObject(Hand.CanPickUp());
             }
             else
             {
@@ -115,6 +111,8 @@ public class GrabbingController : MonoBehaviour
 
     public void PickupObject(GameObject pickObj)
     {
+        if (pickObj == null)
+            return;
         if (pickObj.GetComponent<Rigidbody>())
         {
             Debug.Log("Rigid");

@@ -192,7 +192,6 @@ public class PlayerMovementDen : MonoBehaviour
 
     public void HandleFallDamage()
     {
-        Debug.Log(rb.velocity.y);
         if(rb.velocity.y > -0.1f && landAndHurt)
         {
             Core.Hurt(2);

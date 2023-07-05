@@ -61,7 +61,7 @@ public static class Core_Utils
             //Debug.Log(Vector3.Angle(direction, directionHold));
             if (Vector3.Angle(direction, directionHold) <= angle && Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, interactionMask))
             {
-                Debug.Log(coverHit.collider.gameObject.name);
+                //Debug.Log(coverHit.collider.gameObject.name);
                 return coverHit.collider.gameObject.name == current.name;
             }
         }
@@ -80,5 +80,11 @@ public static class Core_Utils
             return Vector3.Angle(direction, directionHold) <= angle && Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, pickableMask);
         }
         return false;
+    }
+
+    public static bool CastRayHand(float distance, out RaycastHit coverHit)
+    {
+        Vector3 direction = (Hand.transform.position - Camera.transform.position).normalized;
+        return Physics.Raycast(Camera.transform.position, direction, out coverHit, distance);
     }
 }

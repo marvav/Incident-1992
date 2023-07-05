@@ -30,6 +30,11 @@ public static class Inventory
         return;
     }
 
+    public static void Add(string item)
+    {
+        Add(new Item(item));
+    }
+
     public static void Remove(string name)
     {
         for (int i = 0; i < Items.Count; i++)

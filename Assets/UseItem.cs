@@ -25,10 +25,8 @@ public class UseItem : MonoBehaviour
             if ((!itemNeeded || Inventory.InHand == NeededItem) && Input.GetMouseButtonDown(0))
             {
                 if (destroyAfterUse && itemNeeded)
-                {
-                    Inventory.InHand = null;
                     Inventory.Remove(NeededItem.name);
-                }
+                Inventory.InHand = null;
                 NeededItem.SetActive(false);
                 Core.Description.text = "";
                 MovedObject.SetActive(true);

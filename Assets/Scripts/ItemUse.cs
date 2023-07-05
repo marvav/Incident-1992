@@ -7,7 +7,6 @@ using static Core_Utils;
 
 public class ItemUse : MonoBehaviour, IPointerClickHandler
 {
-    public string text;
     public GameObject ItemInHand;
     public Core Core;
 
