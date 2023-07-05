@@ -16,6 +16,8 @@ TagManager:
   - Papers
   - Asphalt
   - Water
+  - ReadableNote
+  - Toggle
   layers:
   - Default
   - TransparentFX
@@ -29,8 +31,8 @@ TagManager:
   - 
   - UI
   - Radio
-  - 
-  - 
+  - E-Interactions
+  - LMB-Interactions
   - 
   - 
   - 

@@ -7501,6 +7501,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2909672253493867174, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
+      propertyPath: Hand
+      value: 
+      objectReference: {fileID: 836405678}
+    - target: {fileID: 2909672253493867174, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: holdPoint
       value: 
       objectReference: {fileID: 143617541}
@@ -7558,7 +7562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2909672254416225424, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 3575
+      value: 7671
       objectReference: {fileID: 0}
     - target: {fileID: 2909672254416225424, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: m_AllowDynamicResolution
@@ -9816,7 +9820,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects:
   - {fileID: 245785265}
   objectsToSwap: []
@@ -21734,9 +21737,9 @@ GameObject:
   - component: {fileID: 366725266}
   - component: {fileID: 366725265}
   - component: {fileID: 366725268}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: David's Note
-  m_TagString: Untagged
+  m_TagString: ReadableNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30150,9 +30153,9 @@ GameObject:
   - component: {fileID: 512883243}
   - component: {fileID: 512883242}
   - component: {fileID: 512883241}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Battery
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39841,9 +39844,9 @@ GameObject:
   - component: {fileID: 668180401}
   - component: {fileID: 668180402}
   - component: {fileID: 668180404}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Welcome Note
-  m_TagString: Untagged
+  m_TagString: ReadableNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45849,7 +45852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects: []
   objectsToSwap: []
   isOn: 0
@@ -49498,6 +49500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 836405677}
+  - component: {fileID: 836405678}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -49520,6 +49523,22 @@ Transform:
   m_Father: {fileID: 143617542}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &836405678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836405676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f6e72062a9dde4983ad8705f2e9873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  currentIcon: {fileID: 0}
+  HoldPickable: {fileID: 361361047}
+  InteractionDistance: 1.5
 --- !u!1 &844981840
 GameObject:
   m_ObjectHideFlags: 0
@@ -56866,10 +56885,9 @@ GameObject:
   - component: {fileID: 955053256}
   - component: {fileID: 955053255}
   - component: {fileID: 955053258}
-  - component: {fileID: 955053259}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Well Note
-  m_TagString: Untagged
+  m_TagString: ReadableNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56984,18 +57002,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 27.940006, y: 0.21433671, z: 20.320011}
   m_Center: {x: -0.0009765736, y: 0.046380017, z: 0}
---- !u!114 &955053259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955053253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfc121ef100f7f43b66e4a7762e05f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &955410364
 GameObject:
   m_ObjectHideFlags: 0
@@ -59341,7 +59347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects:
   - {fileID: 93635231}
   objectsToSwap:
@@ -72390,7 +72395,7 @@ GameObject:
   - component: {fileID: 1213251331}
   - component: {fileID: 1213251330}
   - component: {fileID: 1213251329}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81554,9 +81559,9 @@ GameObject:
   - component: {fileID: 1349218430}
   - component: {fileID: 1349218429}
   - component: {fileID: 1349218428}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Switch
-  m_TagString: Untagged
+  m_TagString: Toggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81611,7 +81616,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects:
   - {fileID: 1980171990}
   objectsToSwap: []
@@ -82740,7 +82744,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects: []
   objectsToSwap: []
   isOn: 0
@@ -83657,7 +83660,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects:
   - {fileID: 1183888112}
   - {fileID: 1257810787}
@@ -87092,7 +87094,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects: []
   objectsToSwap: []
   isOn: 0
@@ -89039,7 +89040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1484279821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -98402,9 +98403,9 @@ GameObject:
   - component: {fileID: 1651838707}
   - component: {fileID: 1651838706}
   - component: {fileID: 1651838705}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Batery
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102889,7 +102890,7 @@ GameObject:
   - component: {fileID: 1747341220}
   - component: {fileID: 1747341219}
   - component: {fileID: 1747341218}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Text
   m_TagString: Papers
   m_Icon: {fileID: 0}
@@ -105812,7 +105813,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects: []
   objectsToSwap: []
   isOn: 0
@@ -109415,9 +109415,9 @@ GameObject:
   - component: {fileID: 1878323920}
   - component: {fileID: 1878323919}
   - component: {fileID: 1878323918}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Switch
-  m_TagString: Untagged
+  m_TagString: Toggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109472,7 +109472,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects:
   - {fileID: 1107457153}
   objectsToSwap: []
@@ -113334,7 +113333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects:
   - {fileID: 427136957}
   objectsToSwap:
@@ -116168,7 +116166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  OptionalCustomIcon: {fileID: 0}
   objects: []
   objectsToSwap: []
   isOn: 0
@@ -122285,9 +122282,9 @@ GameObject:
   - component: {fileID: 2089269256}
   - component: {fileID: 2089269255}
   - component: {fileID: 2089269254}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125293,7 +125290,7 @@ GameObject:
   - component: {fileID: 2134430945}
   - component: {fileID: 2134430944}
   - component: {fileID: 2134430943}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

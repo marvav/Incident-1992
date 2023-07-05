@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Settings : MonoBehaviour
 {
@@ -10,9 +11,10 @@ public class Settings : MonoBehaviour
     public PlayerCamera cam;
     public Slider sensitivity;
     public Slider gamma;
-    public Slider fov;
     public Slider Localization;
     public Slider QualityLevel;
+    public Slider MaxFPS;
+    public TMP_Text fps_count;
 
     void Start()
     {
@@ -23,8 +25,9 @@ public class Settings : MonoBehaviour
     {
         RenderSettings.ambientLight = new Color(gamma.value, gamma.value, gamma.value, 1.0f);
         cam.SetSensitivity(sensitivity.value);
-        cameraStats.fieldOfView = fov.value;
         Core.ChangeLanguage((int) Localization.value);
         QualitySettings.SetQualityLevel((int) QualityLevel.value);
+        Application.targetFrameRate = (int) MaxFPS.value;
+        fps_count.text = "Max FPS: " + Application.targetFrameRate.ToString();
     }
 }
