@@ -85,6 +85,6 @@ public static class Core_Utils
     public static bool CastRayHand(float distance, out RaycastHit coverHit)
     {
         Vector3 direction = (Hand.transform.position - Camera.transform.position).normalized;
-        return Physics.Raycast(Camera.transform.position, direction, out coverHit, distance);
+        return Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, interactionMask);
     }
 }

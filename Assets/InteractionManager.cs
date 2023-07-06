@@ -7,13 +7,14 @@ using static Inventory;
 public class InteractionManager : MonoBehaviour
 {
     public Core Core;
-    public GameObject currentIcon;
     public GameObject HoldPickable;
+    public GrabbingController grabbingController;
+    public float InteractionDistance = 2.0f;
     private bool IconHidden = true;
     private RaycastHit coverHit;
     private bool CanPickup = false;
     private bool isClicked = false;
-    public float InteractionDistance = 1.5f;
+    private GameObject currentIcon;
 
     void Start()
     {
@@ -25,14 +26,23 @@ public class InteractionManager : MonoBehaviour
         if (CastRayHand(InteractionDistance, out coverHit))
         {
             Debug.Log(coverHit.collider.gameObject.name);
+            CanPickup = false;
             switch (coverHit.collider.gameObject.layer)
             {
                 case 7:
                     {
-                        CanPickup = true;
-                        SwapIcons(HoldPickable);
-                        currentIcon.SetActive(true);
-                        IconHidden = false;
+                        if (!grabbingController.isHolding())
+                        {
+                            CanPickup = true;
+                            SwapIcons(HoldPickable);
+                            currentIcon.SetActive(true);
+                            IconHidden = false;
+                        }
+                        else
+                        {
+                            currentIcon.SetActive(false);
+                            IconHidden = true;
+                        }
                         return;
                     }
                 case 12:
@@ -98,6 +108,7 @@ public class InteractionManager : MonoBehaviour
 
     public GameObject CanPickUp()
     {
+        Debug.Log(CanPickup);
         return CanPickup ? coverHit.collider.gameObject : null;
     }
 }

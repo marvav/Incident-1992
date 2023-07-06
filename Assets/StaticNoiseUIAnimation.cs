@@ -57,7 +57,8 @@ public class StaticNoiseUIAnimation : MonoBehaviour, IPointerEnterHandler, IPoin
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         Particles.SetActive(true);
-        Particles.transform.parent = this.transform;
+        Particles.transform.SetParent(this.transform, false);
+        Particles.transform.localPosition = new Vector2(-this.transform.localPosition.x, -this.transform.localPosition.y);
         animationStart = true;
         if(isText)
             text.fontStyle = (FontStyles)FontStyle.Bold;
