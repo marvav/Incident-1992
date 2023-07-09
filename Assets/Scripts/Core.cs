@@ -35,6 +35,7 @@ public class Core : MonoBehaviour
     public AudioSource DeathSound;
     public CombinationLock Lock;
     public ProgressManager ProgressManager;
+    public InteractionManager InteractionManager;
     private float delay;
     private int Localization = 0;
 
@@ -78,7 +79,8 @@ public class Core : MonoBehaviour
 
     public void ChangeLanguage(int value)
     {
-        if(value != Localization)
+        InteractionManager.ChangeLanguage();
+        if (value != Localization)
         {
             Localization = value;
             GameObject[] objects = GameObject.FindGameObjectsWithTag("Localization");

@@ -14,6 +14,7 @@ public class InteractionManager : MonoBehaviour
     private RaycastHit coverHit;
     private bool CanPickup = false;
     private bool isClicked = false;
+    private GameObject currentDescription = null;
     private GameObject currentIcon;
 
     void Start()
@@ -21,10 +22,16 @@ public class InteractionManager : MonoBehaviour
         currentIcon = Core.PickUpItem;
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (CastRayHand(InteractionDistance, out coverHit))
         {
+            ShowDescription();
+            if (currentDescription != null && currentDescription != coverHit.collider.gameObject)
+            {
+                Core.Description.text = "";
+                currentDescription = null;
+            }
             Debug.Log(coverHit.collider.gameObject.name);
             CanPickup = false;
             switch (coverHit.collider.gameObject.layer)
@@ -108,7 +115,22 @@ public class InteractionManager : MonoBehaviour
 
     public GameObject CanPickUp()
     {
-        Debug.Log(CanPickup);
+        //Debug.Log(CanPickup);
         return CanPickup ? coverHit.collider.gameObject : null;
+    }
+
+    void ShowDescription()
+    {
+        ObjectDescription description = coverHit.collider.gameObject.GetComponent<ObjectDescription>();
+        if (description != null)
+        {
+            currentDescription = description.gameObject;
+            ChangeLanguage();
+        }
+    }
+
+    public void ChangeLanguage()
+    {
+        Core.Description.text = currentDescription.GetComponent<ObjectDescription>().GetText(Core.GetLanguage());
     }
 }
