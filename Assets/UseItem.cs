@@ -13,34 +13,17 @@ public class UseItem : MonoBehaviour
     public GameObject NeededItem;
     public string[] description;
     public string message;
-    public Core Core;
-    private bool isHidden = true;
 
-    // Update is called once per frame
-    void Update()
+    public void Use()
     {
-        if (CanInteract(this.gameObject, 2.0f, 35.0f))
+        if ((!itemNeeded || Inventory.InHand == NeededItem))
         {
-            Core.Description.text = description[Core.GetLanguage()];
-            if ((!itemNeeded || Inventory.InHand == NeededItem) && Input.GetMouseButtonDown(0))
-            {
-                if (destroyAfterUse && itemNeeded)
-                    Inventory.Remove(NeededItem.name);
-                Inventory.InHand = null;
-                NeededItem.SetActive(false);
-                Core.Description.text = "";
-                MovedObject.SetActive(true);
-                ObjectToMove.SetActive(false);
-            }
-            isHidden = false;
-        }
-        else
-        {
-            if (!isHidden)
-            {
-                Core.Description.text = "";
-                isHidden = true;
-            }
+            if (destroyAfterUse && itemNeeded)
+                Inventory.Remove(NeededItem.name);
+            Inventory.InHand = null;
+            NeededItem.SetActive(false);
+            MovedObject.SetActive(true);
+            ObjectToMove.SetActive(false);
         }
     }
 }

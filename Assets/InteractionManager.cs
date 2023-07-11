@@ -24,16 +24,14 @@ public class InteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CanPickup = false;
         if (CastRayHand(InteractionDistance, out coverHit))
         {
-            ShowDescription();
-            if (currentDescription != null && currentDescription != coverHit.collider.gameObject)
-            {
+            if(coverHit.collider.gameObject.tag == "Description")
+                ShowDescription();
+            if (currentDescription != coverHit.collider.gameObject)
                 Core.Description.text = "";
-                currentDescription = null;
-            }
             Debug.Log(coverHit.collider.gameObject.name);
-            CanPickup = false;
             switch (coverHit.collider.gameObject.layer)
             {
                 case 7:
@@ -42,8 +40,6 @@ public class InteractionManager : MonoBehaviour
                         {
                             CanPickup = true;
                             SwapIcons(HoldPickable);
-                            currentIcon.SetActive(true);
-                            IconHidden = false;
                         }
                         else
                         {
@@ -54,9 +50,8 @@ public class InteractionManager : MonoBehaviour
                     }
                 case 12:
                     {
+                        ShowDescription();
                         SwapIcons(Core.PickUpItem);
-                        currentIcon.SetActive(true);
-                        IconHidden = false;
                         if (Input.GetButton("Pick Up"))
                         {
                             currentIcon.SetActive(false);
@@ -66,28 +61,20 @@ public class InteractionManager : MonoBehaviour
                             if (coverHit.collider.gameObject.tag == "ReadableNote")
                                 coverHit.collider.gameObject.GetComponent<ReadableNote>().PickUpNote();
                         }
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            if (coverHit.collider.gameObject.tag == "Toggle")
-                            {
-                                coverHit.collider.gameObject.GetComponent<ToggleObject>().Toggle();
-                            }
-                        }
                         return;
                     }
                 case 13:
                     {
-                        SwapIcons(Core.Click);
-                        currentIcon.SetActive(true);
-                        IconHidden = false;
+                        ShowDescription();
+                        ToggleObject obj = coverHit.collider.gameObject.GetComponent<ToggleObject>();
+                        SwapIcons(obj.icon);
                         if (Input.GetMouseButtonDown(0))
                         {
                             if (!isClicked)
                             {
                                 currentIcon.SetActive(false);
                                 isClicked = true;
-                                if (coverHit.collider.gameObject.tag == "Toggle")
-                                    coverHit.collider.gameObject.GetComponent<ToggleObject>().Toggle();
+                                obj.Toggle();
                             }
                         }
                         else
@@ -109,8 +96,13 @@ public class InteractionManager : MonoBehaviour
 
     void SwapIcons(GameObject icon)
     {
-        currentIcon.SetActive(false);
-        currentIcon = icon;
+        if(icon != null)
+        {
+            currentIcon.SetActive(false);
+            currentIcon = icon;
+            currentIcon.SetActive(true);
+            IconHidden = false;
+        }
     }
 
     public GameObject CanPickUp()
@@ -131,6 +123,7 @@ public class InteractionManager : MonoBehaviour
 
     public void ChangeLanguage()
     {
-        Core.Description.text = currentDescription.GetComponent<ObjectDescription>().GetText(Core.GetLanguage());
+        if(currentDescription!=null)
+            Core.Description.text = currentDescription.GetComponent<ObjectDescription>().GetText(Core.GetLanguage());
     }
 }

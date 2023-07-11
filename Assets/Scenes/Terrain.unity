@@ -7567,7 +7567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2909672254416225424, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 7671
+      value: 15863
       objectReference: {fileID: 0}
     - target: {fileID: 2909672254416225424, guid: ab80b10c0ad7ffe4fb9fd60511f7c94d, type: 3}
       propertyPath: m_AllowDynamicResolution
@@ -9742,7 +9742,7 @@ GameObject:
   - component: {fileID: 174137221}
   - component: {fileID: 174137220}
   - component: {fileID: 174137219}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9778,10 +9778,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
+  icon: {fileID: 636363629}
   objects:
   - {fileID: 245785265}
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 1
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!23 &174137220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11923,7 +11927,6 @@ MonoBehaviour:
   NeededItem: {fileID: 467575514}
   description: []
   message: 
-  Core: {fileID: 513218965}
 --- !u!65 &205796970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17520,12 +17523,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311378741}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.442, y: -0.036, z: 1.275}
-  m_LocalScale: {x: -52, y: 30, z: 2.5114295}
+  m_LocalRotation: {x: 0.000000089406946, y: -0.000000014901158, z: 0.000000029802315, w: 1}
+  m_LocalPosition: {x: -0.41501027, y: -0.037546292, z: -0.10438994}
+  m_LocalScale: {x: -52, y: 14.079792, z: 7.2811966}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1680012267}
+  m_Father: {fileID: 1886718112}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &311378743
@@ -21181,7 +21184,6 @@ MonoBehaviour:
   - Tire
   - Pneumatika
   message: Tire
-  Core: {fileID: 513218965}
 --- !u!135 &360381204
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22801,7 +22803,6 @@ MonoBehaviour:
   - Tire
   - Pneumatika
   message: Tire
-  Core: {fileID: 513218965}
 --- !u!135 &382287553
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22954,7 +22955,8 @@ GameObject:
   - component: {fileID: 391837461}
   - component: {fileID: 391837463}
   - component: {fileID: 391837462}
-  m_Layer: 6
+  - component: {fileID: 391837464}
+  m_Layer: 14
   m_Name: Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22969,7 +22971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391837460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.145, y: 0.539, z: 0.663}
+  m_LocalPosition: {x: -0.145, y: 0.539, z: 0.304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22995,7 +22997,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 0.5, z: 0.5}
+  m_Size: {x: 2, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &391837463
 MonoBehaviour:
@@ -23016,7 +23018,21 @@ MonoBehaviour:
   NeededItem: {fileID: 777484587}
   description: []
   message: I could use this radio equipment to play the casette I found
-  Core: {fileID: 513218965}
+--- !u!114 &391837464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391837460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contents:
+  - This radio equipment looks usable
+  - "Tohle vybaven\xED vypad\xE1 funk\u010Dn\u011B"
 --- !u!1001 &397696612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30163,6 +30179,7 @@ MonoBehaviour:
   DeathSound: {fileID: 129162057}
   Lock: {fileID: 1573220043}
   ProgressManager: {fileID: 513218967}
+  InteractionManager: {fileID: 836405678}
 --- !u!114 &513218967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33362,6 +33379,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 50
   heightRange: 25
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.05
   Particles: {fileID: 1921259187}
   isText: 0
@@ -34816,6 +34835,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 0
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.05
   Particles: {fileID: 1921259187}
   isText: 1
@@ -37427,10 +37448,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1680012267}
+      addedObject: {fileID: 616432320}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 616432320}
+      addedObject: {fileID: 1886718112}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
 --- !u!4 &643305057 stripped
@@ -38266,8 +38287,20 @@ PrefabInstance:
       value: DamagedPadLock
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      propertyPath: m_TagString
+      value: Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38279,6 +38312,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
       insertIndex: -1
       addedObject: {fileID: 650282488}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 650282491}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 650282490}
   m_SourcePrefab: {fileID: 100100000, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
 --- !u!4 &650282486 stripped
 Transform:
@@ -38311,7 +38350,6 @@ MonoBehaviour:
   - The lock is damaged, but I'd need a crowbar to finish it
   - "Z\xE1mek je po\u0161kozen\xFD... Hodilo by se mi p\xE1\u010Didlo."
   message: The lock is damaged, but I'd need a crowbar to finish it
-  Core: {fileID: 513218965}
 --- !u!82 &650282489
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38408,6 +38446,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &650282490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650282487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contents:
+  - The lock is damaged, but I'd need a crowbar to finish it
+  - "Z\xE1mek je po\u0161kozen\xFD... Hodilo by se mi p\xE1\u010Didlo."
+--- !u!114 &650282491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650282487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7eb87ab65d5914c8b650b2cefee824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  sound: {fileID: 8300000, guid: 57acd67a2c731c548904345168d3a64f, type: 3}
+  icon: {fileID: 0}
+  objects:
+  - {fileID: 885383094}
+  objectsToSwap:
+  - {fileID: 953560930}
+  neededItem: {fileID: 467575514}
+  isOn: 0
+  isOneTime: 1
+  destroyAfterUse: 1
 --- !u!1 &651828124
 GameObject:
   m_ObjectHideFlags: 0
@@ -40660,6 +40736,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 100
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.025
   Particles: {fileID: 1921259187}
   isText: 0
@@ -40843,6 +40921,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 100
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.025
   Particles: {fileID: 1921259187}
   isText: 0
@@ -45487,7 +45567,7 @@ GameObject:
   - component: {fileID: 777852400}
   - component: {fileID: 777852399}
   - component: {fileID: 777852402}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: SwitchHal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45524,9 +45604,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  objects: []
+  icon: {fileID: 0}
+  objects:
+  - {fileID: 1029396590}
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 0
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!23 &777852400
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45601,7 +45686,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 280.91827, y: 455.89157, z: 35.279213}
+  m_Size: {x: 800, y: 800, z: 35.279213}
   m_Center: {x: 87.486595, y: -0.015625, z: 14.043875}
 --- !u!1001 &782647802
 PrefabInstance:
@@ -46216,11 +46301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
   contents:
   - The door is stucked, but the wood looks weak.
   - "Ty dve\u0159e se ani nepohnou, ale vypadaj\xED slab\u011B"
-  clueID: 0
 --- !u!114 &787959132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53212,12 +53295,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916697824}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.48634237, y: -0.03643, z: 1.2753141}
-  m_LocalScale: {x: 60, y: 30, z: 2.5114295}
+  m_LocalRotation: {x: 0.000000089406946, y: -0.000000014901158, z: 0.000000029802315, w: 1}
+  m_LocalPosition: {x: 0.5133514, y: -0.03769265, z: -0.10559165}
+  m_LocalScale: {x: 60, y: 14.079792, z: 7.2811966}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1680012267}
+  m_Father: {fileID: 1886718112}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &916697826
@@ -56888,6 +56971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   EscapeMenu: {fileID: 1781791410}
+  Settings: {fileID: 461836658}
   Inventory_Object: {fileID: 710470002}
   Archive: {fileID: 1741245751}
 --- !u!4 &961960642 stripped
@@ -57034,6 +57118,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 30
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.05
   Particles: {fileID: 1921259187}
   isText: 1
@@ -57367,7 +57453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88bef8047761ad746af5854b6ffbde4f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57656,6 +57742,8 @@ MonoBehaviour:
   particleSize: 5
   widthRange: 0
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.05
   Particles: {fileID: 1921259187}
   isText: 1
@@ -57870,6 +57958,8 @@ MonoBehaviour:
   particleSize: 3
   widthRange: 0
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.025
   Particles: {fileID: 1921259187}
   isText: 1
@@ -58693,11 +58783,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
+  icon: {fileID: 0}
   objects:
   - {fileID: 93635231}
   objectsToSwap:
   - {fileID: 623905201}
+  neededItem: {fileID: 0}
   isOn: 1
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!65 &995610774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58717,7 +58811,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.4, z: 1}
+  m_Size: {x: 1, y: 0.4, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &996231514
 GameObject:
@@ -59477,11 +59571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
   contents:
   - Radio Station
   - "R\xE1diov\xE1 Stanice"
-  clueID: 0
 --- !u!65 &1008817324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64658,7 +64750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88bef8047761ad746af5854b6ffbde4f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -65644,8 +65736,20 @@ PrefabInstance:
       value: padlock 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      propertyPath: m_TagString
+      value: UseItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -65653,10 +65757,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1774127085}
+      addedObject: {fileID: 1774127084}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1774127084}
+      addedObject: {fileID: 1774127086}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1774127085}
   m_SourcePrefab: {fileID: 100100000, guid: c4879a5c2d9bb864aaf9ee0429600206, type: 3}
 --- !u!1 &1112842058
 GameObject:
@@ -65841,6 +65948,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 100
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.025
   Particles: {fileID: 1921259187}
   isText: 0
@@ -68677,6 +68786,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 50
   heightRange: 25
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.05
   Particles: {fileID: 1921259187}
   isText: 0
@@ -71546,7 +71657,6 @@ MonoBehaviour:
   NeededItem: {fileID: 1891654345}
   description: []
   message: I could descent into the old well
-  Core: {fileID: 513218965}
 --- !u!135 &1208919107
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -75339,7 +75449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88bef8047761ad746af5854b6ffbde4f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76484,7 +76594,6 @@ MonoBehaviour:
   - Tire
   - Pneumatika
   message: Tire
-  Core: {fileID: 513218965}
 --- !u!135 &1275611389
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -80120,12 +80229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
   contents:
   - It's not like I mourn over a man who tried to kill me, but damn...
   - "N\xE9 \u017Ee bych zrovna sr\u0161el z\xE1rmutkem nad mu\u017Eem, kter\xFD se
     m\u011B pokusil zab\xEDt, ale.. proboha..."
-  clueID: 0
 --- !u!1 &1331623066 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6869657863364697610, guid: 94452352966a51c4ab91815c7542328d, type: 3}
@@ -81143,10 +81250,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
+  icon: {fileID: 0}
   objects:
   - {fileID: 1980171990}
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 0
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!23 &1349218430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81646,6 +81757,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 100
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.025
   Particles: {fileID: 1921259187}
   isText: 0
@@ -81851,12 +81964,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357811091}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.399, y: -0.036, z: 1.275}
-  m_LocalScale: {x: 52, y: 30, z: 2.5114295}
+  m_LocalRotation: {x: 0.000000089406946, y: -0.000000014901158, z: 0.000000029802315, w: 1}
+  m_LocalPosition: {x: 0.42600623, y: -0.03754545, z: -0.10434789}
+  m_LocalScale: {x: 52, y: 14.079792, z: 7.2811966}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1680012267}
+  m_Father: {fileID: 1886718112}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1357811093
@@ -82287,9 +82400,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
+  icon: {fileID: 0}
   objects: []
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 0
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!65 &1373237775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82420,6 +82537,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 100
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.025
   Particles: {fileID: 1921259187}
   isText: 0
@@ -83145,13 +83264,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8287702411824127285, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8287702411824127285, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4595779356988897080, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -2949047266891236981, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -2351196129228932846, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -146504199587849384, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dd0f21c518936084fb52a64fad2914a9, type: 2}
+    - target: {fileID: 336271658553974036, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 480723533928362783, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -83159,6 +83298,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
       propertyPath: m_Name
       value: Lever Switch
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766212503428324877, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2766212503428324877, guid: 5eaa9aa75035ac24aa5fa5a0284be846, type: 3}
       propertyPath: m_IsActive
@@ -83199,12 +83346,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
+  icon: {fileID: 636363629}
   objects:
   - {fileID: 1183888112}
   - {fileID: 1257810787}
   objectsToSwap:
   - {fileID: 1430996124}
+  neededItem: {fileID: 0}
   isOn: 1
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!65 &1389595719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86349,11 +86500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
   contents:
   - Three Boulders? Sounds more like a pub
   - "U t\u0159\xED Balvan\u016F? To zn\xED jako hospoda..."
-  clueID: 0
 --- !u!65 &1448844627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86596,7 +86745,7 @@ GameObject:
   - component: {fileID: 1455297294}
   - component: {fileID: 1455297293}
   - component: {fileID: 1455297296}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: SwitchHal2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86633,9 +86782,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  objects: []
+  icon: {fileID: 0}
+  objects:
+  - {fileID: 121446143}
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 0
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!23 &1455297294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -86710,7 +86864,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 280.91833, y: 455.89157, z: 35.279224}
+  m_Size: {x: 800, y: 800, z: 35.279224}
   m_Center: {x: 87.48661, y: -0.015625, z: 14.293876}
 --- !u!1 &1456950251
 GameObject:
@@ -87171,31 +87325,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.57182
+      value: -98.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -30.189133
+      value: -29.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.92437744
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9917469
+      value: 0.9999982
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000037437438
+      value: -0.000000036489556
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.12821136
+      value: 0.0019080838
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000048398614
+      value: -0.000000009669466
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -87203,7 +87357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -14.733
+      value: 0.219
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -87224,6 +87378,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1936716487}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1936716488}
   m_SourcePrefab: {fileID: 100100000, guid: c44abf354824cd441bacb4e2c1855263, type: 3}
 --- !u!1 &1466189543
 GameObject:
@@ -88352,11 +88509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
   contents:
   - What kind of games could kids play with lightning rod?
   - "Co asi mohli d\u011Bti hr\xE1t s hromosvodem?"
-  clueID: 0
 --- !u!1 &1481579535
 GameObject:
   m_ObjectHideFlags: 0
@@ -93837,8 +93992,7 @@ GameObject:
   - component: {fileID: 1583208944}
   - component: {fileID: 1583208943}
   - component: {fileID: 1583208942}
-  - component: {fileID: 1583208945}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: door_doors_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93852,12 +94006,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583208938}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.401, y: -0.034, z: 1.271}
-  m_LocalScale: {x: 52, y: 30, z: 2.5114295}
+  m_LocalRotation: {x: 0.000000089406946, y: -0.000000014901158, z: 0.000000029802315, w: 1}
+  m_LocalPosition: {x: 0.4279911, y: -0.035668004, z: -0.09858993}
+  m_LocalScale: {x: 52, y: 14.079792, z: 7.2811966}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1680012267}
+  m_Father: {fileID: 1886718112}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1583208942
@@ -93902,7 +94056,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6142131971940859538, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
+  - {fileID: 2100000, guid: 88f87dc7423748741af501bf872202f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93932,28 +94086,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583208938}
   m_Mesh: {fileID: -2304434881036101879, guid: a3f2be9557864d7489ef5d5ec6533b5c, type: 3}
---- !u!114 &1583208945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583208938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608a4aa7f4df5cf4bb08847731005196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToMove: {fileID: 1680012266}
-  MovedObject: {fileID: 616432319}
-  itemNeeded: 1
-  destroyAfterUse: 1
-  NeededItem: {fileID: 610081813}
-  description:
-  - The lock looks sturdy. I'd need a key for this.
-  - "Ten z\xE1mek vypad\xE1 pevn\u011B. Na tohle bude pot\u0159eba kl\xED\u010D."
-  message: The lock looks sturdy. I'd need a key for this.
-  Core: {fileID: 513218965}
 --- !u!1 &1585434339
 GameObject:
   m_ObjectHideFlags: 0
@@ -95243,6 +95375,8 @@ MonoBehaviour:
   particleSize: 2
   widthRange: 100
   heightRange: 0
+  offsetLeft: 0
+  offsetUp: 0
   hoverGain: 0.025
   Particles: {fileID: 1921259187}
   isText: 0
@@ -97007,11 +97141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
   contents:
   - Old military box. What secret do you hold?
   - "Arm\xE1dn\xED box? Jak\xE1 tajemstv\xED skr\xFDv\xE1?"
-  clueID: 25
 --- !u!1 &1639466094
 GameObject:
   m_ObjectHideFlags: 0
@@ -97067,7 +97199,6 @@ MonoBehaviour:
   NeededItem: {fileID: 1809905516}
   description: []
   message: The stone yearns for something
-  Core: {fileID: 513218965}
 --- !u!114 &1639466097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99167,41 +99298,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679455171}
   m_Mesh: {fileID: -6100752449607423867, guid: 3b17808190c065841b89e3091c9cdae7, type: 3}
---- !u!1 &1680012266
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1680012267}
-  m_Layer: 6
-  m_Name: Closed Door
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1680012267
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680012266}
-  m_LocalRotation: {x: 0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1583208939}
-  - {fileID: 916697825}
-  - {fileID: 1357811092}
-  - {fileID: 311378742}
-  m_Father: {fileID: 643305057}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681904697
 GameObject:
   m_ObjectHideFlags: 0
@@ -101162,11 +101258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Core: {fileID: 513218965}
   contents:
   - Mhmm. David must have picked on hunting I guess...
   - "Vypad\xE1 to, \u017Ee se David za\u010Dal v\u011Bnovat lovu."
-  clueID: 4
 --- !u!64 &1721922831
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -103959,16 +104053,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1774127083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd82f55b11c64ed47b6fd840d0da0564, type: 3}
+  m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToMove: {fileID: 1774127083}
-  ProgressManager: {fileID: 513218967}
-  MovedObject: {fileID: 650282487}
-  message: The gate is closed shut.
-  messageCannot: I don't have an ammo
-  sound: {fileID: 1774127084}
+  contents:
+  - The gate is closed shut.
+  - "Ta m\u0159\xED\u017E je zam\u010Den\xE1."
+--- !u!114 &1774127086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774127083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7eb87ab65d5914c8b650b2cefee824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
+  sound: {fileID: 0}
+  icon: {fileID: 0}
+  objects:
+  - {fileID: 1774127083}
+  objectsToSwap:
+  - {fileID: 650282487}
+  neededItem: {fileID: 0}
+  isOn: 1
+  isOneTime: 1
+  destroyAfterUse: 0
 --- !u!1 &1777750724
 GameObject:
   m_ObjectHideFlags: 0
@@ -105481,9 +105594,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
+  icon: {fileID: 0}
   objects: []
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 0
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!65 &1807305259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -108675,7 +108792,6 @@ MonoBehaviour:
   - Tire
   - Pneumatika
   message: Tire
-  Core: {fileID: 513218965}
 --- !u!135 &1865392027
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -109134,10 +109250,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 1ff9fffd885ca114dbe248a07b178f04, type: 3}
+  icon: {fileID: 0}
   objects:
   - {fileID: 1107457153}
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 0
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!23 &1878323920
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -109858,6 +109978,103 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885589331}
   m_Mesh: {fileID: 4137455876009383503, guid: 17067d1afea577b489a6b4c6dbea4c6c, type: 3}
+--- !u!1 &1886718111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1886718112}
+  - component: {fileID: 1886718115}
+  - component: {fileID: 1886718114}
+  - component: {fileID: 1886718113}
+  m_Layer: 13
+  m_Name: ClosedDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1886718112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886718111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.027, y: -1.195, z: 0}
+  m_LocalScale: {x: 1, y: 2.1307137, z: 0.34492}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 916697825}
+  - {fileID: 1357811092}
+  - {fileID: 311378742}
+  - {fileID: 1583208939}
+  m_Father: {fileID: 643305057}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1886718113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886718111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contents:
+  - The lock looks sturdy. I'd need a key for this.
+  - "Ten z\xE1mek vypad\xE1 pevn\u011B. Na tohle bude pot\u0159eba kl\xED\u010D."
+--- !u!114 &1886718114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886718111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7eb87ab65d5914c8b650b2cefee824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Core: {fileID: 513218965}
+  sound: {fileID: 8300000, guid: 9a7b5b8fd522b414e85bad6a056c1c5a, type: 3}
+  icon: {fileID: 0}
+  objects:
+  - {fileID: 1886718111}
+  objectsToSwap:
+  - {fileID: 616432319}
+  neededItem: {fileID: 610081813}
+  isOn: 1
+  isOneTime: 1
+  destroyAfterUse: 1
+--- !u!65 &1886718115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886718111}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1890331313
 GameObject:
   m_ObjectHideFlags: 0
@@ -111626,6 +111843,21 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: -0.007116556, y: -1.3043561, z: -0.06214872}
+--- !u!114 &1936716488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608663140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90caed476522594ab005c91c9ee1951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contents:
+  - I can imagine the falling rocks could be quite dangerous...
+  - "Padaj\xEDc\xED kameny zn\xED nebezpe\u010Dn\u011B."
 --- !u!1 &1937784239
 GameObject:
   m_ObjectHideFlags: 0
@@ -112992,11 +113224,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 44a5d3ef46832fe488e45c259d036301, type: 3}
+  icon: {fileID: 0}
   objects:
   - {fileID: 427136957}
   objectsToSwap:
   - {fileID: 1095796714}
+  neededItem: {fileID: 0}
   isOn: 1
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!65 &1961341430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -115788,7 +116024,7 @@ GameObject:
   - component: {fileID: 1992421334}
   - component: {fileID: 1992421333}
   - component: {fileID: 1992421336}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: SwitchHall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115825,9 +116061,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Core: {fileID: 513218965}
   sound: {fileID: 8300000, guid: 89ef90e319767ad40960f02f4d17b4c8, type: 3}
-  objects: []
+  icon: {fileID: 0}
+  objects:
+  - {fileID: 397964740}
   objectsToSwap: []
+  neededItem: {fileID: 0}
   isOn: 0
+  isOneTime: 0
+  destroyAfterUse: 0
 --- !u!23 &1992421334
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -115902,7 +116143,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 280.9183, y: 455.89157, z: 35.279213}
+  m_Size: {x: 800, y: 800, z: 35.279213}
   m_Center: {x: 87.4866, y: -0.015625, z: 14.168877}
 --- !u!1 &1997801002
 GameObject:

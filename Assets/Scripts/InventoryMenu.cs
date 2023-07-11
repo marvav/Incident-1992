@@ -10,6 +10,7 @@ public class InventoryMenu : MonoBehaviour
 {
     public Core Core;
     public GameObject EscapeMenu;
+    public GameObject Settings;
     public GameObject Inventory_Object;
     public GameObject Archive;
     private List<Vector3> Icon_positions;
@@ -28,7 +29,7 @@ public class InventoryMenu : MonoBehaviour
             if (Time.timeScale == 0)
             {
                 Time.timeScale = 1;
-                EscapeMenu.SetActive(false);
+                ToggleEscMenu(false);
                 Inventory_Object.SetActive(false);
                 ToggleCursor();
 
@@ -36,23 +37,22 @@ public class InventoryMenu : MonoBehaviour
             else
             {
                 Inventory_Object.SetActive(false);
-                EscapeMenu.SetActive(true);
+                ToggleEscMenu(true);
                 Time.timeScale = 0;
             }
-            Core.Description.text = "";
         }
         if (Input.GetButtonDown("Inventory"))
         {
             if (Time.timeScale == 0)
             {
                 Time.timeScale = 1;
-                EscapeMenu.SetActive(false);
+                ToggleEscMenu(false);
                 Inventory_Object.SetActive(false);
                 ToggleCursor();
             }
             else
             {
-                EscapeMenu.SetActive(false);
+                ToggleEscMenu(false);
                 ToggleOnInventory();
                 Time.timeScale = 0;
             }
@@ -98,6 +98,15 @@ public class InventoryMenu : MonoBehaviour
             child.gameObject.SetActive(false);
         foreach (GameObject child in CountChildren(Archive))
             child.gameObject.SetActive(false);
+    }
+
+    public void ToggleEscMenu(bool state)
+    {
+        EscapeMenu.SetActive(state);
+        foreach (GameObject child in CountChildren(Settings))
+        {
+            child.SetActive(false);
+        }
     }
 }
 

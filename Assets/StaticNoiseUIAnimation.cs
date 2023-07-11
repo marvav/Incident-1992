@@ -11,6 +11,8 @@ public class StaticNoiseUIAnimation : MonoBehaviour, IPointerEnterHandler, IPoin
     public int particleSize = 5;
     public int widthRange = 0;
     public int heightRange = 0;
+    public int offsetLeft = 0;
+    public int offsetUp = 0;
     public float hoverGain = 0.05f;
     //public float speed = 1.0f;
     public GameObject Particles;
@@ -57,10 +59,9 @@ public class StaticNoiseUIAnimation : MonoBehaviour, IPointerEnterHandler, IPoin
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         Particles.SetActive(true);
-        Particles.transform.SetParent(this.transform, false);
-        Particles.transform.localPosition = new Vector2(-this.transform.localPosition.x, -this.transform.localPosition.y);
         animationStart = true;
-        if(isText)
+        matchPosition();
+        if (isText)
             text.fontStyle = (FontStyles)FontStyle.Bold;
         else
             transform.localScale = new Vector3(transform.localScale.x + hoverGain, transform.localScale.y + hoverGain, transform.localScale.z + hoverGain);
@@ -75,5 +76,11 @@ public class StaticNoiseUIAnimation : MonoBehaviour, IPointerEnterHandler, IPoin
             text.fontStyle = (FontStyles)FontStyle.Normal;
         else
             transform.localScale = new Vector3(scale, scale, scale);
+    }
+
+    public void matchPosition()
+    {
+        Particles.transform.SetParent(this.transform, false);
+        Particles.transform.localPosition = new Vector2(-this.transform.localPosition.x+offsetLeft, -this.transform.localPosition.y+ offsetUp);
     }
 }
