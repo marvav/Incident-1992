@@ -69,7 +69,7 @@ public class PlayerMovementDen : MonoBehaviour
         readyToJump = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // ground check
         //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
