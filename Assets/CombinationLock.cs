@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class CombinationLock : MonoBehaviour
 {

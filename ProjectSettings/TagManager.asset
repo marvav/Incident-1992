@@ -19,6 +19,7 @@ TagManager:
   - ReadableNote
   - Toggle
   - UseItem
+  - Description
   layers:
   - Default
   - TransparentFX

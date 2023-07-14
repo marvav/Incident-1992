@@ -36,7 +36,8 @@ public class PlayerMovementDen : MonoBehaviour
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode sprintKey = KeyCode.LeftControl;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode crawlKey = KeyCode.LeftControl;
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
@@ -58,6 +59,10 @@ public class PlayerMovementDen : MonoBehaviour
 
     public float HeightHurtThreshold;
     private bool landAndHurt = false;
+
+    public float crawlHeight = 1.0f;
+    public float crawlSpeed = 1.0f;
+    private bool isCrawling = false;
 
     private void Start()
     {
@@ -81,6 +86,7 @@ public class PlayerMovementDen : MonoBehaviour
             floorTag = "";
         MyInput();
         SpeedControl();
+        Crawl();
         HandleFallDamage();
 
         // handle drag
@@ -198,5 +204,30 @@ public class PlayerMovementDen : MonoBehaviour
             landAndHurt = false;
         }
         landAndHurt = landAndHurt || rb.velocity.y < HeightHurtThreshold;
+    }
+
+    public void Crawl()
+    {
+        if (Input.GetKey(crawlKey))
+        {
+            speed *= crawlSpeed;
+            if (!isCrawling)
+            {
+                isCrawling = true;
+                GrabbingController.gameObject.transform.position = new Vector3(GrabbingController.gameObject.transform.position.x,
+                    GrabbingController.gameObject.transform.position.y - 1,
+                    GrabbingController.gameObject.transform.position.z);
+            }
+        }
+        else
+        {
+            if (isCrawling)
+            {
+                isCrawling = false;
+                GrabbingController.gameObject.transform.position = new Vector3(GrabbingController.gameObject.transform.position.x,
+                        GrabbingController.gameObject.transform.position.y + 1,
+                        GrabbingController.gameObject.transform.position.z);
+            }
+        }
     }
 }
