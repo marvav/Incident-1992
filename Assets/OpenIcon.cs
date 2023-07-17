@@ -12,7 +12,7 @@ public class OpenIcon : MonoBehaviour, IPointerClickHandler
     public GameObject[] turnOn;
     public GameObject[] turnOff;
     public GameObject[] alwaysOff;
-    private bool isOpen = false;
+    private bool isOpen;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -21,10 +21,13 @@ public class OpenIcon : MonoBehaviour, IPointerClickHandler
         if (clickCount == 1)
         {
             sound.Play();
-            isOpen = !isOpen;
             ToggleObjects(alwaysOn, true);
-            ToggleObjects(turnOn, isOpen);
-            ToggleObjects(turnOff, !isOpen);
+            if (turnOn.Length != 0)
+            {
+                isOpen = turnOn[0].activeSelf;
+                ToggleObjects(turnOn, !isOpen);
+                ToggleObjects(turnOff, isOpen);
+            }
             ToggleObjects(alwaysOff, false);
             if (exitUI)
             {

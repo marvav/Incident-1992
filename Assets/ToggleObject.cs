@@ -26,9 +26,16 @@ public class ToggleObject : MonoBehaviour
         {
             if(Inventory.InHand == neededItem)
                 Inventory.InHand = null;
-            isOn = !isOn;
-            ToggleObjects(objects, isOn);
-            ToggleObjects(objectsToSwap, !isOn);
+            //isOn = !isOn;
+
+            if (objects.Length != 0)
+            {
+                isOn = objects[0].activeSelf;
+                ToggleObjects(objects, !isOn);
+                ToggleObjects(objectsToSwap, isOn);
+            }
+            ////ToggleObjects(objects, isOn);
+            //ToggleObjects(objectsToSwap, !isOn);
             Core.GeneralAudio.clip = sound;
             Core.GeneralAudio.Play();
         }

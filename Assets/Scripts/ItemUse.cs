@@ -29,9 +29,6 @@ public class ItemUse : MonoBehaviour, IPointerClickHandler
 
                 ItemInHand.SetActive(true);
                 Inventory.InHand = ItemInHand;
-                //Core.Inventory.SetActive(false);
-                //Time.timeScale = 1;
-                //ToggleCursor();
             }
         }
     }

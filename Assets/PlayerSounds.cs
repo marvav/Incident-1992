@@ -12,10 +12,16 @@ public class PlayerSounds : MonoBehaviour
     public float woodPitch;
     public AudioClip[] asphaltSteps;
     public float asphaltPitch;
+    public AudioClip[] waterSteps;
+    public float waterPitch;
+    public AudioClip[] splashSounds;
+    public float splashPitch;
     public AudioSource Sound;
     public Rigidbody rb;
     public int stepLength;
+    public float fallTriggerMagnitude;
     private float counter;
+    private float lastVelocity;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -37,6 +43,12 @@ public class PlayerSounds : MonoBehaviour
                         Sound.pitch = woodPitch;
                         break;
                     }
+                case "Water":
+                    {
+                        ChooseLeg(waterSteps);
+                        Sound.pitch = waterPitch;
+                        break;
+                    }
                 default:
                     {
                         ChooseLeg(audioClips);
@@ -50,6 +62,7 @@ public class PlayerSounds : MonoBehaviour
             counter = 0;
         else
             counter += rb.velocity.magnitude;
+        lastVelocity = rb.velocity.magnitude;
     }
 
     void ChooseLeg(AudioClip[] clips)
@@ -60,5 +73,19 @@ public class PlayerSounds : MonoBehaviour
             Sound.clip = clips[rand.Next(0, clips.Length / 2)];
 
         Sound.panStereo *= -1;
+    }
+
+    public void FallSound(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Water":
+                {
+                    ChooseLeg(splashSounds);
+                    Sound.pitch = splashPitch;
+                    Sound.Play();
+                    break;
+                }
+        }
     }
 }
