@@ -16,6 +16,7 @@ public class ToggleObject : MonoBehaviour
     public bool isOneTime = false;
     public bool destroyAfterUse = false;
     private bool wasUsed = false;
+    public bool noToggle = false;
 
     public void Toggle()
     {
@@ -31,6 +32,8 @@ public class ToggleObject : MonoBehaviour
             Core.GeneralAudio.clip = sound;
             Core.GeneralAudio.Play();
         }
+        if (noToggle)
+            isOn = false;
         if (isOneTime)
         {
             if (neededItem != null)
