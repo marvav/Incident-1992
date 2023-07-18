@@ -19,9 +19,7 @@ public class PlayerSounds : MonoBehaviour
     public AudioSource Sound;
     public Rigidbody rb;
     public int stepLength;
-    public float fallTriggerMagnitude;
     private float counter;
-    private float lastVelocity;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -62,7 +60,6 @@ public class PlayerSounds : MonoBehaviour
             counter = 0;
         else
             counter += rb.velocity.magnitude;
-        lastVelocity = rb.velocity.magnitude;
     }
 
     void ChooseLeg(AudioClip[] clips)

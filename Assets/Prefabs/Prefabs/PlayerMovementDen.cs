@@ -64,6 +64,9 @@ public class PlayerMovementDen : MonoBehaviour
     public float crawlSpeed = 1.0f;
     private bool isCrawling = false;
 
+    public float waterSpeedMultiplier;
+    public float asphaltSpeedMultiplier;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -85,7 +88,7 @@ public class PlayerMovementDen : MonoBehaviour
         else
             floorTag = "";
         MyInput();
-        SpeedControl();
+        SpeedControl(floorTag);
         Crawl();
         HandleFallDamage();
 
@@ -160,9 +163,24 @@ public class PlayerMovementDen : MonoBehaviour
         }
     }
 
-    private void SpeedControl()
+    private void SpeedControl(string floorTag)
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        switch (floorTag)
+        {
+            case "Water":
+                {
+                    Debug.Log("Slowed down");
+                    speed *= waterSpeedMultiplier;
+                    break;
+                }
+            case "Asphalt":
+                {
+                    Debug.Log("Sped Up");
+                    speed *= asphaltSpeedMultiplier;
+                    break;
+                }
+        }
 
         // limit velocity if needed
         if(flatVel.magnitude > speed)
@@ -229,5 +247,10 @@ public class PlayerMovementDen : MonoBehaviour
                         GrabbingController.gameObject.transform.position.z);
             }
         }
+    }
+
+    void SurfaceSpeed()
+    {
+
     }
 }
