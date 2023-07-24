@@ -55,10 +55,10 @@ public class InteractionManager : MonoBehaviour
                         if (Input.GetButton("Pick Up"))
                         {
                             currentIcon.SetActive(false);
-                            if (coverHit.collider.gameObject.tag == "Inventory")
-                                coverHit.collider.gameObject.GetComponent<PickUpItem>().PutItemInInventory();
-
-                            if (coverHit.collider.gameObject.tag == "ReadableNote")
+                            PickUpItem component = coverHit.collider.gameObject.GetComponent<PickUpItem>();
+                            if (component!=null)
+                                component.PutItemInInventory();
+                            else
                                 coverHit.collider.gameObject.GetComponent<ReadableNote>().PickUpNote();
                         }
                         return;
