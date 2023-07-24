@@ -66,15 +66,27 @@ public class InteractionManager : MonoBehaviour
                 case 13:
                     {
                         ShowDescription();
-                        ToggleObject obj = coverHit.collider.gameObject.GetComponent<ToggleObject>();
-                        SwapIcons(obj.icon);
+                        ToggleObject toggle = coverHit.collider.gameObject.GetComponent<ToggleObject>();
+                        InteractionTeleport teleport = null;
+                        if (toggle == null)
+                        {
+                            teleport = coverHit.collider.gameObject.GetComponent<InteractionTeleport>();
+                            SwapIcons(teleport.icon);
+                        }
+                        else
+                            SwapIcons(toggle.icon);
+
                         if (Input.GetMouseButtonDown(0))
                         {
                             if (!isClicked)
                             {
                                 currentIcon.SetActive(false);
                                 isClicked = true;
-                                obj.Toggle();
+                                if (toggle != null)
+                                    toggle.Toggle();
+                                else
+                                    teleport.Teleport();
+
                             }
                         }
                         else

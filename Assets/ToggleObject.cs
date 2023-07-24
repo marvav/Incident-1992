@@ -24,7 +24,11 @@ public class ToggleObject : MonoBehaviour
         if(neededItem==null || Inventory.InHand == neededItem)
         {
             if(Inventory.InHand == neededItem)
+            {
+                if (destroyAfterUse)
+                    Inventory.Remove(Inventory.InHand.name);
                 Inventory.InHand = null;
+            }
             //isOn = !isOn;
 
             if (objects.Length != 0)
@@ -45,8 +49,6 @@ public class ToggleObject : MonoBehaviour
                 neededItem.SetActive(false);
                 Inventory.InHand = null;
             }
-            if(destroyAfterUse)
-                Inventory.Remove(Inventory.InHand.name);
         }
     }
 }

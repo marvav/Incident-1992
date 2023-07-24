@@ -12,7 +12,6 @@ public class UseItem : MonoBehaviour
     public bool destroyAfterUse = false;
     public GameObject NeededItem;
     public string[] description;
-    public string message;
 
     public void Use()
     {

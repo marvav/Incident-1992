@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static Core_Utils;
+using static Inventory;
 
 public class EndingLoadScene : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class EndingLoadScene : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        Inventory.Remove("Rope");
+        Inventory.InHand.SetActive(false);
+        Inventory.InHand = null;
         text.text = lines[0];
         LoadingScreen.Play();
     }
