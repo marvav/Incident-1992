@@ -22,15 +22,17 @@ public class InteractionManager : MonoBehaviour
         currentIcon = Core.PickUpItem;
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         CanPickup = false;
         if (CastRayHand(InteractionDistance, out coverHit))
         {
             if(coverHit.collider.gameObject.tag == "Description")
                 ShowDescription();
-            if (currentDescription != coverHit.collider.gameObject)
+            else
                 Core.Description.text = "";
+            if (coverHit.collider.gameObject.layer != 7 && coverHit.distance > InteractionDistance / 2)
+                return;
             Debug.Log(coverHit.collider.gameObject.name);
             switch (coverHit.collider.gameObject.layer)
             {
@@ -91,6 +93,16 @@ public class InteractionManager : MonoBehaviour
                         }
                         else
                             isClicked = false;
+                        return;
+                    }
+                default:
+                    {
+                        isClicked = false;
+                        if (!IconHidden)
+                        {
+                            currentIcon.SetActive(false);
+                            IconHidden = true;
+                        }
                         return;
                     }
             }
