@@ -74,6 +74,9 @@ public class Core : MonoBehaviour
         if (PlayerHP <= 0)
         {
             DeathSound.Play();
+            DeathHUD.SetActive(true);
+            Time.timeScale = 0;
+            ToggleCursor();
         }
     }
 

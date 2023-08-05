@@ -79,8 +79,6 @@ public class PlayerMovementDen : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ground check
-        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
         groundArray = Physics.OverlapSphere(groundCheck.transform.position, groundCheck.GetComponent<SphereCollider>().radius * gameObject.transform.localScale.x, whatIsGround);
         grounded = groundArray.Length != 0 && groundArray[0] != GrabbingController.GetHeldObject();
         if (grounded)
