@@ -16,6 +16,7 @@ public class InteractionManager : MonoBehaviour
     private bool isClicked = false;
     private GameObject currentDescription = null;
     private GameObject currentIcon;
+    private GameObject lastObject = null;
 
     void Start()
     {
@@ -27,12 +28,17 @@ public class InteractionManager : MonoBehaviour
         CanPickup = false;
         if (CastRayHand(InteractionDistance, out coverHit))
         {
-            if(coverHit.collider.gameObject.tag == "Description")
+            if(lastObject!= coverHit.collider.gameObject)
+                leaveObject();
+
+            if (coverHit.collider.gameObject.tag == "Description")
                 ShowDescription();
             else
                 Core.Description.text = "";
+
             if (coverHit.collider.gameObject.layer != 7 && coverHit.distance > InteractionDistance / 2)
                 return;
+
             Debug.Log(coverHit.collider.gameObject.name);
             switch (coverHit.collider.gameObject.layer)
             {
@@ -58,7 +64,7 @@ public class InteractionManager : MonoBehaviour
                         {
                             currentIcon.SetActive(false);
                             PickUpItem component = coverHit.collider.gameObject.GetComponent<PickUpItem>();
-                            if (component!=null)
+                            if (component != null)
                                 component.PutItemInInventory();
                             else
                                 coverHit.collider.gameObject.GetComponent<ReadableNote>().PickUpNote();
@@ -97,25 +103,13 @@ public class InteractionManager : MonoBehaviour
                     }
                 default:
                     {
-                        isClicked = false;
-                        if (!IconHidden)
-                        {
-                            currentIcon.SetActive(false);
-                            IconHidden = true;
-                        }
+                        leaveObject();
                         return;
                     }
             }
         }
         else
-        {
-            isClicked = false;
-            if (!IconHidden)
-            {
-                currentIcon.SetActive(false);
-                IconHidden = true;
-            }
-        }
+            leaveObject();
     }
 
     void SwapIcons(GameObject icon)
@@ -149,5 +143,16 @@ public class InteractionManager : MonoBehaviour
     {
         if(currentDescription!=null)
             Core.Description.text = currentDescription.GetComponent<ObjectDescription>().GetText(Core.GetLanguage());
+    }
+
+    private void leaveObject()
+    {
+        isClicked = false;
+        if (!IconHidden)
+        {
+            currentIcon.SetActive(false);
+            IconHidden = true;
+        }
+
     }
 }
