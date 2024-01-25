@@ -29,7 +29,6 @@ public class FadeAnimation : MonoBehaviour
             Debug.Log(screen.color.a);
             if (screen.color.a == 1)
             {
-                Debug.Log("im");
                 Continue();
             }
         }
