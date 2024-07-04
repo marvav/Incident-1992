@@ -21,9 +21,10 @@ public class ToggleObject : MonoBehaviour
     {
         if (wasUsed && isOneTime)
             return;
-        if(neededItem==null || Inventory.InHand == neededItem)
+
+        if(!neededItem || Inventory.InHand == neededItem)
         {
-            if(Inventory.InHand == neededItem)
+            if(neededItem && Inventory.InHand == neededItem)
             {
                 if (destroyAfterUse)
                     Inventory.Remove(Inventory.InHand.name);
@@ -36,11 +37,12 @@ public class ToggleObject : MonoBehaviour
                 isOn = objects[0].activeSelf;
                 ToggleObjects(objects, !isOn);
                 ToggleObjects(objectsToSwap, isOn);
+                if (sound)
+                {
+                    Core.GeneralAudio.clip = sound;
+                    Core.GeneralAudio.Play();
+                }
             }
-            ////ToggleObjects(objects, isOn);
-            //ToggleObjects(objectsToSwap, !isOn);
-            Core.GeneralAudio.clip = sound;
-            Core.GeneralAudio.Play();
         }
         if (isOneTime)
         {
