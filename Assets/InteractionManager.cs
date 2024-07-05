@@ -23,7 +23,7 @@ public class InteractionManager : MonoBehaviour
         currentIcon = Core.PickUpItem;
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         CanPickup = false;
         if (CastRayHand(InteractionDistance, out coverHit))

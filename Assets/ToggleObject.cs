@@ -12,7 +12,6 @@ public class ToggleObject : MonoBehaviour
     public GameObject[] objects;
     public GameObject[] objectsToSwap;
     public GameObject neededItem;
-    public bool isOn = false;
     public bool isOneTime = false;
     public bool destroyAfterUse = false;
     private bool wasUsed = false;
@@ -22,34 +21,38 @@ public class ToggleObject : MonoBehaviour
         if (wasUsed && isOneTime)
             return;
 
-        if(!neededItem || Inventory.InHand == neededItem)
+        if (neededItem && Inventory.InHand == neededItem)
         {
-            if(neededItem && Inventory.InHand == neededItem)
-            {
-                if (destroyAfterUse)
-                    Inventory.Remove(Inventory.InHand.name);
-                Inventory.InHand = null;
-            }
-            //isOn = !isOn;
-
-            if (objects.Length != 0)
-            {
-                isOn = objects[0].activeSelf;
-                ToggleObjects(objects, !isOn);
-                ToggleObjects(objectsToSwap, isOn);
-                if (sound)
-                {
-                    Core.GeneralAudio.clip = sound;
-                    Core.GeneralAudio.Play();
-                }
-            }
+            if (destroyAfterUse)
+                Inventory.Remove(Inventory.InHand.name);
+            Inventory.InHand = null;
+            PerformToggle();
         }
+
+        if (!neededItem)
+        {
+            //isOn = !isOn;
+            PerformToggle();
+        }
+
         if (isOneTime)
         {
-            if (neededItem != null)
+            neededItem.SetActive(false);
+        }
+    }
+
+    void PerformToggle()
+    {
+        if (objects.Length != 0)
+        {
+            bool isOn = objects[0].activeSelf;
+            ToggleObjects(objects, !isOn);
+            ToggleObjects(objectsToSwap, isOn);
+            if (sound)
             {
-                neededItem.SetActive(false);
-                Inventory.InHand = null;
+                Core.GeneralAudio.Stop();
+                Core.GeneralAudio.clip = sound;
+                Core.GeneralAudio.Play();
             }
         }
     }

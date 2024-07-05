@@ -56,8 +56,8 @@ public class PlayerSounds : MonoBehaviour
             }
             Sound.Play();
         }
-        if (rb.velocity.magnitude == 0)
-            counter = 0;
+        if (rb.velocity.magnitude < 0.1f)
+            counter = stepLength - 1; // So the step is performed upon start of the movement
         else
             counter += rb.velocity.magnitude;
     }
