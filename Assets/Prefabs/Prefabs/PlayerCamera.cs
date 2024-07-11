@@ -5,17 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerCamera : MonoBehaviour
 {
-    public GameObject grabber;
     public float sensetivityX, sensetivityY = 100f;
     public Transform orientation;
-    public bool clamp;
-    public bool onPlayer;
-   // public Slider slider;
+    public Transform player;
     private float mouseSensetivity;
     public float xRotation;
     public float yRotation;
-    //[SerializeField] private Pause pause;
-    public Quaternion startOffset;
 
     public void SetSensitivity(float sensitivity)
     {
@@ -39,9 +34,9 @@ public class PlayerCamera : MonoBehaviour
             yRotation += mouseX;
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f); // constraints
-       
-            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
-            orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+            orientation.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
+            player.rotation = Quaternion.Euler(0, yRotation, 0);
         }
     }
 }

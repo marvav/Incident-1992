@@ -168,13 +168,13 @@ public class PlayerMovementDen : MonoBehaviour
         {
             case "Water":
                 {
-                    Debug.Log("Slowed down");
+                    //Debug.Log("Slowed down");
                     speed *= waterSpeedMultiplier;
                     break;
                 }
             case "Asphalt":
                 {
-                    Debug.Log("Sped Up");
+                    //Debug.Log("Sped Up");
                     speed *= asphaltSpeedMultiplier;
                     break;
                 }

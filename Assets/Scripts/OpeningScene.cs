@@ -54,16 +54,16 @@ public class OpeningScene : MonoBehaviour
                     queueIndex++;
                     if (text.text.Length > 1 && text.text[text.text.Length - 1] == ' ' && text.text[text.text.Length - 2] == '.')
                     {
-                        yield return new WaitForSeconds(1f);
+                        yield return new WaitForSeconds(1.5f);
                     }
                     else
                     {
-                        yield return new WaitForSeconds(0.1f);
+                        yield return new WaitForSeconds(0.05f);
                     }
                 }
             }
         }
-        yield return null;
+        stop();
     }
 
     void resetQueue()
@@ -71,5 +71,16 @@ public class OpeningScene : MonoBehaviour
         queueIndex = 0;
         queueTime = queue.Length * writingSpeed;
         text.text = "";
+    }
+
+    void stop()
+    {
+        sound.Play();
+        if (endLoopMusic)
+            Core.GeneralMusic.loop = false;
+        text.text = "";
+        ToggleObjects(TurnOnAfter, true);
+        ToggleObjects(TurnOffAfter, false);
+        this.gameObject.SetActive(false);
     }
 }

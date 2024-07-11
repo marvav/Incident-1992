@@ -20,6 +20,7 @@ public class PlayerSounds : MonoBehaviour
     public Rigidbody rb;
     public int stepLength;
     private float counter;
+    private string floorType = "";
 
     // Update is called once per frame
     void FixedUpdate()
@@ -27,7 +28,8 @@ public class PlayerSounds : MonoBehaviour
         if (counter >= stepLength && !Sound.isPlaying && Player.isMoving() && Player.grounded)
         {
             counter = 0;
-            switch (Player.GetFloor())
+            string currentFloor = Player.GetFloor();
+            switch (currentFloor)
             {
                 case "Asphalt":
                     {
@@ -55,6 +57,13 @@ public class PlayerSounds : MonoBehaviour
                     }
             }
             Sound.Play();
+            if(currentFloor!=floorType)
+            {
+                Debug.Log("yes");
+                floorType = currentFloor;
+                counter = stepLength - 1; // So the step is performed upon start of the movement
+                return;
+            }
         }
         if (rb.velocity.magnitude < 0.1f)
             counter = stepLength - 1; // So the step is performed upon start of the movement
