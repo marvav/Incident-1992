@@ -7,7 +7,6 @@ public class ToggleObjectsOnStart : MonoBehaviour
     public GameObject[] toggleOn;
     public GameObject[] toggleOff;
 
-    // Update is called once per frame
     void Start()
     {
         foreach (GameObject obj in toggleOn){

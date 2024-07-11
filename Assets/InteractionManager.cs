@@ -22,6 +22,7 @@ public class InteractionManager : MonoBehaviour
     {
         currentIcon = Core.PickUpItem;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -39,7 +40,7 @@ public class InteractionManager : MonoBehaviour
             if (coverHit.collider.gameObject.layer != 7 && coverHit.distance > InteractionDistance / 2)
                 return;
 
-            Debug.Log(coverHit.collider.gameObject.name);
+            //Debug.Log(coverHit.collider.gameObject.name);
             switch (coverHit.collider.gameObject.layer)
             {
                 case 7:

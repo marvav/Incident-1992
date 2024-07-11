@@ -6,6 +6,7 @@ public class GrabbingController : MonoBehaviour
 {
     [SerializeField] Transform holdPoint;
     public InteractionManager Hand;
+    public GameObject SomethingToHoldIcon;
     public Transform orientation;
     private GameObject heldObject = null;
     private Rigidbody heldObjectRb;
@@ -34,7 +35,7 @@ public class GrabbingController : MonoBehaviour
             heldObjectRb.AddForce(moveDirection * 400);
             DropObject();
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && SomethingToHoldIcon.activeSelf)
         {
             if (heldObject == null)
                 PickupObject(Hand.CanPickUp());

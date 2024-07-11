@@ -23,7 +23,7 @@ public class OpeningScene : MonoBehaviour
     private int queueIndex = 0;
     private float queueTime = 0.0f;
     private float pile = 0.0f;
-    // Update is called once per frame
+
     void Start()
     {
         Time.timeScale = 1;
@@ -36,13 +36,14 @@ public class OpeningScene : MonoBehaviour
         }
         queue = lines[start];
         resetQueue();
+        StartCoroutine(write());
     }
 
-    void Update()
+    IEnumerator write()
     {
-        if(queue.Length > queueIndex)
+        while (queue.Length > queueIndex)
         {
-            if(queueTime > 0)
+            if (queueTime > 0)
             {
                 pile += Time.deltaTime;
                 if (pile >= writingSpeed)
@@ -51,30 +52,20 @@ public class OpeningScene : MonoBehaviour
                     queueTime -= writingSpeed;
                     text.text += queue[queueIndex];
                     queueIndex++;
+                    if (text.text.Length > 1 && text.text[text.text.Length - 1] == ' ' && text.text[text.text.Length - 2] == '.')
+                    {
+                        yield return new WaitForSeconds(1f);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(0.1f);
+                    }
                 }
             }
         }
-        if(!isClicked && Input.GetMouseButtonDown(0))
-        {
-            sound.Play();
-            start++;
-            if (start == lines.Length)
-            {
-                if(endLoopMusic)
-                    Core.GeneralMusic.loop = false;
-                text.text = "";
-                ToggleObjects(TurnOnAfter, true);
-                ToggleObjects(TurnOffAfter, false);
-                this.gameObject.SetActive(false);
-                return;
-            }
-            queue = lines[start];
-            resetQueue();
-            isClicked = true;
-        }
-        else
-            isClicked = false;
+        yield return null;
     }
+
     void resetQueue()
     {
         queueIndex = 0;
