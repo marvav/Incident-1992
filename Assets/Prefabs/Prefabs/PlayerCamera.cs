@@ -8,9 +8,10 @@ public class PlayerCamera : MonoBehaviour
     public float sensetivityX, sensetivityY = 100f;
     public Transform orientation;
     public Transform player;
+    public Transform head;
     private float mouseSensetivity;
-    public float xRotation;
-    public float yRotation;
+    private float xRotation = 0.0f;
+    private float yRotation = 0.0f;
 
     public void SetSensitivity(float sensitivity)
     {
@@ -22,14 +23,12 @@ public class PlayerCamera : MonoBehaviour
        Cursor.lockState = CursorLockMode.Locked;
        Cursor.visible = false;
     }
-    void LateUpdate()
+    void Update()
     {
         if (!Cursor.visible)
         {
-            // mouseSensetivity = Mathf.Lerp(0.1f, 2, slider.value);
-            mouseSensetivity = 1;
-            float mouseX = (Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensetivityX*mouseSensetivity);
-            float mouseY = (Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensetivityY*mouseSensetivity);
+            float mouseX = (Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensetivityX);
+            float mouseY = (Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensetivityY);
 
             yRotation += mouseX;
             xRotation -= mouseY;
@@ -37,6 +36,7 @@ public class PlayerCamera : MonoBehaviour
 
             orientation.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
             player.rotation = Quaternion.Euler(0, yRotation, 0);
+            orientation.position = head.position;
         }
     }
 }
