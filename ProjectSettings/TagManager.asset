@@ -20,6 +20,7 @@ TagManager:
   - Toggle
   - UseItem
   - Description
+  - Iron
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,6 @@ using UnityEngine;
 public class SoundOnCollision : MonoBehaviour
 {
     public AudioSource Sound;
-    public string tag;
     public float triggerMagnitude;
     public float defaultPitch = 1.0f;
     public Core Core;
