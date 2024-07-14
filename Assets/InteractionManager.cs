@@ -110,7 +110,10 @@ public class InteractionManager : MonoBehaviour
             }
         }
         else
+        {
+            Core.Description.text = "";
             leaveObject();
+        }
     }
 
     void SwapIcons(GameObject icon)

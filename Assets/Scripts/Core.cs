@@ -27,6 +27,7 @@ public class Core : MonoBehaviour
     public GameObject NoteText;
     public TMP_Text Subtitles;
     public TMP_Text Description;
+    public TMP_Text DescriptionUI;
     public TMP_Text CasetteCode;
     public AudioSource GeneralAudio;
     public AudioSource GeneralMusic;
@@ -36,6 +37,7 @@ public class Core : MonoBehaviour
     public CombinationLock Lock;
     public ProgressManager ProgressManager;
     public InteractionManager InteractionManager;
+    public EnvironmentCollisionSounds EnvironmentCollisionSounds;
     private float delay;
     private int Localization = 0;
 

@@ -11,12 +11,12 @@ public class Description : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        Core.Description.text = text[Core.GetLanguage()];
+        Core.DescriptionUI.text = text[Core.GetLanguage()];
     }
 
     //Detect when Cursor leaves the GameObject
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        Core.Description.text = "";
+        Core.DescriptionUI.text = "";
     }
 }
