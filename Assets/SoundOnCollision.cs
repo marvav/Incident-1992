@@ -18,6 +18,7 @@ public class SoundOnCollision : MonoBehaviour
         {
             Sound.Stop();
             Sound.clip = Core.EnvironmentCollisionSounds.getCollisionSound(this.gameObject.tag);
+            Sound.volume = Core.GeneralAudio.volume;
             Sound.pitch = Math.Max(defaultPitch - (0.025f * collision.relativeVelocity.magnitude),0.1f);
             Sound.Play();
         }

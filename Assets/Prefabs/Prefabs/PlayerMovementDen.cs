@@ -198,6 +198,7 @@ public class PlayerMovementDen : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
+
     private void ResetJump()
     {
         readyToJump = true;
@@ -205,8 +206,14 @@ public class PlayerMovementDen : MonoBehaviour
 
     public bool isMoving()
     {
-        return horizontalInput+verticalInput> 0;
+        return horizontalInput != 0 || verticalInput != 0;
     }
+
+    public bool isPlayerSprinting()
+    {
+        return isSprinting;
+    }
+
     public string GetFloor()
     {
         return floorTag;
@@ -245,10 +252,5 @@ public class PlayerMovementDen : MonoBehaviour
                         GrabbingController.gameObject.transform.position.z);
             }
         }
-    }
-
-    void SurfaceSpeed()
-    {
-
     }
 }

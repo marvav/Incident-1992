@@ -23,7 +23,7 @@ public class PlayerSounds : MonoBehaviour
     private string floorType = "";
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (counter >= stepLength && !Sound.isPlaying && Player.isMoving() && Player.grounded)
         {

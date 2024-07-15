@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,12 @@ using UnityEngine.UI;
 public class PlayerCamera : MonoBehaviour
 {
     public float sensetivityX, sensetivityY = 100f;
+    public float bobbingStrength = 1.0f;
     public Transform orientation;
     public Transform player;
     public Transform head;
+    public PlayerMovementDen playerMovement;
+
     private float mouseSensetivity;
     private float xRotation = 0.0f;
     private float yRotation = 0.0f;
@@ -36,7 +40,17 @@ public class PlayerCamera : MonoBehaviour
 
             orientation.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
             player.rotation = Quaternion.Euler(0, yRotation, 0);
-            orientation.position = head.position;
+
+            if (playerMovement.isMoving()) //Perform View Bobbing
+            {
+                orientation.position = new Vector3(head.position.x,
+                    head.position.y + ((float) Math.Sin(Time.fixedTimeAsDouble * 10))* bobbingStrength,
+                    head.position.z);
+            }
+            else
+            {
+                orientation.position = head.position;
+            }
         }
     }
 }

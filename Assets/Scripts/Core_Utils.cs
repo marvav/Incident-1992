@@ -74,9 +74,6 @@ public static class Core_Utils
         {
             Vector3 direction = (current.transform.position - Camera.transform.position).normalized;
             Vector3 directionHold = (Hand.transform.position - Camera.transform.position).normalized;
-            //Debug.DrawRay(Camera.transform.position, directionHold, Color.green);
-            //Debug.DrawRay(Camera.transform.position, direction, Color.green);
-            //Debug.Log(Vector3.Angle(direction, directionHold));
             return Vector3.Angle(direction, directionHold) <= angle && Physics.Raycast(Camera.transform.position, direction, out coverHit, distance, pickableMask);
         }
         return false;

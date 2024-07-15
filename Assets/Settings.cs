@@ -12,7 +12,7 @@ public class Settings : MonoBehaviour
     public Slider sensitivity;
     public Slider gamma;
     public Slider Localization;
-    public Slider QualityLevel;
+    //public Slider QualityLevel;
     public Slider MaxFPS;
     public TMP_Text fps_count;
 
@@ -26,7 +26,7 @@ public class Settings : MonoBehaviour
         RenderSettings.ambientLight = new Color(gamma.value, gamma.value, gamma.value, 1.0f);
         cam.SetSensitivity(sensitivity.value);
         Core.ChangeLanguage((int) Localization.value);
-        QualitySettings.SetQualityLevel((int) QualityLevel.value);
+        //QualitySettings.SetQualityLevel((int) QualityLevel.value);
         Application.targetFrameRate = (int) MaxFPS.value;
         fps_count.text = "Max FPS: " + Application.targetFrameRate.ToString();
     }
