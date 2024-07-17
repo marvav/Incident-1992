@@ -22,7 +22,6 @@ public class EndingLoadScene : MonoBehaviour
     void Start()
     {
         Inventory.Remove("Rope");
-        Inventory.InHand.SetActive(false);
         Inventory.InHand = null;
         text.text = lines[0];
         LoadingScreen.Play();

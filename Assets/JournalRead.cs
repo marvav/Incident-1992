@@ -12,11 +12,15 @@ public class JournalRead : MonoBehaviour, IPointerClickHandler
     {
         int clickCount = eventData.clickCount;
 
-        if (clickCount == 1)
+        if (clickCount == 1 || !Core.Note.gameObject.activeSelf)
         {
             Core.Description.text = "";
             Core.NoteText.GetComponent<TMP_Text>().text = Core.ProgressManager.getClues();
             Core.Note.SetActive(true);
+        }
+        else
+        {
+            Core.Note.SetActive(false);
         }
     }
 }

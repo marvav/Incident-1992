@@ -13,6 +13,8 @@ public class InventoryMenu : MonoBehaviour
     public GameObject Settings;
     public GameObject Inventory_Object;
     public GameObject Archive;
+    public GameObject[] EscHideObjects;
+    public GameObject[] EscShowObjects;
     private List<Vector3> Icon_positions;
     // Start is called before the first frame update
     void Start()
@@ -26,33 +28,33 @@ public class InventoryMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Escape"))
         {
-            if (Time.timeScale == 0)
+            Inventory_Object.SetActive(false);
+            if (Time.timeScale == 0) //Turn on
             {
-                Time.timeScale = 1;
                 ToggleEscMenu(false);
-                Inventory_Object.SetActive(false);
                 ToggleCursor();
+                Time.timeScale = 1;
+                //ToggleObjects(EscShowObjects, true);
 
             }
-            else
+            else //Turn off
             {
-                Inventory_Object.SetActive(false);
+                //ToggleObjects(EscHideObjects, false);
                 ToggleEscMenu(true);
                 Time.timeScale = 0;
             }
         }
         if (Input.GetButtonDown("Inventory"))
         {
+            ToggleEscMenu(false);
             if (Time.timeScale == 0)
             {
-                Time.timeScale = 1;
-                ToggleEscMenu(false);
                 Inventory_Object.SetActive(false);
                 ToggleCursor();
+                Time.timeScale = 1;
             }
             else
             {
-                ToggleEscMenu(false);
                 ToggleOnInventory();
                 Time.timeScale = 0;
             }

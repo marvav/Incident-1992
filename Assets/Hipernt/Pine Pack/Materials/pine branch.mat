@@ -16,7 +16,7 @@ Material:
   - _WINDQUALITY_FASTEST
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -114,18 +114,20 @@ Material:
     - BACKFACE_NORMAL_MODE: 1
     - EFFECT_BILLBOARD: 0
     - EFFECT_EXTRA_TEX: 1
-    - _AO: 2.4
+    - _AO: 10
     - _AlphaClip: 1
     - _AlphaClipThreshold: 0.33
     - _AlphaToMask: 1
-    - _BaseLight: 0.35
+    - _BaseLight: 1
+    - _BillboardKwToggle: 0
+    - _BillboardShadowFade: 0.5
     - _Blend: 1
     - _BlendModePreserveSpecular: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 0
-    - _Cutoff: 0.207
+    - _Cutoff: 0.9
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -138,7 +140,7 @@ Material:
     - _Metallic: 0
     - _Mode: 3
     - _NormalMapKwToggle: 1
-    - _Occlusion: 7.5
+    - _Occlusion: 20
     - _OcclusionStrength: 1
     - _OldHueVarBehavior: 0
     - _Parallax: 0.005
@@ -155,6 +157,7 @@ Material:
     - _SubsurfaceIndirect: 0.25
     - _SubsurfaceKwToggle: 0
     - _Surface: 0
+    - _TwoSided: 2
     - _UVSec: 0
     - _WINDQUALITY: 1
     - _WindQuality: 1
