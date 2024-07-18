@@ -21,6 +21,7 @@ TagManager:
   - UseItem
   - Description
   - Iron
+  - Ambient
   layers:
   - Default
   - TransparentFX

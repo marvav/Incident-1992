@@ -7,6 +7,7 @@ public class BreakDoorOpen : MonoBehaviour
     public GameObject ObjectToMove;
     public GameObject MovedObject;
     public Core Core;
+    public int clueID;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -15,6 +16,7 @@ public class BreakDoorOpen : MonoBehaviour
             MovedObject.SetActive(true);
             Core.Description.text = "";
             ObjectToMove.SetActive(false);
+            Core.ProgressManager.changeObjective(clueID);
         }
     }
 }

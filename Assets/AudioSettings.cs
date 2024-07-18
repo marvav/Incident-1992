@@ -9,21 +9,24 @@ public class AudioSettings : MonoBehaviour
     public Slider PlayerSounds;
     public Slider Music;
     public Slider VoiceOver;
+    public Slider Ambient;
     public float PlayerVolume;
     public float MusicVolume;
     public float VoiceVolume;
+    public float AmbientVolume;
 
     void Start()
     {
         Core.ChangeVolume("PlayerSounds", PlayerVolume);
         Core.ChangeVolume("Music", MusicVolume);
         Core.ChangeVolume("Voice", VoiceVolume);
+        Core.ChangeVolume("Ambient", AmbientVolume);
         PlayerSounds.value = PlayerVolume;
         Music.value = MusicVolume;
         VoiceOver.value = VoiceVolume;
+        Ambient.value = AmbientVolume;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(PlayerSounds.value != PlayerVolume)
@@ -42,6 +45,12 @@ public class AudioSettings : MonoBehaviour
         {
             Core.ChangeVolume("Music", Music.value);
             MusicVolume = Music.value;
+        }
+
+        if (AmbientVolume != Ambient.value)
+        {
+            Core.ChangeVolume("Ambient", Ambient.value);
+            AmbientVolume = Ambient.value;
         }
     }
 }

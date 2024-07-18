@@ -38,6 +38,7 @@ public class Core : MonoBehaviour
     public ProgressManager ProgressManager;
     public InteractionManager InteractionManager;
     public EnvironmentCollisionSounds EnvironmentCollisionSounds;
+    public RollingText RollingText;
     private float delay;
     private int Localization = 0;
 

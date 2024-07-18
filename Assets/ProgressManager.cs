@@ -43,6 +43,7 @@ public class ProgressManager : MonoBehaviour
     const int RADIO_EQUIPMENT_FOUND = 21;
     const int HOLE_FOUND = 24;
     const int REVOLVER_USED = 23;
+    const int CABIN_ENTERED = 25;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -192,7 +193,7 @@ public class ProgressManager : MonoBehaviour
 
         if (noteFound && !firstRecordingListened)
             if (Core.GetLanguage() == 0)
-                result += "I can't believe they argued and left this fast... But why would David say he left? I thought he lives here.\n\n";
+                result += "Where the hell is David?! Did I actually drive here for nothing?\n\n";
             else
                 result += "Nemùžu uvìøit, že by se prostì pohádali a odešli... Proè by David odcházel? Myslel jsem, že tu žije.\n\n";
         if (lockedCaveFound && !ropeFound)
@@ -332,7 +333,7 @@ public class ProgressManager : MonoBehaviour
                 result += "Nìkdo musel mít tak naspìch, že ztratil baterku... V noci?!\n\n";
         if (holeFound)
             if (Core.GetLanguage() == 0)
-                result += "Someone have been digging near David's cabin very recently. The hole is fresh.\n\n";
+                result += "Someone has been digging near David's cabin very recently. The hole is fresh.\n\n";
             else
                 result += "Nìkdo v lese vykopal podezøele velkou díru. Je èerstvá.\n\n";
         return result;

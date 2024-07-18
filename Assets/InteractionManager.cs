@@ -147,6 +147,7 @@ public class InteractionManager : MonoBehaviour
     {
         if(currentDescription!=null)
             Core.Description.text = currentDescription.GetComponent<ObjectDescription>().GetText(Core.GetLanguage());
+            Core.RollingText.RollText(Core.Description.text);
     }
 
     private void leaveObject()
