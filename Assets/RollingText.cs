@@ -6,10 +6,11 @@ using static Core_Utils;
 
 public class RollingText : MonoBehaviour
 {
-
     public Core Core;
     public TMP_Text text;
-    public float writingSpeed = 1.0f;
+    public float afterCharWait = 0.05f;
+    public float afterSentenceWait = 1.5f;
+    public float afterWholeWait = 2.0f;
 
     public void RollText(string text)
     {
@@ -19,37 +20,22 @@ public class RollingText : MonoBehaviour
     IEnumerator write(string queue)
     {
         int queueIndex = 0;
-        float queueTime = 0.0f;
-        float pile = 0.0f;
         text.text = "";
 
         while (queue.Length > queueIndex)
         {
-            if (queueTime > 0)
+            text.text += queue[queueIndex];
+            queueIndex++;
+            if (text.text.Length > 1 && text.text[text.text.Length - 1] == ' ' && text.text[text.text.Length - 2] == '.')
             {
-                pile += Time.deltaTime;
-                if (pile >= writingSpeed)
-                {
-                    pile -= writingSpeed;
-                    queueTime -= writingSpeed;
-                    text.text += queue[queueIndex];
-                    queueIndex++;
-                    if (text.text.Length > 1 && text.text[text.text.Length - 1] == ' ' && text.text[text.text.Length - 2] == '.')
-                    {
-                        yield return new WaitForSeconds(1.5f);
-                    }
-                    else
-                    {
-                        yield return new WaitForSeconds(0.05f);
-                    }
-                }
+                yield return new WaitForSeconds(afterSentenceWait);
+            }
+            else
+            {
+                yield return new WaitForSeconds(afterCharWait);
             }
         }
-        stop();
-    }
-
-    void stop()
-    {
+        yield return new WaitForSeconds(afterWholeWait);
         text.text = "";
     }
 }

@@ -25,7 +25,7 @@ public class Settings : MonoBehaviour
     {
         RenderSettings.ambientLight = new Color(gamma.value, gamma.value, gamma.value, 1.0f);
         cam.SetSensitivity(sensitivity.value);
-        Core.ChangeLanguage((int) Localization.value);
+        //Core.ChangeLanguage((int) Localization.value);
         //QualitySettings.SetQualityLevel((int) QualityLevel.value);
         Application.targetFrameRate = (int) MaxFPS.value;
         fps_count.text = "Max FPS: " + Application.targetFrameRate.ToString();

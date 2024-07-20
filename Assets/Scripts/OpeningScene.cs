@@ -21,8 +21,6 @@ public class OpeningScene : MonoBehaviour
 
     private string queue = "";
     private int queueIndex = 0;
-    private float queueTime = 0.0f;
-    private float pile = 0.0f;
 
     void Start()
     {
@@ -43,24 +41,15 @@ public class OpeningScene : MonoBehaviour
     {
         while (queue.Length > queueIndex)
         {
-            if (queueTime > 0)
+            text.text += queue[queueIndex];
+            queueIndex++;
+            if (text.text.Length > 1 && text.text[text.text.Length - 1] == ' ' && text.text[text.text.Length - 2] == '.')
             {
-                pile += Time.deltaTime;
-                if (pile >= writingSpeed)
-                {
-                    pile -= writingSpeed;
-                    queueTime -= writingSpeed;
-                    text.text += queue[queueIndex];
-                    queueIndex++;
-                    if (text.text.Length > 1 && text.text[text.text.Length - 1] == ' ' && text.text[text.text.Length - 2] == '.')
-                    {
-                        yield return new WaitForSeconds(1.5f);
-                    }
-                    else
-                    {
-                        yield return new WaitForSeconds(0.05f);
-                    }
-                }
+                yield return new WaitForSeconds(1.5f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.05f);
             }
         }
         stop();
@@ -69,7 +58,6 @@ public class OpeningScene : MonoBehaviour
     void resetQueue()
     {
         queueIndex = 0;
-        queueTime = queue.Length * writingSpeed;
         text.text = "";
     }
 

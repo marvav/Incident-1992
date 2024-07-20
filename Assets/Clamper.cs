@@ -12,5 +12,6 @@ public class Clamper : MonoBehaviour
     void FixedUpdate()
     {
         clamp.transform.position = target.transform.position + new Vector3(x,y,z);
+        //clamp.transform.rotation = Quaternion.Euler(clamp.transform.rotation.x, target.transform.rotation.y, target.transform.rotation.z);
     }
 }

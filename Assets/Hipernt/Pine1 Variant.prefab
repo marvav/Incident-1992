@@ -73,18 +73,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a7d7b03fddcbfc7498794af8405467d1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7bf7aa73e7c83984b963c0ae4b666ed4, type: 2}
     - target: {fileID: -7511558181221131132, guid: a7d7b03fddcbfc7498794af8405467d1, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+      propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 14cce7f31d2f60240a8d0722edab7548, type: 2}
     - target: {fileID: 919132149155446097, guid: a7d7b03fddcbfc7498794af8405467d1, type: 3}
       propertyPath: m_Name
       value: Pine1 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3451118302482216456, guid: a7d7b03fddcbfc7498794af8405467d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -116,7 +117,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06
+  m_Radius: 0.42
   m_Height: 7
   m_Direction: 1
   m_Center: {x: 0, y: 3, z: 0}

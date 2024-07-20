@@ -7,8 +7,6 @@ public class ProgressManager : MonoBehaviour
     public Core Core;
     public AudioClip NewNoteSound;
     public GameObject WalkieTalkie;
-    public GameObject dummyDoor;
-    public GameObject ClosedDoor;
     public GameObject knife;
     public GameObject monster;
     public GameObject encounters;
@@ -76,7 +74,15 @@ public class ProgressManager : MonoBehaviour
     public void changeObjective(int id)
     {
         if (id == 0)
-            return;
+        {
+            if (id_list[id] != true)
+            {
+                id_list[id] = true;
+                Core.RollingText.RollText("I should hurry up to the Hájenka cabin, because it's getting dark. It lies somewhere on the blue trail.");
+            }
+
+            return; //Stop
+        }
 
         if (id_list[id] != true)
         {
@@ -89,8 +95,6 @@ public class ProgressManager : MonoBehaviour
 
         if (id == CABIN_NOTE_READ && !noteFound)
         {
-            dummyDoor.SetActive(false);
-            ClosedDoor.SetActive(true);
             if (!knifeFound)
                 knife.SetActive(true);
             noteFound = true;
