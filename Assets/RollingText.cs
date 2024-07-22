@@ -20,8 +20,6 @@ public class RollingText : MonoBehaviour
     IEnumerator write(string queue)
     {
         int queueIndex = 0;
-        text.text = "";
-
         while (queue.Length > queueIndex)
         {
             text.text += queue[queueIndex];

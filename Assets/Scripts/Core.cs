@@ -14,6 +14,7 @@ public class Core : MonoBehaviour
     public GameObject Hand;
     public GameObject Camera;
     public monsterFollow Monster;
+    public AudioManager AudioManager;
     public int PlayerMaxHP = 10;
     public int PlayerHP = 10;
     public float startingGamma;
@@ -30,7 +31,6 @@ public class Core : MonoBehaviour
     public TMP_Text DescriptionUI;
     public TMP_Text CasetteCode;
     public AudioSource GeneralAudio;
-    public AudioSource GeneralMusic;
     public VoiceOverSubtitles VoiceOver;
     public AudioSource PickUpSound;
     public AudioSource DeathSound;
@@ -45,7 +45,6 @@ public class Core : MonoBehaviour
 
     void Start()
     {
-
         Core_Utils.Player = Player;
         Core_Utils.Hand = Hand;
         Core_Utils.Camera = Camera;
@@ -60,12 +59,11 @@ public class Core : MonoBehaviour
     }
     void Update()
     {
-        if (PlayerHP < PlayerMaxHP && Time.realtimeSinceStartup-delay > 15)
+        if (PlayerHP < PlayerMaxHP && Time.realtimeSinceStartup - delay > 15)
         {
             PlayerHP = PlayerMaxHP;
             effects.chromaticAnimation = false;
         }
-
     }
 
     public void Hurt(int damage)
@@ -76,11 +74,17 @@ public class Core : MonoBehaviour
         delay = Time.realtimeSinceStartup;
         if (PlayerHP <= 0)
         {
-            DeathSound.Play();
-            DeathHUD.SetActive(true);
-            Time.timeScale = 0;
-            ToggleCursor();
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        DeathSound.Play();
+        DeathHUD.SetActive(true);
+        AudioManager.PlayMusic(AudioManager.BadEndingMusic);
+        Time.timeScale = 0;
+        ToggleCursor();
     }
 
     public void ChangeLanguage(int value)

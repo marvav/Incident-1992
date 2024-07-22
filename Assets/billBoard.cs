@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class billBoard : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class billBoard : MonoBehaviour
     }
     void LateUpdate()
     {
-        transform.LookAt(target.transform);
+        if(rand.Next(0, 10000) == 1)
+        {
+            transform.LookAt(target.transform);
+        }
         //transform.Rotate(0, 180, 0);
     }
 }

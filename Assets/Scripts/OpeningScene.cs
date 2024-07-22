@@ -28,9 +28,7 @@ public class OpeningScene : MonoBehaviour
         ToggleCursor();
         if(music != null)
         {
-            Core.GeneralMusic.clip = music;
-            Core.GeneralMusic.Play();
-            Core.GeneralMusic.loop = true;
+            Core.AudioManager.PlayMusic(music, true);
         }
         queue = lines[start];
         resetQueue();
@@ -65,7 +63,7 @@ public class OpeningScene : MonoBehaviour
     {
         sound.Play();
         if (endLoopMusic)
-            Core.GeneralMusic.loop = false;
+            Core.AudioManager.GeneralMusic.loop = false;
         text.text = "";
         ToggleObjects(TurnOnAfter, true);
         ToggleObjects(TurnOffAfter, false);

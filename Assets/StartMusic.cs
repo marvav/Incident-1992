@@ -9,8 +9,6 @@ public class StartMusic : MonoBehaviour
 
     void Start()
     {
-        Core.GeneralMusic.Stop();
-        Core.GeneralMusic.clip = music;
-        Core.GeneralMusic.Play();
+        Core.AudioManager.PlayMusic(music);
     }
 }
