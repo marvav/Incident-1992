@@ -53,4 +53,16 @@ public class AudioSettings : MonoBehaviour
             AmbientVolume = Ambient.value;
         }
     }
+
+    public void forceSettings()
+    {
+        Core.ChangeVolume("PlayerSounds", PlayerSounds.value);
+        Core.ChangeVolume("Voice", VoiceOver.value);
+        Core.ChangeVolume("Music", Music.value);
+        Core.ChangeVolume("Ambient", Ambient.value);
+        PlayerVolume = PlayerSounds.value;
+        VoiceVolume = VoiceOver.value;
+        MusicVolume = Music.value;
+        AmbientVolume = Ambient.value;
+    }
 }

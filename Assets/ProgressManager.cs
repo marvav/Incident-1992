@@ -78,7 +78,7 @@ public class ProgressManager : MonoBehaviour
             if (id_list[id] != true)
             {
                 id_list[id] = true;
-                Core.RollingText.RollText("I should hurry up to the Hájenka cabin, because it's getting dark. It lies somewhere on the blue trail.");
+                Core.RollingText.RollText("I should hurry up to the Hájenka cabin, because it's getting dark. It lies somewhere on the blue trail.", 5);
             }
 
             return; //Stop

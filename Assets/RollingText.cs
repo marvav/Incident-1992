@@ -14,12 +14,18 @@ public class RollingText : MonoBehaviour
 
     public void RollText(string text)
     {
-        StartCoroutine(write(text));
+        RollText(text, 0);
     }
 
-    IEnumerator write(string queue)
+    public void RollText(string text, int waitBeforeStart)
+    {
+        StartCoroutine(write(text, waitBeforeStart));
+    }
+
+    IEnumerator write(string queue, int waitBeforeStart)
     {
         int queueIndex = 0;
+        yield return new WaitForSeconds(waitBeforeStart);
         while (queue.Length > queueIndex)
         {
             text.text += queue[queueIndex];

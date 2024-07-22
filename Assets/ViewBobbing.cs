@@ -17,7 +17,7 @@ public class ViewBobbing : MonoBehaviour
         orgPosition = this.gameObject.transform.localPosition;
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (player.isMoving()) //Perform View Bobbing
         {

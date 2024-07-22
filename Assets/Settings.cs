@@ -23,11 +23,16 @@ public class Settings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        forceSettings();
+        fps_count.text = "Max FPS: " + Application.targetFrameRate.ToString();
+    }
+
+    public void forceSettings()
+    {
         RenderSettings.ambientLight = new Color(gamma.value, gamma.value, gamma.value, 1.0f);
         cam.SetSensitivity(sensitivity.value);
+        Application.targetFrameRate = (int) MaxFPS.value;
         //Core.ChangeLanguage((int) Localization.value);
         //QualitySettings.SetQualityLevel((int) QualityLevel.value);
-        Application.targetFrameRate = (int) MaxFPS.value;
-        fps_count.text = "Max FPS: " + Application.targetFrameRate.ToString();
     }
 }
