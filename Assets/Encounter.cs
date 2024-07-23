@@ -8,6 +8,7 @@ public class Encounter : MonoBehaviour
 {
     public Core Core;
     public int chance;
+    public int carChance;
     public GameObject death;
     public GameObject car;
     public GameObject carFire;
@@ -23,44 +24,47 @@ public class Encounter : MonoBehaviour
     {
         if(isHappening)
         {
-            if (counter == 4)
-                AreYouBlind.SetActive(true);
+            performEncounter();
+            return;
+        }
+        if (rand.Next(0, chance) == 1 || (isCloseToPlayer(car.transform, 50) && rand.Next(0, carChance) == 1))
+        {
+            ShootHim.SetActive(true);
+            gun.Play();
+            isHappening = true;
+        }
+    }
 
-            if (!gun.isPlaying)
+    void performEncounter()
+    {
+        if (counter == 4)
+            AreYouBlind.SetActive(true);
+
+        if (!gun.isPlaying)
+        {
+            gun.clip = gunshots[counter];
+            counter++;
+            gun.Play();
+            //gun.volume = rand.Next(5, 10) / 10;
+            if (player.velocity.magnitude < 7)
             {
-                gun.clip = gunshots[counter];
-                counter++;
-                gun.Play();
-                //gun.volume = rand.Next(5, 10) / 10;
-                if (player.velocity.magnitude < 7)
+                Core.Hurt(5);
+                if (Core.PlayerHP <= 0)
                 {
-                    Core.Hurt(5);
-                    if (Core.PlayerHP <= 0)
-                    {
-                        death.SetActive(true);
-                        this.gameObject.SetActive(false);
-                    }
-                    return;
-                }
-                if (counter >= gunshots.Length-1)
-                {
-                    if (isCloseToPlayer(car.transform, 50))
-                    {
-                        car.SetActive(false);
-                        carFire.SetActive(true);
-                    }
-                    Core.ProgressManager.changeObjective(9);
+                    death.SetActive(true);
                     this.gameObject.SetActive(false);
                 }
+                return;
             }
-        }
-        else
+            if (counter >= gunshots.Length - 1)
             {
-                if (rand.Next(0, chance) ==1 || (isCloseToPlayer(car.transform, 50) && rand.Next(0, (int)(chance/10)) == 1))
+                if (isCloseToPlayer(car.transform, 50))
                 {
-                    ShootHim.SetActive(true);
-                    gun.Play();
-                    isHappening = true;
+                    car.SetActive(false);
+                    carFire.SetActive(true);
+                }
+                Core.ProgressManager.changeObjective(9);
+                this.gameObject.SetActive(false);
             }
         }
     }
