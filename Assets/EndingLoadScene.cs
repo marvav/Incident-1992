@@ -7,45 +7,33 @@ using static Inventory;
 
 public class EndingLoadScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public Core Core;
-    public TMP_Text text;
     public AudioSource sound;
     public AudioSource LoadingScreen;
     public GameObject Teleport;
-    public GameObject WellRegularEntrance;
+    public GameObject[] turnOn;
+    public GameObject[] turnOff;
     public string[] lines;
-    private int start = 1;
-    private bool isHidden = true;
-    // Update is called once per frame
+    private int start = 0;
+
     void Start()
     {
-        Inventory.Remove("Rope");
-        Inventory.InHand = null;
-        text.text = lines[0];
         LoadingScreen.Play();
+        ToggleObjects(turnOn, true);
     }
-    void Update()
+    void LateUpdate()
     {
-        if (isHidden && Input.GetMouseButtonDown(0))
+        if (!Core.RollingText.isWriting())
         {
-            sound.Play();
-            if (start >= lines.Length - 1)
+            if (start >= lines.Length)
             {
-                text.text = "";
                 Core.Player.transform.position = Teleport.transform.position;
-                WellRegularEntrance.SetActive(true);
+                ToggleObjects(turnOff, false);
                 this.gameObject.SetActive(false);
                 return;
             }
-            text.text = lines[start];
+            Core.RollingText.RollText(lines[start], 0, 0.0f);
             start++;
-            isHidden = false;
-        }
-        else
-        {
-            isHidden = true;
         }
     }
 }

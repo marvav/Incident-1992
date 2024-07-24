@@ -11,10 +11,9 @@ public class BreakDoorOpen : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == DestructiveLayer && collision.relativeVelocity.magnitude > 0.2)
+        if ((collision.gameObject.layer == DestructiveLayer || this.gameObject.layer == DestructiveLayer) && collision.relativeVelocity.magnitude > 0.2)
         {
             MovedObject.SetActive(true);
-            Core.Description.text = "";
             ObjectToMove.SetActive(false);
             Core.ProgressManager.changeObjective(clueID);
         }

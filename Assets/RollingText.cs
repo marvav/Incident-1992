@@ -12,17 +12,31 @@ public class RollingText : MonoBehaviour
     public float afterSentenceWait = 1.5f;
     public float afterWholeWait = 2.0f;
 
+    private bool isWritingState = false;
+
+    public bool isWriting()
+    {
+        return isWritingState;
+    }
+
     public void RollText(string text)
     {
-        RollText(text, 0);
+        Debug.Log("rolling");
+        isWritingState = true;
+        RollText(text, 0, afterWholeWait);
     }
 
     public void RollText(string text, int waitBeforeStart)
     {
-        StartCoroutine(write(text, waitBeforeStart));
+        StartCoroutine(write(text, waitBeforeStart, afterWholeWait));
     }
 
-    IEnumerator write(string queue, int waitBeforeStart)
+    public void RollText(string text, int waitBeforeStart, float afterWholeWait)
+    {
+        StartCoroutine(write(text, waitBeforeStart, afterWholeWait));
+    }
+
+    IEnumerator write(string queue, int waitBeforeStart, float afterWholeWait)
     {
         int queueIndex = 0;
         yield return new WaitForSeconds(waitBeforeStart);
@@ -39,7 +53,8 @@ public class RollingText : MonoBehaviour
                 yield return new WaitForSeconds(afterCharWait);
             }
         }
-        yield return new WaitForSeconds(afterWholeWait);
         text.text = "";
+        isWritingState = false;
+        yield return new WaitForSeconds(afterWholeWait);
     }
 }
