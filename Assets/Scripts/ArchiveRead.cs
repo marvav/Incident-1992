@@ -26,16 +26,17 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
 
         if (clickCount == 1)
         {
-            isOpen = !isOpen;
+            bool currentState = ArchiveUI.gameObject.activeSelf;
             for (int i = 0; i < icons.Count; i++)
             {
                 if (Notes[i] == null)
                     break;
-                icons[i].SetActive(isOpen);
+                icons[i].SetActive(!currentState);
             }
-            CloseTouchScreen.SetActive(isOpen);
-            ArchiveUI.SetActive(isOpen);
+            CloseTouchScreen.SetActive(!currentState);
+            ArchiveUI.SetActive(!currentState);
             Core.Description.text = "";
+            Core.DescriptionUI.text = "";
             Core.Note.SetActive(false);
         }
     }

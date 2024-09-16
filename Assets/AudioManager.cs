@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip BadEndingMusic;
     public AudioClip CarEndingMusic;
     public AudioClip DepthEndingMusic;
+    public AudioClip EscapeEndingMusic;
 
     public void PlayMusic(AudioClip clip)
     {

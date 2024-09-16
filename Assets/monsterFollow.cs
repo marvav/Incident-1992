@@ -52,29 +52,35 @@ public class monsterFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        phase = Core.PlayerDen.isPlayerInSafeZone() ? Phase.SafeZone : phase;
-
+        if (Core.PlayerDen.isPlayerInSafeZone())
+        {
+            phase = Phase.SafeZone;
+            RandomTeleport();
+        }
+        UpdateAudio();
         switch (phase)
         {
             case Phase.FollowMessaging:
                 Core.ProgressManager.monsterFound = true;
-                UpdateAudio();
                 ChangeVisibility(distance);
                 MonsterFollow();
                 break;
             case Phase.FollowClose:
-                UpdateAudio();
                 ChangeVisibility(distance);
                 MonsterFollow();
                 break;
             case Phase.Follow:
-                UpdateAudio();
                 ChangeVisibility(distance);
                 MonsterFollow();
                 break;
             case Phase.Clamp:
                 break;
             case Phase.SafeZone:
+
+                if (!Core.PlayerDen.isPlayerInSafeZone())
+                {
+                    phase = Phase.Follow;
+                }
                 break;
         }
     }

@@ -64,7 +64,7 @@ public class FlashLightComponent : MonoBehaviour
         if (0 < power)
         {
 
-            if (power < start_flicker_at && rand.Next(0, 2000) == 1)
+            if (power <= start_flicker_at && rand.Next(0, 1500) == 1)
             {
                 //Debug.Log("Started flickering");
                 buzzing.Play();
@@ -97,7 +97,8 @@ public class FlashLightComponent : MonoBehaviour
             Sound.Play();
             isFlickering = false;
             buzzing.Pause();
-            switchLight();
+            if(power > 0)
+                switchLight();
         }
     }
     public void Restore_Capacity()

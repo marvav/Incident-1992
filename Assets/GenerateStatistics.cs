@@ -10,6 +10,6 @@ public class GenerateStatistics : MonoBehaviour
 
     void Update()
     {
-        cluesDiscovered.text += " " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.id_list.Length.ToString();
+        cluesDiscovered.text = "Clues Discovered: " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.AllClueCount();
     }
 }

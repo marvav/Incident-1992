@@ -60,7 +60,7 @@ public class PlayerMovementDen : MonoBehaviour
 
     public float HeightHurtThreshold;
     private bool landAndHurt = false;
-    private bool isInSafeZone = false;
+    public bool isInSafeZone = false;
 
     public float crawlHeight = 1.0f;
     public float crawlSpeed = 1.0f;
@@ -281,11 +281,17 @@ public class PlayerMovementDen : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        isInSafeZone = other.gameObject.tag == "SafeZone" && !isInSafeZone;
+        if(other.gameObject.tag == "SafeZone" && !isInSafeZone)
+        {
+            isInSafeZone = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        isInSafeZone = other.gameObject.tag == "SafeZone" && isInSafeZone;
+        if(other.gameObject.tag == "SafeZone" && isInSafeZone)
+        {
+            isInSafeZone = false;
+        }
     }
 }

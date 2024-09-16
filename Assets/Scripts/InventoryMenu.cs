@@ -58,7 +58,7 @@ public class InventoryMenu : MonoBehaviour
                 ToggleOnInventory();
                 Time.timeScale = 0;
             }
-            Core.Description.text = "";
+            Core.DescriptionUI.text = "";
         }
     }
     public void ToggleOnInventory()

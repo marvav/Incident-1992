@@ -73,6 +73,8 @@ public class ProgressManager : MonoBehaviour
 
     public bool[] id_list = new bool[50];
 
+    private int clueCount = 26;
+
     public void changeObjective(int id)
     {
         if (id == 0)
@@ -80,7 +82,7 @@ public class ProgressManager : MonoBehaviour
             if (id_list[id] != true)
             {
                 id_list[id] = true;
-                Core.RollingText.RollText("I should hurry up to the Hájenka cabin. It lies somewhere on the blue trail.", 5, 2);
+                Core.RollingText.RollText("I should hurry up to the Hajenka cabin. It lies somewhere on the blue trail.", 5, 2);
             }
 
             return; //Stop
@@ -371,5 +373,8 @@ public class ProgressManager : MonoBehaviour
             count += clue ? 1 : 0;
         }
         return count;
+    }
+    public int AllClueCount() {
+        return clueCount;
     }
 }

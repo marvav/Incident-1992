@@ -8,9 +8,17 @@ public class FadeInScene : MonoBehaviour
     public UnityEngine.UI.Image badEndingImage;
     public UnityEngine.UI.Image carEndingImage;
     public UnityEngine.UI.Image depthEnding;
+    public UnityEngine.UI.Image escapeEnding;
     public float fadeInSpeed = 1f;
     public float fadeInStrength = 0.1f;
     public bool isScreenReady = false;
+
+    public void EscapeEndingScreen()
+    {
+        Screen(escapeEnding);
+        escapeEnding.gameObject.SetActive(true);
+        Core.AudioManager.PlayMusic(Core.AudioManager.EscapeEndingMusic);
+    }
 
     public void DepthEndingScreen()
     {

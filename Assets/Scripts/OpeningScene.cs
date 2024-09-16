@@ -11,7 +11,6 @@ public class OpeningScene : MonoBehaviour
     public GameObject[] TurnOnAfter;
     public GameObject[] TurnOffAfter;
     public TMP_Text text;
-    public AudioSource sound;
     public AudioClip music;
     public string[] lines;
     public float writingSpeed = 1.0f;
@@ -61,7 +60,6 @@ public class OpeningScene : MonoBehaviour
 
     void stop()
     {
-        sound.Play();
         if (endLoopMusic)
             Core.AudioManager.GeneralMusic.loop = false;
         text.text = "";
