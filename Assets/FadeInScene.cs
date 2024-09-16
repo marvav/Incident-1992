@@ -24,7 +24,6 @@ public class FadeInScene : MonoBehaviour
     {
         Screen(depthEnding);
         depthEnding.gameObject.SetActive(true);
-        Core.AudioManager.PlayMusic(Core.AudioManager.DepthEndingMusic);
     }
 
     public void CarEndingScreen()

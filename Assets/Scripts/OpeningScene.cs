@@ -16,7 +16,7 @@ public class OpeningScene : MonoBehaviour
     public float writingSpeed = 1.0f;
     public bool endLoopMusic = true;
     private int start = 0;
-    private bool isClicked = false;
+    public bool turnOffSelfAfter = true;
 
     private string queue = "";
     private int queueIndex = 0;
@@ -65,6 +65,9 @@ public class OpeningScene : MonoBehaviour
         text.text = "";
         ToggleObjects(TurnOnAfter, true);
         ToggleObjects(TurnOffAfter, false);
-        this.gameObject.SetActive(false);
+        if (turnOffSelfAfter)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }

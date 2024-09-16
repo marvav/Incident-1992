@@ -62,10 +62,6 @@ public class PlayerMovementDen : MonoBehaviour
     private bool landAndHurt = false;
     public bool isInSafeZone = false;
 
-    public float crawlHeight = 1.0f;
-    public float crawlSpeed = 1.0f;
-    private bool isCrawling = false;
-
     public float waterSpeedMultiplier;
     public float asphaltSpeedMultiplier;
 
@@ -92,10 +88,8 @@ public class PlayerMovementDen : MonoBehaviour
             floorTag = "";
         MyInput();
         SpeedControl(floorTag);
-        Crawl();
         HandleFallDamage();
 
-        // handle drag
         if (grounded)
             rb.drag = groundDrag;
         else
@@ -118,9 +112,10 @@ public class PlayerMovementDen : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         speed = moveSpeed + verticalInput * moveSpeed * speedCoeficient;
-        if (Input.GetKey(sprintKey) && verticalInput >= 0.2f && !staminaDrained)
+        isSprinting = Input.GetKey(sprintKey) && verticalInput >= 0.2f && !staminaDrained;
+
+        if (isSprinting)
         {
-            isSprinting = true;
             if (currentStamina > 0)
             {
                 currentStamina -= Time.deltaTime;
@@ -132,8 +127,7 @@ public class PlayerMovementDen : MonoBehaviour
                 staminaPanting.Play();
             }
         }
-        else
-            isSprinting = false;
+
         if (staminaDrained)
         {
             speed *= staminaDrainedMultiplier;
@@ -141,8 +135,8 @@ public class PlayerMovementDen : MonoBehaviour
                 staminaDrained = false;
         }
 
-        if((!Input.GetKey(sprintKey) || staminaDrained) && currentStamina < stamina)
-            currentStamina += Time.deltaTime* staminaRechargeSpeed;
+        if(!isSprinting && currentStamina < stamina)
+            currentStamina += Time.deltaTime * staminaRechargeSpeed;
 
         // when to jump (grounded || gameObject.transform.parent!=null)
         if (Input.GetKey(jumpKey) && readyToJump && (grounded || gameObject.transform.parent != null))
@@ -182,13 +176,11 @@ public class PlayerMovementDen : MonoBehaviour
         {
             case "Water":
                 {
-                    //Debug.Log("Slowed down");
                     speed *= waterSpeedMultiplier;
                     break;
                 }
             case "Asphalt":
                 {
-                    //Debug.Log("Sped Up");
                     speed *= asphaltSpeedMultiplier;
                     break;
                 }
@@ -209,7 +201,6 @@ public class PlayerMovementDen : MonoBehaviour
 
         // reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
@@ -241,31 +232,6 @@ public class PlayerMovementDen : MonoBehaviour
             landAndHurt = false;
         }
         landAndHurt = landAndHurt || rb.velocity.y < HeightHurtThreshold;
-    }
-
-    public void Crawl()
-    {
-        if (Input.GetKey(crawlKey))
-        {
-            speed *= crawlSpeed;
-            if (!isCrawling)
-            {
-                isCrawling = true;
-                GrabbingController.gameObject.transform.position = new Vector3(GrabbingController.gameObject.transform.position.x,
-                    GrabbingController.gameObject.transform.position.y - 1,
-                    GrabbingController.gameObject.transform.position.z);
-            }
-        }
-        else
-        {
-            if (isCrawling)
-            {
-                isCrawling = false;
-                GrabbingController.gameObject.transform.position = new Vector3(GrabbingController.gameObject.transform.position.x,
-                        GrabbingController.gameObject.transform.position.y + 1,
-                        GrabbingController.gameObject.transform.position.z);
-            }
-        }
     }
 
     public bool isPlayerInSafeZone()

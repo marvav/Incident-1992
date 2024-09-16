@@ -13,7 +13,6 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
     public GameObject ArchiveUI;
     public GameObject CloseTouchScreen;
     private List<GameObject> icons;
-    private bool isOpen = false;
 
     public void Start()
     {
