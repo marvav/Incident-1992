@@ -59,7 +59,6 @@ public class PlayerSounds : MonoBehaviour
             Sound.Play();
             if(currentFloor!=floorType)
             {
-                Debug.Log("yes");
                 floorType = currentFloor;
                 counter = stepLength - 1; // So the step is performed upon start of the movement
                 return;

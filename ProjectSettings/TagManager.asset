@@ -22,6 +22,7 @@ TagManager:
   - Description
   - Iron
   - Ambient
+  - SafeZone
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - Radio
   - E-Interactions
   - LMB-Interactions
-  - 
+  - SafeZone
   - 
   - 
   - 

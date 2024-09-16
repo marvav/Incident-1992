@@ -14,6 +14,11 @@ public class RollingText : MonoBehaviour
 
     private bool isWritingState = false;
 
+    public bool isEmpty()
+    {
+        return text.text.Length == 0;
+    }
+
     public bool isWriting()
     {
         return isWritingState;
@@ -53,8 +58,8 @@ public class RollingText : MonoBehaviour
                 yield return new WaitForSeconds(afterCharWait);
             }
         }
+        yield return new WaitForSeconds(afterWholeWait);
         text.text = "";
         isWritingState = false;
-        yield return new WaitForSeconds(afterWholeWait);
     }
 }

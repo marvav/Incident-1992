@@ -6,6 +6,7 @@ using TMPro;
 public class PlayerMovementDen : MonoBehaviour
 {
     public Core Core;
+    public monsterFollow monster;
     float speed;
     public float moveSpeed;
 
@@ -59,6 +60,7 @@ public class PlayerMovementDen : MonoBehaviour
 
     public float HeightHurtThreshold;
     private bool landAndHurt = false;
+    private bool isInSafeZone = false;
 
     public float crawlHeight = 1.0f;
     public float crawlSpeed = 1.0f;
@@ -66,6 +68,9 @@ public class PlayerMovementDen : MonoBehaviour
 
     public float waterSpeedMultiplier;
     public float asphaltSpeedMultiplier;
+
+    private Vector3 teleportCoordinates;
+    private bool teleportPlayer;
 
     private void Start()
     {
@@ -95,7 +100,16 @@ public class PlayerMovementDen : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = airDrag;
-        MovePlayer();
+
+        if (teleportPlayer)
+        {
+            this.gameObject.transform.position = teleportCoordinates;
+            teleportPlayer = false;
+        }
+        else
+        {
+            MovePlayer();
+        }
 
     }
 
@@ -252,5 +266,26 @@ public class PlayerMovementDen : MonoBehaviour
                         GrabbingController.gameObject.transform.position.z);
             }
         }
+    }
+
+    public bool isPlayerInSafeZone()
+    {
+        return isInSafeZone;
+    }
+
+    public void TeleportPlayer(Vector3 destination)
+    {
+        teleportCoordinates = destination;
+        teleportPlayer = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        isInSafeZone = other.gameObject.tag == "SafeZone" && !isInSafeZone;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        isInSafeZone = other.gameObject.tag == "SafeZone" && isInSafeZone;
     }
 }

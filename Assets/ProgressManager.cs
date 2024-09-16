@@ -15,7 +15,7 @@ public class ProgressManager : MonoBehaviour
     public GameObject wellEntrance;
     public monsterFollow monsterStats;
     public WalkieTalkie recordings;
-    public int fasterMonsterSpeed = 3;
+    public int fasterMonsterSpeed = 4;
 
     const int START = 0;
     const int CABIN_NOTE_READ = 1;
@@ -42,6 +42,7 @@ public class ProgressManager : MonoBehaviour
     const int HOLE_FOUND = 24;
     const int REVOLVER_USED = 23;
     const int CABIN_ENTERED = 25;
+    const int REAL_DAVID_NOTE_FOUND = 26;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -68,6 +69,7 @@ public class ProgressManager : MonoBehaviour
     public bool radioEquipmentFound = false;
     public bool holeFound = false;
     public bool revolverUsed = false;
+    public bool realDavidNoteFound = false;
 
     public bool[] id_list = new bool[50];
 
@@ -78,7 +80,7 @@ public class ProgressManager : MonoBehaviour
             if (id_list[id] != true)
             {
                 id_list[id] = true;
-                Core.RollingText.RollText("I should hurry up to the Hájenka cabin, because it's getting dark. It lies somewhere on the blue trail.", 5);
+                Core.RollingText.RollText("I should hurry up to the Hájenka cabin. It lies somewhere on the blue trail.", 5, 2);
             }
 
             return; //Stop
@@ -183,6 +185,13 @@ public class ProgressManager : MonoBehaviour
         if(id == HOLE_FOUND && !holeFound)
             holeFound = true;
         revolverUsed = id == REVOLVER_USED && !revolverUsed;
+
+        if (id == REAL_DAVID_NOTE_FOUND)
+        {
+            Core.RollingText.RollText("David... What have you gotten yourself into?", 1);
+            realDavidNoteFound = true;
+            monster.SetActive(true);
+        }
     }
 
 
@@ -195,11 +204,16 @@ public class ProgressManager : MonoBehaviour
             else
                 result += "Mìl bych si pohnout do Davidovy chaty. Nechci aby se zlobili, že jdu pozdì. Mìlo by to být nìkde na modré trase.\n\n";
 
-        if (noteFound && !firstRecordingListened)
+        if (noteFound && !realDavidNoteFound)
             if (Core.GetLanguage() == 0)
                 result += "Where the hell is David?! Did I actually drive here for nothing?\n\n";
             else
-                result += "Nemùžu uvìøit, že by se prostì pohádali a odešli... Proè by David odcházel? Myslel jsem, že tu žije.\n\n";
+                result += "\n\n";
+        if (realDavidNoteFound && !firstRecordingListened)
+            if (Core.GetLanguage() == 0)
+                result += "What thing did David discover that he risks his life for it?! The note sounded like he was in some kind of danger.\n\n";
+            else
+                result += "\n\n";
         if (lockedCaveFound && !ropeFound)
             if (Core.GetLanguage() == 0)
                 result += "There is a light on in Hájenka cave. Someone must have been there recently!\n\n";
@@ -207,7 +221,7 @@ public class ProgressManager : MonoBehaviour
                 result += "V jeskyni Hájence je nìjaké svìtlo. Asi tam nìkdo je nebo aspoò byl.\n\n";
         if (monsterFound)
             if (Core.GetLanguage() == 0)
-                result += "I feel... breeze, shivers down my spine and... presence? Like in a horror movie before the action happens.\n\n";
+                result += "I feel... breeze, shivers down my spine and... presence? Like in a horror movie before something happens.\n\n";
             else
                 result += "Cítím... chladný vánek. Mráz mi leze po zádech. Skoro jako v horrorovém filmu než si postavy uvìdomí, že nejsou samy\n\n";
         if (cabinBroken && !firstRecordingListened)
@@ -337,7 +351,7 @@ public class ProgressManager : MonoBehaviour
                 result += "Nìkdo musel mít tak naspìch, že ztratil baterku... V noci?!\n\n";
         if (holeFound)
             if (Core.GetLanguage() == 0)
-                result += "Someone has been digging near David's cabin very recently. The hole is fresh.\n\n";
+                result += "Someone has been digging near David's cabin very recently. The soil is fresh.\n\n";
             else
                 result += "Nìkdo v lese vykopal podezøele velkou díru. Je èerstvá.\n\n";
         return result;

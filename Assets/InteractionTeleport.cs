@@ -14,10 +14,6 @@ public class InteractionTeleport : MonoBehaviour
     public void Teleport()
     {
         MovementSound.Play();
-        Core.Player.transform.position = Destination.transform.position;
-        Core.Player.transform.position = Destination.transform.position;
-        Core.Player.transform.position = Destination.transform.position;
-        Core.Player.transform.position = Destination.transform.position;
-        Core.Player.transform.position = Destination.transform.position;
+        Core.PlayerDen.TeleportPlayer(Destination.transform.position);
     }
 }

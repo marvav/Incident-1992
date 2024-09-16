@@ -13,6 +13,7 @@ public class Core : MonoBehaviour
     public GameObject Player;
     public GameObject Hand;
     public GameObject Camera;
+    public FadeInScene DeathManager;
     public monsterFollow Monster;
     public AudioManager AudioManager;
     public int PlayerMaxHP = 10;
@@ -81,10 +82,17 @@ public class Core : MonoBehaviour
     public void Die()
     {
         DeathSound.Play();
+        Monster.gameObject.SetActive(false);
+        DeathManager.BadEndingScreen();
         DeathHUD.SetActive(true);
-        AudioManager.PlayMusic(AudioManager.BadEndingMusic);
-        Time.timeScale = 0;
+        StopPlayer();
         ToggleCursor();
+    }
+
+    public void StopPlayer()
+    {
+        Hand.SetActive(false);
+        Player.SetActive(false);
     }
 
     public void ChangeLanguage(int value)

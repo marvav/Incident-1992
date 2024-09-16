@@ -10,15 +10,16 @@ public class monsterFollow : MonoBehaviour
     public GameObject eyes;
     public Light flashlight;
     public float speedUpWhenFlashlightOn;
-    public Transform followTransform;
     public GameObject death;
     public AudioSource buzzing;
     public AudioSource Damage;
     public AudioClip[] audioClips;
+    public AudioClip[] cryingClips;
     public Animation animation;
     public GameObject[] monsterClamps;
     CharacterController charControl;
-    AudioSource Sound;
+    public AudioSource Sound;
+    public AudioSource CryingAudio;
 
     public float speed;
     public float gravityScale;
@@ -29,16 +30,16 @@ public class monsterFollow : MonoBehaviour
     public Vector3[] spawnPlaces;
 
     private int monsterDirection;
-
     private float distance;
-    private bool isClose = false;
-    private bool messaging = true;
     private Vector3 blankVector = new Vector3(0, 0, 0);
 
     public enum Phase
     {
+        FollowClose,
+        FollowMessaging,
         Follow,
-        Clamp
+        Clamp,
+        SafeZone
     }
 
     void Start()
@@ -51,60 +52,53 @@ public class monsterFollow : MonoBehaviour
 
     void FixedUpdate()
     {
+        phase = Core.PlayerDen.isPlayerInSafeZone() ? Phase.SafeZone : phase;
+
         switch (phase)
         {
+            case Phase.FollowMessaging:
+                Core.ProgressManager.monsterFound = true;
+                UpdateAudio();
+                ChangeVisibility(distance);
+                MonsterFollow();
+                break;
+            case Phase.FollowClose:
+                UpdateAudio();
+                ChangeVisibility(distance);
+                MonsterFollow();
+                break;
             case Phase.Follow:
+                UpdateAudio();
+                ChangeVisibility(distance);
                 MonsterFollow();
                 break;
             case Phase.Clamp:
+                break;
+            case Phase.SafeZone:
                 break;
         }
     }
 
     void MonsterFollow()
     {
-        distance = Vector3.Distance(followTransform.position, transform.position);
-        monsterSubtitles.SetActive(messaging && distance < messageDistance);
+        distance = Vector3.Distance(Core.Player.transform.position, transform.position);
+        monsterSubtitles.SetActive(Phase.FollowMessaging == phase);
         if (distance < 1 && rand.Next(0, 25) == 1)
         {
             Damage.Play();
             Core.Hurt(4);
         }
-        if (distance < messageDistance)
-            Core.ProgressManager.monsterFound = true;
-        else
-        {
-            messaging = true;
-            if (!buzzing.isPlaying)
-                buzzing.Play();
-        }
 
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         if (distance > respawnDistance)
         {
-            if (rand.Next(0, 50) == 1) //Chance to spawn directly behind player
-            {
-                int random = rand.Next(0, 4);
-                if (random == 0)
-                    Teleport(followTransform.position, new Vector3(-20, 0, 0));
-                if (random == 1)
-                    Teleport(followTransform.position, new Vector3(20, 0, 0));
-                if (random == 2)
-                    Teleport(followTransform.position, new Vector3(0, 0, -20));
-                if (random == 3)
-                    Teleport(followTransform.position, new Vector3(0, 0, 20));
-                buzzing.Pause();
-                messaging = false;
-            }
-            else //Spawns on one of locations
-            {
-                transform.position = spawnPlaces[rand.Next(0, spawnPlaces.Length)];
-            }
+            RandomTeleport();
         }
         else
+        {
             Move();
-        ChangeVisibility(distance);
+        }
     }
 
     void MonsterClamp()
@@ -114,44 +108,90 @@ public class monsterFollow : MonoBehaviour
 
     void ChangeVisibility(float distance)
     {
-        if (distance < revealDistance)
+        if (phase == Phase.FollowClose)
         {
-            messaging = true;
-            if (!buzzing.isPlaying)
-                buzzing.Play();
-            if (!isClose)
-            {
-                Sound.clip = audioClips[rand.Next(0, audioClips.Length)];
-                Sound.Play();
-                isClose = true;
-            }
-            else
-            {
-                if (rand.Next(0, 100) == 1)
-                {
-                    Sound.clip = audioClips[rand.Next(0, audioClips.Length)];
-                    Sound.Play();
-                }
-            }
             eyes.SetActive(true);
             animation.Play("monster_final");
         }
         else
         {
             eyes.SetActive(!flashlight.enabled);
-            isClose = false;
             if (flashlight.enabled && animation.IsPlaying("monster_final")) animation.Stop("monster_final");
             else if (!animation.IsPlaying("monster_final")) animation.Play("monster_final");
         }
     }
+
+    void UpdateAudio()
+    {
+        switch (phase) {
+            case Phase.FollowClose:
+                if (!buzzing.isPlaying)
+                {
+                    buzzing.Play();
+                }
+                if (!Sound.isPlaying)
+                {
+                    Sound.clip = audioClips[rand.Next(0, audioClips.Length)];
+                    Sound.Play();
+                }
+                break;
+            case Phase.FollowMessaging:
+                buzzing.Stop();
+                Sound.Stop();
+                if (!CryingAudio.isPlaying && rand.Next(0, 2500) == 1)
+                {
+                    CryingAudio.clip = cryingClips[rand.Next(0, cryingClips.Length)];
+                    CryingAudio.Play();
+                }
+                break;
+            default:
+                buzzing.Stop();
+                Sound.Stop();
+                CryingAudio.Stop();
+                break;
+        }
+    }
+
     void Move()
     {
         charControl.Move(monsterDirection * transform.up * gravityScale * Time.deltaTime);
-        transform.LookAt(followTransform);
+        transform.LookAt(Core.Player.transform);
         Vector3 movement = monsterDirection * transform.forward * Time.deltaTime * speed;
+
         if (flashlight.enabled)
             movement *= speedUpWhenFlashlightOn;
+
         charControl.Move(movement);
+
+        if (distance > messageDistance)
+        {
+            phase = Phase.Follow;
+        }
+        else {
+            phase = distance > revealDistance 
+                ? Phase.FollowMessaging 
+                : Phase.FollowClose;
+        }
+    }
+
+    private void RandomTeleport()
+    {
+        if (rand.Next(0, 50) == 1) //Chance to spawn directly behind player
+        {
+            int random = rand.Next(0, 4);
+            if (random == 0)
+                Teleport(Core.Player.transform.position, new Vector3(-20, 0, 0));
+            if (random == 1)
+                Teleport(Core.Player.transform.position, new Vector3(20, 0, 0));
+            if (random == 2)
+                Teleport(Core.Player.transform.position, new Vector3(0, 0, -20));
+            if (random == 3)
+                Teleport(Core.Player.transform.position, new Vector3(0, 0, 20));
+        }
+        else //Spawns on one of locations
+        {
+            transform.position = spawnPlaces[rand.Next(0, spawnPlaces.Length)];
+        }
     }
 
     // Public Methods
@@ -169,6 +209,10 @@ public class monsterFollow : MonoBehaviour
     public void Teleport(Vector3 position, Vector3 offset)
     {
         transform.position = new Vector3(position.x + offset.x,position.y + offset.y,position.z + offset.z);
+    }
+    public bool MonsterIsClose()
+    {
+        return phase == Phase.FollowClose;
     }
 
 }

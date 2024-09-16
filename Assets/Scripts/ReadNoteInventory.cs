@@ -14,13 +14,13 @@ public class ReadNoteInventory : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        Core.Description.text = Notes[ArchiveIndex].titles[Core.GetLanguage()];
+        Core.DescriptionUI.text = Notes[ArchiveIndex].titles[Core.GetLanguage()];
     }
 
     //Detect when Cursor leaves the GameObject
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        Core.Description.text = "";
+        Core.DescriptionUI.text = "";
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -29,7 +29,7 @@ public class ReadNoteInventory : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
         if (clickCount == 1)
         {
-            Core.Description.text = "";
+            Core.DescriptionUI.text = "";
             Core.NoteText.GetComponent<TMP_Text>().text = Notes[ArchiveIndex].contents[Core.GetLanguage()];
             Core.Note.SetActive(true);
         }

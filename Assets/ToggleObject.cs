@@ -43,7 +43,7 @@ public class ToggleObject : MonoBehaviour
 
     void PerformToggle()
     {
-        if (objects.Length != 0)
+        if (objects.Length > 0)
         {
             bool isOn = objects[0].activeSelf;
             ToggleObjects(objects, !isOn);

@@ -27,7 +27,7 @@ public class EndingLoadScene : MonoBehaviour
         {
             if (start >= lines.Length)
             {
-                Core.Player.transform.position = Teleport.transform.position;
+                Core.PlayerDen.TeleportPlayer(Teleport.transform.position);
                 ToggleObjects(turnOff, false);
                 this.gameObject.SetActive(false);
                 return;

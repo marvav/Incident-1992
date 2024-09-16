@@ -6,11 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource GeneralMusic;
     public AudioClip BadEndingMusic;
-
-    void Start()
-    {
-        
-    }
+    public AudioClip CarEndingMusic;
+    public AudioClip DepthEndingMusic;
 
     public void PlayMusic(AudioClip clip)
     {

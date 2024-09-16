@@ -20,21 +20,25 @@ public class OpenIcon : MonoBehaviour, IPointerClickHandler
 
         if (clickCount > 0)
         {
-            if (sound)
-            {
-            sound.Play(); 
-            }
-            isOpen = !isOpen;
-            ToggleObjects(alwaysOn, true);
-            ToggleObjects(turnOn, isOpen);
-            ToggleObjects(turnOff, !isOpen);
-            ToggleObjects(alwaysOff, false);
-            if (exitUI)
-            {
-                ToggleCursor();
-                Time.timeScale = 1;
-            }
+            ForceClickAction();
+        }
+    }
 
+    public void ForceClickAction()
+    {
+        if (sound)
+        {
+            sound.Play();
+        }
+        isOpen = !isOpen;
+        ToggleObjects(alwaysOn, true);
+        ToggleObjects(turnOn, isOpen);
+        ToggleObjects(turnOff, !isOpen);
+        ToggleObjects(alwaysOff, false);
+        if (exitUI)
+        {
+            ToggleCursor();
+            Time.timeScale = 1;
         }
     }
 }
