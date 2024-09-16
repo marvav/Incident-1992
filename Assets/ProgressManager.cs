@@ -170,7 +170,10 @@ public class ProgressManager : MonoBehaviour
             wellEntrance.SetActive(true);
         }
         if (id == WELL_ENTERED && !wellEntered)
+        {
+            Core.RollingText.RollText("The breeze is cold.", 1);
             wellEntered = true;
+        }
         if (id == CASETTE_FOUND && !casetteFound)
             casetteFound = true;
         if (id == CASETTE_PLAYED && !casettePlayed)
@@ -181,7 +184,10 @@ public class ProgressManager : MonoBehaviour
         if(id== BURNED_CASETTES_FOUND && !burnedCasettesFound)
             burnedCasettesFound = true;
         if (id == RADIO_EQUIPMENT_FOUND && !radioEquipmentFound)
+        {
+            Core.RollingText.RollText("Radio? Maybe I'll hear someone talking...", 1);
             radioEquipmentFound = true;
+        }
         if(id == HOLE_FOUND && !holeFound)
             holeFound = true;
         revolverUsed = id == REVOLVER_USED && !revolverUsed;

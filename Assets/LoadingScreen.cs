@@ -8,9 +8,6 @@ public class LoadingScreen : MonoBehaviour
     public GameObject screen;
     void Update()
     {
-        if (!sound.isPlaying)
-            screen.SetActive(false);
-        else
-            screen.SetActive(true);
+        screen.SetActive(sound.isPlaying);
     }
 }
