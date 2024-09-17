@@ -136,7 +136,7 @@ public class InteractionManager : MonoBehaviour
     void ShowDescription()
     {
         ObjectDescription description = coverHit.collider.gameObject.GetComponent<ObjectDescription>();
-        if (description != null && Core.RollingText.isEmpty())
+        if (description != null && Core.RollingText.isEmpty() && Core.Subtitles.text.Length == 0)
         {
             currentDescription = description.gameObject;
             ChangeLanguage();
