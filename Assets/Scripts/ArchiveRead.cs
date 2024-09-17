@@ -12,12 +12,7 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
     public Core Core;
     public GameObject ArchiveUI;
     public GameObject CloseTouchScreen;
-    private List<GameObject> icons;
-
-    public void Start()
-    {
-        icons = CountChildren(ArchiveUI);
-    }
+    public GameObject[] notesUI;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -26,11 +21,11 @@ public class ArchiveRead : MonoBehaviour, IPointerClickHandler
         if (clickCount == 1)
         {
             bool currentState = ArchiveUI.gameObject.activeSelf;
-            for (int i = 0; i < icons.Count; i++)
+            for (int i = 0; i < notesUI.Length; i++)
             {
                 if (Notes[i] == null)
                     break;
-                icons[i].SetActive(!currentState);
+                notesUI[i].SetActive(!currentState);
             }
             CloseTouchScreen.SetActive(!currentState);
             ArchiveUI.SetActive(!currentState);

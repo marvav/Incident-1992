@@ -41,8 +41,10 @@ public class ProgressManager : MonoBehaviour
     const int RADIO_EQUIPMENT_FOUND = 21;
     const int HOLE_FOUND = 24;
     const int REVOLVER_USED = 23;
+    const int LADY_FOUND = 22;
     const int CABIN_ENTERED = 25;
     const int REAL_DAVID_NOTE_FOUND = 26;
+    const int BROKEN_LIGTHNING_ROD = 27;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -70,10 +72,12 @@ public class ProgressManager : MonoBehaviour
     public bool holeFound = false;
     public bool revolverUsed = false;
     public bool realDavidNoteFound = false;
+    public bool ladyFound = false;
+    public bool brokenLightningRod = false;
 
     public bool[] id_list = new bool[50];
 
-    private int clueCount = 26;
+    private int clueCount = 27;
 
     public void changeObjective(int id)
     {
@@ -102,6 +106,14 @@ public class ProgressManager : MonoBehaviour
             if (!knifeFound)
                 knife.SetActive(true);
             noteFound = true;
+            if (!realDavidNoteFound)
+            {
+                Core.RollingText.RollText("What?! David left? Then why the hell am I doing here?.", 1);
+            }
+            else
+            {
+                Core.RollingText.RollText("This sounds completely different to the note I found upstairs. Was it even written by the same person?", 1);
+            }
         }
 
         lockedCaveFound = id == LOCKED_CAVE_FOUND;
@@ -130,6 +142,7 @@ public class ProgressManager : MonoBehaviour
                 knife.SetActive(true);
             }
             campFound = true;
+            Core.RollingText.RollText("Portable radio? Alone in the woods? Maybe I'll hear someone talking...", 1);
         }
         if(id == FIRST_RECORDING_LISTENED && !firstRecordingListened)
         {
@@ -200,6 +213,17 @@ public class ProgressManager : MonoBehaviour
             realDavidNoteFound = true;
             monster.SetActive(true);
         }
+        if(id == BROKEN_LIGTHNING_ROD)
+        {
+            Core.RollingText.RollText("Looks like a solid piece of steel.", 1);
+            brokenLightningRod = true;
+        }
+
+        if (id == LADY_FOUND)
+        {
+            Core.RollingText.RollText("What the fuck is this?!", 1);
+            ladyFound = true;
+        }
     }
 
 
@@ -208,9 +232,9 @@ public class ProgressManager : MonoBehaviour
         string result = "";
         if (!noteFound)
             if (Core.GetLanguage() == 0)
-                result += "I should hurry up to the Hájenka cabin. I don't want to miss the reunion. It's somewhere on the blue trail.\n\n";
+                result += "I should hurry up to the Hajenka cabin. It's somewhere on the blue trail.\n\n";
             else
-                result += "Mìl bych si pohnout do Davidovy chaty. Nechci aby se zlobili, že jdu pozdì. Mìlo by to být nìkde na modré trase.\n\n";
+                result += "Mìl bych si pohnout do Davidovy chaty. Mìlo by to být nìkde na modré trase.\n\n";
 
         if (noteFound && !realDavidNoteFound)
             if (Core.GetLanguage() == 0)
@@ -227,11 +251,6 @@ public class ProgressManager : MonoBehaviour
                 result += "There is a light on in Hájenka cave. Someone must have been there recently!\n\n";
             else
                 result += "V jeskyni Hájence je nìjaké svìtlo. Asi tam nìkdo je nebo aspoò byl.\n\n";
-        if (monsterFound)
-            if (Core.GetLanguage() == 0)
-                result += "I feel... breeze, shivers down my spine and... presence? Like in a horror movie before something happens.\n\n";
-            else
-                result += "Cítím... chladný vánek. Mráz mi leze po zádech. Skoro jako v horrorovém filmu než si postavy uvìdomí, že nejsou samy\n\n";
         if (cabinBroken && !firstRecordingListened)
             if (Core.GetLanguage() == 0)
                 result += "David's cabin looks somewhat empty... and tidy?\n\n";

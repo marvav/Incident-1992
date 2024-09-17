@@ -10,7 +10,6 @@ public class AudioWithSubtitles : MonoBehaviour
     public float[] subtitlesTimes;
     public ProgressManager ProgressManager;
     public int progressNumber = 0;
-    public bool fluentMode = false;
     private int index = 0;
     private int charIndex = 0; 
     private float timer = 0.0f;
@@ -38,10 +37,6 @@ public class AudioWithSubtitles : MonoBehaviour
             {
                 isPaused = false;
                 source.UnPause();
-            }
-            if (fluentMode)
-            {
-                //TODO fluent character appearing
             }
             else
             {

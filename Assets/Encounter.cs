@@ -27,11 +27,14 @@ public class Encounter : MonoBehaviour
             performEncounter();
             return;
         }
-        if (rand.Next(0, chance) == 1 || (isCloseToPlayer(car.transform, 50) && rand.Next(0, carChance) == 1))
+        if (!Core.PlayerDen.isPlayerInSafeZone())
         {
-            ShootHim.SetActive(true);
-            gun.Play();
-            isHappening = true;
+            if (rand.Next(0, chance) == 1 || (isCloseToPlayer(car.transform, 50) && rand.Next(0, carChance) == 1))
+            {
+                ShootHim.SetActive(true);
+                gun.Play();
+                isHappening = true;
+            }
         }
     }
 
