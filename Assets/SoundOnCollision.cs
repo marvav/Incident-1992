@@ -6,20 +6,22 @@ using UnityEngine;
 public class SoundOnCollision : MonoBehaviour
 {
     public AudioSource Sound;
-    public float triggerMagnitude;
-    public float defaultPitch = 1.0f;
     public Core Core;
+
+    void Start()
+    {
+        Sound.volume = 0.0f; // To not make noise on startup
+    }
 
     void OnCollisionEnter(Collision collision)
     {
 
         //TODO tag hierarchy of sounds
-        if (collision.gameObject.layer != 8 && collision.relativeVelocity.magnitude > triggerMagnitude)
+        if (collision.gameObject.layer != 8 && collision.relativeVelocity.magnitude > Core.EnvironmentCollisionSounds.getTriggerVelocity(this.gameObject.tag))
         {
             Sound.Stop();
-            Sound.clip = Core.EnvironmentCollisionSounds.getCollisionSound(this.gameObject.tag);
+            Core.EnvironmentCollisionSounds.setupAudio(Sound, this.gameObject.tag, collision.relativeVelocity.magnitude);
             Sound.volume = Core.GeneralAudio.volume;
-            Sound.pitch = Math.Max(defaultPitch - (0.025f * collision.relativeVelocity.magnitude),0.1f);
             Sound.Play();
         }
     }
