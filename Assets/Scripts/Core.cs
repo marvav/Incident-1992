@@ -13,6 +13,7 @@ public class Core : MonoBehaviour
     public GameObject Player;
     public GameObject Hand;
     public GameObject Camera;
+    public GameObject CameraMover;
     public FadeInScene DeathManager;
     public monsterFollow Monster;
     public AudioManager AudioManager;
@@ -40,8 +41,14 @@ public class Core : MonoBehaviour
     public InteractionManager InteractionManager;
     public EnvironmentCollisionSounds EnvironmentCollisionSounds;
     public RollingText RollingText;
-    private float delay;
     private int Localization = 0;
+    private Coroutine playerHealAfterDamage;
+    public enum DeathType
+    {
+        Monster,
+        Shot,
+        Fall,
+    }
 
 
     void Start()
@@ -55,38 +62,41 @@ public class Core : MonoBehaviour
         VoiceOverManager.InitializeVoiceOverManager();
         GenerateCode();
 
-        delay = Time.realtimeSinceStartup;
         RenderSettings.ambientLight = new Color(startingGamma, startingGamma, startingGamma, 1.0f);
     }
-    void Update()
-    {
-        if (PlayerHP < PlayerMaxHP && Time.realtimeSinceStartup - delay > 15)
-        {
-            PlayerHP = PlayerMaxHP;
-            effects.chromaticAnimation = false;
-        }
-    }
 
-    public void Hurt(int damage)
+    public void Hurt(int damage, DeathType deathType)
     {
-        effects.chromaticAnimation = true;
+        effects.SetChromaticAberrationAnimation(true);
         PlayerHP -= damage;
         HurtScreen.SetActive(true);
-        delay = Time.realtimeSinceStartup;
+
+        if (playerHealAfterDamage != null) {
+            StopCoroutine(playerHealAfterDamage);
+        }
+        playerHealAfterDamage = StartCoroutine(Heal(15.0f));
+
+
         if (PlayerHP <= 0)
         {
-            Die();
+            DeathSound.Play();
+            Monster.gameObject.SetActive(false);
+            CameraMover.gameObject.SetActive(false);
+            StopPlayer();
+            switch (deathType)
+            {
+                case DeathType.Shot:
+                    DeathManager.YouGotShotEndingScreen();
+                    break;
+                case DeathType.Fall:
+                    DeathManager.BadEndingScreen();
+                    break;
+                case DeathType.Monster:
+                    DeathManager.BadEndingScreen();
+                    break;
+            }
+            ToggleCursor();
         }
-    }
-
-    public void Die()
-    {
-        DeathSound.Play();
-        Monster.gameObject.SetActive(false);
-        DeathManager.BadEndingScreen();
-        DeathHUD.SetActive(true);
-        StopPlayer();
-        ToggleCursor();
     }
 
     public void StopPlayer()
@@ -134,5 +144,12 @@ public class Core : MonoBehaviour
             Lock.correctDigits[i] = rand.Next(0,10);
             CasetteCode.text += Lock.correctDigits[i].ToString();
         }
+    }
+
+    private IEnumerator Heal(float waitBefore)
+    {
+        yield return new WaitForSeconds(waitBefore);
+        PlayerHP = PlayerMaxHP;
+        effects.SetChromaticAberrationAnimation(false);
     }
 }

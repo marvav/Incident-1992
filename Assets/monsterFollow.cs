@@ -10,7 +10,6 @@ public class monsterFollow : MonoBehaviour
     public GameObject eyes;
     public Light flashlight;
     public float speedUpWhenFlashlightOn;
-    public GameObject death;
     public AudioSource buzzing;
     public AudioSource Damage;
     public AudioClip[] audioClips;
@@ -23,13 +22,13 @@ public class monsterFollow : MonoBehaviour
 
     public float speed;
     public float gravityScale;
-    public Phase phase;
+    public Phase phase = Phase.Follow;
     public int messageDistance;
     public int revealDistance;
     public int respawnDistance;
     public Vector3[] spawnPlaces;
 
-    private int monsterDirection;
+    private int monsterDirection = 1;
     private float distance;
     private Vector3 blankVector = new Vector3(0, 0, 0);
 
@@ -44,10 +43,8 @@ public class monsterFollow : MonoBehaviour
 
     void Start()
     {
-        monsterDirection = 1;
         charControl = gameObject.GetComponent<CharacterController>();
         Sound = gameObject.GetComponent<AudioSource>();
-        phase = Phase.Follow;
     }
 
     void FixedUpdate()
@@ -92,7 +89,7 @@ public class monsterFollow : MonoBehaviour
         if (distance < 1 && rand.Next(0, 25) == 1)
         {
             Damage.Play();
-            Core.Hurt(4);
+            Core.Hurt(4, Core.DeathType.Monster);
         }
 
         //Debug.Log(distance);
@@ -141,15 +138,17 @@ public class monsterFollow : MonoBehaviour
                     Sound.Play();
                 }
                 break;
+
             case Phase.FollowMessaging:
                 buzzing.Stop();
                 Sound.Stop();
-                if (!CryingAudio.isPlaying && rand.Next(0, 2500) == 1)
+                if (!CryingAudio.isPlaying && rand.Next(0, 2000) == 1)
                 {
                     CryingAudio.clip = cryingClips[rand.Next(0, cryingClips.Length)];
                     CryingAudio.Play();
                 }
                 break;
+
             default:
                 buzzing.Stop();
                 Sound.Stop();
@@ -182,7 +181,7 @@ public class monsterFollow : MonoBehaviour
 
     private void RandomTeleport()
     {
-        if (rand.Next(0, 50) == 1) //Chance to spawn directly behind player
+        if (rand.Next(0, 40) == 1) //Chance to spawn directly behind player
         {
             int random = rand.Next(0, 4);
             if (random == 0)
@@ -218,7 +217,7 @@ public class monsterFollow : MonoBehaviour
     }
     public bool MonsterIsClose()
     {
-        return phase == Phase.FollowClose;
+        return phase == Phase.FollowClose && this.gameObject.activeSelf;
     }
 
 }

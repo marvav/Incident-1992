@@ -48,13 +48,11 @@ public class Encounter : MonoBehaviour
             gun.clip = gunshots[counter];
             counter++;
             gun.Play();
-            //gun.volume = rand.Next(5, 10) / 10;
             if (player.velocity.magnitude < 7)
             {
-                Core.Hurt(5);
+                Core.Hurt(4, Core.DeathType.Shot);
                 if (Core.PlayerHP <= 0)
                 {
-                    death.SetActive(true);
                     this.gameObject.SetActive(false);
                 }
                 return;

@@ -36,7 +36,6 @@ public class AudioManager : MonoBehaviour
     {
         if (Core.Monster.MonsterIsClose())
         {
-            Debug.Log("fail");
             StopMusic();
             return;
         }

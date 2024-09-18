@@ -8,8 +8,14 @@ public class GenerateStatistics : MonoBehaviour
     public Core Core;
     public TMP_Text cluesDiscovered;
 
-    void Update()
+    void Update() {
+        cluesDiscovered.text = "";
+        addLine("Clues Discovered: " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.AllClueCount());
+        addLine("Casettes Discovered: " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.AllClueCount());
+    }
+
+    private void addLine(string line)
     {
-        cluesDiscovered.text = "Clues Discovered: " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.AllClueCount();
+        cluesDiscovered.text += line + "\n";
     }
 }

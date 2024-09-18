@@ -228,7 +228,7 @@ public class PlayerMovementDen : MonoBehaviour
     {
         if(rb.velocity.y > -0.1f && landAndHurt)
         {
-            Core.Hurt(2);
+            Core.Hurt(2, Core.DeathType.Fall);
             landAndHurt = false;
         }
         landAndHurt = landAndHurt || rb.velocity.y < HeightHurtThreshold;
