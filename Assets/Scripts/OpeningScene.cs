@@ -12,11 +12,13 @@ public class OpeningScene : MonoBehaviour
     public GameObject[] TurnOffAfter;
     public TMP_Text text;
     public AudioClip music;
+    public AudioSource backgroundSounds;
     public string[] lines;
     public float writingSpeed = 1.0f;
     public bool endLoopMusic = true;
     private int start = 0;
     public bool turnOffSelfAfter = true;
+    public float waitAfterFinish = 0.0f;
 
     private string queue = "";
     private int queueIndex = 0;
@@ -49,6 +51,8 @@ public class OpeningScene : MonoBehaviour
                 yield return new WaitForSeconds(0.05f);
             }
         }
+        backgroundSounds.Stop();
+        yield return new WaitForSeconds(waitAfterFinish);
         stop();
     }
 

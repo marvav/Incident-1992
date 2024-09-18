@@ -9,7 +9,6 @@ public class End : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Core.StopPlayer();
         Core.DeathManager.DepthEndingScreen();
         Scene.SetActive(true);
     }

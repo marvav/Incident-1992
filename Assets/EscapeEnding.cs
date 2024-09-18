@@ -5,10 +5,11 @@ using UnityEngine;
 public class EscapeEnding : MonoBehaviour
 {
     public Core Core;
+    public GameObject RopeEndingTextScene;
     // Start is called before the first frame update
     void Start()
     {
-        Core.StopPlayer();
+        RopeEndingTextScene.SetActive(true);
         Core.DeathManager.EscapeEndingScreen();
     }
 }

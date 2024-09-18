@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Core_Utils;
 
 public class PlayerInit : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerInit : MonoBehaviour
 
     void Start()
     {
-        Core.ProgressManager.changeObjective(0);
+        Time.timeScale = 1;
+        ToggleCursor();
     }
 }

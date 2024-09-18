@@ -10,6 +10,6 @@ public class SceneFadeInOnStart : MonoBehaviour
     public float fadeInStrength = 0.1f;
     void Start()
     {
-        Core.DeathManager.Screen(image, fadeInStrength, fadeInSpeed);
+        Core.DeathManager.Screen(image, fadeInStrength, fadeInSpeed, 0.0f, 0.0f);
     }
 }

@@ -80,9 +80,6 @@ public class Core : MonoBehaviour
         if (PlayerHP <= 0)
         {
             DeathSound.Play();
-            Monster.gameObject.SetActive(false);
-            CameraMover.gameObject.SetActive(false);
-            StopPlayer();
             switch (deathType)
             {
                 case DeathType.Shot:
@@ -103,6 +100,8 @@ public class Core : MonoBehaviour
     {
         Hand.SetActive(false);
         Player.SetActive(false);
+        Monster.gameObject.SetActive(false);
+        CameraMover.gameObject.SetActive(false);
     }
 
     public void ChangeLanguage(int value)
