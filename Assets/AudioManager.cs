@@ -7,12 +7,19 @@ public class AudioManager : MonoBehaviour
 {
     public Core Core;
     public AudioSource GeneralMusic;
+    public AudioSource GeneralAmbient;
     public AudioClip BadEndingMusic;
     public AudioClip CarEndingMusic;
     public AudioClip DepthEndingMusic;
     public AudioClip EscapeEndingMusic;
     public AudioClip[] musicAutoplay;
     public int chanceToPlay;
+
+    void Start()
+    {
+        GeneralAmbient.time = rand.Next(0, 1800);
+        GeneralAmbient.Play();
+    }
 
     public void PlayMusic(AudioClip clip)
     {

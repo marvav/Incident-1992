@@ -15,7 +15,7 @@ public class ProgressManager : MonoBehaviour
     public GameObject wellEntrance;
     public monsterFollow monsterStats;
     public WalkieTalkie recordings;
-    public int fasterMonsterSpeed = 4;
+    public float fasterMonsterSpeed = 4.0f;
 
     const int START = 0;
     const int CABIN_NOTE_READ = 1;
@@ -108,7 +108,7 @@ public class ProgressManager : MonoBehaviour
             noteFound = true;
             if (!realDavidNoteFound)
             {
-                Core.RollingText.RollText("What?! David left? Then why the hell am I doing here?.", 1);
+                Core.RollingText.RollText("What?! David left? Then what the hell am I doing here?.", 1);
             }
             else
             {
@@ -170,6 +170,7 @@ public class ProgressManager : MonoBehaviour
         if(id==BURNED_CAR && !carIsBurned)
         {
             carIsBurned= true;
+            Core.RollingText.RollText("Oh my GOD. That was my fucking CAR!", 1);
         }
         if(id== AMMO_AQUIRED &&!ammoAquired)
         {
@@ -178,6 +179,7 @@ public class ProgressManager : MonoBehaviour
         if (id == VAN_SABOTAGED)
         {
             vanSabotaged = true;
+            Core.RollingText.RollText("Cutting things open makes me very happy.", 1);
         }
         if (id == ROPE_FOUND)
         {
@@ -295,7 +297,7 @@ public class ProgressManager : MonoBehaviour
 
         if (campFound && !secondRecordingListened)
             if (Core.GetLanguage() == 0)
-                result += "I stole a walkie talkie from the creepy camp I found. Maybe I'll hear someone talking.\n\n";
+                result += "I stole a portable radio from the creepy camp I found. I should listen closely.\n\n";
             else
                 result += "Šlohnul jsem vysílaèku z toho podivného táboøištì s dodávkou. Tøeba nìkoho uslyším.\n\n";
         if (encounterSurvived && !vanSabotaged)

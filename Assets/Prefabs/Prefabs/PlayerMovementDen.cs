@@ -16,6 +16,7 @@ public class PlayerMovementDen : MonoBehaviour
     public AudioSource staminaPanting;
 
     public float speedCoeficient;
+    public float safeZoneSpeedCoeficient;
     
     public float groundDrag, airDrag;
 
@@ -81,11 +82,13 @@ public class PlayerMovementDen : MonoBehaviour
     private void FixedUpdate()
     {
         groundArray = Physics.OverlapSphere(groundCheck.transform.position, groundCheck.GetComponent<SphereCollider>().radius * gameObject.transform.localScale.x, whatIsGround);
-        grounded = groundArray.Length != 0 && groundArray[0] != GrabbingController.GetHeldObject();
+        grounded = groundArray.Length != 0 && groundArray[0].gameObject != GrabbingController.GetHeldObject();
+
         if (grounded)
             floorTag = groundArray[0].gameObject.tag;
         else
             floorTag = "";
+
         MyInput();
         SpeedControl(floorTag);
         HandleFallDamage();
@@ -114,6 +117,11 @@ public class PlayerMovementDen : MonoBehaviour
         speed = moveSpeed + verticalInput * moveSpeed * speedCoeficient;
         isSprinting = Input.GetKey(sprintKey) && verticalInput >= 0.2f && !staminaDrained;
 
+        if (isInSafeZone)
+        {
+            speed *= safeZoneSpeedCoeficient;
+        }
+
         if (isSprinting)
         {
             if (currentStamina > 0)
@@ -138,7 +146,7 @@ public class PlayerMovementDen : MonoBehaviour
         if(!isSprinting && currentStamina < stamina)
             currentStamina += Time.deltaTime * staminaRechargeSpeed;
 
-        // when to jump (grounded || gameObject.transform.parent!=null)
+        // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && (grounded || gameObject.transform.parent != null))
         {
             readyToJump = false;

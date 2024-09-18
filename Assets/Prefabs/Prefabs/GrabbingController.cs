@@ -27,18 +27,19 @@ public class GrabbingController : MonoBehaviour
 
     public void Update()
     {
-        //if (pause.isPaused)
-        //     return;
         if (Input.GetMouseButtonDown(1) && heldObject != null)
         {
             Vector3 moveDirection = (holdPoint.position - transform.position).normalized;
             heldObjectRb.AddForce(moveDirection * 400);
             DropObject();
         }
-        if (Input.GetMouseButtonDown(0) && SomethingToHoldIcon.activeSelf)
+        if (Input.GetMouseButtonDown(0))
         {
             if (heldObject == null)
-                PickupObject(Hand.CanPickUp());
+            {
+                if (SomethingToHoldIcon.activeSelf)
+                    PickupObject(Hand.CanPickUp());
+            }
             else
                 DropObject();
         }
@@ -48,22 +49,8 @@ public class GrabbingController : MonoBehaviour
         }
     }
 
-    //void MoveHoldPoint()
-    //{
-    //    move += Input.mouseScrollDelta.y / 10;
-    //    move = Mathf.Clamp(move, 1f, 4f);
-    //    holdPoint.localPosition = new Vector3(0,0, move);
-    //    Debug.Log(move);
-    //}
-
     public void MoveObject()
     {
-        //if (heldObject.GetComponent<GrabbedObject>().collideWithPlayer)
-        //{
-        //    DropObject();
-        //    return;
-        //}
-        //MoveHoldPoint();
         if (Vector3.Distance(heldObject.transform.position, holdPoint.position) > 0.01f)
         {
             Vector3 moveDirection = (holdPoint.position - heldObject.transform.position);
@@ -71,12 +58,12 @@ public class GrabbingController : MonoBehaviour
         }
         else if (!wasCentered)
         {
-            Debug.Log("Sentered");
+            //Debug.Log("Sentered");
             wasCentered = true;
         }
         if (((Vector3.Distance(heldObject.transform.position, holdPoint.position) > holdRange) && wasCentered) || Vector3.Distance(heldObjectRb.transform.position, holdPoint.position) > 1)
         {
-            Debug.Log("Too far");
+            //Debug.Log("Too far");
             DropObject();
         }
     }
@@ -87,61 +74,26 @@ public class GrabbingController : MonoBehaviour
             return;
         if (pickObj.GetComponent<Rigidbody>())
         {
-            Debug.Log("Rigid");
+            //Debug.Log("Rigid");
             holdPoint.rotation = orientation.rotation;
-            holdPoint.position = pickObj.transform.position;   ////////////// comment to make the game cooler
+            holdPoint.position = pickObj.transform.position;
             heldObjectRb = pickObj.GetComponent<Rigidbody>();
             heldObjectRb.useGravity = false;
             heldObjectRb.drag = 10;
             heldObjectRb.constraints = RigidbodyConstraints.FreezeRotation;
             heldObjectRb.transform.parent = holdPoint;
-            //heldObjectRb.transform.parent = transform;
             heldObject = pickObj;
-            //holdPoint.localPosition = new Vector3(0, 0, heldObject.transform.localScale.x * 2);
         }
     }
 
-    //void RotateObject()
-    //{
-    //    //rotation += new Vector3(0, 0, Time.deltaTime * 10);
-    //    //heldObject.transform.rotation = Quaternion.Euler(rotation);
-    //    if(Input.GetKeyDown(KeyCode.Tab))
-    //    {
-    //        mode++;
-    //        if (mode == 2)
-    //            mode = 0;
-    //    }
-    //    rotationSpeed = rotationSpeedMax;
-    //    if (Input.GetKey(KeyCode.LeftShift))
-    //    {
-    //        rotationSpeed = rotationSpeedMax / 10;
-    //    }
-    //    switch (mode)
-    //    {
-    //        case 0:
-    //            if (Input.GetKey(KeyCode.Q))
-    //                heldObject.transform.Rotate(heldObject.transform.up, rotationSpeed, Space.World);
-    //            if (Input.GetKey(KeyCode.E))
-    //                heldObject.transform.Rotate(heldObject.transform.up, -rotationSpeed, Space.World);
-    //            break;
-    //        case 1:
-    //            if (Input.GetKey(KeyCode.Q))
-    //                heldObject.transform.Rotate(heldObject.transform.right, rotationSpeed, Space.World);
-    //            if (Input.GetKey(KeyCode.E))
-    //                heldObject.transform.Rotate(heldObject.transform.right, -rotationSpeed, Space.World);
-    //            break;
-    //    }
-    //}
     public void DropObject()
     {
-        Debug.Log("Drop");
+        //Debug.Log("Drop");
         heldObjectRb.useGravity = true;
         heldObjectRb.drag = 1;
         heldObjectRb.constraints = RigidbodyConstraints.None;
         heldObjectRb.transform.parent = null;
         heldObject = null;
         wasCentered = false;
-        //holdPointRotator.enabled = false;
-        //holdPointRotator.Reset();
     }
 }
