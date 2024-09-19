@@ -26,6 +26,8 @@ public class monsterFollow : MonoBehaviour
     public int messageDistance;
     public int revealDistance;
     public int respawnDistance;
+    public int teleportChance;
+    public int cryingChance;
     public Vector3[] spawnPlaces;
 
     private int monsterDirection = 1;
@@ -37,7 +39,7 @@ public class monsterFollow : MonoBehaviour
         FollowClose,
         FollowMessaging,
         Follow,
-        Clamp,
+        Waiting,
         SafeZone
     }
 
@@ -51,8 +53,11 @@ public class monsterFollow : MonoBehaviour
     {
         if (Core.PlayerDen.isPlayerInSafeZone())
         {
+            if(phase != Phase.SafeZone)
+            {
+                RandomTeleport();
+            }
             phase = Phase.SafeZone;
-            RandomTeleport();
         }
         UpdateAudio();
         switch (phase)
@@ -70,7 +75,7 @@ public class monsterFollow : MonoBehaviour
                 ChangeVisibility(distance);
                 MonsterFollow();
                 break;
-            case Phase.Clamp:
+            case Phase.Waiting:
                 break;
             case Phase.SafeZone:
 
@@ -86,7 +91,7 @@ public class monsterFollow : MonoBehaviour
     {
         distance = Vector3.Distance(Core.Player.transform.position, transform.position);
         monsterSubtitles.SetActive(Phase.FollowMessaging == phase);
-        if (distance < 1 && rand.Next(0, 25) == 1)
+        if (distance < 1 && rand.Next(0, 22) == 1)
         {
             Damage.Play();
             Core.Hurt(4, Core.DeathType.Monster);
@@ -94,7 +99,7 @@ public class monsterFollow : MonoBehaviour
 
         //Debug.Log(distance);
 
-        if (distance > respawnDistance)
+        if (distance > respawnDistance && rand.Next(0, teleportChance) == 1)
         {
             RandomTeleport();
         }
@@ -142,7 +147,7 @@ public class monsterFollow : MonoBehaviour
             case Phase.FollowMessaging:
                 buzzing.Stop();
                 Sound.Stop();
-                if (!CryingAudio.isPlaying && rand.Next(0, 2000) == 1)
+                if (!CryingAudio.isPlaying && rand.Next(0, cryingChance) == 1)
                 {
                     CryingAudio.clip = cryingClips[rand.Next(0, cryingClips.Length)];
                     CryingAudio.Play();
@@ -200,6 +205,11 @@ public class monsterFollow : MonoBehaviour
     }
 
     // Public Methods
+
+    public void triggerMonster()
+    {
+        phase = Phase.Follow;
+    }
 
     public int GetMonsterDistance()
     {

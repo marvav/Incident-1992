@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PlayerMovementDen : MonoBehaviour
 {
@@ -47,8 +48,6 @@ public class PlayerMovementDen : MonoBehaviour
     private Collider[] groundArray;
     public bool grounded;
 
-    public Transform orientation;
-
     float horizontalInput;
     float verticalInput;
 
@@ -69,6 +68,16 @@ public class PlayerMovementDen : MonoBehaviour
     private Vector3 teleportCoordinates;
     private bool teleportPlayer;
 
+    public float sensetivityX, sensetivityY = 100f;
+    public float bobbingStrength = 1.0f;
+
+    public Transform head;
+    public Transform camera;
+
+    private float mouseSensetivity;
+    private float xRotation = 0.0f;
+    private float yRotation = 0.0f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -77,6 +86,9 @@ public class PlayerMovementDen : MonoBehaviour
         currentStamina = stamina;
 
         readyToJump = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void FixedUpdate()
@@ -106,6 +118,7 @@ public class PlayerMovementDen : MonoBehaviour
         else
         {
             MovePlayer();
+            RotatePlayer();
         }
 
     }
@@ -160,7 +173,7 @@ public class PlayerMovementDen : MonoBehaviour
     private void MovePlayer()
     {
         // calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = this.transform.forward * verticalInput + this.transform.right * horizontalInput;
 
         if (grounded)
         {
@@ -174,6 +187,33 @@ public class PlayerMovementDen : MonoBehaviour
             rb.AddForce(moveDirection.normalized * speed * 10f * airMultiplier, ForceMode.Force);
             velocity.y += gravity * Time.deltaTime;
             rb.velocity += velocity;
+        }
+    }
+
+    private void RotatePlayer()
+    {
+        if (!Cursor.visible)
+        {
+            float mouseX = (Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensetivityX);
+            float mouseY = (Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensetivityY);
+
+            yRotation += mouseX;
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f); // constraints
+
+            camera.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
+            this.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+
+            if (isMoving()) //Perform View Bobbing
+            {
+                camera.position = new Vector3(head.position.x,
+                    head.position.y + ((float)Math.Sin(Time.fixedTimeAsDouble * 10)) * bobbingStrength,
+                    head.position.z);
+            }
+            else
+            {
+                camera.position = head.position;
+            }
         }
     }
 
@@ -267,5 +307,11 @@ public class PlayerMovementDen : MonoBehaviour
         {
             isInSafeZone = false;
         }
+    }
+
+    public void SetSensitivity(float sensitivity)
+    {
+        sensetivityX = sensitivity;
+        sensetivityY = sensitivity;
     }
 }

@@ -101,7 +101,6 @@ public class Core : MonoBehaviour
         Hand.SetActive(false);
         Player.SetActive(false);
         Monster.gameObject.SetActive(false);
-        CameraMover.gameObject.SetActive(false);
     }
 
     public void ChangeLanguage(int value)

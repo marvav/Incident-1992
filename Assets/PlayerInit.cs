@@ -7,9 +7,10 @@ public class PlayerInit : MonoBehaviour
 {
     public Core Core;
 
-    void Start()
+    void OnEnable()
     {
         Time.timeScale = 1;
-        ToggleCursor();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

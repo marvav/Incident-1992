@@ -8,7 +8,6 @@ public class ProgressManager : MonoBehaviour
     public AudioClip NewNoteSound;
     public GameObject WalkieTalkie;
     public GameObject knife;
-    public GameObject monster;
     public GameObject encounters;
     public GameObject murder;
     public GameObject van;
@@ -128,14 +127,14 @@ public class ProgressManager : MonoBehaviour
             tracksFound = true;
         if (id == KNIFE_FOUND && !knifeFound)
         {
-            monster.SetActive(true);
+            monsterStats.triggerMonster();
             knifeFound = true;
         }
         if(id== DEER_FOUND && !deerFound)
             deerFound = true;
         if(id== RADIO_FOUND && !campFound)
         {
-            monster.SetActive(true);
+            monsterStats.triggerMonster();
             WalkieTalkie.SetActive(true);
             if (!knifeFound)
             {
@@ -151,7 +150,7 @@ public class ProgressManager : MonoBehaviour
         }
         if (id == REVOLVER_FOUND && !revolverFound)
         {
-            monster.SetActive(true);
+            monsterStats.triggerMonster();
             revolverFound = true;
         }
         if (id == ENCOUNTER_SURVIVED)
@@ -196,7 +195,7 @@ public class ProgressManager : MonoBehaviour
         if (id == CASETTE_PLAYED && !casettePlayed)
         {
             casettePlayed = true;
-            monster.SetActive(true);
+            monsterStats.triggerMonster();
         }
         if(id== BURNED_CASETTES_FOUND && !burnedCasettesFound)
             burnedCasettesFound = true;
@@ -213,7 +212,7 @@ public class ProgressManager : MonoBehaviour
         {
             Core.RollingText.RollText("David... What have you gotten yourself into?", 1);
             realDavidNoteFound = true;
-            monster.SetActive(true);
+            monsterStats.triggerMonster();
         }
         if(id == BROKEN_LIGTHNING_ROD)
         {
