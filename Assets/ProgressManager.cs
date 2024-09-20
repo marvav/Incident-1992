@@ -44,6 +44,7 @@ public class ProgressManager : MonoBehaviour
     const int CABIN_ENTERED = 25;
     const int REAL_DAVID_NOTE_FOUND = 26;
     const int BROKEN_LIGTHNING_ROD = 27;
+    const int SECOND_CASETTE_PLAYED = 28;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -73,10 +74,11 @@ public class ProgressManager : MonoBehaviour
     public bool realDavidNoteFound = false;
     public bool ladyFound = false;
     public bool brokenLightningRod = false;
+    public bool secondCasettePlayed = false;
 
     public bool[] id_list = new bool[50];
 
-    private int clueCount = 27;
+    private int clueCount = 28;
 
     public void changeObjective(int id)
     {
@@ -163,6 +165,7 @@ public class ProgressManager : MonoBehaviour
         {
             secondRecordingListened = true;
             murder.SetActive(true);
+            Core.RollingText.RollText("Did the monster just kill one of the guys?!", 1);
             if (!vanSabotaged)
                 van.SetActive(false);
         }
@@ -225,6 +228,12 @@ public class ProgressManager : MonoBehaviour
             Core.RollingText.RollText("What the fuck is this?!", 1);
             ladyFound = true;
         }
+
+        if(id == SECOND_CASETTE_PLAYED && !secondCasettePlayed)
+        {
+            secondCasettePlayed = true;
+            Core.RollingText.RollText("Well, it appears David has gone underground. Should I follow him?", 1);
+        }
     }
 
 
@@ -264,7 +273,7 @@ public class ProgressManager : MonoBehaviour
                 result += "Našel jsem èerstvé stopy kol v trávì na èervené stezce.\n\n";
         if (deerFound && !revolverFound)
             if (Core.GetLanguage() == 0)
-                result += "David got into hunting...probably\n\n";
+                result += "David got into hunting. Maybe he has a hunting lookout nearby.\n\n";
             else
                 result += "Vypadá to, že se David zaèal zajímat o lov.\n\n";
         if (revolverFound && !ammoAquired)
@@ -382,6 +391,10 @@ public class ProgressManager : MonoBehaviour
                 result += "Someone has been digging near David's cabin very recently. The soil is fresh.\n\n";
             else
                 result += "Nìkdo v lese vykopal podezøele velkou díru. Je èerstvá.\n\n";
+        if (secondCasettePlayed)
+        {
+            result += "Now I know where to find David. Well, not exactly, but I know it's somewhere underground.\n\n";
+        }
         return result;
     }
 
@@ -396,5 +409,10 @@ public class ProgressManager : MonoBehaviour
     }
     public int AllClueCount() {
         return clueCount;
+    }
+
+    public int playedCasettesCount()
+    {
+        return (casettePlayed ? 1 : 0) + (secondCasettePlayed ? 1 : 0);
     }
 }

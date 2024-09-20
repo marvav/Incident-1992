@@ -11,7 +11,7 @@ public class GenerateStatistics : MonoBehaviour
     void Update() {
         cluesDiscovered.text = "";
         addLine("Clues Discovered: " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.AllClueCount());
-        addLine("Casettes Discovered: " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.AllClueCount());
+        addLine("Casettes Played: " + Core.ProgressManager.getFoundCluesCount().ToString() + "/" + Core.ProgressManager.playedCasettesCount());
     }
 
     private void addLine(string line)

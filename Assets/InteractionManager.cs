@@ -75,15 +75,15 @@ public class InteractionManager : MonoBehaviour
                 case 13:
                     {
                         ShowDescription();
-                        ToggleObject toggle = coverHit.collider.gameObject.GetComponent<ToggleObject>();
+                        ToggleObject[] toggle = coverHit.collider.gameObject.GetComponents<ToggleObject>();
                         InteractionTeleport teleport = null;
-                        if (toggle == null)
+                        if (toggle.Length == 0)
                         {
                             teleport = coverHit.collider.gameObject.GetComponent<InteractionTeleport>();
                             SwapIcons(teleport.icon);
                         }
                         else
-                            SwapIcons(toggle.icon);
+                            SwapIcons(toggle[0].icon); // Icon of the 1st toggle component is used
 
                         if (Input.GetMouseButtonDown(0))
                         {
@@ -91,8 +91,11 @@ public class InteractionManager : MonoBehaviour
                             {
                                 currentIcon.SetActive(false);
                                 isClicked = true;
-                                if (toggle != null)
-                                    toggle.Toggle();
+                                if (toggle.Length > 0) { // All valid toggles are triggered
+                                    foreach(ToggleObject toggleComponent in toggle){
+                                        toggleComponent.Toggle();
+                                    }
+                                }
                                 else
                                     teleport.Teleport();
 
