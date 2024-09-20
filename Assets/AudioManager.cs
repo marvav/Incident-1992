@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip CarEndingMusic;
     public AudioClip DepthEndingMusic;
     public AudioClip EscapeEndingMusic;
+    public AudioClip CaveMusic;
     public AudioClip MenuMusic;
     public AudioClip[] musicAutoplay;
     public int chanceToPlay;

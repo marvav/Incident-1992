@@ -95,8 +95,7 @@ public class ProgressManager : MonoBehaviour
 
         if (id_list[id] != true)
         {
-            Core.GeneralAudio.clip = NewNoteSound;
-            Core.GeneralAudio.Play();
+            Invoke(nameof(MakeNewNoteSound), 3);
         }
 
         id_list[id] = true;
@@ -193,6 +192,7 @@ public class ProgressManager : MonoBehaviour
         if (id == WELL_ENTERED && !wellEntered)
         {
             Core.RollingText.RollText("The breeze is so cold.", 5);
+            Core.AudioManager.PlayMusic(Core.AudioManager.CaveMusic);
             wellEntered = true;
         }
         if (id == CASETTE_FOUND && !casetteFound)
@@ -417,5 +417,11 @@ public class ProgressManager : MonoBehaviour
     public int playedCasettesCount()
     {
         return (casettePlayed ? 1 : 0) + (secondCasettePlayed ? 1 : 0);
+    }
+
+    void MakeNewNoteSound()
+    {
+        Core.GeneralAudio.clip = NewNoteSound;
+        Core.GeneralAudio.Play();
     }
 }

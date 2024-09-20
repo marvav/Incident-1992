@@ -27,7 +27,7 @@ public class InteractionManager : MonoBehaviour
     void Update()
     {
         CanPickup = false;
-        if (CastRayHand(InteractionDistance, out coverHit))
+        if (CastRayHand(InteractionDistance, out coverHit) && Time.timeScale == 1)
         {
             if(lastObject!= coverHit.collider.gameObject)
                 leaveObject();

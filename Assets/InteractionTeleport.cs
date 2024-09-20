@@ -11,9 +11,11 @@ public class InteractionTeleport : MonoBehaviour
     public Core Core;
     public GameObject Destination;
     public AudioSource MovementSound;
+    public int clueID;
     public void Teleport()
     {
         MovementSound.Play();
         Core.PlayerDen.TeleportPlayer(Destination.transform.position);
+        Core.ProgressManager.changeObjective(clueID);
     }
 }

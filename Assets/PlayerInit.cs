@@ -10,6 +10,7 @@ public class PlayerInit : MonoBehaviour
     void OnEnable()
     {
         Time.timeScale = 1;
+        Core.AudioManager.GeneralMusic.loop = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
