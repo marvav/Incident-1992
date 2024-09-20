@@ -13,7 +13,7 @@ public class Core : MonoBehaviour
     public GameObject Player;
     public GameObject Hand;
     public GameObject Camera;
-    public GameObject CameraMover;
+    public GameObject Hands;
     public FadeInScene DeathManager;
     public monsterFollow Monster;
     public AudioManager AudioManager;
@@ -48,6 +48,7 @@ public class Core : MonoBehaviour
         Monster,
         Shot,
         Fall,
+        Electricity,
     }
 
 
@@ -79,6 +80,7 @@ public class Core : MonoBehaviour
 
         if (PlayerHP <= 0)
         {
+            Hands.SetActive(false);
             DeathSound.Play();
             switch (deathType)
             {
@@ -89,6 +91,9 @@ public class Core : MonoBehaviour
                     DeathManager.BadEndingScreen();
                     break;
                 case DeathType.Monster:
+                    DeathManager.BadEndingScreen();
+                    break;
+                case DeathType.Electricity:
                     DeathManager.BadEndingScreen();
                     break;
             }

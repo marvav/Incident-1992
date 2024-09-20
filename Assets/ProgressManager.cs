@@ -177,6 +177,7 @@ public class ProgressManager : MonoBehaviour
         if(id== AMMO_AQUIRED &&!ammoAquired)
         {
             ammoAquired = true;
+            Core.RollingText.RollText("I don't really feel pity for a guy that tried to shoot me.", 1);
         }
         if (id == VAN_SABOTAGED)
         {
@@ -187,10 +188,11 @@ public class ProgressManager : MonoBehaviour
         {
             ropeFound = true;
             wellEntrance.SetActive(true);
+            Core.RollingText.RollText("That's a good 15 meters worth of rope.", 1);
         }
         if (id == WELL_ENTERED && !wellEntered)
         {
-            Core.RollingText.RollText("The breeze is cold.", 1);
+            Core.RollingText.RollText("The breeze is so cold.", 5);
             wellEntered = true;
         }
         if (id == CASETTE_FOUND && !casetteFound)
@@ -199,6 +201,7 @@ public class ProgressManager : MonoBehaviour
         {
             casettePlayed = true;
             monsterStats.triggerMonster();
+            Core.RollingText.RollText("Did David discover something that's worth a lot of money? Why did he sound so paranoid?", 1);
         }
         if(id== BURNED_CASETTES_FOUND && !burnedCasettesFound)
             burnedCasettesFound = true;

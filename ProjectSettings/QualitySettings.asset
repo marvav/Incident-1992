@@ -166,6 +166,7 @@ QualitySettings:
     terrainMaxTrees: 50
     excludedTargetPlatforms:
     - Server
+    - Standalone
   - serializedVersion: 4
     name: High
     pixelLightCount: 2
@@ -271,6 +272,7 @@ QualitySettings:
     terrainMaxTrees: 50
     excludedTargetPlatforms:
     - Server
+    - Standalone
   - serializedVersion: 4
     name: Ultra
     pixelLightCount: 4
@@ -324,6 +326,7 @@ QualitySettings:
     terrainMaxTrees: 50
     excludedTargetPlatforms:
     - Server
+    - Standalone
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:
     Server: 0
