@@ -34,4 +34,9 @@ public class CombinationLock : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+
+    public string getCode()
+    {
+        return "" + correctDigits[0] + correctDigits[1] + correctDigits[2] + correctDigits[3];
+    }
 }

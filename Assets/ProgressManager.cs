@@ -12,8 +12,10 @@ public class ProgressManager : MonoBehaviour
     public GameObject murder;
     public GameObject van;
     public GameObject wellEntrance;
+    public CombinationLock combinationLock;
     public monsterFollow monsterStats;
     public WalkieTalkie recordings;
+    public GameObject PhoneBoothCall;
     public float fasterMonsterSpeed = 4.0f;
 
     const int START = 0;
@@ -45,6 +47,7 @@ public class ProgressManager : MonoBehaviour
     const int REAL_DAVID_NOTE_FOUND = 26;
     const int BROKEN_LIGTHNING_ROD = 27;
     const int SECOND_CASETTE_PLAYED = 28;
+    const int PHONE_BOOTH_CALL = 29;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -75,10 +78,11 @@ public class ProgressManager : MonoBehaviour
     public bool ladyFound = false;
     public bool brokenLightningRod = false;
     public bool secondCasettePlayed = false;
+    public bool phoneBoothCall = false;
 
     public bool[] id_list = new bool[50];
 
-    private int clueCount = 28;
+    private int clueCount = 29;
 
     public void changeObjective(int id)
     {
@@ -95,7 +99,7 @@ public class ProgressManager : MonoBehaviour
 
         if (id_list[id] != true)
         {
-            Invoke(nameof(MakeNewNoteSound), 3);
+            Invoke(nameof(MakeNewNoteSound), 2);
         }
 
         id_list[id] = true;
@@ -130,6 +134,7 @@ public class ProgressManager : MonoBehaviour
         {
             monsterStats.triggerMonster();
             knifeFound = true;
+            Core.RollingText.RollText("I don't remember carrying a buthcer knife in my car...", 1);
         }
         if(id== DEER_FOUND && !deerFound)
             deerFound = true;
@@ -153,6 +158,10 @@ public class ProgressManager : MonoBehaviour
         {
             monsterStats.triggerMonster();
             revolverFound = true;
+            if(revolverFound && ammoAquired)
+            {
+                Core.RollingText.RollText("I loaded the revolver.", 1);
+            }
         }
         if (id == ENCOUNTER_SURVIVED)
         {
@@ -177,6 +186,10 @@ public class ProgressManager : MonoBehaviour
         {
             ammoAquired = true;
             Core.RollingText.RollText("I don't really feel pity for a guy that tried to shoot me.", 1);
+            if (revolverFound && ammoAquired)
+            {
+                Core.RollingText.RollText("I loaded the revolver.", 10);
+            }
         }
         if (id == VAN_SABOTAGED)
         {
@@ -217,6 +230,7 @@ public class ProgressManager : MonoBehaviour
         if (id == REAL_DAVID_NOTE_FOUND)
         {
             Core.RollingText.RollText("David... What have you gotten yourself into?", 1);
+            PhoneBoothCall.SetActive(true);
             realDavidNoteFound = true;
             monsterStats.triggerMonster();
         }
@@ -236,6 +250,13 @@ public class ProgressManager : MonoBehaviour
         {
             secondCasettePlayed = true;
             Core.RollingText.RollText("Well, it appears David has gone underground. Should I follow him?", 1);
+        }
+
+
+        if (id == PHONE_BOOTH_CALL && !phoneBoothCall)
+        {
+            phoneBoothCall = true;
+            Core.RollingText.RollText("Well, David did not go to the musem. Something is very wrong here", 2);
         }
     }
 
@@ -329,6 +350,11 @@ public class ProgressManager : MonoBehaviour
             else
                 result += "Ještì nikdy na mì nikdo nestøílel... Co když nìco udìlali Davidovi a Brandonovi\n\n";
 
+        if(phoneBoothCall && !secondCasettePlayed)
+        {
+            result += "David did not go to the museum. Then he must be somewhere around, but where?!\n\n";
+        }
+
         if (secondRecordingListened && !ammoAquired)
             if (monsterFound)
             {
@@ -372,6 +398,11 @@ public class ProgressManager : MonoBehaviour
         if (casettePlayed && !wellEntered)
             if (Core.GetLanguage() == 0)
                 result += "Oh my God, what was David talking about?! Excavation?! Ice Singing Lady? Entrace hidden with contaminated water note. He can't be serious\n\n";
+            else
+                result += "Proboha, o èem to sakra David mluvil? Výzkum? Dáma ze Zpívaného Ledu? Tajný vchod maskovaný zkazkou o kontaminované vodì?! To nemùže myslet vážnì!\n\n";
+        if (casettePlayed && !ladyFound)
+            if (Core.GetLanguage() == 0)
+                result += "The code on the casette I played was "+ combinationLock.getCode() + "\n\n";
             else
                 result += "Proboha, o èem to sakra David mluvil? Výzkum? Dáma ze Zpívaného Ledu? Tajný vchod maskovaný zkazkou o kontaminované vodì?! To nemùže myslet vážnì!\n\n";
         if (burnedCasettesFound && !casettePlayed)
