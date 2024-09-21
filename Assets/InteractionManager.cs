@@ -27,7 +27,7 @@ public class InteractionManager : MonoBehaviour
     void Update()
     {
         CanPickup = false;
-        if (CastRayHand(InteractionDistance, out coverHit) && Time.timeScale == 1)
+        if (CastRayHand(InteractionDistance, out coverHit) && !isGamePaused())
         {
             if(lastObject!= coverHit.collider.gameObject)
                 leaveObject();
@@ -59,50 +59,12 @@ public class InteractionManager : MonoBehaviour
                     }
                 case 12:
                     {
-                        ShowDescription();
-                        SwapIcons(Core.PickUpItem);
-                        if (Input.GetButton("Pick Up"))
-                        {
-                            currentIcon.SetActive(false);
-                            PickUpItem component = coverHit.collider.gameObject.GetComponent<PickUpItem>();
-                            if (component != null)
-                                component.PutItemInInventory();
-                            else
-                                coverHit.collider.gameObject.GetComponent<ReadableNote>().PickUpNote();
-                        }
+                        HandleEIteraction();
                         return;
                     }
                 case 13:
                     {
-                        ShowDescription();
-                        ToggleObject[] toggle = coverHit.collider.gameObject.GetComponents<ToggleObject>();
-                        InteractionTeleport teleport = null;
-                        if (toggle.Length == 0)
-                        {
-                            teleport = coverHit.collider.gameObject.GetComponent<InteractionTeleport>();
-                            SwapIcons(teleport.icon);
-                        }
-                        else
-                            SwapIcons(toggle[0].icon); // Icon of the 1st toggle component is used
-
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            if (!isClicked)
-                            {
-                                currentIcon.SetActive(false);
-                                isClicked = true;
-                                if (toggle.Length > 0) { // All valid toggles are triggered
-                                    foreach(ToggleObject toggleComponent in toggle){
-                                        toggleComponent.Toggle();
-                                    }
-                                }
-                                else
-                                    teleport.Teleport();
-
-                            }
-                        }
-                        else
-                            isClicked = false;
+                        HandleLMBIteraction();
                         return;
                     }
                 default:
@@ -167,5 +129,60 @@ public class InteractionManager : MonoBehaviour
             IconHidden = true;
         }
 
+    }
+
+    private bool isGamePaused()
+    {
+        return Time.timeScale == 0;
+    }
+
+    private void HandleLMBIteraction()
+    {
+        ShowDescription();
+        ToggleObject[] toggleObjects = coverHit.collider.gameObject.GetComponents<ToggleObject>();
+        InteractionTeleport teleport = null;
+        if (toggleObjects.Length == 0)
+        {
+            teleport = coverHit.collider.gameObject.GetComponent<InteractionTeleport>();
+            SwapIcons(teleport.icon);
+        }
+        else
+            SwapIcons(toggleObjects[0].icon); // Icon of the 1st toggle component is used
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!isClicked)
+            {
+                currentIcon.SetActive(false);
+                isClicked = true;
+                if (toggleObjects.Length > 0)
+                { // All valid toggles are triggered
+                    foreach (ToggleObject toggle in toggleObjects)
+                    {
+                        toggle.Toggle();
+                    }
+                }
+                else
+                    teleport.Teleport();
+
+            }
+        }
+        else
+            isClicked = false;
+    }
+
+    private void HandleEIteraction()
+    {
+        ShowDescription();
+        SwapIcons(Core.PickUpItem);
+        if (Input.GetButton("Pick Up"))
+        {
+            currentIcon.SetActive(false);
+            PickUpItem component = coverHit.collider.gameObject.GetComponent<PickUpItem>();
+            if (component != null)
+                component.PutItemInInventory();
+            else
+                coverHit.collider.gameObject.GetComponent<ReadableNote>().PickUpNote();
+        }
     }
 }

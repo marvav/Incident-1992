@@ -15,10 +15,10 @@ public class SoundOnCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer != 8 && collision.relativeVelocity.magnitude > Core.EnvironmentCollisionSounds.getTriggerVelocity(this.gameObject.tag))
+        if (collision.relativeVelocity.magnitude > Core.EnvironmentCollisionSounds.getTriggerVelocity(this.gameObject.tag))
         {
             Sound.Stop();
-            Core.EnvironmentCollisionSounds.setupAudio(Sound, this.gameObject.tag, collision.relativeVelocity.magnitude);
+            Core.EnvironmentCollisionSounds.setupAudio(Sound, collision.gameObject.tag == "Water" ? "Water" : this.gameObject.tag, collision.relativeVelocity.magnitude);
             Sound.volume = Core.GeneralAudio.volume;
             Sound.Play();
         }

@@ -18,7 +18,8 @@ public class PlayerMovementDen : MonoBehaviour
 
     public float speedCoeficient;
     public float safeZoneSpeedCoeficient;
-    
+    public float holdingObjectSpeedCoeficient;
+
     public float groundDrag, airDrag;
 
     public float jumpForce;
@@ -127,12 +128,18 @@ public class PlayerMovementDen : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
         speed = moveSpeed + verticalInput * moveSpeed * speedCoeficient;
         isSprinting = Input.GetKey(sprintKey) && verticalInput >= 0.2f && !staminaDrained;
 
         if (isInSafeZone)
         {
             speed *= safeZoneSpeedCoeficient;
+        }
+
+        if (GrabbingController.isHolding())
+        {
+            speed *= holdingObjectSpeedCoeficient;
         }
 
         if (isSprinting)
