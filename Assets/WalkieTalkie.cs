@@ -15,6 +15,7 @@ public class WalkieTalkie : MonoBehaviour
     public AudioSource buzzingSource;
     public AudioClip[] Buzz;
     public AudioClip[] VoiceOver;
+    public int minimalTimeBeforeRecordingStarts = 30;
     private int index = 0;
     private float timer = 0;
     private bool wasPlayed = false;
@@ -30,10 +31,10 @@ public class WalkieTalkie : MonoBehaviour
     {
         if (!wasPlayed)
         {
-            if (index == 0 && isCloseToPlayer(enemyCamp.transform, 100.0f))
+            if (index == 0 && isCloseToPlayer(enemyCamp.transform, 125.0f))
                 return;
 
-            if (index == 1 && isCloseToPlayer(ThreeBoulders.transform, 100.0f))
+            if (index == 1 && isCloseToPlayer(ThreeBoulders.transform, 125.0f))
                 return;
 
             if (!recordingIsHappening && rand.Next(0, eventChance) == 1)
@@ -53,7 +54,7 @@ public class WalkieTalkie : MonoBehaviour
             }
             if (recordingIsHappening)
             {
-                if (Inventory.InHand!=null && Inventory.InHand.name == "WalkieTalkie")
+                if (Inventory.InHand != null && Inventory.InHand.name == "WalkieTalkie")
                 {
                     recordings[index].SetActive(true);
                     wasPlayed = true;
@@ -63,7 +64,7 @@ public class WalkieTalkie : MonoBehaviour
                     timer += Time.deltaTime;
             }
 
-            if(timer > availableTime)
+            if (timer > availableTime)
             {
                 recordingIsHappening = false;
                 timer = 0;
@@ -72,6 +73,11 @@ public class WalkieTalkie : MonoBehaviour
     }
 
     public void NextRecording()
+    {
+        Invoke(nameof(delayRecording), minimalTimeBeforeRecordingStarts);
+    }
+
+    public void delayRecording()
     {
         wasPlayed = false;
         index++;

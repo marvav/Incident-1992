@@ -55,6 +55,7 @@ public class monsterFollow : MonoBehaviour
         {
             if(phase != Phase.SafeZone)
             {
+                monsterSubtitles.SetActive(false);
                 RandomTeleport();
             }
             phase = Phase.SafeZone;
