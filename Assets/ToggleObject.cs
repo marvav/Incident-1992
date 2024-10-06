@@ -14,6 +14,8 @@ public class ToggleObject : MonoBehaviour
     public GameObject neededItem;
     public bool isOneTime = false;
     public bool destroyAfterUse = false;
+    public bool triggerClueAfterUse = false;
+    public int clueID = 0;
     private bool wasUsed = false;
 
     public void Toggle()
@@ -38,6 +40,11 @@ public class ToggleObject : MonoBehaviour
         if (isOneTime)
         {
             neededItem.SetActive(false);
+        }
+
+        if (triggerClueAfterUse)
+        {
+            Core.ProgressManager.changeObjective(clueID);
         }
     }
 

@@ -108,22 +108,6 @@ public class Core : MonoBehaviour
         Monster.gameObject.SetActive(false);
     }
 
-    public void ChangeLanguage(int value)
-    {
-        InteractionManager.ChangeLanguage();
-        if (value != Localization)
-        {
-            Localization = value;
-            GameObject[] objects = GameObject.FindGameObjectsWithTag("Localization");
-            foreach (GameObject gameobject in objects)
-            {
-                Debug.Log(gameobject.name);
-                Multitext text = gameobject.GetComponent<Multitext>();
-                text.ChangeLanguage(Localization);
-            }
-        }
-    }
-
     public void ChangeVolume(string tag, float volume)
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);

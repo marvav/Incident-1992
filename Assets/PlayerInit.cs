@@ -13,5 +13,6 @@ public class PlayerInit : MonoBehaviour
         Core.AudioManager.GeneralMusic.loop = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Core.ProgressManager.changeObjective(0);
     }
 }

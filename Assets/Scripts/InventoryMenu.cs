@@ -13,17 +13,18 @@ public class InventoryMenu : MonoBehaviour
     public GameObject Settings;
     public GameObject Inventory_Object;
     public GameObject Archive;
+    public GameObject[] InventoryExitHideObjects;
     public GameObject[] EscHideObjects;
     public GameObject[] EscShowObjects;
     private List<Vector3> Icon_positions;
-    // Start is called before the first frame update
+
     void Start()
     {
         Icon_positions = new List<Vector3> {new Vector3(-860,-370,0), new Vector3(-795,-370,0) , new Vector3(-720,-370,0) ,
                                             new Vector3(-860,-450,0) , new Vector3(-795,-450,0) , new Vector3(-720,-450,0) , new Vector3(-645,-450,0)};
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetButtonDown("Escape"))
@@ -34,7 +35,7 @@ public class InventoryMenu : MonoBehaviour
                 ToggleEscMenu(false);
                 ToggleCursor();
                 Time.timeScale = 1;
-                //ToggleObjects(EscShowObjects, true);
+                //ToggleObjects(InventoryExitHideObjects, false);
 
             }
             else //Turn off
@@ -43,6 +44,7 @@ public class InventoryMenu : MonoBehaviour
                 ToggleEscMenu(true);
                 Time.timeScale = 0;
             }
+            Core.DescriptionUI.text = "";
         }
         if (Input.GetButtonDown("Inventory"))
         {

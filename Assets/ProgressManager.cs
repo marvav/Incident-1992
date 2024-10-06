@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Inventory;
 
 public class ProgressManager : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class ProgressManager : MonoBehaviour
     const int BROKEN_LIGTHNING_ROD = 27;
     const int SECOND_CASETTE_PLAYED = 28;
     const int PHONE_BOOTH_CALL = 29;
+    const int LIGHTS_UPSTAIRS_ARE_ON = 30;
+    const int HAJENKA_CAVE_LOCK_SHOT = 31;
 
     public bool noteFound = false;
     public bool lockedCaveFound = false;
@@ -79,6 +82,8 @@ public class ProgressManager : MonoBehaviour
     public bool brokenLightningRod = false;
     public bool secondCasettePlayed = false;
     public bool phoneBoothCall = false;
+    public bool lightsUpstairsAreOn = false;
+    public bool hajenkaCaveLockShot = false;
 
     public bool[] id_list = new bool[50];
 
@@ -258,6 +263,16 @@ public class ProgressManager : MonoBehaviour
             phoneBoothCall = true;
             Core.RollingText.RollText("Well, David did not go to the musem. Something is very wrong here", 2);
         }
+
+        if(id == LIGHTS_UPSTAIRS_ARE_ON && !lightsUpstairsAreOn)
+        {
+            lightsUpstairsAreOn = true;
+        }
+        if(id == HAJENKA_CAVE_LOCK_SHOT && !hajenkaCaveLockShot)
+        {
+            hajenkaCaveLockShot = true;
+            Inventory.Remove("Ammo");
+        }
     }
 
 
@@ -429,6 +444,13 @@ public class ProgressManager : MonoBehaviour
         {
             result += "Now I know where to find David. Well, not exactly, but I know it's somewhere underground.\n\n";
         }
+
+        if(lightsUpstairsAreOn && !realDavidNoteFound)
+        {
+            result += "There is light coming from David's attic. I should check it out!";
+        }
+
+
         return result;
     }
 
@@ -445,7 +467,7 @@ public class ProgressManager : MonoBehaviour
         return clueCount;
     }
 
-    public int playedCasettesCount()
+    public int getPlayedCasettesCount()
     {
         return (casettePlayed ? 1 : 0) + (secondCasettePlayed ? 1 : 0);
     }

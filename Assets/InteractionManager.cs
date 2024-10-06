@@ -14,7 +14,6 @@ public class InteractionManager : MonoBehaviour
     private RaycastHit coverHit;
     private bool CanPickup = false;
     private bool isClicked = false;
-    private GameObject currentDescription = null;
     private GameObject currentIcon;
     private GameObject lastObject = null;
 
@@ -103,20 +102,12 @@ public class InteractionManager : MonoBehaviour
         ObjectDescription description = coverHit.collider.gameObject.GetComponent<ObjectDescription>();
         if (description != null && Core.RollingText.isEmpty() && Core.Subtitles.text.Length == 0)
         {
-            currentDescription = description.gameObject;
-            ChangeLanguage();
+            Core.Description.text = description.GetText(Core.GetLanguage());
+            Core.ProgressManager.changeObjective(description.GetClue());
         }
         else
         {
             Core.Description.text = "";
-        }
-    }
-
-    public void ChangeLanguage()
-    {
-        if (currentDescription != null)
-        {
-            Core.Description.text = currentDescription.GetComponent<ObjectDescription>().GetText(Core.GetLanguage());
         }
     }
 

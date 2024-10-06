@@ -26,7 +26,6 @@ public class RollingText : MonoBehaviour
 
     public void RollText(string text)
     {
-        Debug.Log("rolling");
         isWritingState = true;
         RollText(text, 0, afterWholeWait);
     }
