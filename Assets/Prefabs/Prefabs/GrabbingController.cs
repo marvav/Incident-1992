@@ -27,12 +27,6 @@ public class GrabbingController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(1) && heldObject != null)
-        {
-            Vector3 moveDirection = (holdPoint.position - transform.position).normalized;
-            heldObjectRb.AddForce(moveDirection * 400);
-            DropObject();
-        }
         if (Input.GetMouseButtonDown(0))
         {
             if (heldObject == null)
@@ -41,40 +35,49 @@ public class GrabbingController : MonoBehaviour
                     PickupObject(Hand.CanPickUp());
             }
             else
+            {
                 DropObject();
+            }
+            return;
         }
+
         if (heldObject != null)
         {
-            MoveObject();
+            if (Input.GetMouseButtonDown(1))
+            {
+                Vector3 moveDirection = (holdPoint.position - transform.position).normalized;
+                heldObjectRb.AddForce(moveDirection * 400);
+                DropObject();
+            }
+            else
+            {
+                MoveObject();
+            }
         }
     }
 
     public void MoveObject()
     {
-        if (Vector3.Distance(heldObject.transform.position, holdPoint.position) > 0.01f)
+        float distance = Vector3.Distance(heldObject.transform.position, holdPoint.position);
+        if (distance > 0.01f)
         {
             Vector3 moveDirection = (holdPoint.position - heldObject.transform.position);
             heldObjectRb.AddForce(moveDirection * pickupForce);
         }
         else if (!wasCentered)
         {
-            //Debug.Log("Sentered");
             wasCentered = true;
         }
-        if (((Vector3.Distance(heldObject.transform.position, holdPoint.position) > holdRange) && wasCentered) || Vector3.Distance(heldObjectRb.transform.position, holdPoint.position) > 1)
+        if (((distance > holdRange) && wasCentered) || distance > 1)
         {
-            //Debug.Log("Too far");
             DropObject();
         }
     }
 
     public void PickupObject(GameObject pickObj)
     {
-        if (pickObj == null)
-            return;
         if (pickObj.GetComponent<Rigidbody>())
         {
-            //Debug.Log("Rigid");
             holdPoint.rotation = orientation.rotation;
             holdPoint.position = pickObj.transform.position;
             heldObjectRb = pickObj.GetComponent<Rigidbody>();

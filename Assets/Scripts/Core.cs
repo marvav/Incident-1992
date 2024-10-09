@@ -38,6 +38,7 @@ public class Core : MonoBehaviour
     public AudioSource DeathSound;
     public CombinationLock Lock;
     public ProgressManager ProgressManager;
+    public GrabbingController GrabbingController;
     public InteractionManager InteractionManager;
     public EnvironmentCollisionSounds EnvironmentCollisionSounds;
     public RollingText RollingText;

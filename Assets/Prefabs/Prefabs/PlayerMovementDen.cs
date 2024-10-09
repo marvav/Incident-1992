@@ -59,7 +59,7 @@ public class PlayerMovementDen : MonoBehaviour
     public bool staminaDrained = false;
     public bool isSprinting = false;
 
-    public float HeightHurtThreshold;
+    public float heightHurtThreshold;
     private bool landAndHurt = false;
     public bool isInSafeZone = false;
 
@@ -286,7 +286,7 @@ public class PlayerMovementDen : MonoBehaviour
             Core.Hurt(2, Core.DeathType.Fall);
             landAndHurt = false;
         }
-        landAndHurt = landAndHurt || rb.velocity.y < HeightHurtThreshold;
+        landAndHurt = landAndHurt || rb.velocity.y < heightHurtThreshold;
     }
 
     public bool isPlayerInSafeZone()

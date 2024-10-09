@@ -10,7 +10,7 @@ public class BadEnding : MonoBehaviour
     public GameObject escapeRope;
     void Start()
     {
-        Invoke(nameof(ReleaseMonster), 1);
+        badEndingMonster.SetActive(true);
         if (Core.ProgressManager.vanSabotaged) {
             cutRope.SetActive(true);
             Core.RollingText.RollText("What was that?! The remaining guy must have cut off my rope!", 1);
@@ -18,12 +18,7 @@ public class BadEnding : MonoBehaviour
         else
         {
             escapeRope.SetActive(true);
-            Core.RollingText.RollText("Is the monster coming for the knife?!", 1);
+            Core.RollingText.RollText("RUN!", 0);
         }
-    }
-
-    void ReleaseMonster()
-    {
-        badEndingMonster.SetActive(true);
     }
 }
